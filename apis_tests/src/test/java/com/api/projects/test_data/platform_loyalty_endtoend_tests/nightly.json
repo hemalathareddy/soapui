@@ -1,0 +1,9 @@
+{
+"endpoint" : "nightly.capillary.in",
+"authorization":{
+  "username" : "endtoend_test",
+  "password" : "202cb962ac59075b964b07152d234b70"
+},
+"webhook_workspace" : "enqovte5kgmv6a1.m.pipedream.net",
+"webhook_workspace_name" : "endtoend_hook_ng"
+}
