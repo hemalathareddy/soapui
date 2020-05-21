@@ -390,7 +390,10 @@
                      </config>
              </configs>
      </organization>
-</root>]]></con:request><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="version" value="v1.1" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface><con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@errors_only">false</con:setting></con:settings><con:runType>PARALLELL</con:runType><con:testCase id="a6919450-66f2-417f-9891-60d4219922a2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TransactionAdd" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get txn numer" id="ebafad87-9920-45df-a6d0-64a324a881a2"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+</root>]]></con:request><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="version" value="v1.1" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="58906dd6-573e-4ca1-97d8-6660624d4ecd" wadlVersion="http://wadl.dev.java.net/2009/02" name="triggerCustomEvent" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT"/><con:endpoints><con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint></con:endpoints><con:resource name="1b35496e-4126-4242-be3e-20f624766b67" path="" id="298f4f66-d3fe-4f25-bbf4-b8bbcf2e3706"><con:settings/><con:parameters/><con:method name="Method 1" id="bc2ab0db-9295-4bdf-ae1e-788c2302c95b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="f773dd65-36e5-4368-91df-2c4c620e83d1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint><con:request>{"Mobile":"918733645468",
+"Name":"stringxxx",
+"Till":"alpha_endtoend_test",
+"event_name":"AlphaEndToEnd"}</con:request><con:originalUri>https://8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@errors_only">false</con:setting></con:settings><con:runType>PARALLELL</con:runType><con:testCase id="a6919450-66f2-417f-9891-60d4219922a2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TransactionAdd" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get txn numer" id="ebafad87-9920-45df-a6d0-64a324a881a2"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
 log.info timestamp
 testRunner.testCase.setPropertyValue("tnx_number",timestamp);</script></con:config></con:testStep><con:testStep type="groovy" name="get current date and time" id="022d35e4-b48a-4ff3-afa8-fdccd2adeb35"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
 String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
@@ -677,7 +680,7 @@ String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 def webhook_names = json.data.name;
-def my_webhook = context.expand('${#Project#webhook_name}');
+def my_webhook = context.expand('${#Project#webhook_workspace_name}');
 int index = 0;
 String consumer_id = "";
 for(name in webhook_names){
@@ -3100,7 +3103,7 @@ for(TestProperty prop : properties){
 	prop.setValue("")
 }</con:setupScript><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589785605165</con:value></con:property><con:property><con:name>request_id</con:name><con:value>5c8ecd69-368c-477d-b644-15d586b18382</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249228</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919785605166</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378988529</con:value></con:property><con:property><con:name>lifetimePoints_afterTnx</con:name><con:value>620</con:value></con:property><con:property><con:name>loyaltyPoints_afterTnx</con:name><con:value>620</con:value></con:property><con:property><con:name>currentSlab_afterTnx</con:name><con:value>Silver</con:value></con:property><con:property><con:name>lifetime_puchases_afterTnx</con:name><con:value>2000</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>440</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>620</con:value></con:property><con:property><con:name>lifetime_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyalty_points</con:name><con:value>180</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919792644247</con:value></con:property><con:property><con:name>webhook_consumerID</con:name><con:value/></con:property><con:property><con:name>user_id</con:name><con:value>378989600</con:value></con:property></con:properties></con:testSuite><con:testSuite id="38583330-b416-4a11-a304-90fa8d14eb9b" name="Point Redemption"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="09dd370e-3ef6-4e5f-b954-65609ca078e7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Full_Point_Redemption" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get current date and time" id="b7e5507d-cc2c-4f11-bdc4-6bf6906b40dc"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
 String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
-testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="call add transaction for point redemption" id="21bd6f70-3c8d-45d4-9fdf-cece1f441a81"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782308382</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249200</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987737</con:value></con:property><con:property><con:name>mobile</con:name><con:value>8768044354</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name><con:value>null</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782308386</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>pointBalance_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem awarded Points from the transaction" id="1d17908d-5c78-4dd8-8486-7f8965c4beed"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem awarded Points from the transaction" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="add a transaction" id="21bd6f70-3c8d-45d4-9fdf-cece1f441a81"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782308382</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249200</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987737</con:value></con:property><con:property><con:name>mobile</con:name><con:value>8768044354</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name><con:value>null</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782308386</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>pointBalance_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem full points awarded in transaction" id="1d17908d-5c78-4dd8-8486-7f8965c4beed"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem full points awarded in transaction" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "redeem": {
       "points_redeemed": "${#awarded_points_afterTnx}",
@@ -3165,7 +3168,7 @@ else{
   <con:entry key="version" value="v1.1"/>
 </con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="JDBC Request" id="a3555cc3-db20-4364-b51d-daad5ccc5ed3" disabled="true"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://127.0.0.1:8921/warehouse?user=capillaryro&amp;password=captech123</con:connectionString><con:query>Select * from warehouse.points_awarded where org_id = 50613 and program_id = 1400 and customer_id =378950979</con:query><con:properties/></con:config></con:testStep><con:properties><con:property><con:name>redemption_id</con:name><con:value>qsS6eQ</con:value></con:property><con:property><con:name>redemption_mobile</con:name><con:value>919782308386</con:value></con:property></con:properties></con:testCase><con:testCase id="ff854ded-40a5-4d28-95be-c0654510fd29" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Partial_Point_Redemprion" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get current date and time" id="a44585c7-5822-479f-b75a-b939035bc9b2"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
 String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
-testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="call add transaction for partial point redemption" id="1814b005-910e-4fc3-bf00-9ce004862956"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782613534</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249201</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987738</con:value></con:property><con:property><con:name>mobile</con:name><con:value>9782613536</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782613536</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>mobile</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem partial points" id="6b66b6de-8722-4e24-a19a-f5673ecdc093"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem partial points" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="add a transaction" id="1814b005-910e-4fc3-bf00-9ce004862956"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782613534</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249201</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987738</con:value></con:property><con:property><con:name>mobile</con:name><con:value>9782613536</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782613536</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>mobile</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem half of the points awarded" id="6b66b6de-8722-4e24-a19a-f5673ecdc093"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem half of the points awarded" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "redeem": {
       "points_redeemed": "${=Math.round(${#awarded_points_afterTnx}/2)}",
@@ -3229,7 +3232,7 @@ else{
   <con:entry key="version" value="v1.1"/>
 </con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>redemption_id</con:name><con:value>iAocu4</con:value></con:property></con:properties></con:testCase><con:testCase id="310a2eb8-7984-477b-95a0-083d05c2b92e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Full_Points_Redemption_Against_Tnx_Number" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get current date and time" id="470d400d-2a45-4a04-84b1-3021542b96fc"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
 String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
-testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="call add transaction for point redemption with tnx number" id="ebe731fa-b082-4256-8278-277ff1f3b76f"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782732648</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249202</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987836</con:value></con:property><con:property><con:name>mobile</con:name></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name><con:value>null</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782732651</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>pointBalance_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem awarded points against transaction" id="90cec6ee-cfcd-4bda-a9db-eb3c2b9ae755"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem awarded points against transaction" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="add transaction with transaction number" id="ebe731fa-b082-4256-8278-277ff1f3b76f"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782732648</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249202</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987836</con:value></con:property><con:property><con:name>mobile</con:name></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name><con:value>null</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782732651</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>pointBalance_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem awarded points against transaction number" id="90cec6ee-cfcd-4bda-a9db-eb3c2b9ae755"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem awarded points against transaction number" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "redeem": {
       "points_redeemed": "${#awarded_points_afterTnx}",
@@ -3287,7 +3290,7 @@ else{
   <con:entry key="version" value="v1.1"/>
 </con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>redemption_id</con:name><con:value>HsifkE</con:value></con:property></con:properties></con:testCase><con:testCase id="e45bd6ea-01ee-43dd-a1ac-b13564d41dac" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Partial_Points_Redemption_Against_Tnx_Number" searchProperties="true"><con:settings/><con:testStep type="groovy" name="call get current date and time script" id="1233e6fd-80b9-42f3-a107-5f72313e74e6"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
 String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
-testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="call add transaction for point partial redemption with tnx number" id="a96964aa-036b-43a9-b2d7-f76798a6fcb0"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782792932</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249203</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987840</con:value></con:property><con:property><con:name>mobile</con:name></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name><con:value>null</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782792935</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>pointBalance_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem partial points against transaction" id="20e83e7c-cc25-46d9-8383-04bc1c47a786"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem partial points against transaction" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="calltestcase" name="add a transaction with transaction number" id="a96964aa-036b-43a9-b2d7-f76798a6fcb0"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>a6919450-66f2-417f-9891-60d4219922a2</con:targetTestCase><con:properties><con:property><con:name>tnx_number</con:name><con:value>1589782792932</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249203</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378987840</con:value></con:property><con:property><con:name>mobile</con:name></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>500</con:value></con:property><con:property><con:name>pointBalance_afterTnx</con:name><con:value>null</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919782792935</con:value></con:property></con:properties><con:returnProperties><con:entry>tnx_number</con:entry><con:entry>tnxID</con:entry><con:entry>user_id</con:entry><con:entry>awarded_points_afterTnx</con:entry><con:entry>totalPoints_afterTnx</con:entry><con:entry>pointBalance_afterTnx</con:entry><con:entry>tnx_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="restrequest" name="redeem partial points against transaction number" id="20e83e7c-cc25-46d9-8383-04bc1c47a786"><con:settings/><con:config service="RedeemPoints" resourcePath="/{version}/points/redeem" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="redeem partial points against transaction number" id="589bdef3-8de7-4a35-bc91-bdb079b2b19f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding xsi:nil="true"/><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "redeem": {
       "points_redeemed": "${=Math.round(${#awarded_points_afterTnx}/2)}",
@@ -3341,11 +3344,11 @@ else{
   <con:entry key="program_id" value=""/>
   <con:entry key="format" value="json"/>
   <con:entry key="version" value="v1.1"/>
-</con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>redemption_id</con:name><con:value>aJKPjo</con:value></con:property></con:properties></con:testCase><con:testCase id="8655a3f6-09ec-4cfd-8ab6-237d14e586f5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Pass_Redemption_Id_In_Add_Transaction" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="call full point redemption api to get redemption id" id="18b9eafe-1794-4833-abbe-034527909b25"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>09dd370e-3ef6-4e5f-b954-65609ca078e7</con:targetTestCase><con:properties><con:property><con:name>redemption_id</con:name><con:value>2jqbp6</con:value></con:property><con:property><con:name>redemption_mobile</con:name><con:value>919783176780</con:value></con:property></con:properties><con:returnProperties><con:entry>redemption_id</con:entry><con:entry>redemption_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="get current date and time" id="6bb7a7a9-38a7-486f-8b09-1dda614a2c93"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
+</con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>redemption_id</con:name><con:value>aJKPjo</con:value></con:property></con:properties></con:testCase><con:testCase id="8655a3f6-09ec-4cfd-8ab6-237d14e586f5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Pass_Redemption_Id_In_Add_Transaction" searchProperties="true"><con:settings/><con:testStep type="calltestcase" name="do full point redemption" id="18b9eafe-1794-4833-abbe-034527909b25"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>09dd370e-3ef6-4e5f-b954-65609ca078e7</con:targetTestCase><con:properties><con:property><con:name>redemption_id</con:name><con:value>2jqbp6</con:value></con:property><con:property><con:name>redemption_mobile</con:name><con:value>919783176780</con:value></con:property></con:properties><con:returnProperties><con:entry>redemption_id</con:entry><con:entry>redemption_mobile</con:entry></con:returnProperties><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="get current date and time" id="6bb7a7a9-38a7-486f-8b09-1dda614a2c93"><con:settings/><con:config><script>def getcurrent = Calendar.getInstance()
 String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
-testRunner.testCase.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="groovy" name="call get tnx number" id="c778ef58-9ddc-4028-bb53-6f3234edd22b"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+testRunner.testCase.setPropertyValue("current_time",current_time);</script></con:config></con:testStep><con:testStep type="groovy" name="get unique transaction number" id="c778ef58-9ddc-4028-bb53-6f3234edd22b"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
 log.info timestamp
-testRunner.testCase.setPropertyValue("tnx_number",timestamp);</script></con:config></con:testStep><con:testStep type="restrequest" name="add transaction by passing redemption id" id="49bee437-a59c-4f6d-98ff-49b146a15871"><con:settings/><con:config service="addRegularTransaction" resourcePath="/v1.1/transaction/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="add transaction by passing redemption id" id="30d7b033-bada-4cf6-abdf-781b858869dc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+testRunner.testCase.setPropertyValue("tnx_number",timestamp);</script></con:config></con:testStep><con:testStep type="restrequest" name="add transaction through redemption id" id="49bee437-a59c-4f6d-98ff-49b146a15871"><con:settings/><con:config service="addRegularTransaction" resourcePath="/v1.1/transaction/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="add transaction through redemption id" id="30d7b033-bada-4cf6-abdf-781b858869dc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "transaction": {
       "type": "regular",
@@ -3486,7 +3489,725 @@ if(msg.toLowerCase() == "transaction added successfully"){
 else{
 	assert false : "Getting message as - " + msg;
 }
-</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>current_time</con:name><con:value>2020-05-18 11:56:22</con:value></con:property><con:property><con:name>tnx_number</con:name><con:value>1589783182714</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249209</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378988117</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919783176780</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>320</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>320</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>current_time</con:name><con:value>2020-05-18 11:56:16</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>environment</con:name><con:value>nightly</con:value></con:property><con:property><con:name>auth_username</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>auth_password</con:name><con:value>202cb962ac59075b964b07152d234b70</con:value></con:property><con:property><con:name>application_endpoint</con:name><con:value>nightly.capillary.in</con:value></con:property><con:property><con:name>webhook_workspace</con:name><con:value>enqovte5kgmv6a1.m.pipedream.net</con:value></con:property><con:property><con:name>webhook_workspace_name</con:name><con:value>endtoend_hook_ng</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:beforeRunScript>import groovy.json.JsonSlurper
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>current_time</con:name><con:value>2020-05-18 11:56:22</con:value></con:property><con:property><con:name>tnx_number</con:name><con:value>1589783182714</con:value></con:property><con:property><con:name>tnxID</con:name><con:value>38249209</con:value></con:property><con:property><con:name>user_id</con:name><con:value>378988117</con:value></con:property><con:property><con:name>tnx_mobile</con:name><con:value>919783176780</con:value></con:property><con:property><con:name>awarded_points_afterTnx</con:name><con:value>320</con:value></con:property><con:property><con:name>totalPoints_afterTnx</con:name><con:value>320</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>current_time</con:name><con:value>2020-05-18 11:56:16</con:value></con:property></con:properties></con:testSuite><con:testSuite id="0c38c5f7-ee0f-4b71-9e88-733b992cd242" name="Behavioural_events_are_working_fine_endtoend"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="aa946f3b-1c01-4708-ae13-d7335cf6833a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Case1_event_triggered_through_default_till" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get unique customer mobile number" id="4164433d-8055-4dce-8a66-54a69be2bab3"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(3);
+testRunner.testCase.setPropertyValue("mobile","91" + mobile);</script></con:config></con:testStep><con:testStep type="restrequest" name="register a customer" id="b3c551f9-02ff-480f-b9a7-ff0cb9092cfb"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of register a new customer" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request><con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="6561825e-a822-4b5a-8d71-764b779e304e" name="Status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="358bd7c4-10af-4b97-9e52-6af837cb76b9" name="validate customer registration data"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+//assert success holder in response
+assert(json.response.status.success == "true")
+assert(json.response.status.code == 200)
+assert(json.response.status.message == "Success")
+
+
+//assert customer data.
+
+assert(json.response.customers.customer.user_id.size() == 1);
+
+String user_id = json.response.customers.customer.user_id[0];
+String f_name = json.response.customers.customer.firstname[0];
+String l_name = json.response.customers.customer.lastname[0];
+String mobile = json.response.customers.customer.mobile[0];
+String email = json.response.customers.customer.email[0];
+String lifetime_points = json.response.customers.customer.lifetime_points[0];
+String loyalty_points = json.response.customers.customer.loyalty_points[0];
+String current_slab = json.response.customers.customer.current_slab[0];
+
+String lifetime_purchases = json.response.customers.customer.lifetime_purchases[0];
+String type = json.response.customers.customer.type[0];
+String source = json.response.customers.customer.source[0];
+String mobile_reg = context.expand('${#TestCase#mobile}');
+
+
+
+
+
+
+
+assert(lifetime_purchases == "0") // as this is new customer with no transactions.
+assert(mobile == mobile_reg)
+assert(json.response.customers.customer.subscriptions[0].subscription.size() == 4) // as we have configured 4 subscription while adding a customer.
+assert(f_name == "fname_" + mobile_reg);
+assert(l_name == "lname_" + mobile_reg);
+assert(email == mobile_reg + "@gmail.com");
+messageExchange.modelItem.testCase.setPropertyValue("user_id",user_id);
+messageExchange.modelItem.testCase.testSuite.setPropertyValue("user_id",user_id);
+messageExchange.modelItem.testCase.setPropertyValue("lifetime_points",lifetime_points.toString());
+messageExchange.modelItem.testCase.setPropertyValue("loyalty_points",loyalty_points.toString());
+
+
+
+
+
+//item status.
+
+String item_message = json.response.customers.customer.item_status[0].message
+String item_status = json.response.customers.customer.item_status[0].success
+String item_code = json.response.customers.customer.item_status[0].code
+assert(item_status == "true")
+assert(item_code == "1000")
+assert(item_message== "Customer registration successful")</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="version" value="v1.1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="now trigger a custom event through default till" id="3ba26597-e13b-4c89-980e-942e5885a60c"><con:settings/><con:config service="triggerCustomEvent" resourcePath="" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="now trigger a custom event through default till" id="f773dd65-36e5-4368-91df-2c4c620e83d1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint><con:request>{"Mobile":"${#TestCase#mobile}",
+"Name":"stringxxx",
+"Till":"${#Project#auth_username}",
+"event_name":"AlphaEndToEnd"}</con:request><con:originalUri>https://8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="7f48372c-a1db-4aa8-b8b0-c1cde60f90c6" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7b8ea09a-8dcb-4665-a95e-855e11551e8e" name="get the request ID"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+String request_id = json.requestId
+
+messageExchange.modelItem.testCase.setPropertyValue("request_id",request_id);</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="get webhook consumer ID" id="77178375-c319-4c0c-9ace-7f0183402e67"><con:settings/><con:config service="getWebhooks" resourcePath="/{version}/webHooks" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of get webhooks and fetch webhook consumer id" id="e34c812d-806e-498b-adbd-323081eda9a6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v3/webHooks</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="bd5d1a2f-529b-492a-bf27-f3681c66848c" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b9a1562a-b14d-4245-a079-7407ffcc3c36" name="get webhook consumer id by webhook name"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def webhook_names = json.data.name;
+def my_webhook = context.expand('${#Project#webhook_workspace_name}');
+int index = 0;
+String consumer_id = "";
+for(String name in webhook_names){
+	if(name == my_webhook){
+		consumer_id = json.data.consumerGroupId[index];
+	}
+	index++;
+}
+
+messageExchange.modelItem.testCase.setPropertyValue("webhook_consumerID",consumer_id);</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="version" value="v3" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="get loyalty points info after events gets trigered" id="c0a13fa9-8785-4ff4-aed5-772c00c59e25"><con:settings/><con:config service="getCustomerV2" resourcePath="/v2/customers/{user_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of get loyalty program info for customer" id="35a353eb-1756-4e37-83f8-d8c4a290f0aa" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v2/customers/376790377</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="396dd36d-730e-404e-bac9-0e2754e38fa0" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="db44dbb0-61ac-473b-ac62-0e0c1d71ee5f" name="validate if points allocated is correct"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+int loyaltyPointsAfterEvent = json.groupLoyaltyProgramDetails.loyaltyPoints[0]
+
+int loyaltyPointsBeforeEvent = Integer.parseInt(context.expand('${#TestCase#loyalty_points}'))
+
+// Program is configured to allocate 100 points from default program whenever
+// event is triggered from default program.
+
+int pointsAllocatedForCustomEvent = 100
+
+assert(loyaltyPointsAfterEvent == loyaltyPointsBeforeEvent + pointsAllocatedForCustomEvent)
+
+
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="user_id" value="${#TestCase#user_id}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="delay" name="wait for sync" id="e27aac08-2eee-4df7-a0cb-caa6c529a4ac"><con:settings/><con:config><delay>120000</delay></con:config></con:testStep><con:testStep type="restrequest" name="validate the event log in mongo via an API" id="5fb75843-6e22-4599-a17f-e1e762fc7624"><con:settings/><con:config service="getEventLogs" resourcePath="/{version}/webHooks/eventLog/requestId/{request_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of validate the event log in mongo via an API" id="c3c5f177-ed07-4079-aa2d-e3b654c037ab" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic Y20uMToyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="9a67073e-d145-4c5f-90bf-7b2955e84d93" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="ac07e8a1-01a4-49a8-9e5d-6e28d324525f" name="Validate &quot;Customer Added&quot; events pushed"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def consumers = json.data.consumerGroupId;
+
+int index = 0;
+String my_consumer = context.expand('${#TestCase#webhook_consumerID}');
+
+ArrayList&lt;String> eventNames = new ArrayList();
+
+ArrayList&lt;Integer> consumersStatus = new ArrayList();
+
+for(consumer in consumers){
+	if(consumer == my_consumer){
+		String event_name = json.data.eventName[index];
+		def consumerResponse = json.data.consumerResponse[index]
+		assert(consumerResponse != null) : "Consumer response is NULL "
+		int status = json.data.consumerResponse[index].webhookHttpStatus;
+		eventNames.add(event_name);
+		consumersStatus.add(status);
+	}
+	index++;
+}
+
+int eventCount = eventNames.size()
+messageExchange.modelItem.testCase.setPropertyValue("events",eventNames.inspect())
+messageExchange.modelItem.testCase.setPropertyValue("eventStatus",consumersStatus.inspect())
+
+//all status should be 200
+for(String status : consumersStatus){
+	assert status == "200"
+}
+//customerAdded event should be pushed, as that is triggered as part of test case.
+assert('pointsIssued' in eventNames)</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="version" value="v3"/>
+  <con:entry key="request_id" value="${#TestCase#request_id}"/>
+</con:parameters><con:parameterOrder><con:entry>version</con:entry><con:entry>request_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="httprequest" name="validate response data of event pushed to webhook" id="45a13de7-9299-48e7-9827-127adf51d953"><con:settings/><con:config method="GET" xsi:type="con:HttpRequest" id="a8d53e36-26fb-4c1a-8c27-d0cb991becfb" name="validate response data of event pushed to webhook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#webhook_workspace}/api/events</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" id="6f4c5385-a53b-43e7-bbcb-3e084abfe072" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b125b22a-5024-494c-b2f4-26382b2aaa51" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+int bodyCount = json.body.size();
+def events = Eval.me(context.expand('${#TestCase#events}'))
+def eventsInConsumer = json.body.eventName
+
+messageExchange.modelItem.testCase.setPropertyValue('eventsReceived',eventsInConsumer.inspect())
+assert(bodyCount == events.size())
+
+assert('pointsIssued' in eventsInConsumer)
+
+for(int i = 0;i&lt;bodyCount;i++){
+	String event_name = json.body[i].eventName;
+	if(event_name == "pointsIssued"){
+		
+	int pointsIssued = json.body[i].data.totalPointsIssued;
+	assert(pointsIssued == 100)
+
+	}
+
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><con:parameter><con:name>request_id</con:name><con:value>${#TestCase#request_id}</con:value><con:style>QUERY</con:style><con:default/><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters></con:config></con:testStep><con:setupScript>// Setting all the test cases property to blank value (by default)
+import com.eviware.soapui.model.testsuite.TestProperty
+List&lt;TestProperty> properties = testCase.getPropertyList()
+
+for(TestProperty prop : properties){
+	prop.setValue("")
+}
+</con:setupScript><con:properties><con:property><con:name>mobile</con:name><con:value>910042646017</con:value></con:property><con:property><con:name>request_id</con:name><con:value>3d021b2a-08c8-4abf-ad1c-f23531461627</con:value></con:property><con:property><con:name>user_id</con:name><con:value>379061024</con:value></con:property><con:property><con:name>lifetime_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyalty_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyaltyType</con:name><con:value>loyalty</con:value></con:property><con:property><con:name>source</con:name><con:value>instore</con:value></con:property><con:property><con:name>till_code</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>till_name</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>lstLifeTimePoints_AfterTnx</con:name><con:value>[280]</con:value></con:property><con:property><con:name>lstLoyaltyPoints_AfterTnx</con:name><con:value>[280]</con:value></con:property><con:property><con:name>lstCurrentSlabs_AfterTnx</con:name><con:value>['Silver']</con:value></con:property><con:property><con:name>lstProgramIds_AfterTnx</con:name><con:value>[796]</con:value></con:property><con:property><con:name>lstProgramTitles_AfterTnx</con:name><con:value>['SOAP_AUTOMATIONDefaultProgram']</con:value></con:property><con:property><con:name>events</con:name><con:value>['pointsIssued']</con:value></con:property><con:property><con:name>eventStatus</con:name><con:value>[200]</con:value></con:property><con:property><con:name>eventsReceived</con:name><con:value>['pointsIssued']</con:value></con:property><con:property><con:name>webhook_consumerID</con:name><con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value></con:property></con:properties></con:testCase><con:testCase id="07b6512e-72ac-4581-ba4a-95ce6e79639a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Case2_event_is_triggered_with_first_nonDefault_till" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get unique customer mobile number" id="a2140f74-cbcc-4bbd-aa02-76722aff3b52"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(3);
+testRunner.testCase.setPropertyValue("mobile","91" + mobile);</script></con:config></con:testStep><con:testStep type="restrequest" name="register a customer" id="9c76789c-c686-441d-9dc2-9047cf87f0a3"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="register a customer" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request><con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="6561825e-a822-4b5a-8d71-764b779e304e" name="Status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="358bd7c4-10af-4b97-9e52-6af837cb76b9" name="validate customer registration data"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+//assert success holder in response
+assert(json.response.status.success == "true")
+assert(json.response.status.code == 200)
+assert(json.response.status.message == "Success")
+
+
+//assert customer data.
+
+assert(json.response.customers.customer.user_id.size() == 1);
+
+String user_id = json.response.customers.customer.user_id[0];
+String f_name = json.response.customers.customer.firstname[0];
+String l_name = json.response.customers.customer.lastname[0];
+String mobile = json.response.customers.customer.mobile[0];
+String email = json.response.customers.customer.email[0];
+String lifetime_points = json.response.customers.customer.lifetime_points[0];
+String loyalty_points = json.response.customers.customer.loyalty_points[0];
+String current_slab = json.response.customers.customer.current_slab[0];
+
+String lifetime_purchases = json.response.customers.customer.lifetime_purchases[0];
+String type = json.response.customers.customer.type[0];
+String source = json.response.customers.customer.source[0];
+String mobile_reg = context.expand('${#TestCase#mobile}');
+
+
+
+
+
+
+
+assert(lifetime_purchases == "0") // as this is new customer with no transactions.
+assert(mobile == mobile_reg)
+assert(json.response.customers.customer.subscriptions[0].subscription.size() == 4) // as we have configured 4 subscription while adding a customer.
+assert(f_name == "fname_" + mobile_reg);
+assert(l_name == "lname_" + mobile_reg);
+assert(email == mobile_reg + "@gmail.com");
+messageExchange.modelItem.testCase.setPropertyValue("user_id",user_id);
+messageExchange.modelItem.testCase.testSuite.setPropertyValue("user_id",user_id);
+messageExchange.modelItem.testCase.setPropertyValue("lifetime_points",lifetime_points.toString());
+messageExchange.modelItem.testCase.setPropertyValue("loyalty_points",loyalty_points.toString());
+
+
+
+
+
+//item status.
+
+String item_message = json.response.customers.customer.item_status[0].message
+String item_status = json.response.customers.customer.item_status[0].success
+String item_code = json.response.customers.customer.item_status[0].code
+assert(item_status == "true")
+assert(item_code == "1000")
+assert(item_message== "Customer registration successful")</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="version" value="v1.1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="now trigger a custom event through first nonDefault till" id="e114a7a9-1b37-49cc-81e8-64ef3daf9633"><con:settings/><con:config service="triggerCustomEvent" resourcePath="" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="now trigger a custom event through default till" id="f773dd65-36e5-4368-91df-2c4c620e83d1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint><con:request>{"Mobile":"${#TestCase#mobile}",
+"Name":"stringxxx",
+"Till":"${#Project#alphatill_username}",
+"event_name":"AlphaEndToEnd"}</con:request><con:originalUri>https://8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="7f48372c-a1db-4aa8-b8b0-c1cde60f90c6" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7b8ea09a-8dcb-4665-a95e-855e11551e8e" name="get the request ID"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+String request_id = json.requestId
+
+messageExchange.modelItem.testCase.setPropertyValue("request_id",request_id);</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="get webhook consumer ID" id="2a5a2d86-6c00-4b05-82a3-4ba076818da3"><con:settings/><con:config service="getWebhooks" resourcePath="/{version}/webHooks" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="get webhook consumer ID" id="e34c812d-806e-498b-adbd-323081eda9a6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v3/webHooks</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="bd5d1a2f-529b-492a-bf27-f3681c66848c" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b9a1562a-b14d-4245-a079-7407ffcc3c36" name="get webhook consumer id by webhook name"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def webhook_names = json.data.name;
+def my_webhook = context.expand('${#Project#webhook_workspace_name}');
+int index = 0;
+String consumer_id = "";
+for(String name in webhook_names){
+	if(name == my_webhook){
+		consumer_id = json.data.consumerGroupId[index];
+	}
+	index++;
+}
+
+messageExchange.modelItem.testCase.setPropertyValue("webhook_consumerID",consumer_id);</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="version" value="v3" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="get loyalty points info after events gets trigered" id="a6bed1b3-1927-417a-8db6-4cf0664f7d18"><con:settings/><con:config service="getCustomerV2" resourcePath="/v2/customers/{user_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="get loyalty points info after events gets trigered" id="35a353eb-1756-4e37-83f8-d8c4a290f0aa" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v2/customers/376790377</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="396dd36d-730e-404e-bac9-0e2754e38fa0" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="db44dbb0-61ac-473b-ac62-0e0c1d71ee5f" name="validate if points allocated is correct"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+int loyaltyPointsAfterEvent = json.groupLoyaltyProgramDetails.loyaltyPoints[0]
+
+int loyaltyPointsBeforeEvent = Integer.parseInt(context.expand('${#TestCase#loyalty_points}'))
+
+// Program is configured to allocate 100 points from default program and 50 points 
+// from non-defualt aplpha program whenever
+// event is triggered from aplha program.
+
+int pointsAllocatedForCustomEvent = 150
+
+assert(loyaltyPointsAfterEvent == loyaltyPointsBeforeEvent + pointsAllocatedForCustomEvent)
+
+// also assert the points allocated per program.
+
+int[] loyaltyPoints = json.loyaltyProgramDetails.loyaltyPoints
+int pointsInDefaultProgramExpected = (loyaltyPointsBeforeEvent+100)
+
+assert(pointsInDefaultProgramExpected in loyaltyPoints)
+assert(50 in loyaltyPoints)
+
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="user_id" value="${#TestCase#user_id}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="delay" name="wait for sync" id="f8db3d7d-ed1a-4f4c-bdaa-5e37f90e03e8"><con:settings/><con:config><delay>120000</delay></con:config></con:testStep><con:testStep type="restrequest" name="validate the event log in mongo via an API" id="0efbaf04-fa21-45c2-9a8d-adad3bf55085"><con:settings/><con:config service="getEventLogs" resourcePath="/{version}/webHooks/eventLog/requestId/{request_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="validate the event log in mongo via an API" id="c3c5f177-ed07-4079-aa2d-e3b654c037ab" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic Y20uMToyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="9a67073e-d145-4c5f-90bf-7b2955e84d93" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="ac07e8a1-01a4-49a8-9e5d-6e28d324525f" name="Validate &quot;Customer Added&quot; events pushed"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def consumers = json.data.consumerGroupId;
+
+int index = 0;
+String my_consumer = context.expand('${#TestCase#webhook_consumerID}');
+
+ArrayList&lt;String> eventNames = new ArrayList();
+
+ArrayList&lt;Integer> consumersStatus = new ArrayList();
+
+for(consumer in consumers){
+	if(consumer == my_consumer){
+		String event_name = json.data.eventName[index];
+		def consumerResponse = json.data.consumerResponse[index]
+		assert(consumerResponse != null) : "Consumer response is NULL "
+		int status = json.data.consumerResponse[index].webhookHttpStatus;
+		eventNames.add(event_name);
+		consumersStatus.add(status);
+	}
+	index++;
+}
+
+int eventCount = eventNames.size()
+messageExchange.modelItem.testCase.setPropertyValue("events",eventNames.inspect())
+messageExchange.modelItem.testCase.setPropertyValue("eventStatus",consumersStatus.inspect())
+
+//all status should be 200
+for(String status : consumersStatus){
+	assert status == "200"
+}
+//customerAdded event should be pushed, as that is triggered as part of test case.
+assert('pointsIssued' in eventNames)</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="version" value="v3"/>
+  <con:entry key="request_id" value="${#TestCase#request_id}"/>
+</con:parameters><con:parameterOrder><con:entry>version</con:entry><con:entry>request_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="httprequest" name="validate response data of event pushed to webhook" id="894bdae0-12f5-466a-a6de-fb42a9393b47"><con:settings/><con:config method="GET" xsi:type="con:HttpRequest" id="a8d53e36-26fb-4c1a-8c27-d0cb991becfb" name="validate response data of event pushed to webhook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#webhook_workspace}/api/events</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" id="6f4c5385-a53b-43e7-bbcb-3e084abfe072" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b125b22a-5024-494c-b2f4-26382b2aaa51" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+int bodyCount = json.body.size();
+def events = Eval.me(context.expand('${#TestCase#events}'))
+def eventsInConsumer = json.body.eventName
+
+messageExchange.modelItem.testCase.setPropertyValue('eventsReceived',eventsInConsumer.inspect())
+assert(bodyCount == events.size())
+
+assert('pointsIssued' in eventsInConsumer)
+
+for(int i = 0;i&lt;bodyCount;i++){
+	String event_name = json.body[i].eventName;
+	if(event_name == "pointsIssued"){
+		
+	int pointsIssued = json.body[i].data.totalPointsIssued;
+	assert(pointsIssued == 100)
+
+	}
+
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><con:parameter><con:name>request_id</con:name><con:value>${#TestCase#request_id}</con:value><con:style>QUERY</con:style><con:default/><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters></con:config></con:testStep><con:setupScript>// Setting all the test cases property to blank value (by default)
+import com.eviware.soapui.model.testsuite.TestProperty
+List&lt;TestProperty> properties = testCase.getPropertyList()
+
+for(TestProperty prop : properties){
+	prop.setValue("")
+}
+</con:setupScript><con:properties><con:property><con:name>mobile</con:name><con:value>910052223468</con:value></con:property><con:property><con:name>request_id</con:name><con:value>4ef59ac8-fdf2-4afb-8a65-32246a821645</con:value></con:property><con:property><con:name>user_id</con:name><con:value>379061139</con:value></con:property><con:property><con:name>lifetime_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyalty_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyaltyType</con:name><con:value>loyalty</con:value></con:property><con:property><con:name>source</con:name><con:value>instore</con:value></con:property><con:property><con:name>till_code</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>till_name</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>lstLifeTimePoints_AfterTnx</con:name><con:value>[280]</con:value></con:property><con:property><con:name>lstLoyaltyPoints_AfterTnx</con:name><con:value>[280]</con:value></con:property><con:property><con:name>lstCurrentSlabs_AfterTnx</con:name><con:value>['Silver']</con:value></con:property><con:property><con:name>lstProgramIds_AfterTnx</con:name><con:value>[796]</con:value></con:property><con:property><con:name>lstProgramTitles_AfterTnx</con:name><con:value>['SOAP_AUTOMATIONDefaultProgram']</con:value></con:property><con:property><con:name>events</con:name><con:value>['pointsIssued']</con:value></con:property><con:property><con:name>eventStatus</con:name><con:value>[200]</con:value></con:property><con:property><con:name>eventsReceived</con:name><con:value>[]</con:value></con:property><con:property><con:name>webhook_consumerID</con:name><con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value></con:property></con:properties></con:testCase><con:testCase id="ea4a15e6-521c-4ac1-8861-fadb155cab4a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Case3_event_is_triggered_with_second_nonDefault_till" searchProperties="true"><con:settings/><con:testStep type="groovy" name="get unique customer mobile number" id="79804cc9-ff13-4075-be3c-df22078684e8"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(3);
+testRunner.testCase.setPropertyValue("mobile","91" + mobile);</script></con:config></con:testStep><con:testStep type="restrequest" name="register a customer" id="4d2f9790-766e-4ea8-aa4b-8765f48c6b5e"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="register a customer" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request><con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="6561825e-a822-4b5a-8d71-764b779e304e" name="Status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="358bd7c4-10af-4b97-9e52-6af837cb76b9" name="validate customer registration data"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+//assert success holder in response
+assert(json.response.status.success == "true")
+assert(json.response.status.code == 200)
+assert(json.response.status.message == "Success")
+
+
+//assert customer data.
+
+assert(json.response.customers.customer.user_id.size() == 1);
+
+String user_id = json.response.customers.customer.user_id[0];
+String f_name = json.response.customers.customer.firstname[0];
+String l_name = json.response.customers.customer.lastname[0];
+String mobile = json.response.customers.customer.mobile[0];
+String email = json.response.customers.customer.email[0];
+String lifetime_points = json.response.customers.customer.lifetime_points[0];
+String loyalty_points = json.response.customers.customer.loyalty_points[0];
+String current_slab = json.response.customers.customer.current_slab[0];
+
+String lifetime_purchases = json.response.customers.customer.lifetime_purchases[0];
+String type = json.response.customers.customer.type[0];
+String source = json.response.customers.customer.source[0];
+String mobile_reg = context.expand('${#TestCase#mobile}');
+
+
+
+
+
+
+
+assert(lifetime_purchases == "0") // as this is new customer with no transactions.
+assert(mobile == mobile_reg)
+assert(json.response.customers.customer.subscriptions[0].subscription.size() == 4) // as we have configured 4 subscription while adding a customer.
+assert(f_name == "fname_" + mobile_reg);
+assert(l_name == "lname_" + mobile_reg);
+assert(email == mobile_reg + "@gmail.com");
+messageExchange.modelItem.testCase.setPropertyValue("user_id",user_id);
+messageExchange.modelItem.testCase.testSuite.setPropertyValue("user_id",user_id);
+messageExchange.modelItem.testCase.setPropertyValue("lifetime_points",lifetime_points.toString());
+messageExchange.modelItem.testCase.setPropertyValue("loyalty_points",loyalty_points.toString());
+
+
+
+
+
+//item status.
+
+String item_message = json.response.customers.customer.item_status[0].message
+String item_status = json.response.customers.customer.item_status[0].success
+String item_code = json.response.customers.customer.item_status[0].code
+assert(item_status == "true")
+assert(item_code == "1000")
+assert(item_message== "Customer registration successful")</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="version" value="v1.1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="now trigger a custom event through second nonDefault till" id="8d884097-d2e7-44f3-9971-aab093c9f50e"><con:settings/><con:config service="triggerCustomEvent" resourcePath="" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="now trigger a custom event through first nonDefault till" id="f773dd65-36e5-4368-91df-2c4c620e83d1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint><con:request>{"Mobile":"${#TestCase#mobile}",
+"Name":"stringxxx",
+"Till":"${#Project#gammatill_username}",
+"event_name":"AlphaEndToEnd"}</con:request><con:originalUri>https://8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="7f48372c-a1db-4aa8-b8b0-c1cde60f90c6" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7b8ea09a-8dcb-4665-a95e-855e11551e8e" name="get the request ID"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+String request_id = json.requestId
+
+messageExchange.modelItem.testCase.setPropertyValue("request_id",request_id);</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="get webhook consumer ID" id="fe9e490a-01c4-4512-952f-9524b6d1780d"><con:settings/><con:config service="getWebhooks" resourcePath="/{version}/webHooks" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="get webhook consumer ID" id="e34c812d-806e-498b-adbd-323081eda9a6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v3/webHooks</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="bd5d1a2f-529b-492a-bf27-f3681c66848c" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b9a1562a-b14d-4245-a079-7407ffcc3c36" name="get webhook consumer id by webhook name"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def webhook_names = json.data.name;
+def my_webhook = context.expand('${#Project#webhook_workspace_name}');
+int index = 0;
+String consumer_id = "";
+for(String name in webhook_names){
+	if(name == my_webhook){
+		consumer_id = json.data.consumerGroupId[index];
+	}
+	index++;
+}
+
+messageExchange.modelItem.testCase.setPropertyValue("webhook_consumerID",consumer_id);</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="version" value="v3" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="get loyalty points info after events gets trigered" id="595a0dce-602c-4926-a45b-da4c414327f1"><con:settings/><con:config service="getCustomerV2" resourcePath="/v2/customers/{user_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="get loyalty points info after events gets trigered" id="35a353eb-1756-4e37-83f8-d8c4a290f0aa" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v2/customers/376790377</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="396dd36d-730e-404e-bac9-0e2754e38fa0" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="db44dbb0-61ac-473b-ac62-0e0c1d71ee5f" name="validate if points allocated is correct"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+int loyaltyPointsAfterEvent = json.groupLoyaltyProgramDetails.loyaltyPoints[0]
+
+int loyaltyPointsBeforeEvent = Integer.parseInt(context.expand('${#TestCase#loyalty_points}'))
+
+// Program is configured to allocate 100 points from default program and 50 points 
+// from non-defualt aplpha program whenever
+// event is triggered from aplha program.
+
+int pointsAllocatedForCustomEvent = 140
+
+assert(loyaltyPointsAfterEvent == loyaltyPointsBeforeEvent + pointsAllocatedForCustomEvent)
+
+// also assert the points allocated per program.
+
+int[] loyaltyPoints = json.loyaltyProgramDetails.loyaltyPoints
+int pointsInDefaultProgramExpected = (loyaltyPointsBeforeEvent+100)
+
+assert(pointsInDefaultProgramExpected in loyaltyPoints)
+assert(40 in loyaltyPoints)
+
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="user_id" value="${#TestCase#user_id}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="delay" name="wait for sync" id="49719df6-6c42-4e53-8853-6ce89924a670"><con:settings/><con:config><delay>120000</delay></con:config></con:testStep><con:testStep type="restrequest" name="validate the event log in mongo via an API" id="a47eae45-ddfd-4b4d-93e9-ac94459a210f"><con:settings/><con:config service="getEventLogs" resourcePath="/{version}/webHooks/eventLog/requestId/{request_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="validate the event log in mongo via an API" id="c3c5f177-ed07-4079-aa2d-e3b654c037ab" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic Y20uMToyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="9a67073e-d145-4c5f-90bf-7b2955e84d93" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="ac07e8a1-01a4-49a8-9e5d-6e28d324525f" name="Validate &quot;Customer Added&quot; events pushed"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def consumers = json.data.consumerGroupId;
+
+int index = 0;
+String my_consumer = context.expand('${#TestCase#webhook_consumerID}');
+
+ArrayList&lt;String> eventNames = new ArrayList();
+
+ArrayList&lt;Integer> consumersStatus = new ArrayList();
+
+for(consumer in consumers){
+	if(consumer == my_consumer){
+		String event_name = json.data.eventName[index];
+		def consumerResponse = json.data.consumerResponse[index]
+		assert(consumerResponse != null) : "Consumer response is NULL "
+		int status = json.data.consumerResponse[index].webhookHttpStatus;
+		eventNames.add(event_name);
+		consumersStatus.add(status);
+	}
+	index++;
+}
+
+int eventCount = eventNames.size()
+messageExchange.modelItem.testCase.setPropertyValue("events",eventNames.inspect())
+messageExchange.modelItem.testCase.setPropertyValue("eventStatus",consumersStatus.inspect())
+
+//all status should be 200
+for(String status : consumersStatus){
+	assert status == "200"
+}
+//customerAdded event should be pushed, as that is triggered as part of test case.
+assert('pointsIssued' in eventNames)</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="version" value="v3"/>
+  <con:entry key="request_id" value="${#TestCase#request_id}"/>
+</con:parameters><con:parameterOrder><con:entry>version</con:entry><con:entry>request_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="httprequest" name="validate response data of event pushed to webhook" id="144638f7-db3b-41ba-9afa-bd9413a57345"><con:settings/><con:config method="GET" xsi:type="con:HttpRequest" id="a8d53e36-26fb-4c1a-8c27-d0cb991becfb" name="validate response data of event pushed to webhook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#webhook_workspace}/api/events</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" id="6f4c5385-a53b-43e7-bbcb-3e084abfe072" name="status - 200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b125b22a-5024-494c-b2f4-26382b2aaa51" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+int bodyCount = json.body.size();
+def events = Eval.me(context.expand('${#TestCase#events}'))
+def eventsInConsumer = json.body.eventName
+
+messageExchange.modelItem.testCase.setPropertyValue('eventsReceived',eventsInConsumer.inspect())
+assert(bodyCount == events.size())
+
+assert('pointsIssued' in eventsInConsumer)
+
+for(int i = 0;i&lt;bodyCount;i++){
+	String event_name = json.body[i].eventName;
+	if(event_name == "pointsIssued"){
+		
+	int pointsIssued = json.body[i].data.totalPointsIssued;
+	assert(pointsIssued == 100)
+
+	}
+
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><con:parameter><con:name>request_id</con:name><con:value>${#TestCase#request_id}</con:value><con:style>QUERY</con:style><con:default/><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters></con:config></con:testStep><con:setupScript>// Setting all the test cases property to blank value (by default)
+import com.eviware.soapui.model.testsuite.TestProperty
+List&lt;TestProperty> properties = testCase.getPropertyList()
+
+for(TestProperty prop : properties){
+	prop.setValue("")
+}
+</con:setupScript><con:properties><con:property><con:name>mobile</con:name><con:value>910056082743</con:value></con:property><con:property><con:name>request_id</con:name><con:value>49c519f9-f928-4c82-abc7-5f82215ad219</con:value></con:property><con:property><con:name>user_id</con:name><con:value>379061158</con:value></con:property><con:property><con:name>lifetime_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyalty_points</con:name><con:value>180</con:value></con:property><con:property><con:name>loyaltyType</con:name><con:value>loyalty</con:value></con:property><con:property><con:name>source</con:name><con:value>instore</con:value></con:property><con:property><con:name>till_code</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>till_name</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>lstLifeTimePoints_AfterTnx</con:name><con:value>[280]</con:value></con:property><con:property><con:name>lstLoyaltyPoints_AfterTnx</con:name><con:value>[280]</con:value></con:property><con:property><con:name>lstCurrentSlabs_AfterTnx</con:name><con:value>['Silver']</con:value></con:property><con:property><con:name>lstProgramIds_AfterTnx</con:name><con:value>[796]</con:value></con:property><con:property><con:name>lstProgramTitles_AfterTnx</con:name><con:value>['SOAP_AUTOMATIONDefaultProgram']</con:value></con:property><con:property><con:name>events</con:name><con:value>['pointsIssued']</con:value></con:property><con:property><con:name>eventStatus</con:name><con:value>[200]</con:value></con:property><con:property><con:name>eventsReceived</con:name><con:value>[]</con:value></con:property><con:property><con:name>webhook_consumerID</con:name><con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>user_id</con:name><con:value>379061158</con:value></con:property><con:property><con:name>webhook_consumerID</con:name><con:value/></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>environment</con:name><con:value>nightly</con:value></con:property><con:property><con:name>auth_username</con:name><con:value>endtoend_test</con:value></con:property><con:property><con:name>auth_password</con:name><con:value>202cb962ac59075b964b07152d234b70</con:value></con:property><con:property><con:name>application_endpoint</con:name><con:value>nightly.capillary.in</con:value></con:property><con:property><con:name>webhook_workspace</con:name><con:value>enqovte5kgmv6a1.m.pipedream.net</con:value></con:property><con:property><con:name>webhook_workspace_name</con:name><con:value>endtoend_hook_ng</con:value></con:property><con:property><con:name>custom_events_webhook</con:name><con:value>8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:value></con:property><con:property><con:name>alphatill_username</con:name><con:value>alpha_endtoend_test</con:value></con:property><con:property><con:name>alphatill_password</con:name><con:value>202cb962ac59075b964b07152d234b70</con:value></con:property><con:property><con:name>gammatill_username</con:name><con:value>gamma_endtoend_test</con:value></con:property><con:property><con:name>gammatill_password</con:name><con:value>202cb962ac59075b964b07152d234b70</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:beforeRunScript>import groovy.json.JsonSlurper
 import java.io.FileInputStream;
 
 
@@ -3504,9 +4225,14 @@ String auth_username = json.authorization.username;
 String auth_password = json.authorization.password;
 project.setPropertyValue("auth_username",auth_username);
 project.setPropertyValue("auth_password",auth_password);
+project.setPropertyValue("alphatill_username",json.authorization.alphatill_username);
+project.setPropertyValue("alphatill_password",json.authorization.alphatill_password);
+project.setPropertyValue("gammatill_username",json.authorization.gammatill_username);
+project.setPropertyValue("gammatill_password",json.authorization.gammatill_password);
 project.setPropertyValue("application_endpoint",endpoint);
 project.setPropertyValue("webhook_workspace",json.webhook_workspace);
 project.setPropertyValue("webhook_workspace_name",json.webhook_workspace_name);
+project.setPropertyValue("custom_events_webhook",json.custom_events_webhook);
 }
 catch(Exception e){
 	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());

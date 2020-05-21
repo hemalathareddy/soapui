@@ -2,8 +2,13 @@
 "endpoint" : "nightly.capillary.in",
 "authorization":{
   "username" : "endtoend_test",
-  "password" : "202cb962ac59075b964b07152d234b70"
+  "password" : "202cb962ac59075b964b07152d234b70",
+  "alphatill_username" : "alpha_endtoend_test",
+  "alphatill_password" : "202cb962ac59075b964b07152d234b70",
+  "gammatill_username" : "gamma_endtoend_test",
+  "gammatill_password" : "202cb962ac59075b964b07152d234b70"
 },
 "webhook_workspace" : "enqovte5kgmv6a1.m.pipedream.net",
-"webhook_workspace_name" : "endtoend_hook_ng"
+"webhook_workspace_name" : "endtoend_hook_ng",
+"custom_events_webhook" : "8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67"
 }
