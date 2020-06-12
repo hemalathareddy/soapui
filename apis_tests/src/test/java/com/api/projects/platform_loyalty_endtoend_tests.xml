@@ -1530,19 +1530,19 @@ else{
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1590736233712</con:value>
+          <con:value>1591618396257</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38260734</con:value>
+          <con:value>38261500</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379076668</con:value>
+          <con:value>379085721</con:value>
         </con:property>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>919736233712</con:value>
+          <con:value>919618396262</con:value>
         </con:property>
         <con:property>
           <con:name>awarded_points_afterTnx</con:name>
@@ -1558,7 +1558,7 @@ else{
         </con:property>
         <con:property>
           <con:name>tnx_mobile</con:name>
-          <con:value>919736233712</con:value>
+          <con:value>919618396262</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -1813,6 +1813,33 @@ else{
         </con:property>
       </con:properties>
     </con:testCase>
+    <con:testCase id="23925634-f0eb-426a-a829-a89cf00cdd78" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RegisterNewCustomer" searchProperties="true">
+      <con:settings/>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="6e30978c-6c9b-45e3-b911-002b13496a6b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Utility" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="Random" id="68795682-d551-4bb4-94b2-ba40be330002">
+        <con:settings/>
+        <con:config>
+          <script>context.randomValue = String.valueOf((int)(Math.random()*9999999))
+
+
+  // use like ${Random#result}</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Mobile" id="a4f34990-4529-4846-adfd-b4a3be86577f">
+        <con:settings/>
+        <con:config>
+          <script>String timestamp = System.currentTimeMillis().toString()
+String mobile = "919" + timestamp.substring(4);
+context.mobile = mobile
+
+// use it like ${Mobile#result}</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
     <con:properties>
       <con:property>
         <con:name>mobile</con:name>
@@ -1820,14 +1847,14 @@ else{
       </con:property>
       <con:property>
         <con:name>current_time</con:name>
-        <con:value>2020-05-29 12:41:08</con:value>
+        <con:value>2020-06-08 17:43:16</con:value>
       </con:property>
     </con:properties>
   </con:testSuite>
-  <con:testSuite id="b7186296-ce49-40a4-8956-65b39421bc62" name="All_Events_Flows_Are_Pushing_Fine_Over_Webhook">
+  <con:testSuite id="b7186296-ce49-40a4-8956-65b39421bc62" name="Events_pushing_fine_to_webhook">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="b4789551-1d5f-46bd-bdba-b8c0119d65a7" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Event_CustomerAdd" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
+    <con:testCase id="b4789551-1d5f-46bd-bdba-b8c0119d65a7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Event_CustomerAdd" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:description>Pre-Requisite :
 1. Webhook created.
 2. Loyalty program added with default program having strategy -
@@ -1861,8 +1888,8 @@ log.info("Greeting" + demoinstance.hello());</script>
         <con:settings/>
         <con:config>
           <script>String timestamp = System.currentTimeMillis().toString()
-String mobile = timestamp.substring(3);
-testRunner.testCase.testSuite.setPropertyValue("mobile","91" + mobile);</script>
+String mobile = timestamp.substring(4);
+testRunner.testCase.testSuite.setPropertyValue("mobile","919" + mobile);</script>
         </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="register a new customer" id="f282289d-1e50-45a7-972b-a56a2b148cfb">
@@ -2085,6 +2112,7 @@ import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
 
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_CustomerAdd"].testSteps["poll event log"]
@@ -2096,7 +2124,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -2393,29 +2421,23 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>23f6cbf0-d277-45ea-9fac-21e7c76ab7a2</con:value>
+          <con:value>aa288e94-9370-4d94-91c8-b4422d77649d</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379076704</con:value>
+          <con:value>379094320</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
-          <con:value>180</con:value>
+          <con:value>620</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points</con:name>
-          <con:value>180</con:value>
+          <con:value>620</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyType</con:name>
@@ -2459,15 +2481,15 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['pointsIssued', 'customerAdded']</con:value>
+          <con:value>['customerAdded']</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200, 200]</con:value>
+          <con:value>[200]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value>['pointsIssued', 'customerAdded']</con:value>
+          <con:value>['customerAdded']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -2877,7 +2899,7 @@ import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
 
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_RegularTransactionAdd"].testSteps["poll for event logs"]
 	TestStepResult result = teststep.run(testRunner,context)
@@ -2888,7 +2910,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -3019,7 +3041,7 @@ for(String status : consumersStatus){
 	assert status == "200"
 }
 //transactionAdded event should be pushed, as that is triggered as part of test case.
-assert('transactionAdded' in eventNames)</scriptText>
+assert('transactionAdded' in eventNames) : "transactionAdded event didn't get pushed";</scriptText>
               </con:configuration>
             </con:assertion>
             <con:credentials>
@@ -3063,13 +3085,14 @@ String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 int bodyCount = json.body.size();
+String mobileNum = context.expand('${#TestSuite#mobile}')
 def events = Eval.me(context.expand('${#TestCase#events}'))
 def eventsInConsumer = json.body.eventName
 
 messageExchange.modelItem.testCase.setPropertyValue('eventsReceived',eventsInConsumer.inspect())
-assert(bodyCount == events.size())
+assert(bodyCount == events.size()) : "All events in event forest didn't pushed to webhook";
 
-assert('transactionAdded' in eventsInConsumer)
+assert('transactionAdded' in eventsInConsumer) : "transactionAdded is not pushed in event forest";
 
 for(int i = 0;i&lt;bodyCount;i++){
 	String event_name = json.body[i].eventName;
@@ -3087,12 +3110,13 @@ for(int i = 0;i&lt;bodyCount;i++){
     //get tnx info
     def tnxNumber = context.expand('${#TestCase#tnx_number}');
     def tnxID = context.expand('${#TestCase#tnxID}');
+    def userID = context.expand('${#TestSuite#user_id}')
 
-    assert(amount == 50000);
+    assert(amount == 2000) : "Amount has to be '2000' as we made a transaction of this amount";
     assert(billNumber == tnxNumber);
     assert(transactionId == tnxID);
     assert(billClientID == mobileNum);
-    assert(lineItemCount == 2); // as while addign tnx , line item was 2.
+    assert(lineItemCount == 3); // as while addign tnx , line item was 2.
     assert(discount == 10);
     assert(grossAmount == 100);
     assert(cust_id == userID);
@@ -3175,25 +3199,19 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1590737961558</con:value>
+          <con:value>1591940207196</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>509797e4-cc21-401e-86be-b60b005dddc4</con:value>
+          <con:value>6f579fb6-0539-41c1-a817-5614309da66b</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38260740</con:value>
+          <con:value>38262034</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimePoints_afterTnx</con:name>
@@ -3293,15 +3311,15 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['customerUpdated', 'pointsIssued']</con:value>
+          <con:value>['pointsIssued']</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200, 200]</con:value>
+          <con:value>[200]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value/>
+          <con:value>['pointsIssued']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3594,7 +3612,7 @@ import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
 
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_PointsRedeem"].testSteps["check event logs"]
 	TestStepResult result = teststep.run(testRunner,context)
@@ -3605,7 +3623,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -3812,13 +3830,7 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>programID</con:name>
@@ -3826,19 +3838,19 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>loyaltyPoints</con:name>
-          <con:value>180.0</con:value>
+          <con:value>620.0</con:value>
         </con:property>
         <con:property>
           <con:name>pointsToBeRedeemed</con:name>
-          <con:value>9</con:value>
+          <con:value>31</con:value>
         </con:property>
         <con:property>
           <con:name>pointsRedeemableValue</con:name>
-          <con:value>9</con:value>
+          <con:value>31</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>ba221359-e7c3-42eb-aaf7-35e6ae9b21f6</con:value>
+          <con:value>4f74ca04-5c43-41b5-ae04-0dfae98e246c</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
@@ -3846,15 +3858,15 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value/>
+          <con:value>['pointsRedeemed']</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value/>
+          <con:value>[200]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value>[]</con:value>
+          <con:value>['pointsRedeemed']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4257,7 +4269,7 @@ assert(json.response.customers.customer.item_status[0].message == "Coupons retri
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="get webhooks and fetch webhook consumer id" id="c4acdf43-b8eb-4e36-8041-873e7af145c9">
+      <con:testStep type="restrequest" name="get webhooks and fetch webhook consumer id" id="c4acdf43-b8eb-4e36-8041-873e7af145c9" disabled="true">
         <con:settings/>
         <con:config service="getWebhooks" resourcePath="/{version}/webHooks" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:restRequest name="get webhooks and fetch webhook consumer id" id="e34c812d-806e-498b-adbd-323081eda9a6" mediaType="application/json">
@@ -4309,7 +4321,7 @@ messageExchange.modelItem.testCase.setPropertyValue("webhook_consumerID",consume
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="groovy" name="Poll the status of event log" id="3953980f-feb2-4da2-ae55-611deee824ad">
+      <con:testStep type="groovy" name="Poll the status of event log" id="3953980f-feb2-4da2-ae55-611deee824ad" disabled="true">
         <con:settings/>
         <con:config>
           <script>import com.eviware.soapui.model.testsuite.TestStepResult
@@ -4318,7 +4330,7 @@ import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
 
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_CouponRedeem"].testSteps["check event logs"]
 	TestStepResult result = teststep.run(testRunner,context)
@@ -4329,13 +4341,13 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="validate the event log in mongo via an API" id="bc5f9a38-a392-423e-83f1-0766949d1427">
+      <con:testStep type="restrequest" name="validate the event log in mongo via an API" id="bc5f9a38-a392-423e-83f1-0766949d1427" disabled="true">
         <con:settings/>
         <con:config service="getEventLogs" resourcePath="/{version}/webHooks/eventLog/requestId/{request_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:restRequest name="validate the event log in mongo via an API" id="c3c5f177-ed07-4079-aa2d-e3b654c037ab" mediaType="application/json">
@@ -4407,7 +4419,7 @@ assert('pointsRedeemed' in eventNames)</scriptText>
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="httprequest" name="validate response data in webhook" id="cc134525-b1e0-4d82-a860-733f5b4833a8">
+      <con:testStep type="httprequest" name="validate response data in webhook" id="cc134525-b1e0-4d82-a860-733f5b4833a8" disabled="true">
         <con:settings/>
         <con:config method="GET" xsi:type="con:HttpRequest" id="a8d53e36-26fb-4c1a-8c27-d0cb991becfb" name="validate response data in webhook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:settings>
@@ -4536,13 +4548,7 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>couponID</con:name>
@@ -5240,7 +5246,7 @@ import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
 import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_PointsTransfer"].testSteps["check event logs"]
@@ -5252,7 +5258,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -5486,25 +5492,19 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>mobile1</con:name>
-          <con:value>919740300869</con:value>
+          <con:value>919868139700</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>13fd99ea-94fb-47dc-8624-d8224784d4fe</con:value>
+          <con:value>922a0dee-5f5b-4f7e-a802-babc4558165b</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379076701</con:value>
+          <con:value>379092334</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -5516,15 +5516,15 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>mobile2</con:name>
-          <con:value>919740304055</con:value>
+          <con:value>919868141587</con:value>
         </con:property>
         <con:property>
           <con:name>request_id_2</con:name>
-          <con:value>6a610483-bc4d-434b-ade9-4080c93d3444</con:value>
+          <con:value>f936b71b-c6a7-4d93-9dc5-6be625d1683c</con:value>
         </con:property>
         <con:property>
           <con:name>user_id_2</con:name>
-          <con:value>379076702</con:value>
+          <con:value>379092335</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points_2</con:name>
@@ -5548,7 +5548,7 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value/>
+          <con:value>[]</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5621,15 +5621,7 @@ testRunner.testCase.setPropertyValue("mobile",mobile);</script>
 						"value": "122001"
 					}
 				]
-			},
-        "custom_fields": {
-          "field": [
-            {
-              "name": "Hobbies",
-              "value": "[“Fitness”]"
-            }
-          ]
-        }
+			}
 
       }
     ]
@@ -5943,7 +5935,7 @@ import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
 
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_CustomerUpdate"].testSteps["check event logs"]
 	TestStepResult result = teststep.run(testRunner,context)
@@ -5954,7 +5946,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -6162,25 +6154,19 @@ for(int i = 0;i&lt;bodyCount;i++){
           </con:parameters>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>0662518628</con:value>
+          <con:value>1868666910</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>7bfd679b-3d92-4454-a108-3b7b3845428d</con:value>
+          <con:value>54c37aeb-3d79-427b-884c-8a744e1d2e2b</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379075429</con:value>
+          <con:value>379092337</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -6906,7 +6892,7 @@ import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
 import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Event_ReturnTransaction"].testSteps["check event logs"]
@@ -6918,7 +6904,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -6973,7 +6959,7 @@ for(String status : consumersStatus){
 	assert status == "200"
 }
 //transactionAdded event should be pushed, as that is triggered as part of test case.
-assert('customerUpdated' in eventNames)</scriptText>
+assert('transactionAdded' in eventNames)</scriptText>
               </con:configuration>
             </con:assertion>
             <con:credentials>
@@ -7017,37 +7003,42 @@ String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 int bodyCount = json.body.size();
+String mobileNum = context.expand('${#TestSuite#mobile}')
 def events = Eval.me(context.expand('${#TestCase#events}'))
 def eventsInConsumer = json.body.eventName
 
-
 messageExchange.modelItem.testCase.setPropertyValue('eventsReceived',eventsInConsumer.inspect())
 assert(bodyCount == events.size())
-assert('customerUpdated' in eventsInConsumer)
+
+assert('transactionAdded' in eventsInConsumer)
 
 for(int i = 0;i&lt;bodyCount;i++){
 	String event_name = json.body[i].eventName;
 	log.info event_name;
-	if(event_name == "customerUpdated"){
-		def loyaltyType = json.body[i].data.loyaltyType
-		def source = json.body[i].data.source
-		def firstName = json.body[i].data.firstName
-		def lastName = json.body[i].data.lastName
-		def custId = json.body[i].data.customerIdentifiers.customerId.toString()
-		def mobile = json.body[i].data.customerIdentifiers.instore.mobile.toString()
-		def email = json.body[i].data.customerIdentifiers.instore.email.toString()
+	if(event_name == "transactionAdded"){
+    def amount = json.body[i].data.amount;
+    def billClientID = json.body[i].data.billClientId;
+    def billNumber = json.body[i].data.billNumber;
+    def transactionId = json.body[i].data.transactionId.toString();
+    def lineItemCount = json.body[i].data.lineItemCount;
+    def discount = json.body[i].data.discount;
+    def grossAmount = json.body[i].data.grossAmount;
+    def cust_id = json.body[i].data.customerIdentifiers.customerId.toString();
 
-		def userMobile = context.expand('${#TestCase#mobile}')
-		def userID = context.expand('${#TestCase#user_id}')
+    //get tnx info
+    def tnxNumber = context.expand('${#TestCase#tnx_number}');
+    def tnxID = context.expand('${#TestCase#tnxID}');
+    def userID = context.expand('${#TestSuite#user_id}')
 
-		assert(loyaltyType == "LOYALTY")
-		assert(source == "instore")
-		assert(firstName == "fname_" + userMobile + "_changed")
-		assert(lastName == "lname_" + userMobile + "_changed")
-		assert(custId == userID)
-		assert(mobile == userMobile)
-		assert(email == userMobile + "@gmail.com")
-	}
+    assert(amount == 2000);
+    assert(billNumber == tnxNumber);
+    assert(transactionId == tnxID);
+    assert(billClientID == mobileNum);
+    assert(lineItemCount == 3); // as while addign tnx , line item was 2.
+    assert(discount == 10);
+    assert(grossAmount == 100);
+    assert(cust_id == userID);
+}
 }</scriptText>
             </con:configuration>
           </con:assertion>
@@ -7068,33 +7059,85 @@ for(int i = 0;i&lt;bodyCount;i++){
           </con:parameters>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
+      <con:testStep type="restrequest" name="check event logs" id="1e225697-4dbe-41d7-98f8-94d9c19e7adc" disabled="true">
+        <con:settings/>
+        <con:config service="getEventLogs" resourcePath="/{version}/webHooks/eventLog/requestId/{request_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="check event logs" id="c3c5f177-ed07-4079-aa2d-e3b654c037ab" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic Y20uMToyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="9a67073e-d145-4c5f-90bf-7b2955e84d93" name="status - 200">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="ac07e8a1-01a4-49a8-9e5d-6e28d324525f" name="validate the events pushed status">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def consumers = json.data.consumerGroupId;
+log.info consumers
+int index = 0;
+String my_consumer = context.expand('${#TestCase#webhook_consumerID}');
+ArrayList&lt;String> eventNames = new ArrayList();
+ArrayList&lt;Integer> consumersStatus = new ArrayList();
+for(consumer in consumers){
+	if(consumer == my_consumer){
+		String event_name = json.data.eventName[index];
+		def consumerResponse = json.data.consumerResponse[index]
+		assert(consumerResponse != null)
+	}
+	index++;
+}</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>${#Project#auth_username}</con:username>
+              <con:password>${#Project#auth_password}</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="version" value="v3"/>
+              <con:entry key="request_id" value="${#TestCase#request_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>version</con:entry>
+              <con:entry>request_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1590662620741</con:value>
+          <con:value>1591869591741</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>cc91e944-6f28-4a94-b456-6943ea2c08b5</con:value>
+          <con:value>029bc6ba-ff10-448c-81c3-8e000bbb74b4</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38260657</con:value>
+          <con:value>38261983</con:value>
         </con:property>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>910662620747</con:value>
+          <con:value>911869591741</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379075431</con:value>
+          <con:value>379092480</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimePoints_afterTnx</con:name>
@@ -7134,22 +7177,22 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['customerUpdated']</con:value>
+          <con:value>['customerUpdated', 'transactionAdded']</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200]</con:value>
+          <con:value>[200, 200]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value>['customerUpdated']</con:value>
+          <con:value>[]</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
     <con:properties>
       <con:property>
         <con:name>mobile</con:name>
-        <con:value>910741492437</con:value>
+        <con:value>911939872959</con:value>
       </con:property>
       <con:property>
         <con:name>webhook_consumerID</con:name>
@@ -7157,7 +7200,7 @@ for(TestProperty prop : properties){
       </con:property>
       <con:property>
         <con:name>user_id</con:name>
-        <con:value>379076704</con:value>
+        <con:value>379094320</con:value>
       </con:property>
     </con:properties>
   </con:testSuite>
@@ -7181,19 +7224,19 @@ testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</sc
           <con:properties>
             <con:property>
               <con:name>tnx_number</con:name>
-              <con:value>1590734601116</con:value>
+              <con:value>1591618396257</con:value>
             </con:property>
             <con:property>
               <con:name>tnxID</con:name>
-              <con:value>38260718</con:value>
+              <con:value>38261500</con:value>
             </con:property>
             <con:property>
               <con:name>user_id</con:name>
-              <con:value>379076656</con:value>
+              <con:value>379085721</con:value>
             </con:property>
             <con:property>
               <con:name>mobile</con:name>
-              <con:value>919734601118</con:value>
+              <con:value>919618396262</con:value>
             </con:property>
             <con:property>
               <con:name>awarded_points_afterTnx</con:name>
@@ -7205,11 +7248,11 @@ testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</sc
             </con:property>
             <con:property>
               <con:name>pointBalance_afterTnx</con:name>
-              <con:value>null</con:value>
+              <con:value xsi:nil="true"/>
             </con:property>
             <con:property>
               <con:name>tnx_mobile</con:name>
-              <con:value>919734601118</con:value>
+              <con:value>919618396262</con:value>
             </con:property>
           </con:properties>
           <con:returnProperties>
@@ -7337,11 +7380,11 @@ else{
       <con:properties>
         <con:property>
           <con:name>redemption_id</con:name>
-          <con:value>QrSOGC</con:value>
+          <con:value>j4V7ET</con:value>
         </con:property>
         <con:property>
           <con:name>redemption_mobile</con:name>
-          <con:value>919734601118</con:value>
+          <con:value>919618396262</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -9249,11 +9292,11 @@ else{
     <con:properties>
       <con:property>
         <con:name>current_time</con:name>
-        <con:value>2020-05-29 12:14:31</con:value>
+        <con:value>2020-06-08 17:43:16</con:value>
       </con:property>
     </con:properties>
   </con:testSuite>
-  <con:testSuite id="0c38c5f7-ee0f-4b71-9e88-733b992cd242" name="Behavioural_events_are_working_fine_endtoend">
+  <con:testSuite id="0c38c5f7-ee0f-4b71-9e88-733b992cd242" name="Behavioural_Events">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
     <con:testCase id="aa946f3b-1c01-4708-ae13-d7335cf6833a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Case1_event_triggered_through_default_till" searchProperties="true">
@@ -9262,8 +9305,8 @@ else{
         <con:settings/>
         <con:config>
           <script>String timestamp = System.currentTimeMillis().toString()
-String mobile = timestamp.substring(3);
-testRunner.testCase.setPropertyValue("mobile","91" + mobile);</script>
+String mobile = timestamp.substring(4);
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script>
         </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="register a customer" id="b3c551f9-02ff-480f-b9a7-ff0cb9092cfb">
@@ -9370,6 +9413,8 @@ String type = json.response.customers.customer.type[0];
 String source = json.response.customers.customer.source[0];
 String mobile_reg = context.expand('${#TestCase#mobile}');
 
+messageExchange.modelItem.testCase.setPropertyValue("mobilev2",mobile);
+
 
 
 
@@ -9425,7 +9470,7 @@ assert(item_message== "Customer registration successful")</scriptText>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
             </con:settings>
             <con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint>
-            <con:request>{"Mobile":"${#TestCase#mobile}",
+            <con:request>{"Mobile":"${#TestCase#mobilev2}",
 "Name":"stringxxx",
 "Till":"${#Project#auth_username}",
 "event_name":"AlphaEndToEnd"}</con:request>
@@ -9517,7 +9562,7 @@ import com.eviware.soapui.model.testsuite.TestStep
 
 int maxRetries = 10;
 
-
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
 while(maxRetries > 0){
 	TestStep teststep = testRunner.testCase.testSuite.testCases["Case1_event_triggered_through_default_till"].testSteps["check event logs"]
 	TestStepResult result = teststep.run(testRunner,context)
@@ -9528,7 +9573,7 @@ while(maxRetries > 0){
 		break;
 	}
 	else{
-		sleep(10000);
+		sleep(polling_time);
 	}
 	maxRetries--;
 }</script>
@@ -9775,25 +9820,19 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>911159860858</con:value>
+          <con:value>919938018462</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>ed414a61-6f35-4c0e-888e-bbf072dddd59</con:value>
+          <con:value>dd1ff1d3-c92b-45bc-bd03-b6a3b4f4209a</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379083018</con:value>
+          <con:value>379094267</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -9841,19 +9880,23 @@ for(TestProperty prop : properties){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value/>
+          <con:value>['pointsIssued']</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value/>
+          <con:value>[200]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value/>
+          <con:value>['pointsIssued']</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
           <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+        </con:property>
+        <con:property>
+          <con:name>mobilev2</con:name>
+          <con:value>919938018462</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -9863,8 +9906,8 @@ for(TestProperty prop : properties){
         <con:settings/>
         <con:config>
           <script>String timestamp = System.currentTimeMillis().toString()
-String mobile = timestamp.substring(3);
-testRunner.testCase.setPropertyValue("mobile","91" + mobile);</script>
+String mobile = timestamp.substring(4);
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script>
         </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="register a customer" id="9c76789c-c686-441d-9dc2-9047cf87f0a3">
@@ -10390,25 +10433,19 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>910736984901</con:value>
+          <con:value>919938253628</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>fc127fbb-720c-4d4b-93a5-c184b1ccaecd</con:value>
+          <con:value>ff78c5d4-e67a-4b20-bb4a-4baf5042109b</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379076676</con:value>
+          <con:value>379094268</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -10478,8 +10515,8 @@ for(TestProperty prop : properties){
         <con:settings/>
         <con:config>
           <script>String timestamp = System.currentTimeMillis().toString()
-String mobile = timestamp.substring(3);
-testRunner.testCase.setPropertyValue("mobile","91" + mobile);</script>
+String mobile = timestamp.substring(4);
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script>
         </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="register a customer" id="4d2f9790-766e-4ea8-aa4b-8765f48c6b5e">
@@ -11004,25 +11041,19 @@ for(consumer in consumers){
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript>// Setting all the test cases property to blank value (by default)
-import com.eviware.soapui.model.testsuite.TestProperty
-List&lt;TestProperty> properties = testCase.getPropertyList()
-
-for(TestProperty prop : properties){
-	prop.setValue("")
-}</con:setupScript>
+      <con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>910737205171</con:value>
+          <con:value>919938643177</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>27ca3bfd-9482-4d81-a8f8-dc46b6d429d3</con:value>
+          <con:value>797a13ee-9116-4cd2-b134-b8dd360aa68e</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379076677</con:value>
+          <con:value>379094270</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -11089,7 +11120,7 @@ for(TestProperty prop : properties){
     <con:properties>
       <con:property>
         <con:name>user_id</con:name>
-        <con:value>379083018</con:value>
+        <con:value>379094270</con:value>
       </con:property>
       <con:property>
         <con:name>webhook_consumerID</con:name>
@@ -11112,7 +11143,7 @@ for(TestProperty prop : properties){
     </con:property>
     <con:property>
       <con:name>application_endpoint</con:name>
-      <con:value>nightly.capillary.in</con:value>
+      <con:value>crm-nightly-new.cc.capillarytech.com</con:value>
     </con:property>
     <con:property>
       <con:name>webhook_workspace</con:name>
@@ -11124,7 +11155,7 @@ for(TestProperty prop : properties){
     </con:property>
     <con:property>
       <con:name>custom_events_webhook</con:name>
-      <con:value>8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:value>
+      <con:value>vo4mrjpidb.execute-api.us-east-1.amazonaws.com/crm-nightly-new/webhooks/8b5ec968-6c9d-46cf-8d1b-30b5ffb2d925</con:value>
     </con:property>
     <con:property>
       <con:name>alphatill_username</con:name>
@@ -11141,6 +11172,10 @@ for(TestProperty prop : properties){
     <con:property>
       <con:name>gammatill_password</con:name>
       <con:value>202cb962ac59075b964b07152d234b70</con:value>
+    </con:property>
+    <con:property>
+      <con:name>polling_time</con:name>
+      <con:value>15000</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>

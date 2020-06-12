@@ -80,14 +80,12 @@
                             <settingsFile>${basedir}/apis_tests/ext/soapui-settings.xml</settingsFile>
                             <projectProperties>
                                 <value>environment=${environment}</value>
-                                <!--
-                                <value>rp.uuid=7b57af22-c3c4-4c1c-9e07-c44293eab0fc</value>
-                                <value>rp.endpoint=https://beta.demo.reportportal.io</value>
-                                <value>rp.launch=APIs_Functional_Tests</value>
-                                <value>rp.project=ngaur_personal</value>
+                                <value>rp.uuid=938a9903-3b87-4b26-8d73-cf1e4e07f7f9</value>
+                                <value>rp.endpoint=https://reportportal.capillary.in</value>
+                                <value>rp.launch=EndToEndTests_${environment}</value>
+                                <value>rp.project=platform_loyalty_endtoend</value>
                                 <value>rp.attributes=key:value;value;</value>
-                                <value>rp.description=Event forest test automation sanity</value>
-                                -->
+                                <value>rp.description=${launch_description}</value>
                             </projectProperties>
                             <soapuiProperties>
                                 <property>
