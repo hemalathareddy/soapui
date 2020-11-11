@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+   <TestSuite>
+		<Events_pushing_fine_to_webhook>
+			<tags>eventforest,sanity,regression</tags>
+	   </Events_pushing_fine_to_webhook>
+	   <Point_Redemption>
+		   <tags>redemption,sanity</tags>
+	   </Point_Redemption>
+	   <Behavioural_Events>
+		   <tags>regression,behaviouralevents</tags>
+	   </Behavioural_Events>
+	 </TestSuite>
+</project>

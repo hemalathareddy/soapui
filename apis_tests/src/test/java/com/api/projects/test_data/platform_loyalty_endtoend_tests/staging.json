@@ -1,0 +1,15 @@
+{
+"endpoint" : "intouch-staging.capillary.in",
+"authorization":{
+  "username" : "endtoend_test_staging",
+  "password" : "202cb962ac59075b964b07152d234b70",
+  "auth": "Basic ZW5kdG9lbmRfdGVzdF9zdGFnaW5nOjIwMmNiOTYyYWM1OTA3NWI5NjRiMDcxNTJkMjM0Yjcw"
+  "alphatill_username" : "alpha_endtoend_test",
+  "alphatill_password" : "202cb962ac59075b964b07152d234b70",
+  "gammatill_username" : "gamma_endtoend_test",
+  "gammatill_password" : "202cb962ac59075b964b07152d234b70"
+},
+"webhook_workspace" : "enfmnlq9rj2i6m3.m.pipedream.net",
+"webhook_workspace_name" : "endtoend_hook_ng",
+"custom_events_webhook" : "6jj4zruzag.execute-api.us-east-1.amazonaws.com/staging/webhooks/d65e1ce9-6995-4dae-864e-5bac33540f46"
+}

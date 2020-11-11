@@ -1316,6 +1316,11 @@
       </con:method>
     </con:resource>
   </con:interface>
+  <con:interface xsi:type="con:RestService" id="a691791f-99a2-4ace-9f16-fb0574a1ef08" wadlVersion="http://wadl.dev.java.net/2009/02" name="rp" type="rest" definitionUrl="reportPortal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints/>
+  </con:interface>
   <con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting>
@@ -1815,29 +1820,6 @@ else{
     </con:testCase>
     <con:testCase id="23925634-f0eb-426a-a829-a89cf00cdd78" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RegisterNewCustomer" searchProperties="true">
       <con:settings/>
-      <con:properties/>
-    </con:testCase>
-    <con:testCase id="6e30978c-6c9b-45e3-b911-002b13496a6b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Utility" searchProperties="true">
-      <con:settings/>
-      <con:testStep type="groovy" name="Random" id="68795682-d551-4bb4-94b2-ba40be330002">
-        <con:settings/>
-        <con:config>
-          <script>context.randomValue = String.valueOf((int)(Math.random()*9999999))
-
-
-  // use like ${Random#result}</script>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="groovy" name="Mobile" id="a4f34990-4529-4846-adfd-b4a3be86577f">
-        <con:settings/>
-        <con:config>
-          <script>String timestamp = System.currentTimeMillis().toString()
-String mobile = "919" + timestamp.substring(4);
-context.mobile = mobile
-
-// use it like ${Mobile#result}</script>
-        </con:config>
-      </con:testStep>
       <con:properties/>
     </con:testCase>
     <con:properties>
@@ -2425,19 +2407,19 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>aa288e94-9370-4d94-91c8-b4422d77649d</con:value>
+          <con:value>b8250118e36e4ce7bcfeddbb3b19cf12</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379094320</con:value>
+          <con:value>379546045</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
-          <con:value>620</con:value>
+          <con:value>300</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points</con:name>
-          <con:value>620</con:value>
+          <con:value>300</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyType</con:name>
@@ -2449,31 +2431,31 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>till_code</con:name>
-          <con:value>endtoend_test</con:value>
+          <con:value>cm.1</con:value>
         </con:property>
         <con:property>
           <con:name>till_name</con:name>
-          <con:value>endtoend_test</con:value>
+          <con:value>cm.1</con:value>
         </con:property>
         <con:property>
           <con:name>lstLifeTimePoints_AfterTnx</con:name>
-          <con:value>[180]</con:value>
+          <con:value>[300]</con:value>
         </con:property>
         <con:property>
           <con:name>lstLoyaltyPoints_AfterTnx</con:name>
-          <con:value>[180]</con:value>
+          <con:value>[300]</con:value>
         </con:property>
         <con:property>
           <con:name>lstCurrentSlabs_AfterTnx</con:name>
-          <con:value>['Silver']</con:value>
+          <con:value>['SILVER']</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramIds_AfterTnx</con:name>
-          <con:value>[796]</con:value>
+          <con:value>[622]</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramTitles_AfterTnx</con:name>
-          <con:value>['SOAP_AUTOMATIONDefaultProgram']</con:value>
+          <con:value>['CLIENT_MERGEDefaultProgram']</con:value>
         </con:property>
         <con:property>
           <con:name>eventCount</con:name>
@@ -2481,15 +2463,15 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['customerAdded']</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200]</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value>['customerAdded']</con:value>
+          <con:value>[]</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3203,39 +3185,39 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1591940207196</con:value>
+          <con:value>1592572582331</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>6f579fb6-0539-41c1-a817-5614309da66b</con:value>
+          <con:value>a6eb8f480c7bcb5df917b32cf4ac279e</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38262034</con:value>
+          <con:value>38262794</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimePoints_afterTnx</con:name>
-          <con:value>620</con:value>
+          <con:value>1160</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyPoints_afterTnx</con:name>
-          <con:value>620</con:value>
+          <con:value>1160</con:value>
         </con:property>
         <con:property>
           <con:name>currentSlab_afterTnx</con:name>
-          <con:value>Silver</con:value>
+          <con:value>Diamond</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_puchases_afterTnx</con:name>
-          <con:value>2000</con:value>
+          <con:value>4000</con:value>
         </con:property>
         <con:property>
           <con:name>awarded_points_afterTnx</con:name>
-          <con:value>440</con:value>
+          <con:value>540</con:value>
         </con:property>
         <con:property>
           <con:name>totalPoints_afterTnx</con:name>
-          <con:value>620</con:value>
+          <con:value>1160</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
@@ -3259,15 +3241,15 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>lstLifeTimePoints_AfterTnx</con:name>
-          <con:value>[620]</con:value>
+          <con:value>[1160]</con:value>
         </con:property>
         <con:property>
           <con:name>lstLoyaltyPoints_AfterTnx</con:name>
-          <con:value>[620]</con:value>
+          <con:value>[1160]</con:value>
         </con:property>
         <con:property>
           <con:name>lstCurrentSlabs_AfterTnx</con:name>
-          <con:value>['Silver']</con:value>
+          <con:value>['Diamond']</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramIds_AfterTnx</con:name>
@@ -3279,19 +3261,19 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>loyaltyPoints</con:name>
-          <con:value>180</con:value>
+          <con:value>620</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimepointsPoints</con:name>
-          <con:value>180</con:value>
+          <con:value>620</con:value>
         </con:property>
         <con:property>
           <con:name>currentSlab</con:name>
-          <con:value>Silver</con:value>
+          <con:value>Gold</con:value>
         </con:property>
         <con:property>
           <con:name>nextSlab</con:name>
-          <con:value>Gold</con:value>
+          <con:value>Diamond</con:value>
         </con:property>
         <con:property>
           <con:name>programID</con:name>
@@ -3303,7 +3285,7 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>cumulativePurchases</con:name>
-          <con:value>0</con:value>
+          <con:value>2000</con:value>
         </con:property>
         <con:property>
           <con:name>eventsCount</con:name>
@@ -3311,15 +3293,15 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['pointsIssued']</con:value>
+          <con:value>['customerUpdated', 'pointsIssued', 'tierUpgraded', 'transactionAdded']</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200]</con:value>
+          <con:value>[200, 200, 200, 200]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
-          <con:value>['pointsIssued']</con:value>
+          <con:value>[]</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3838,19 +3820,19 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>loyaltyPoints</con:name>
-          <con:value>620.0</con:value>
+          <con:value>1160.0</con:value>
         </con:property>
         <con:property>
           <con:name>pointsToBeRedeemed</con:name>
-          <con:value>31</con:value>
+          <con:value>58</con:value>
         </con:property>
         <con:property>
           <con:name>pointsRedeemableValue</con:name>
-          <con:value>31</con:value>
+          <con:value>58</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>4f74ca04-5c43-41b5-ae04-0dfae98e246c</con:value>
+          <con:value>3839723f-bbd1-470a-b685-ab72bfe9bbd7</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
@@ -4588,7 +4570,7 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>couponCode</con:name>
-          <con:value>2HX97J0K</con:value>
+          <con:value>18RRO4WD</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
@@ -4596,7 +4578,7 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>6dfbb7e3-f471-4f76-8c7e-ae2b532f0692</con:value>
+          <con:value>6d53a5b1-1242-41f9-be8f-6203b57868a7</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5496,15 +5478,15 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>mobile1</con:name>
-          <con:value>919868139700</con:value>
+          <con:value>919573614752</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>922a0dee-5f5b-4f7e-a802-babc4558165b</con:value>
+          <con:value>fff5c05dc90b5b52874ca86088087804</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379092334</con:value>
+          <con:value>379111543</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -5516,15 +5498,15 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>mobile2</con:name>
-          <con:value>919868141587</con:value>
+          <con:value>919573617032</con:value>
         </con:property>
         <con:property>
           <con:name>request_id_2</con:name>
-          <con:value>f936b71b-c6a7-4d93-9dc5-6be625d1683c</con:value>
+          <con:value>0a489906-12af-47b7-88d0-4ff00cf5dcbe</con:value>
         </con:property>
         <con:property>
           <con:name>user_id_2</con:name>
-          <con:value>379092335</con:value>
+          <con:value>379111544</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points_2</con:name>
@@ -6158,15 +6140,15 @@ for(int i = 0;i&lt;bodyCount;i++){
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>1868666910</con:value>
+          <con:value>2392124159</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>54c37aeb-3d79-427b-884c-8a744e1d2e2b</con:value>
+          <con:value>fe53aa5e-bc13-4aae-b155-a4e1fcf79afc</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379092337</con:value>
+          <con:value>379107111</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -7121,23 +7103,23 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1591869591741</con:value>
+          <con:value>1592392321420</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>029bc6ba-ff10-448c-81c3-8e000bbb74b4</con:value>
+          <con:value>2ece4221-0613-4f50-86af-904a5107cc21</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38261983</con:value>
+          <con:value>38262517</con:value>
         </con:property>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>911869591741</con:value>
+          <con:value>912392321420</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379092480</con:value>
+          <con:value>379107112</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimePoints_afterTnx</con:name>
@@ -7149,7 +7131,7 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>currentSlab_afterTnx</con:name>
-          <con:value>Silver</con:value>
+          <con:value>Gold</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_puchases_afterTnx</con:name>
@@ -7192,19 +7174,19 @@ for(consumer in consumers){
     <con:properties>
       <con:property>
         <con:name>mobile</con:name>
-        <con:value>911939872959</con:value>
+        <con:value>919462306378</con:value>
       </con:property>
       <con:property>
         <con:name>webhook_consumerID</con:name>
-        <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+        <con:value/>
       </con:property>
       <con:property>
         <con:name>user_id</con:name>
-        <con:value>379094320</con:value>
+        <con:value>379546045</con:value>
       </con:property>
     </con:properties>
   </con:testSuite>
-  <con:testSuite id="38583330-b416-4a11-a304-90fa8d14eb9b" name="Point Redemption">
+  <con:testSuite id="38583330-b416-4a11-a304-90fa8d14eb9b" name="Point_Redemption">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
     <con:testCase id="09dd370e-3ef6-4e5f-b954-65609ca078e7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Full_Point_Redemption" searchProperties="true">
@@ -9824,15 +9806,15 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>919938018462</con:value>
+          <con:value>919393299038</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>dd1ff1d3-c92b-45bc-bd03-b6a3b4f4209a</con:value>
+          <con:value>747cca36-1976-41cf-a389-c04ff1b6bfa3</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379094267</con:value>
+          <con:value>379107118</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -9896,7 +9878,7 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>mobilev2</con:name>
-          <con:value>919938018462</con:value>
+          <con:value>919393299038</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -10437,15 +10419,15 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>919938253628</con:value>
+          <con:value>919395178822</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>ff78c5d4-e67a-4b20-bb4a-4baf5042109b</con:value>
+          <con:value>fd5c037a-17d5-428c-a36a-88b9a5261da2</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379094268</con:value>
+          <con:value>379107124</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
@@ -11120,7 +11102,7 @@ for(consumer in consumers){
     <con:properties>
       <con:property>
         <con:name>user_id</con:name>
-        <con:value>379094270</con:value>
+        <con:value>379107124</con:value>
       </con:property>
       <con:property>
         <con:name>webhook_consumerID</con:name>
@@ -11132,6 +11114,10 @@ for(consumer in consumers){
     <con:property>
       <con:name>environment</con:name>
       <con:value>nightly</con:value>
+    </con:property>
+    <con:property>
+      <con:name>execution_group</con:name>
+      <con:value>sanity,regression</con:value>
     </con:property>
     <con:property>
       <con:name>auth_username</con:name>
@@ -11184,9 +11170,46 @@ for(consumer in consumers){
   <con:beforeRunScript>import groovy.json.JsonSlurper
 import java.io.FileInputStream;
 
+////////////////////// Functions /////////////////////////
+
+def filterList(commaSperatedListContent){
+	def list = commaSperatedListContent.split(",");
+	def filteredList = [];
+	list.each(){
+	def entry = it.toLowerCase().replaceAll("^\\s+", "");
+	entry = entry.trim();
+	if(entry != ""){
+	filteredList.add(entry);}	
+	}
+	return filteredList;
+}
+
+def customListCompare(list1,list2){
+	//list1 is the list of tags that are given by user to execute.
+	//list2 is the list of tags for specific test suite.
+	boolean isRunnable = false;
+	for(int l1 in 0 .. list1.size()-1)
+	{
+		def inputTag = list1.get(l1);		
+		for(int l2 in 0 .. list2.size()-1){
+			
+			if(inputTag.toString() == list2.get(l2).toString()){
+				isRunnable =  true;
+				break;
+			}
+		}
+		if(isRunnable){
+			break;
+		}
+	}
+	return isRunnable;
+}
+///////////////////// Function //////////////////////////////////////////////
+
 
 // connect to json data file based on environment specified.
 String environment = context.expand('${#Project#environment}');
+
 String project_dir = context.expand('${projectDir}');
 String filepath = project_dir + File.separator + "test_data" + File.separator + project.name + File.separator + environment + ".json";
 log.info environment
@@ -11211,6 +11234,66 @@ project.setPropertyValue("custom_events_webhook",json.custom_events_webhook);
 catch(Exception e){
 	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());
 	assert(false)
-}</con:beforeRunScript>
+}
+
+
+// Selecting the test suites to run based on the group.
+
+String executionGroups = project.getPropertyValue("execution_group")
+def filteredTags = filterList(executionGroups) ;
+
+def Conf_input = "";
+
+log.info "Reading the Configuration file.....";
+
+try{
+
+Conf_input = new File(project_dir + "/test_data/" + project.getName() + "/TestData.xml");
+
+def parser = new XmlParser(); //Get XML Parser.
+
+def Configuration = parser.parse(Conf_input);//Point parser to configration file.
+
+context.Configuration = Configuration;
+
+}
+catch(Exception e){
+		assert false : "Error in reading configuration file -- " + e.getMessage();
+}
+
+def testSuiteListToExecute = [];
+
+log.info "Fetching Test-Scenarios to execute....";
+
+def testSuites = project.getTestSuiteList();
+
+//Enable all TestSuites.
+for(j in 0 .. testSuites.size()-1){
+	//log.info testSuites.get(j).getName();
+	testSuites.get(j).setDisabled(false); 
+}
+//Decide which test suites to execute and eventually disabled the non-relevant test suites.
+		for(i in 0 .. testSuites.size()-1) {
+   			def testSuiteName = testSuites.get(i).getName();
+   			def tags = context.Configuration.TestSuite."${testSuiteName}".tags.text()
+   			def testSuiteTags = filterList(tags);
+   			   			
+   			if(filteredTags == null || filteredTags.empty){
+   				break;
+   			}
+   			else{
+   				if(testSuiteTags == null || testSuiteTags.empty){
+   					testSuites.get(i).setDisabled(true);
+   				}
+   				else{
+   					def isRunnable = customListCompare(filteredTags,testSuiteTags);
+   					log.info testSuiteName+":::"+isRunnable
+   					if(!isRunnable){
+   						testSuites.get(i).setDisabled(true);
+   					}
+   				}
+   			}
+   			
+		}</con:beforeRunScript>
   <con:sensitiveInformation/>
 </con:soapui-project>
