@@ -81,12 +81,12 @@
                             <projectProperties>
                                 <value>environment=${environment}</value>
                                 <value>execution_group=${execution_group}</value>
-                                <value>rp.uuid=938a9903-3b87-4b26-8d73-cf1e4e07f7f9</value>
-                                <value>rp.endpoint=https://reportportal.capillary.in</value>
+                                <value>rp.uuid=3c24e31f-e667-4ecd-8b80-91b42abccc8f</value>
+                                <value>rp.endpoint=https://qareportportal.capillary.in</value>
                                 <value>rp.launch=TestExecution_${environment}_${execution_group}</value>
-                                <value>rp.project=SoapUI_Tests</value>
+                                <value>rp.project=APIs_SoapUI_Tests</value>
                                 <value>rp.attributes=key:value;value;</value>
-                                <value>rp.description=${launch_description}</value>
+                                <value>rp.description=${execution_group} - test execution on ${environment}</value>
                             </projectProperties>
                             <soapuiProperties>
                                 <property>
