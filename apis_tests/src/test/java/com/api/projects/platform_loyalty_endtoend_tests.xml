@@ -2407,19 +2407,19 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>b8250118e36e4ce7bcfeddbb3b19cf12</con:value>
+          <con:value>946ee4e871a94592a11db4e6b4c8e39c</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379546045</con:value>
+          <con:value>371409770</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
-          <con:value>300</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points</con:name>
-          <con:value>300</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyType</con:name>
@@ -2431,31 +2431,31 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>till_code</con:name>
-          <con:value>cm.1</con:value>
+          <con:value>api.auto1</con:value>
         </con:property>
         <con:property>
           <con:name>till_name</con:name>
-          <con:value>cm.1</con:value>
+          <con:value>api.auto1</con:value>
         </con:property>
         <con:property>
           <con:name>lstLifeTimePoints_AfterTnx</con:name>
-          <con:value>[300]</con:value>
+          <con:value>[140]</con:value>
         </con:property>
         <con:property>
           <con:name>lstLoyaltyPoints_AfterTnx</con:name>
-          <con:value>[300]</con:value>
+          <con:value>[140]</con:value>
         </con:property>
         <con:property>
           <con:name>lstCurrentSlabs_AfterTnx</con:name>
-          <con:value>['SILVER']</con:value>
+          <con:value>['Silver']</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramIds_AfterTnx</con:name>
-          <con:value>[622]</con:value>
+          <con:value>[1465]</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramTitles_AfterTnx</con:name>
-          <con:value>['CLIENT_MERGEDefaultProgram']</con:value>
+          <con:value>['ApiAutomationOrgDefaultProgram']</con:value>
         </con:property>
         <con:property>
           <con:name>eventCount</con:name>
@@ -3185,43 +3185,43 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1592572582331</con:value>
+          <con:value>1606216622898</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>a6eb8f480c7bcb5df917b32cf4ac279e</con:value>
+          <con:value>d0a04994602f77452d4e73e57ea1b451</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38262794</con:value>
+          <con:value>37216407</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimePoints_afterTnx</con:name>
-          <con:value>1160</con:value>
+          <con:value>340</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyPoints_afterTnx</con:name>
-          <con:value>1160</con:value>
+          <con:value>340</con:value>
         </con:property>
         <con:property>
           <con:name>currentSlab_afterTnx</con:name>
-          <con:value>Diamond</con:value>
+          <con:value>Silver</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_puchases_afterTnx</con:name>
-          <con:value>4000</con:value>
+          <con:value>2000</con:value>
         </con:property>
         <con:property>
           <con:name>awarded_points_afterTnx</con:name>
-          <con:value>540</con:value>
+          <con:value>200</con:value>
         </con:property>
         <con:property>
           <con:name>totalPoints_afterTnx</con:name>
-          <con:value>1160</con:value>
+          <con:value>340</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
-          <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+          <con:value/>
         </con:property>
         <con:property>
           <con:name>loyaltyType</con:name>
@@ -3233,59 +3233,59 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>till_code</con:name>
-          <con:value>endtoend_test</con:value>
+          <con:value>api.auto1</con:value>
         </con:property>
         <con:property>
           <con:name>till_name</con:name>
-          <con:value>endtoend_test</con:value>
+          <con:value>api.auto1</con:value>
         </con:property>
         <con:property>
           <con:name>lstLifeTimePoints_AfterTnx</con:name>
-          <con:value>[1160]</con:value>
+          <con:value>[340]</con:value>
         </con:property>
         <con:property>
           <con:name>lstLoyaltyPoints_AfterTnx</con:name>
-          <con:value>[1160]</con:value>
+          <con:value>[340]</con:value>
         </con:property>
         <con:property>
           <con:name>lstCurrentSlabs_AfterTnx</con:name>
-          <con:value>['Diamond']</con:value>
+          <con:value>['Silver']</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramIds_AfterTnx</con:name>
-          <con:value>[796]</con:value>
+          <con:value>[1465]</con:value>
         </con:property>
         <con:property>
           <con:name>lstProgramTitles_AfterTnx</con:name>
-          <con:value>['SOAP_AUTOMATIONDefaultProgram']</con:value>
+          <con:value>['ApiAutomationOrgDefaultProgram']</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyPoints</con:name>
-          <con:value>620</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimepointsPoints</con:name>
-          <con:value>620</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>currentSlab</con:name>
-          <con:value>Gold</con:value>
+          <con:value>Silver</con:value>
         </con:property>
         <con:property>
           <con:name>nextSlab</con:name>
-          <con:value>Diamond</con:value>
+          <con:value>Gold</con:value>
         </con:property>
         <con:property>
           <con:name>programID</con:name>
-          <con:value>796</con:value>
+          <con:value>1465</con:value>
         </con:property>
         <con:property>
           <con:name>programTitle</con:name>
-          <con:value>SOAP_AUTOMATIONDefaultProgram</con:value>
+          <con:value>ApiAutomationOrgDefaultProgram</con:value>
         </con:property>
         <con:property>
           <con:name>cumulativePurchases</con:name>
-          <con:value>2000</con:value>
+          <con:value>0</con:value>
         </con:property>
         <con:property>
           <con:name>eventsCount</con:name>
@@ -3293,11 +3293,11 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['customerUpdated', 'pointsIssued', 'tierUpgraded', 'transactionAdded']</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200, 200, 200, 200]</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
@@ -3816,35 +3816,35 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>programID</con:name>
-          <con:value>796</con:value>
+          <con:value>1465</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyPoints</con:name>
-          <con:value>1160.0</con:value>
+          <con:value>340.0</con:value>
         </con:property>
         <con:property>
           <con:name>pointsToBeRedeemed</con:name>
-          <con:value>58</con:value>
+          <con:value>17</con:value>
         </con:property>
         <con:property>
           <con:name>pointsRedeemableValue</con:name>
-          <con:value>58</con:value>
+          <con:value>17</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>3839723f-bbd1-470a-b685-ab72bfe9bbd7</con:value>
+          <con:value>94cbe24f15e932314607e55453542bb0</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
-          <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+          <con:value/>
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['pointsRedeemed']</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200]</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
@@ -4534,7 +4534,7 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>couponID</con:name>
-          <con:value>121186</con:value>
+          <con:value>623241</con:value>
         </con:property>
         <con:property>
           <con:name>couponDescription</con:name>
@@ -4542,11 +4542,11 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>couponSeriesCode</con:name>
-          <con:value>E68RFUIR</con:value>
+          <con:value>HI1BLN1R</con:value>
         </con:property>
         <con:property>
           <con:name>validTillDate</con:name>
-          <con:value>2120-05-13</con:value>
+          <con:value>2064-12-31</con:value>
         </con:property>
         <con:property>
           <con:name>discountCode</con:name>
@@ -4570,7 +4570,7 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>couponCode</con:name>
-          <con:value>18RRO4WD</con:value>
+          <con:value>ZTDRZWEN</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
@@ -5478,55 +5478,55 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>mobile1</con:name>
-          <con:value>919573614752</con:value>
+          <con:value>919216647723</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>fff5c05dc90b5b52874ca86088087804</con:value>
+          <con:value>4829c6ab94f0636b1d5f4f43a9843f8d</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379111543</con:value>
+          <con:value>371409771</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>mobile2</con:name>
-          <con:value>919573617032</con:value>
+          <con:value>919216649617</con:value>
         </con:property>
         <con:property>
           <con:name>request_id_2</con:name>
-          <con:value>0a489906-12af-47b7-88d0-4ff00cf5dcbe</con:value>
+          <con:value>df87143e5322aba0f5676c02f5a32ad1</con:value>
         </con:property>
         <con:property>
           <con:name>user_id_2</con:name>
-          <con:value>379111544</con:value>
+          <con:value>371409772</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points_2</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points_2</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value/>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value/>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
-          <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+          <con:value/>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
@@ -6140,35 +6140,35 @@ for(int i = 0;i&lt;bodyCount;i++){
       <con:properties>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>2392124159</con:value>
+          <con:value>6216655805</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>fe53aa5e-bc13-4aae-b155-a4e1fcf79afc</con:value>
+          <con:value>d361db5cd018b62bc41d35e1d573efb2</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379107111</con:value>
+          <con:value>371409773</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
-          <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+          <con:value/>
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['customerUpdated']</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200]</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
@@ -7103,35 +7103,35 @@ for(consumer in consumers){
       <con:properties>
         <con:property>
           <con:name>tnx_number</con:name>
-          <con:value>1592392321420</con:value>
+          <con:value>1606216660548</con:value>
         </con:property>
         <con:property>
           <con:name>request_id</con:name>
-          <con:value>2ece4221-0613-4f50-86af-904a5107cc21</con:value>
+          <con:value>eba9a6802fedd1f0863b396c31a5ab29</con:value>
         </con:property>
         <con:property>
           <con:name>tnxID</con:name>
-          <con:value>38262517</con:value>
+          <con:value>37216408</con:value>
         </con:property>
         <con:property>
           <con:name>mobile</con:name>
-          <con:value>912392321420</con:value>
+          <con:value>916216660549</con:value>
         </con:property>
         <con:property>
           <con:name>user_id</con:name>
-          <con:value>379107112</con:value>
+          <con:value>371409774</con:value>
         </con:property>
         <con:property>
           <con:name>lifetimePoints_afterTnx</con:name>
-          <con:value>620</con:value>
+          <con:value>340</con:value>
         </con:property>
         <con:property>
           <con:name>loyaltyPoints_afterTnx</con:name>
-          <con:value>620</con:value>
+          <con:value>340</con:value>
         </con:property>
         <con:property>
           <con:name>currentSlab_afterTnx</con:name>
-          <con:value>Gold</con:value>
+          <con:value>Silver</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_puchases_afterTnx</con:name>
@@ -7139,31 +7139,31 @@ for(consumer in consumers){
         </con:property>
         <con:property>
           <con:name>awarded_points_afterTnx</con:name>
-          <con:value>440</con:value>
+          <con:value>200</con:value>
         </con:property>
         <con:property>
           <con:name>totalPoints_afterTnx</con:name>
-          <con:value>620</con:value>
+          <con:value>340</con:value>
         </con:property>
         <con:property>
           <con:name>lifetime_points</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>loyalty_points</con:name>
-          <con:value>180</con:value>
+          <con:value>140</con:value>
         </con:property>
         <con:property>
           <con:name>webhook_consumerID</con:name>
-          <con:value>befe1b9f-7948-4540-8794-3c0a6fc073bb</con:value>
+          <con:value/>
         </con:property>
         <con:property>
           <con:name>events</con:name>
-          <con:value>['customerUpdated', 'transactionAdded']</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventStatus</con:name>
-          <con:value>[200, 200]</con:value>
+          <con:value>[]</con:value>
         </con:property>
         <con:property>
           <con:name>eventsReceived</con:name>
@@ -7174,7 +7174,7 @@ for(consumer in consumers){
     <con:properties>
       <con:property>
         <con:name>mobile</con:name>
-        <con:value>919462306378</con:value>
+        <con:value>919216616203</con:value>
       </con:property>
       <con:property>
         <con:name>webhook_consumerID</con:name>
@@ -7182,7 +7182,7 @@ for(consumer in consumers){
       </con:property>
       <con:property>
         <con:name>user_id</con:name>
-        <con:value>379546045</con:value>
+        <con:value>371409774</con:value>
       </con:property>
     </con:properties>
   </con:testSuite>
@@ -11121,7 +11121,7 @@ for(consumer in consumers){
     </con:property>
     <con:property>
       <con:name>auth_username</con:name>
-      <con:value>endtoend_test</con:value>
+      <con:value>api.auto1</con:value>
     </con:property>
     <con:property>
       <con:name>auth_password</con:name>
@@ -11145,7 +11145,7 @@ for(consumer in consumers){
     </con:property>
     <con:property>
       <con:name>alphatill_username</con:name>
-      <con:value>alpha_endtoend_test</con:value>
+      <con:value>api.auto2</con:value>
     </con:property>
     <con:property>
       <con:name>alphatill_password</con:name>
@@ -11153,7 +11153,7 @@ for(consumer in consumers){
     </con:property>
     <con:property>
       <con:name>gammatill_username</con:name>
-      <con:value>gamma_endtoend_test</con:value>
+      <con:value>api.auto3</con:value>
     </con:property>
     <con:property>
       <con:name>gammatill_password</con:name>
