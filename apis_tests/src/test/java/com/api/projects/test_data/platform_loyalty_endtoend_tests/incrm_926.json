@@ -1,0 +1,14 @@
+{
+"endpoint" : "api.capillary.co.in",
+"authorization":{
+  "username" : "eg.003",
+  "password" : "202cb962ac59075b964b07152d234b70",
+  "alphatill_username" : "eg.004",
+  "alphatill_password" : "202cb962ac59075b964b07152d234b70",
+  "gammatill_username" : "eg.008",
+  "gammatill_password" : "202cb962ac59075b964b07152d234b70"
+},
+"webhook_workspace" : "en94asrk77qt6hr.m.pipedream.net",
+"webhook_workspace_name" : "apiauto_webhook",
+"custom_events_webhook" : "vo4mrjpidb.execute-api.us-east-1.amazonaws.com/crm-nightly-new/webhooks/8b5ec968-6c9d-46cf-8d1b-30b5ffb2d925"
+}
