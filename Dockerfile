@@ -1,7 +1,4 @@
 FROM maven:3.5-jdk-8
-ENV projectname=platform_loyalty_endtoend_tests
-ENV environment=nightly
-ENV execution_group=sanity
 WORKDIR /QA_Automation
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
