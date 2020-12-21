@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-8
 ENV projectname=platform_loyalty_endtoend_tests
-ENV environment=nightly
+ENV environment=crm-nightly-new_50660
 ENV execution_group=sanity
 WORKDIR /QA_Automation
 COPY pom.xml .
