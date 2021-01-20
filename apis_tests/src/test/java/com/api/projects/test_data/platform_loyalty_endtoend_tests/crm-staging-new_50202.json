@@ -1,11 +1,11 @@
 {
-"endpoint" : "crm-nightly-new.cc.capillarytech.com",
+"endpoint" : "crm-staging-new.cc.capillarytech.com",
 "authorization":{
-  "username" : "api.auto1",
+  "username" : "alpha_endtoend_test",
   "password" : "202cb962ac59075b964b07152d234b70",
-  "alphatill_username" : "api.auto2",
+  "alphatill_username" : "endtoend_test_staging",
   "alphatill_password" : "202cb962ac59075b964b07152d234b70",
-  "gammatill_username" : "api.auto3",
+  "gammatill_username" : "gamma_endtoend_test",
   "gammatill_password" : "202cb962ac59075b964b07152d234b70"
 },
 "webhook_workspace" : "enfmnlq9rj2i6m3.m.pipedream.net",
