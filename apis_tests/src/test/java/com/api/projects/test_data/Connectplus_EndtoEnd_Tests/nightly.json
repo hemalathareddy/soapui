@@ -1,0 +1,35 @@
+{
+"connectplus_baseurl" : "connectplus-nightly.connectplus.capillarytech.com",
+"api_baseurl" : "crm-nightly-new.cc.capillarytech.com",
+"sftp":{
+  "username" : "capillary",
+  "password" : "captech123",
+  "host" : "data.capillarydata.com",
+  "port" : "22"
+  
+},
+"cpalldata_sftp":{
+  "username" : "kunjkant.pandya",
+  "password" : "Kunj@123",
+  "host" : "data.capillarydata.com",
+  "port" : "22"
+  
+},
+"api_Oauth":{
+  "clientkey" : "yFsClxbAu7wpFfLIIbZ78qBFg",
+  "clientsecret" : "cQqqhhizfBM3n20jJxawvSBi7A4tpM8ytZc2DQvV"
+ 
+},
+"connect_Oauth":{
+  "Authorization" : "Basic YXV0b21hdGlvbl91c2VyOks1MjFyITMzYQ=="
+ 
+ 
+},
+
+"api_endpoint":{
+ "customers" : "/v2/integrations/customer/upsert/bulk?skipChangeIdentifier=true",
+ "transactions" : "/v2/transactions/bulk"
+ }
+
+
+}

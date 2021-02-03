@@ -1,0 +1,3192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="94ec99a2-f0c6-4dac-8a21-f69ae86da2c9" activeEnvironment="Default" name="Connectplus_EndtoEnd_Tests" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="b7d6181e-712c-4e63-b8b4-112a1c24f7e2" wadlVersion="http://wadl.dev.java.net/2009/02" name="GetTemplates" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Templates" path="/api/templates" id="37a902bc-d0fc-4612-bf21-60b42f4f167d"><con:settings/><con:parameters/><con:method name="Templates 1" id="26d0d5bb-b586-4594-88f5-43cecd2defbe" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="AllTemplates" id="9aadd18e-a18a-4205-8ce1-2f33401f6943" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:username/><con:password/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="fa709750-15d8-4f2b-82ac-3617aaedcd29" wadlVersion="http://wadl.dev.java.net/2009/02" name="AddDataFlow_Name" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Dataflows" path="/api/workspaces/{workspaceId}/templates/{uuid}/dataflows" id="4a8b11e4-1920-4d89-9e54-564ef4ebcc90"><con:settings/><con:parameters><con:parameter><con:name>workspaceId</con:name><con:value>workspaceId</con:value><con:style>TEMPLATE</con:style><con:default>workspaceId</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>uuid</con:name><con:value>uuid</con:value><con:style>TEMPLATE</con:style><con:default>uuid</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Dataflows 1" id="8507195f-d955-4595-b2ee-40e0a6e0fdf7" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:goog="http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google">goog:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:goog="http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google">goog:Fault</con:element></con:representation><con:request name="createName" id="028ac5fc-481a-46fe-b6e4-c958f789ab52" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request>{
+  "dataFlowName": "${#TestCase#dataflowname}"
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="577a47cb-d34b-4549-91b9-996a45c68989" wadlVersion="http://wadl.dev.java.net/2009/02" name="UpdateDataflow_Blocks" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Dataflows" path="/api/workspaces/{workspaceId}/dataflows/{uuid}" id="43c915c5-a7db-4206-ab2b-70054f4dfb70"><con:settings/><con:parameters><con:parameter><con:name>workspaceId</con:name><con:value>workspaceId</con:value><con:style>TEMPLATE</con:style><con:default>workspaceId</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>uuid</con:name><con:value>uuid</con:value><con:style>TEMPLATE</con:style><con:default>uuid</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Dataflows 1" id="e979e9e8-5f22-467a-bb0b-dbc8e8919e7d" method="PUT"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:goog="http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google">goog:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:goog="http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google">goog:Response</con:element></con:representation><con:request name="AddBlocks" id="7a42f0da-2c95-4009-9162-68720f1c72ea" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request>{
+   "name": "${#TestCase#dataflowname}",
+   "uuid": "${#TestCase#dataflowuuid}",
+   "blocks":    [
+            {
+         "blockTypeId": 5,
+         "name": "Connect-to-destination",
+         "type": "intouch_transaction_v2",
+         "order": 2,
+         "fields":          [
+                        {
+               "name": "clientKey",
+               "displayName": "Client Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "yFsClxbAu7wpFfLIIbZ78qBFg"
+            },
+                        {
+               "name": "clientSecret",
+               "displayName": "Client Secret",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "cQqqhhizfBM3n20jJxawvSBi7A4tpM8ytZc2DQvV"
+            },
+                        {
+               "name": "apiEndPoint",
+               "displayName": "API EndPoint",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "/v2/integrations/customer/upsert/bulk?skipChangeIdentifier=true"
+            },
+                        {
+               "name": "apiBaseUrl",
+               "displayName": "API Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "https://crm-nightly-new.cc.capillarytech.com"
+            },
+                        {
+               "name": "apiMethod",
+               "displayName": "API Method",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "POST",
+                  "PUT"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "POST"
+            },
+                        {
+               "name": "oAuthBaseUrl",
+               "displayName": "OAuth Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "https://crm-nightly-new.cc.capillarytech.com"
+            },
+                        {
+               "name": "responseKey",
+               "displayName": "Response Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "$.response.*"
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "terminated": true
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 7,
+         "name": "Transform-data",
+         "type": "transform_to_customer",
+         "order": 1,
+         "fields":          [
+                        {
+               "name": "orgId",
+               "displayName": "Intouch Org",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "1102",
+                  "1779",
+                  "1115"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "1779"
+            },
+                        {
+               "name": "fileDelimiter",
+               "displayName": "File Delimiter",
+               "defaultValue": ",",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "|"
+            },
+                        {
+               "name": "headerMapping",
+               "displayName": "Header Mapping",
+               "defaultValue": "{}",
+               "htmlType": "json",
+               "childrenFields":                {
+                   "customer.standard.source": {"required": true,"value":"const{${#TestCase#source}}"},
+                  "customer.standard.accountId":{"required":false,"value":"const{${#TestCase#accountId}}"},
+                 
+ 
+                  
+                  "attribution.store.identifierType": {"required": true,"value":"const{${#TestCase#identifierType}}"},
+                 
+                  "identifiers.standard.externalId": {"required": false,"value":"MEMBER_ID"},
+                  
+                  "attribution.store.identifierValue": {"required": true,"value":"const{${#TestCase#till}}"},
+                  
+                  "customer.loyaltyInfo.loyaltyType": {"required": true,"value":"const{${#TestCase#loyaltyType}}"}
+                  
+                  
+               },
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }}
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "destinationBlockName": "Connect-to-destination"
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 6,
+         "name": "Connect-to-source",
+         "type": "sftp_pull",
+         "order": 0,
+         "fields":          [
+                        {
+               "name": "hostname",
+               "displayName": "Hostname",
+               "htmlType": "text",
+               "rules":                {
+                  "minLength":                   {
+                     "value": "5",
+                     "message": "minimum length must be 5"
+                  },
+                  "required":                   {
+                     "value": "true",
+                     "message": "this is required"
+                  },
+                  "maxLength":                   {
+                     "value": "100",
+                     "message": "maximum length can't exceed 100"
+                  }
+               },
+               "value": "data.capillarydata.com"
+            },
+                        {
+               "name": "username",
+               "displayName": "Username",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "capillary"
+            },
+                        {
+               "name": "password",
+               "displayName": "Password",
+               "htmlType": "password",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "captech123"
+            },
+                        {
+               "name": "sourceDirectory",
+               "displayName": "Source Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#sourceDirectory}"
+            },
+                        {
+               "name": "fileRegex",
+               "displayName": "Filename Pattern",
+               "htmlType": "text",
+               "possibleValues":                [
+                  ".*.csv",
+                  ".*"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ".*.csv"
+            },
+                        {
+               "name": "processedDirectory",
+               "displayName": "Processed Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#processedDirectory}"
+            },
+                        {
+               "name": "unzipFiles",
+               "displayName": "Unzip Files",
+               "htmlType": "checkbox",
+               "value": "true"
+            }
+         ],
+         "connections": [         {
+            "relationship": "success",
+            "destinationBlockName": "Transform-data"
+         }],
+         "source": true
+      }
+   ],
+   "status":    {
+      "state": "Draft",
+      "runningCount": 0,
+      "stoppedCount": 7,
+      "invalidCount": 4,
+      "disabledCount": 0
+   },
+   "schedule": {"cron":"0 0/1 * * * ? *"}
+   
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="00a9eac6-854f-4cad-8a74-bbd7c75408ec" wadlVersion="http://wadl.dev.java.net/2009/02" name="ScheduleDataFlow" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://connectplusnightly.connectplus.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Scheduler" path="/api/workspaces/{workspaceId}/dataflows/{uuid}/schedule" id="0874c570-1182-4ac4-b406-08e444977738"><con:settings/><con:parameters><con:parameter><con:name>workspaceId</con:name><con:value>workspaceId</con:value><con:style>TEMPLATE</con:style><con:default>workspaceId</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>uuid</con:name><con:value>uuid</con:value><con:style>TEMPLATE</con:style><con:default>uuid</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="ScheduleDataflow" id="5666b9e3-67c0-4e3a-b8ad-4bb570c80920" method="PUT"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sch="https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/schedule">sch:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:sch="https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/schedule">sch:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Schedule" id="1c4027ea-9aa8-4cd5-a9a6-8a528124641a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request>{"cron":"0 0/1 * * * ? *"}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="e7755195-014d-4179-8bd3-253562b470bb" wadlVersion="http://wadl.dev.java.net/2009/02" name="ActivateDataflow" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://connectplusnightly.connectplus.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Live" path="/api/workspaces/{workspaceId}/dataflows/{uuid}/state/Live" id="d05d1a0c-72d4-4292-a86e-5503dc9530da"><con:settings/><con:parameters><con:parameter><con:name>workspaceId</con:name><con:value>workspaceId</con:value><con:style>TEMPLATE</con:style><con:default>workspaceId</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>uuid</con:name><con:value>uuid</con:value><con:style>TEMPLATE</con:style><con:default>uuid</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Live 1" id="6b9fad94-453f-460b-9532-30afdb57a776" method="PUT"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:live="https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/state/Live">live:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="ActivateDataflow" id="b5104e8a-6720-4b63-a452-c3ae3cb832da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Athorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/workspaceId/dataflows/uuid/state/Live</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="3b61534d-9749-4d05-95b4-a20a1353bd56" wadlVersion="http://wadl.dev.java.net/2009/02" name="GetCustomers" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Get" path="/v1.1/customer/get" id="b28b9627-2bd1-4cb3-a7a9-339376dcb4b9"><con:settings/><con:parameters><con:parameter><con:name>format</con:name><con:value>json</con:value><con:style>QUERY</con:style><con:default>json</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>mobile</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Get 1" id="f12d7d7b-5cc2-4901-9fc3-40739e796dd7" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/get">get:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/get">get:Response</con:element></con:representation><con:request name="Request 1" id="cc745a20-ed9b-4dfc-8cbd-e428a1d3a22e" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#api_url}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/get</con:originalUri><con:credentials><con:username>hyd_2</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="mobile" value="${#TestSuite#mobilenum1}"/>
+</con:parameters><con:parameterOrder><con:entry>format</con:entry><con:entry>mobile</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="f0d3c782-9e1d-4c04-9ec6-f9574c4efdf8" wadlVersion="http://wadl.dev.java.net/2009/02" name="GetErrors" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Errors" path="/api/workspaces/{workspaceid}/dataflows/{uuid}/errors" id="e4c435e9-9ae6-4dd9-a00a-f052f29de383"><con:settings/><con:parameters><con:parameter><con:name>workspaceid</con:name><con:style>TEMPLATE</con:style></con:parameter><con:parameter><con:name>uuid</con:name><con:style>TEMPLATE</con:style></con:parameter></con:parameters><con:method name="Errors 1" id="354e3987-67b5-4422-82fe-7e49928f8d2d" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="becbb513-3e05-4bf2-97ff-57913de43e82" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceid" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceid</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="81347992-32fc-4e4a-bf5e-794db95c2e8b" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://crm-nightly-new.cc.capillarytech.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Get" path="/v1.1/transaction/get" id="6afc53a8-a907-4033-b39c-6825d1afea9d"><con:settings/><con:parameters><con:parameter><con:name>format</con:name><con:value>json</con:value><con:style>QUERY</con:style><con:default>json</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>number</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Get 1" id="b66f74ee-587f-421a-8324-6be955acc0e5" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="https://crm-nightly-new.cc.capillarytech.com/v1.1/transaction/get">get:Response</con:element></con:representation><con:request name="Request 1" id="16ead0cd-1160-485d-aabb-ba400c46ce91" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/transaction/get</con:originalUri><con:credentials><con:username>hyd_2</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="number" value="1234567890"/>
+  <con:entry key="format" value="json"/>
+</con:parameters><con:parameterOrder><con:entry>format</con:entry><con:entry>number</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="ef6b1133-3ed9-4b33-8524-d41f7706c0c4" name="customerdataflow_endtoend"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="727f1e00-104d-4e3f-8dcd-ba69909ebfe9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addDataflow" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="customeruuid" id="1cdfdcbe-f0dd-41d0-babd-8354c39493c1"><con:settings/><con:config service="GetTemplates" resourcePath="/api/templates" methodName="Templates 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="customeruuid" id="9aadd18e-a18a-4205-8ce1-2f33401f6943" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic YXV0b21hdGlvbl91c2VyOks1MjFyITMzYQ==" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request/><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:username/><con:password/><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="customer_uuid" id="ca2e2ca3-ae27-4768-89f7-c8d84be5995e"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="false" transferChildNodes="false"><con:name>customeruuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>customeruuid</con:sourceStep><con:sourcePath>$.[?(@.name =='Customer v2 add')].uuid[0]</con:sourcePath><con:targetType>uuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="generateDataflowName" id="2a8bc0e9-94bb-4b8d-b84d-cf3fc6a6826a"><con:settings/><con:config><script>
+def generator = { String alphabet, int n ->
+new Random().with {
+(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+}
+}
+dataflowValue = "customer_"+generator( (('A'..'Z')+('0'..'9')+('a'..'z')).join(), 10 )
+testRunner.getTestCase().setPropertyValue("dataflowname", dataflowValue);
+log.info(dataflowValue)</script></con:config></con:testStep><con:testStep type="restrequest" name="addDataflowName" id="ec8667e3-66fd-4625-af86-b1c08dbe0039"><con:settings/><con:config service="AddDataFlow_Name" resourcePath="/api/workspaces/{workspaceId}/templates/{uuid}/dataflows" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addDataflowName" id="028ac5fc-481a-46fe-b6e4-c958f789ab52" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{
+  "dataFlowName": "${#TestCase#dataflowname}"
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#uuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="dataflow_uuid" id="89e6bf4c-c6f3-4585-921b-f13d15d28025"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="false" transferChildNodes="false"><con:name>dataflowuuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>addDataflowName</con:sourceStep><con:sourcePath>uuid</con:sourcePath><con:targetType>dataflowuuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="generateSourcepath" id="f37bf094-1260-462b-a7bf-fca04528da28"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#TestCase#dataflowname}')
+log.info dataflowValue
+pathsource="/Capillary testing/connectplus/source/"+dataflowValue
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession("capillary", "data.capillarydata.com", 22)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword("captech123")
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathsource.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+  testRunner.getTestCase().setPropertyValue("sourceDirectory", pathsource);
+ 
+  
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="genearteDestinationPath" id="a19bdefe-75a4-4eda-82ba-2a8c39913a6a"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#TestCase#dataflowname}')
+log.info dataflowValue
+
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession("capillary", "data.capillarydata.com", 22)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword("captech123")
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathdes.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+ 
+  testRunner.getTestCase().setPropertyValue("processedDirectory", pathdes);
+  
+}
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="updateDataflow" id="994df35e-be67-459f-a20c-021c6275fde9"><con:settings/><con:config service="UpdateDataflow_Blocks" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="updateDataflow" id="7a42f0da-2c95-4009-9162-68720f1c72ea" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{
+   "name": "${#TestCase#dataflowname}",
+   "uuid": "${#TestCase#dataflowuuid}",
+   "blocks":    [
+            {
+         "blockTypeId": 5,
+         "name": "Connect-to-destination",
+         "type": "intouch_transaction_v2",
+         "order": 2,
+         "fields":          [
+                        {
+               "name": "clientKey",
+               "displayName": "Client Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "yFsClxbAu7wpFfLIIbZ78qBFg"
+            },
+                        {
+               "name": "clientSecret",
+               "displayName": "Client Secret",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "cQqqhhizfBM3n20jJxawvSBi7A4tpM8ytZc2DQvV"
+            },
+                        {
+               "name": "apiEndPoint",
+               "displayName": "API EndPoint",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "/v2/integrations/customer/upsert/bulk?skipChangeIdentifier=true"
+            },
+                        {
+               "name": "apiBaseUrl",
+               "displayName": "API Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "https://crm-nightly-new.cc.capillarytech.com"
+            },
+                        {
+               "name": "apiMethod",
+               "displayName": "API Method",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "POST",
+                  "PUT"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "POST"
+            },
+                        {
+               "name": "oAuthBaseUrl",
+               "displayName": "OAuth Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "https://crm-nightly-new.cc.capillarytech.com"
+            },
+                        {
+               "name": "responseKey",
+               "displayName": "Response Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "$.response.*"
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "terminated": true
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 7,
+         "name": "Transform-data",
+         "type": "transform_to_customer",
+         "order": 1,
+         "fields":          [
+                        {
+               "name": "orgId",
+               "displayName": "Intouch Org",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "1102",
+                  "1779",
+                  "1115"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "1779"
+            },
+                        {
+               "name": "fileDelimiter",
+               "displayName": "File Delimiter",
+               "defaultValue": ",",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ","
+            },
+                        {
+               "name": "headerMapping",
+               "displayName": "Header Mapping",
+               "defaultValue": "{}",
+               "htmlType": "json",
+               "childrenFields":                {
+                   "customer.standard.source": {"required": true,"value":"const{${#TestCase#source}}"},
+                  "customer.standard.accountId":{"required":false,"value":"const{${#TestCase#accountId}}"},
+                 
+ 
+                  
+                  "attribution.store.identifierType": {"required": true,"value":"const{${#TestCase#identifierType}}"},
+                 
+                  "identifiers.standard.mobile": {"required": false,"value":"mobile"},
+                  
+                  "attribution.store.identifierValue": {"required": true,"value":"const{${#TestCase#till}}"},
+                  
+                  "customer.loyaltyInfo.loyaltyType": {"required": true,"value":"const{${#TestCase#loyaltyType}}"}
+                  
+                  
+               },
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }}
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "destinationBlockName": "Connect-to-destination"
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 6,
+         "name": "Connect-to-source",
+         "type": "sftp_pull",
+         "order": 0,
+         "fields":          [
+                        {
+               "name": "hostname",
+               "displayName": "Hostname",
+               "htmlType": "text",
+               "rules":                {
+                  "minLength":                   {
+                     "value": "5",
+                     "message": "minimum length must be 5"
+                  },
+                  "required":                   {
+                     "value": "true",
+                     "message": "this is required"
+                  },
+                  "maxLength":                   {
+                     "value": "100",
+                     "message": "maximum length can't exceed 100"
+                  }
+               },
+               "value": "data.capillarydata.com"
+            },
+                        {
+               "name": "username",
+               "displayName": "Username",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "capillary"
+            },
+                        {
+               "name": "password",
+               "displayName": "Password",
+               "htmlType": "password",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "captech123"
+            },
+                        {
+               "name": "sourceDirectory",
+               "displayName": "Source Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#sourceDirectory}"
+            },
+                        {
+               "name": "fileRegex",
+               "displayName": "Filename Pattern",
+               "htmlType": "text",
+               "possibleValues":                [
+                  ".*.csv",
+                  ".*"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ".*.csv"
+            },
+                        {
+               "name": "processedDirectory",
+               "displayName": "Processed Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#processedDirectory}"
+            },
+                        {
+               "name": "unzipFiles",
+               "displayName": "Unzip Files",
+               "htmlType": "checkbox",
+               "value": "true"
+            }
+         ],
+         "connections": [         {
+            "relationship": "success",
+            "destinationBlockName": "Transform-data"
+         }],
+         "source": true
+      }
+   ],
+   "status":    {
+      "state": "Draft",
+      "runningCount": 0,
+      "stoppedCount": 7,
+      "invalidCount": 4,
+      "disabledCount": 0
+   },
+   "schedule": {"cron":"0 0/1 * * * ? *"}
+   
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="scheduleDataflow" id="cb428661-f1ec-4c0e-9aaa-9e74ae02f5dd"><con:settings/><con:config service="ScheduleDataFlow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/schedule" methodName="ScheduleDataflow" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="scheduleDataflow" id="1c4027ea-9aa8-4cd5-a9a6-8a528124641a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{"cron":"0 0/1 * * * ? *"}</con:request><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/schedule</con:originalUri><con:assertion type="Simple Contains" id="075b1110-a539-4519-8f5f-f27723d8e8c2" name="Contains"><con:configuration><token>{"cron":"0 0/1 * * * ? *"}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="activateDataflow" id="f3ddb8ae-6305-4e63-b8d8-80d64a66a57f"><con:settings/><con:config service="ActivateDataflow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/state/Live" methodName="Live 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="activateDataflow" id="b5104e8a-6720-4b63-a452-c3ae3cb832da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/state/Live</con:originalUri><con:assertion type="Simple Contains" id="e5f9fb5f-d877-4a6f-8cc5-b14c8683dc99" name="Contains"><con:configuration><token>Live</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="generateData" id="65bffd6f-025b-4b6b-857a-f3acba85728b"><con:settings/><con:config><script>
+import au.com.bytecode.opencsv.CSVWriter
+
+
+        String customersource="INSTORE";
+   String loyaltyType="loyalty";
+   String customeraccountId="-1";
+   String customeridentifierType="TILL";
+   String customeridentifierValue="hyd_2";
+   String mobile="";
+   String firstName="FN";
+   String lastName="LN";
+   String timestamp = System.currentTimeMillis().toString()
+   def dataflowValue=context.expand('${#TestCase#dataflowname}')
+   def fileName=dataflowValue+'.csv'
+   def TEST_OUTPUT_FILE_NAME='D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/'+fileName
+   testRunner.testCase.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+    testRunner.testCase.setPropertyValue( "fileNameToUpload",fileName )
+testRunner.testCase.testSuite.project.setPropertyValue( "fileNameToUpload", fileName )
+
+  testRunner.testCase.testSuite.project.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+  log.info("fileNameToUpload :"+ fileName)
+  log.info("localFilePath:"+ TEST_OUTPUT_FILE_NAME)
+
+	   phone=[]
+	   //Mobile number generation
+	   Random rand = new Random();
+	for(int i=1;i&lt;=2;i++)
+	{
+   String  num1 = 9 * 100 + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   String  num2 = (rand.nextInt(8)+1 * 100) + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   String  num3 = (rand.nextInt(8)+1 * 100) + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   
+
+      phoneNumber = num1+num2+num3+rand.nextInt(9);
+
+   
+    phone.add(phoneNumber);
+    
+	}
+	
+
+
+   line1 = ["source", "loyaltyType", "accountId", "identifierType","identifierValue","mobile","firstName","lastName"]
+ 
+
+  File csvFile = new File(TEST_OUTPUT_FILE_NAME)
+  csvFile.createNewFile()
+  csvFile.withWriter { writer ->
+  CSVWriter csvWriter = new CSVWriter(writer)
+  
+  csvWriter.writeNext(line1 as String[])
+  for(mobile1 in phone)
+  {
+  line2 = [customersource, loyaltyType, customeraccountId, customeridentifierType,customeridentifierValue,mobile1,firstName,lastName]
+    csvWriter.writeNext(line2 as String[])	
+  }
+  csvWriter.close()
+ 
+                
+  }
+  log.info("customer Data generated ")
+  
+  testRunner.testCase.setPropertyValue("mobilenum1",phone[0] as String)
+  testRunner.testCase.setPropertyValue("mobilenum2",phone[1] as String)
+  testRunner.testCase.testSuite.setPropertyValue("mobilenum1",phone[0] as String)
+  testRunner.testCase.testSuite.setPropertyValue("mobilenum2",phone[1] as String)
+  
+
+                
+                </script></con:config></con:testStep><con:testStep type="groovy" name="uploadinputcsv" id="6c6bc1b5-b5f1-47dc-a7c4-de89e6ba5ad6"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = testCase.getPropertyValue("ftpHost")
+def int ftpPort = testCase.getPropertyValue("ftpPort").toInteger()
+def String ftpUsername = testCase.getPropertyValue("ftpUsername")
+def String ftpPassword = testCase.getPropertyValue("ftpPassword")
+def String fileContent = testCase.getPropertyValue("localFilePath")
+def String remoteFile = testCase.getPropertyValue("sourceDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start uploaded from " + fileContent)
+  
+  sftp.put(fileContent, remoteFile);
+  log.info("File Content uploaded to " + remoteFile)
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp upload process complete")
+}</script></con:config></con:testStep><con:testStep type="delay" name="200000" id="987e509d-a220-4f97-af5a-d66ec4d547d1"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="groovy" name="ValidateFileProcessed" id="c6e3912e-71f6-4ef0-908f-7033d0eef882"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = testCase.getPropertyValue("ftpHost")
+def int ftpPort = testCase.getPropertyValue("ftpPort").toInteger()
+def String ftpUsername = testCase.getPropertyValue("ftpUsername")
+def String ftpPassword = testCase.getPropertyValue("ftpPassword")
+ def dataflowValue=context.expand('${#TestCase#dataflowname}')
+def String fileName = dataflowValue+'.csv'
+
+def String remoteProcessedDir = testCase.getPropertyValue("processedDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp file get process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start verifying file  in" + remoteProcessedDir)
+  log.info(remoteProcessedDir+fileName)
+  InputStream stream = sftp.get(remoteProcessedDir+'/'+fileName);
+            
+                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+                String line;
+                while ((line = br.readLine()) != null) {
+                	log.info("file exists")
+                    log.info(line);
+                
+
+            } 
+			}catch (IOException io) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + io.getMessage());
+                io.getMessage();
+
+            } catch (Exception e) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + e.getMessage());
+                e.getMessage();
+
+            }
+ finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  
+}</script></con:config></con:testStep><con:properties><con:property><con:name>uuid</con:name><con:value>b39fa808-fd88-3312-bae4-351f37d86728</con:value></con:property><con:property><con:name>workspaceid</con:name><con:value>18</con:value></con:property><con:property><con:name>dataflowname</con:name><con:value>customer_3cvPeGrxVt</con:value></con:property><con:property><con:name>dataflowuuid</con:name><con:value>03ead338-592b-3850-89b6-c278121845b9</con:value></con:property><con:property><con:name>localFilePath</con:name><con:value>D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/customer_3cvPeGrxVt.csv</con:value></con:property><con:property><con:name>fileNameToUpload</con:name><con:value>customer_3cvPeGrxVt.csv</con:value></con:property><con:property><con:name>mobilenum1</con:name><con:value>9171221204</con:value></con:property><con:property><con:name>mobilenum2</con:name><con:value>9171251135</con:value></con:property><con:property><con:name>identifierType</con:name><con:value>TILL</con:value></con:property><con:property><con:name>loyaltyType</con:name><con:value>loyalty</con:value></con:property><con:property><con:name>source</con:name><con:value>INSTORE</con:value></con:property><con:property><con:name>accountId</con:name><con:value>-1</con:value></con:property><con:property><con:name>sourceDirectory</con:name><con:value>/Capillary testing/connectplus/source/customer_3cvPeGrxVt</con:value></con:property><con:property><con:name>processedDirectory</con:name><con:value>/Capillary testing/connectplus/destination/customer_3cvPeGrxVt</con:value></con:property><con:property><con:name>ftpHost</con:name><con:value>data.capillarydata.com</con:value></con:property><con:property><con:name>ftpPort</con:name><con:value>22</con:value></con:property><con:property><con:name>ftpUsername</con:name><con:value>capillary</con:value></con:property><con:property><con:name>ftpPassword</con:name><con:value>captech123</con:value></con:property></con:properties></con:testCase><con:testCase id="4544498c-ccf0-4ae5-b0ec-8570a6da73d6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="validateData" searchProperties="true"><con:settings/><con:testStep type="groovy" name="poll filedata processed status" id="2a28a91b-a0d8-48cc-b77c-39abcb042fd4"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestStepResult
+import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
+import com.eviware.soapui.model.testsuite.TestStep
+
+int maxRetries = 10;
+
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
+
+while(maxRetries > 0){
+	TestStep teststep = testRunner.testCase.testSuite.testCases["validateData"].testSteps["getcustomerData"]
+	log.info(teststep)
+	TestStepResult result = teststep.run(testRunner,context)
+	TestStepStatus status = result.getStatus();
+	log.info "Status -- " + status
+	if(status == TestStepStatus.OK){
+		maxRetries=0;
+		break;
+	}
+	else{
+		sleep(polling_time);
+	}
+	maxRetries--;
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="getcustomerData" id="4bd31d40-1181-4b52-b3b4-ab6043c24b62"><con:settings/><con:config service="GetCustomers" resourcePath="/v1.1/customer/get" methodName="Get 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getcustomerData" id="cc745a20-ed9b-4dfc-8cbd-e428a1d3a22e" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/get</con:originalUri><con:assertion type="Simple Contains" id="44277ff7-cb4b-4ae4-9056-519347e1013d" name="Contains"><con:configuration><token>Customer successfully retrieved</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>hyd_2</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="mobile" value="${#TestSuite#mobilenum1}"/>
+</con:parameters><con:parameterOrder><con:entry>format</con:entry><con:entry>mobile</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getcustomerData2" id="65523074-cc09-4d09-9c1d-ee402c71996f"><con:settings/><con:config service="GetCustomers" resourcePath="/v1.1/customer/get" methodName="Get 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getcustomerData2" id="cc745a20-ed9b-4dfc-8cbd-e428a1d3a22e" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/get</con:originalUri><con:assertion type="Simple Contains" id="44277ff7-cb4b-4ae4-9056-519347e1013d" name="Contains"><con:configuration><token>Customer successfully retrieved</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>hyd_2</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="mobile" value="${#TestSuite#mobilenum2}"/>
+</con:parameters><con:parameterOrder><con:entry>format</con:entry><con:entry>mobile</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>mobilenum1</con:name><con:value>9171221204</con:value></con:property><con:property><con:name>mobilenum2</con:name><con:value>9171251135</con:value></con:property></con:properties></con:testSuite><con:testSuite id="c98d0981-df76-492b-a859-8537e32f32aa" name="addDataFlows"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="75de17b1-a888-4c35-9224-0d85f2f196f5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addCustomers" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getUUID" id="3d06b9e5-6691-4fd2-95c0-782119f56f36"><con:settings/><con:config service="GetTemplates" methodName="Templates 1" resourcePath="/api/templates" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getUUID" id="ce99b79c-8e0b-4e22-8892-202d3aa4e1bf" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:originalUri>https://connectplus-nightly.connectplus.capillarytech.com/api/templates</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="uuid" id="2186e3f8-32cc-4bd5-99a2-406ebc69174c"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>uuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getUUID</con:sourceStep><con:sourcePath>$.[?(@.name =='Customer v2 add')].uuid[0]</con:sourcePath><con:targetType>uuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="setDataflowName" id="5572e6fb-2d5c-42f3-9cfa-5a166bfe6f7b"><con:settings/><con:config><script>
+def generator = { String alphabet, int n ->
+new Random().with {
+(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+}
+}
+dataflowValue = "customer_"+generator( (('A'..'Z')+('0'..'9')+('a'..'z')).join(), 10 )
+testRunner.getTestCase().setPropertyValue("dataflowname", dataflowValue);
+log.info(dataflowValue)</script></con:config></con:testStep><con:testStep type="restrequest" name="addDataflowName" id="2d8cdd90-393a-44c4-934a-085dc8ae6851"><con:settings/><con:config service="AddDataFlow_Name" resourcePath="/api/workspaces/{workspaceId}/templates/{uuid}/dataflows" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addDataflowName" id="028ac5fc-481a-46fe-b6e4-c958f789ab52" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request>{
+  "dataFlowName": "${#TestCase#dataflowname}"
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#uuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="getDataFlowUUID" id="f290e96b-af11-41a2-aa98-0f5d7521f20b"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>dfuuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>addDataflowName</con:sourceStep><con:sourcePath>uuid</con:sourcePath><con:targetType>dfuuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="generateSourcepath" id="7e753931-4099-4e5f-934d-9eaa667054fb"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#TestCase#dataflowname}')
+log.info dataflowValue
+pathsource="/Capillary testing/connectplus/source/"+dataflowValue
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession("capillary", "data.capillarydata.com", 22)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword("captech123")
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathsource.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+  testRunner.getTestCase().setPropertyValue("sourceDirectory", pathsource);
+ 
+  
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="genearteDestinationPath" id="190094fa-104b-4a6c-9f8d-08872bde1f0a"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#TestCase#dataflowname}')
+log.info dataflowValue
+
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession("capillary", "data.capillarydata.com", 22)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword("captech123")
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathdes.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+ 
+  testRunner.getTestCase().setPropertyValue("processedDirectory", pathdes);
+  
+}
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="updateDataflow" id="41c80d36-04e9-446a-a1b4-3b825e7b5b98"><con:settings/><con:config service="UpdateDataflow_Blocks" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="updateDataflow" id="7a42f0da-2c95-4009-9162-68720f1c72ea" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{
+   "name": "${#TestCase#dataflowname}",
+   "uuid": "${#TestCase#dfuuid}",
+   "blocks":    [
+            {
+         "blockTypeId": 5,
+         "name": "Connect-to-destination",
+         "type": "intouch_transaction_v2",
+         "order": 2,
+         "fields":          [
+                        {
+               "name": "clientKey",
+               "displayName": "Client Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#clientkey}"
+            },
+                        {
+               "name": "clientSecret",
+               "displayName": "Client Secret",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#clientsecret}"
+            },
+                        {
+               "name": "apiEndPoint",
+               "displayName": "API EndPoint",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#customers_endpoint}"
+            },
+                        {
+               "name": "apiBaseUrl",
+               "displayName": "API Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#customers_endpoint}"
+            },
+                        {
+               "name": "apiMethod",
+               "displayName": "API Method",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "POST",
+                  "PUT"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "POST"
+            },
+                        {
+               "name": "oAuthBaseUrl",
+               "displayName": "OAuth Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#api_url}"
+            },
+                        {
+               "name": "responseKey",
+               "displayName": "Response Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "$.response.*"
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "terminated": true
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 7,
+         "name": "Transform-data",
+         "type": "transform_to_customer",
+         "order": 1,
+         "fields":          [
+                        {
+               "name": "orgId",
+               "displayName": "Intouch Org",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "1102",
+                  "1779",
+                  "1115"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "1779"
+            },
+                        {
+               "name": "fileDelimiter",
+               "displayName": "File Delimiter",
+               "defaultValue": ",",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ","
+            },
+                        {
+               "name": "headerMapping",
+               "displayName": "Header Mapping",
+               "defaultValue": "{}",
+               "htmlType": "json",
+               "childrenFields":                {
+                   "customer.standard.source": {"required": true,"value":"const{${#TestCase#source}}"},
+                  "customer.standard.accountId":{"required":false,"value":"const{${#TestCase#accountId}}"},
+                 
+ 
+                  
+                  "attribution.store.identifierType": {"required": true,"value":"const{${#TestCase#identifierType}}"},
+                 
+                  "identifiers.standard.mobile": {"required": false,"value":"mobile"},
+                  
+                  "attribution.store.identifierValue": {"required": true,"value":"const{${#TestCase#till}}"},
+                  
+                  "customer.loyaltyInfo.loyaltyType": {"required": true,"value":"const{${#TestCase#loyaltyType}}"}
+                  
+                  
+               },
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }}
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "destinationBlockName": "Connect-to-destination"
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 6,
+         "name": "Connect-to-source",
+         "type": "sftp_pull",
+         "order": 0,
+         "fields":          [
+                        {
+               "name": "hostname",
+               "displayName": "Hostname",
+               "htmlType": "text",
+               "rules":                {
+                  "minLength":                   {
+                     "value": "5",
+                     "message": "minimum length must be 5"
+                  },
+                  "required":                   {
+                     "value": "true",
+                     "message": "this is required"
+                  },
+                  "maxLength":                   {
+                     "value": "100",
+                     "message": "maximum length can't exceed 100"
+                  }
+               },
+               "value": "${#Project#host}"
+            },
+                        {
+               "name": "username",
+               "displayName": "Username",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#username}"
+            },
+                        {
+               "name": "password",
+               "displayName": "Password",
+               "htmlType": "password",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#password}"
+            },
+                        {
+               "name": "sourceDirectory",
+               "displayName": "Source Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#sourceDirectory}"
+            },
+                        {
+               "name": "fileRegex",
+               "displayName": "Filename Pattern",
+               "htmlType": "text",
+               "possibleValues":                [
+                  ".*.csv",
+                  ".*"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ".*.csv"
+            },
+                        {
+               "name": "processedDirectory",
+               "displayName": "Processed Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#processedDirectory}"
+            },
+                        {
+               "name": "unzipFiles",
+               "displayName": "Unzip Files",
+               "htmlType": "checkbox",
+               "value": "true"
+            }
+         ],
+         "connections": [         {
+            "relationship": "success",
+            "destinationBlockName": "Transform-data"
+         }],
+         "source": true
+      }
+   ],
+   "status":    {
+      "state": "Draft",
+      "runningCount": 0,
+      "stoppedCount": 7,
+      "invalidCount": 4,
+      "disabledCount": 0
+   },
+   "schedule": {"cron":"0 0/1 * * * ? *"}
+   
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="scheduleDataflow" id="34d28bc9-5d1c-478a-99cd-457e28e8b56d"><con:settings/><con:config service="ScheduleDataFlow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/schedule" methodName="ScheduleDataflow" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="scheduleDataflow" id="1c4027ea-9aa8-4cd5-a9a6-8a528124641a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{"cron":"0 0/1 * * * ? *"}</con:request><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/schedule</con:originalUri><con:assertion type="Simple Contains" id="075b1110-a539-4519-8f5f-f27723d8e8c2" name="Contains"><con:configuration><token>{"cron":"0 0/1 * * * ? *"}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="activateDataflow" id="04f12875-f681-4900-8ba8-4decacc646c4"><con:settings/><con:config service="ActivateDataflow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/state/Live" methodName="Live 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="activateDataflow" id="b5104e8a-6720-4b63-a452-c3ae3cb832da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/state/Live</con:originalUri><con:assertion type="Simple Contains" id="e5f9fb5f-d877-4a6f-8cc5-b14c8683dc99" name="Contains"><con:configuration><token>Live</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="generateData" id="720dd98d-888e-4ef1-a5d3-b3ddd14316a1"><con:settings/><con:config><script>
+import au.com.bytecode.opencsv.CSVWriter
+
+
+        String customersource="INSTORE";
+   String loyaltyType="loyalty";
+   String customeraccountId="-1";
+   String customeridentifierType="TILL";
+   String customeridentifierValue="hyd_2";
+   String mobile="";
+   String firstName="FN";
+   String lastName="LN";
+   String timestamp = System.currentTimeMillis().toString()
+   def dataflowValue=context.expand('${#TestCase#dataflowname}')
+   def fileName=dataflowValue+'.csv'
+   def TEST_OUTPUT_FILE_NAME='D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/'+fileName
+   testRunner.testCase.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+    testRunner.testCase.setPropertyValue( "fileNameToUpload",fileName )
+testRunner.testCase.testSuite.project.setPropertyValue( "fileNameToUpload", fileName )
+
+  testRunner.testCase.testSuite.project.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+  log.info("fileNameToUpload :"+ fileName)
+  log.info("localFilePath:"+ TEST_OUTPUT_FILE_NAME)
+
+	   phone=[]
+	   //Mobile number generation
+	   Random rand = new Random();
+	for(int i=1;i&lt;=2;i++)
+	{
+   String  num1 = 9 * 100 + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   String  num2 = (rand.nextInt(8)+1 * 100) + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   String  num3 = (rand.nextInt(8)+1 * 100) + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   
+
+      phoneNumber = num1+num2+num3+rand.nextInt(9);
+
+   
+    phone.add(phoneNumber);
+    
+	}
+	
+
+
+   line1 = ["source", "loyaltyType", "accountId", "identifierType","identifierValue","mobile","firstName","lastName"]
+ 
+
+  File csvFile = new File(TEST_OUTPUT_FILE_NAME)
+  csvFile.createNewFile()
+  csvFile.withWriter { writer ->
+  CSVWriter csvWriter = new CSVWriter(writer)
+  
+  csvWriter.writeNext(line1 as String[])
+  for(mobile1 in phone)
+  {
+  line2 = [customersource, loyaltyType, customeraccountId, customeridentifierType,customeridentifierValue,mobile1,firstName,lastName]
+    csvWriter.writeNext(line2 as String[])	
+  }
+  csvWriter.close()
+ 
+                
+  }
+  log.info("customer Data generated ")
+  
+ // testRunner.testCase.setPropertyValue("mobilenum1",phone[0] as String)
+ // testRunner.testCase.setPropertyValue("mobilenum2",phone[1] as String)
+ // testRunner.testCase.testSuite.setPropertyValue("mobilenum1",phone[0] as String)
+  testRunner.testCase.testSuite.project.setPropertyValue("mobilenum2",phone as String)
+  
+
+                
+                </script></con:config></con:testStep><con:testStep type="groovy" name="uploadinputcsv" id="d11313d4-c698-4349-84d4-1350808d9202"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+ 
+def String fileContent = testCase.getPropertyValue("localFilePath")
+def String remoteFile = testCase.getPropertyValue("sourceDirectory")
+
+
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start uploaded from " + fileContent)
+  
+  sftp.put(fileContent, remoteFile);
+  log.info("File Content uploaded to " + remoteFile)
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp upload process complete")
+}</script></con:config></con:testStep><con:testStep type="delay" name="200000" id="bd97445b-033f-40b9-9309-cc8d771bf949"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="groovy" name="ValidateFileProcessed" id="051266c1-5d38-442f-9a3d-43eb71bddc7f"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+ 
+ def dataflowValue=context.expand('${#TestCase#dataflowname}')
+def String fileName = dataflowValue+'.csv'
+
+def String remoteProcessedDir = testCase.getPropertyValue("processedDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp file get process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start verifying file  in" + remoteProcessedDir)
+  log.info(remoteProcessedDir+fileName)
+  InputStream stream = sftp.get(remoteProcessedDir+'/'+fileName);
+            
+                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+                String line;
+                while ((line = br.readLine()) != null) {
+                	log.info("file exists")
+                    log.info(line);
+                
+
+            } 
+			}catch (IOException io) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + io.getMessage());
+                io.getMessage();
+
+            } catch (Exception e) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + e.getMessage());
+                e.getMessage();
+
+            }
+ finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  
+}</script></con:config></con:testStep><con:properties><con:property><con:name>uuid</con:name><con:value>b39fa808-fd88-3312-bae4-351f37d86728</con:value></con:property><con:property><con:name>workspaceid</con:name><con:value>18</con:value></con:property><con:property><con:name>dfuuid</con:name><con:value/></con:property><con:property><con:name>localFilePath</con:name><con:value>D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/.csv</con:value></con:property><con:property><con:name>fileNameToUpload</con:name><con:value>.csv</con:value></con:property></con:properties></con:testCase><con:testCase id="5e9140a4-228f-4a69-8b60-72e5baaf6e0a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addTransactions" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getUUID" id="4285f136-ecbf-4d8d-8791-f57c909c3475"><con:settings/><con:config service="GetTemplates" methodName="Templates 1" resourcePath="/api/templates" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getUUID" id="64002224-db66-4131-866f-f1c40c35b36c" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:originalUri>https://connectplus-nightly.connectplus.capillarytech.com/api/templates</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="uuid" id="29df5b79-70d9-4105-bd4a-5ef2b6fee7be"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>uuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getUUID</con:sourceStep><con:sourcePath>$.[?(@.name =='Transaction v2 add')].uuid[0]</con:sourcePath><con:targetType>uuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="setDataflowName" id="af40a550-13f4-4fe3-980f-09c38f269c8c"><con:settings/><con:config><script>
+def generator = { String alphabet, int n ->
+new Random().with {
+(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+}
+}
+dataflowValue = "transction_"+generator( (('A'..'Z')+('0'..'9')+('a'..'z')).join(), 10 )
+testRunner.getTestCase().setPropertyValue("dataflowname", dataflowValue);
+log.info(dataflowValue)</script></con:config></con:testStep><con:testStep type="restrequest" name="addDataflowName" id="92b5f326-e121-46f7-9d54-70db972d175e"><con:settings/><con:config service="AddDataFlow_Name" resourcePath="/api/workspaces/{workspaceId}/templates/{uuid}/dataflows" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addDataflowName" id="028ac5fc-481a-46fe-b6e4-c958f789ab52" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request>{
+  "dataFlowName": "${#TestCase#dataflowname}"
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#uuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="getDataFlowUUID" id="7f06ffc1-ad05-4895-ad1b-ccf243c25ea3"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>dfuuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>addDataflowName</con:sourceStep><con:sourcePath>uuid</con:sourcePath><con:targetType>dfuuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="generateSourcepath" id="f41f472d-0db5-414a-a99b-1ddf62e43695"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#TestCase#dataflowname}')
+log.info dataflowValue
+pathsource="/Capillary testing/connectplus/source/"+dataflowValue
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathsource.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+  testRunner.getTestCase().setPropertyValue("sourceDirectory", pathsource);
+ 
+  
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="genearteDestinationPath" id="13bbf09b-fba0-4ee3-a02a-9cbf470277d8"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#TestCase#dataflowname}')
+log.info dataflowValue
+
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession("capillary", "data.capillarydata.com", 22)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword("captech123")
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathdes.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+ 
+  testRunner.getTestCase().setPropertyValue("processedDirectory", pathdes);
+  
+}
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="updateDataFlow" id="64707c1f-3ee2-4460-a7cb-3345ccbc5648"><con:settings/><con:config service="UpdateDataflow_Blocks" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="updateDataFlow" id="7d935905-9238-4997-8a4a-6631e77fa32b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{
+   "name": "${#TestCase#dataflowname}",
+   "uuid": "${#TestCase#dfuuid}",
+   "blocks":    [
+            {
+         "blockTypeId": 5,
+         "name": "Connect-to-destination",
+         "type": "intouch_transaction_v2",
+         "order": 2,
+         "fields":          [
+                        {
+               "name": "clientKey",
+               "displayName": "Client Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#clientkey}"
+            },
+                        {
+               "name": "clientSecret",
+               "displayName": "Client Secret",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#clientsecret}"
+            },
+                        {
+               "name": "apiEndPoint",
+               "displayName": "API EndPoint",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#transactions_endpoint}"
+            },
+                        {
+               "name": "apiBaseUrl",
+               "displayName": "API Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#api_url}"
+            },
+                        {
+               "name": "apiMethod",
+               "displayName": "API Method",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "POST",
+                  "PUT"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "POST"
+            },
+                        {
+               "name": "oAuthBaseUrl",
+               "displayName": "OAuth Base Url",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#api_url}"
+            },
+                        {
+               "name": "responseKey",
+               "displayName": "Response Key",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "$.response.*"
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "terminated": true
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 4,
+         "name": "Transform-data",
+         "type": "transform_to_transaction",
+         "order": 1,
+         "fields":          [
+                        {
+               "name": "orgId",
+               "displayName": "Intouch Org",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "1115",
+                  "1102",
+                  "1779"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "1779"
+            },
+                        {
+               "name": "fileDelimiter",
+               "displayName": "File Delimiter",
+               "defaultValue": ",",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ","
+            },
+                        {
+               "name": "formatXsactionDate",
+               "displayName": "Format Transaction Date",
+               "htmlType": "checkbox",
+               "value": "true"
+            },
+                        {
+               "name": "existingDateFormat",
+               "displayName": "Transaction Date Format",
+               "defaultValue": "yyyy-MM-dd HH:mm:ss",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "yyyy-MM-dd HH:mm:ss",
+                  "dd-MM-yyyy HH:mm:ss",
+                  "dd/MM/yyyy HH:mm:ss",
+                  "yyyy-MM-dd HH:mm:ss Z",
+                  "yyyy-MM-dd HH:mm:ssXXX"
+               ],
+               "value": "dd/MM-/yyy HH:mm:ss"
+            },
+                        {
+               "name": "headersMapping",
+               "displayName": "Headers Mapping",
+               "defaultValue": "{}",
+               "htmlType": "json",
+               "childrenFields":                {
+					"attribution.store.identifierType": {"required": true, "value": "const{TILL}"},
+					"attribution.store.identifierValue": {"required": true, "value": "const{${#TestCase#till}}"},
+					"transaction.standard.accountId": {"required": false, "value": "const{-1}"},
+					"transaction.standard.billAmount": {"required": true, "value": "sum{hdr{amount}}"},
+					"transaction.standard.billNumber": {"required": false, "value": "NUMBER"},
+					"transaction.standard.billingDate": {"required": true, "value": "const{10/7/2020 3:37:00 PM}"},
+					"transaction.standard.identifierType": {"required": false, "value": "const{MOBILE}"},
+					"transaction.standard.identifierValue": {"required": false, "value": "MOBILE"},
+					"transaction.standard.source": {"required": true, "value": "const{INSTORE}"},
+					"transaction.standard.type": {"required": true, "value": "const{REGULAR}"},										
+					"lineItem.standard.itemCode": {"required": false, "value": "ITEM_CODE"},
+					"lineItem.standard.qty": {"required": false,"value": "const{2}"},
+					"lineItem.standard.amount": {"required": false,"value": "const{1000}"}
+					
+               },
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }}
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "destinationBlockName": "Connect-to-destination"
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 6,
+         "name": "Connect-to-source",
+         "type": "sftp_pull",
+         "order": 0,
+         "fields":          [
+                        {
+               "name": "hostname",
+               "displayName": "Hostname",
+               "htmlType": "text",
+               "rules":                {
+                  "minLength":                   {
+                     "value": "5",
+                     "message": "minimum length must be 5"
+                  },
+                  "required":                   {
+                     "value": "true",
+                     "message": "this is required"
+                  },
+                  "maxLength":                   {
+                     "value": "100",
+                     "message": "maximum length can't exceed 100"
+                  }
+               },
+               "value": "${#Project#host}"
+            },
+                        {
+               "name": "username",
+               "displayName": "Username",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#username}"
+            },
+                        {
+               "name": "password",
+               "displayName": "Password",
+               "htmlType": "password",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#password}"
+            },
+                        {
+               "name": "sourceDirectory",
+               "displayName": "Source Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#sourceDirectory}"
+            },
+                        {
+               "name": "fileRegex",
+               "displayName": "Filename Pattern",
+               "htmlType": "text",
+               "possibleValues":                [
+                  ".*.csv",
+                  ".*"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ".*.csv"
+            },
+                        {
+               "name": "processedDirectory",
+               "displayName": "Processed Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#processedDirectory}"
+            },
+                        {
+               "name": "unzipFiles",
+               "displayName": "Unzip Files",
+               "htmlType": "checkbox",
+               "value": "false"
+            }
+         ],
+         "connections": [         {
+            "relationship": "success",
+            "destinationBlockName": "Transform-data"
+         }],
+         "source": true
+      }
+   ],
+   "status":    {
+      "state": "Draft",
+      "runningCount": 0,
+      "stoppedCount": 9,
+      "invalidCount": 5,
+      "disabledCount": 0
+   },
+   "schedule":{"cron":"0 0/1 * * * ? *"}
+}</con:request><con:originalUri>https://connectplus-nightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/6ede2298-f3d7-3136-9159-53db29d00149</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="scheduleDataflow" id="2e7c9c2a-015d-4bb4-9a4e-d4ae855f10e4"><con:settings/><con:config service="ScheduleDataFlow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/schedule" methodName="ScheduleDataflow" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="scheduleDataflow" id="1c4027ea-9aa8-4cd5-a9a6-8a528124641a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{"cron":"0 0/1 * * * ? *"}</con:request><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/schedule</con:originalUri><con:assertion type="Simple Contains" id="075b1110-a539-4519-8f5f-f27723d8e8c2" name="Contains"><con:configuration><token>{"cron":"0 0/1 * * * ? *"}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="activateDataflow" id="07e30651-02b5-45a8-8e43-0d4f2ecfebfb"><con:settings/><con:config service="ActivateDataflow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/state/Live" methodName="Live 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="activateDataflow" id="b5104e8a-6720-4b63-a452-c3ae3cb832da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/state/Live</con:originalUri><con:assertion type="Simple Contains" id="e5f9fb5f-d877-4a6f-8cc5-b14c8683dc99" name="Contains"><con:configuration><token>Live</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dataflowuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="generateData" id="d362b2a1-2d6d-47b6-94ea-713017cea899"><con:settings/><con:config><script>
+import au.com.bytecode.opencsv.CSVWriter
+
+
+        
+   String timestamp = System.currentTimeMillis().toString()
+   def dataflowValue=context.expand('${#TestCase#dataflowname}')
+   def fileName=dataflowValue+'.csv'
+   def TEST_OUTPUT_FILE_NAME='D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/'+fileName
+   testRunner.testCase.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+    testRunner.testCase.setPropertyValue( "fileNameToUpload",fileName )
+testRunner.testCase.testSuite.project.setPropertyValue( "fileNameToUpload", fileName )
+
+  testRunner.testCase.testSuite.project.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+  log.info("fileNameToUpload :"+ fileName)
+  log.info("localFilePath:"+ TEST_OUTPUT_FILE_NAME)
+
+	   transactions=[]
+	   //Mobile number generation
+	   Random rand = new Random();
+	for(int i=1;i&lt;=2;i++)
+	{
+   String  num1 = 9 * 100 + (rand.nextInt(10)+1 * 10) + rand.nextInt(12);
+   
+   String  num2 = (rand.nextInt(10)+1 * 100) + (rand.nextInt(10)+1 * 10) + rand.nextInt(10);
+   
+   String  num3 = (rand.nextInt(10)+1 * 100) + (rand.nextInt(10)+1 * 10) + rand.nextInt(10);
+   
+   
+
+      transactionnum = num1+num2+num3+rand.nextInt(9);
+
+   
+    transactions.add(transactionnum);
+    
+	}
+	
+ String  tempcode = (rand.nextInt(11)+1 * 100) + (rand.nextInt(11)+1 * 10) + rand.nextInt(11);
+ itemcode="SKU_"+tempcode
+
+   line1 = ["NUMBER","ITEM_CODE"]
+ 
+
+  File csvFile = new File(TEST_OUTPUT_FILE_NAME)
+  csvFile.createNewFile()
+  csvFile.withWriter { writer ->
+  CSVWriter csvWriter = new CSVWriter(writer)
+  
+  csvWriter.writeNext(line1 as String[])
+  for(txnum in transactions)
+  {
+  line2 = [txnum,itemcode]
+    csvWriter.writeNext(line2 as String[])	
+  }
+  csvWriter.close()
+ 
+                
+  }
+  log.info("transaction Data generated ")
+  
+ // testRunner.testCase.setPropertyValue("mobilenum1",phone[0] as String)
+ // testRunner.testCase.setPropertyValue("mobilenum2",phone[1] as String)
+ // testRunner.testCase.testSuite.setPropertyValue("mobilenum1",phone[0] as String)
+  testRunner.testCase.testSuite.project.setPropertyValue("txnumbers",transactions as String)
+  
+
+                
+                </script></con:config></con:testStep><con:testStep type="groovy" name="uploadinputcsv" id="aeaf0e71-fdf7-4871-aedf-84dcdb7fb310"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+ 
+def String fileContent = testCase.getPropertyValue("localFilePath")
+def String remoteFile = testCase.getPropertyValue("sourceDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start uploaded from " + fileContent)
+  
+  sftp.put(fileContent, remoteFile);
+  log.info("File Content uploaded to " + remoteFile)
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp upload process complete")
+}</script></con:config></con:testStep><con:testStep type="delay" name="200000" id="6eec7f04-8d96-4df8-a692-b44784d4e43a"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="groovy" name="validateFileProcessed" id="a55b9277-099c-471d-8915-d88de7f81e0a"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = testCase.getPropertyValue("ftpHost")
+def int ftpPort = testCase.getPropertyValue("ftpPort").toInteger()
+def String ftpUsername = testCase.getPropertyValue("ftpUsername")
+def String ftpPassword = testCase.getPropertyValue("ftpPassword")
+ def dataflowValue=context.expand('${#TestCase#dataflowname}')
+def String fileName = dataflowValue+'.csv'
+
+def String remoteProcessedDir = testCase.getPropertyValue("processedDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp file get process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start verifying file  in" + remoteProcessedDir)
+  log.info(remoteProcessedDir+fileName)
+  InputStream stream = sftp.get(remoteProcessedDir+'/'+fileName);
+            
+                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+                String line;
+                while ((line = br.readLine()) != null) {
+                	log.info("file exists")
+                    log.info(line);
+                
+
+            } 
+			}catch (IOException io) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + io.getMessage());
+                io.getMessage();
+
+            } catch (Exception e) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + e.getMessage());
+                e.getMessage();
+
+            }
+ finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  
+}</script></con:config></con:testStep><con:properties><con:property><con:name>uuid</con:name><con:value>babe5c16-f891-3940-82fa-d57f5f1f0532</con:value></con:property><con:property><con:name>workspaceid</con:name><con:value>18</con:value></con:property><con:property><con:name>dfuuid</con:name><con:value>0f1028d0-34cd-3be9-b1e8-e5b0564495b4</con:value></con:property><con:property><con:name>dataflowname</con:name><con:value>transction_a6tK11HKyZ</con:value></con:property><con:property><con:name>sourceDirectory</con:name><con:value>/Capillary testing/connectplus/source/customer_ZIDzwLCjju</con:value></con:property><con:property><con:name>localFilePath</con:name><con:value>D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/transction_a6tK11HKyZ.csv</con:value></con:property><con:property><con:name>fileNameToUpload</con:name><con:value>transction_a6tK11HKyZ.csv</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobilenum2</con:name><con:value>[9151241193, 9201161182]</con:value></con:property></con:properties></con:testSuite><con:testSuite id="4b5a55c1-03fb-4355-b6e5-985717289059" name="validateData"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3f1badfe-cdfe-4388-aca3-b2dc16a0634a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="validateCustomerData" searchProperties="true"><con:settings/><con:testStep type="groovy" name="poll filedata processed status" id="3ac95e01-9b7a-479e-954d-9f58784eb084"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestStepResult
+import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
+import com.eviware.soapui.model.testsuite.TestStep
+
+int maxRetries = 10;
+
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
+
+while(maxRetries > 0){
+	TestStep teststep = testRunner.testCase.testSuite.testCases["validateData"].testSteps["getcustomerData"]
+	log.info(teststep)
+	TestStepResult result = teststep.run(testRunner,context)
+	TestStepStatus status = result.getStatus();
+	log.info "Status -- " + status
+	if(status == TestStepStatus.OK){
+		maxRetries=0;
+		break;
+	}
+	else{
+		sleep(polling_time);
+	}
+	maxRetries--;
+}</script></con:config></con:testStep><con:testStep type="groovy" name="loop" id="d801d299-198f-405d-b07b-7632aa481aa9"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.TestStepResult
+import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
+import com.eviware.soapui.model.testsuite.TestStep
+def mobilenums = context.expand('${#Project#mobilenum2}')
+ def numberlist=new JsonSlurper().parseText(mobilenums)
+ log.info("lengthod"+numberlist.size())
+ 
+ 
+ def loop = 0
+while (loop &lt; numberlist.size()){ //must match if loop
+log.info "Still Running " + loop
+testRunner.testCase.setPropertyValue("mobilenum",numberlist[loop] as String)
+TestStep teststep = testRunner.testCase.testSuite.testCases["validateCustomerData"].testSteps["getcustomerData"]
+log.info(teststep)
+	TestStepResult result = teststep.run(testRunner,context)
+	TestStepStatus status = result.getStatus();
+	log.info "Status -- " + status
+loop = loop + 1
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="getcustomerData" id="65602c4a-85e1-4251-a44b-a182b45fcfc0"><con:settings/><con:config service="GetCustomers" resourcePath="/v1.1/customer/get" methodName="Get 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getcustomerData" id="cc745a20-ed9b-4dfc-8cbd-e428a1d3a22e" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#api_url}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/get</con:originalUri><con:assertion type="Simple Contains" id="44277ff7-cb4b-4ae4-9056-519347e1013d" name="Contains"><con:configuration><token>Customer successfully retrieved</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>hyd_2</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="format" value="json"/>
+  <con:entry key="mobile" value="${#TestCase#mobilenum}"/>
+</con:parameters><con:parameterOrder><con:entry>format</con:entry><con:entry>mobile</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>mobilenum</con:name><con:value>9211141216</con:value></con:property></con:properties></con:testCase><con:testCase id="14d436a6-d423-4ac7-88eb-5fb66959e65b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="validateTransactionData" searchProperties="true"><con:settings/><con:testStep type="groovy" name="poll filedata processed status" id="d11cabb2-4927-4924-965a-0cc52ed22bf6"><con:settings/><con:config><script>import com.eviware.soapui.model.testsuite.TestStepResult
+import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
+import com.eviware.soapui.model.testsuite.TestStep
+
+int maxRetries = 10;
+
+int polling_time = Integer.parseInt(context.expand('${#Project#polling_time}'));
+
+while(maxRetries > 0){
+	TestStep teststep = testRunner.testCase.testSuite.testCases["validateTransactionData"].testSteps["getTransaction"]
+	log.info(teststep)
+	TestStepResult result = teststep.run(testRunner,context)
+	TestStepStatus status = result.getStatus();
+	log.info "Status -- " + status
+	if(status == TestStepStatus.OK){
+		maxRetries=0;
+		break;
+	}
+	else{
+		sleep(polling_time);
+	}
+	maxRetries--;
+}</script></con:config></con:testStep><con:testStep type="groovy" name="loop" id="b8e977c0-81bf-40ea-bd76-aeecc6c67777"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import com.eviware.soapui.model.testsuite.TestStepResult
+import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus
+import com.eviware.soapui.model.testsuite.TestStep
+def txnums = context.expand('${#Project#txnumbers}')
+ def numberlist=new JsonSlurper().parseText(txnums)
+ log.info("lengthod"+numberlist.size())
+ 
+ 
+ def loop = 0
+while (loop &lt; numberlist.size()){ //must match if loop
+log.info "Still Running " + loop
+testRunner.testCase.setPropertyValue("transactionnum",numberlist[loop] as String)
+TestStep teststep = testRunner.testCase.testSuite.testCases["validateTransactionData"].testSteps["getTransaction"]
+log.info(teststep)
+	TestStepResult result = teststep.run(testRunner,context)
+	TestStepStatus status = result.getStatus();
+	log.info "Status -- " + status
+loop = loop + 1
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="getTransaction" id="203caed2-4442-4cba-9906-ce8d0e39a36a"><con:settings/><con:config service="https://crm-nightly-new.cc.capillarytech.com" methodName="Get 1" resourcePath="/v1.1/transaction/get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getTransaction" id="69984f28-f355-4f9c-b464-5589c9403572" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#api_url}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/transaction/get</con:originalUri><con:assertion type="Simple Contains" id="afaea628-d0fd-408d-85df-03f1fe0185b4" name="Contains"><con:configuration><token>Transaction retrieved successfully</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>hyd_2</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="number" value="${#TestCase#transactionnum}"/>
+  <con:entry key="format" value="json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionnum</con:name><con:value>9211161308</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:testSuite id="b8d7dc76-d105-4bbc-9865-677ba1073866" name="addMergeDataFlows"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ed22f92a-7ad2-4c84-b949-2ad4b0dd26df" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="singleFile" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getUUID" id="54311b30-37ca-4142-bc0f-cce75ebe1eea"><con:settings/><con:config service="GetTemplates" methodName="Templates 1" resourcePath="/api/templates" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getUUID" id="f4671ea2-376d-431e-a68e-47f8aa5ff2e2" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="uuid" id="25801377-828e-48ba-aeb5-a17875d774bc"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>uuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getUUID</con:sourceStep><con:sourcePath>$.[?(@.name =='sftp to sftp single file header')].uuid[0]</con:sourcePath><con:targetType>uuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="setDataflowName" id="e434e9b1-ed31-47fb-a873-cb12d1fffdfd"><con:settings/><con:config><script>
+def generator = { String alphabet, int n ->
+new Random().with {
+(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+}
+}
+dataflowValue = "singlefilemerge_"+generator( (('A'..'Z')+('0'..'9')+('a'..'z')).join(), 10 )
+//testRunner.getTestCase().setPropertyValue("singlefiledataflowname", dataflowValue);
+ testRunner.testCase.testSuite.project.setPropertyValue( "singlefiledataflowname", dataflowValue )
+log.info(dataflowValue)</script></con:config></con:testStep><con:testStep type="restrequest" name="addDataFlowName" id="d5e4d40f-fd7e-4b7f-b624-7463229feba1"><con:settings/><con:config service="AddDataFlow_Name" resourcePath="/api/workspaces/{workspaceId}/templates/{uuid}/dataflows" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addDataFlowName" id="028ac5fc-481a-46fe-b6e4-c958f789ab52" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request>{
+  "dataFlowName": "${#Project#singlefiledataflowname}"
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#uuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="getDataFlowUUID" id="7d4ef7c6-cad3-4655-8bb2-ce06e6f1a085"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>dfuuid</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>addDataFlowName</con:sourceStep><con:sourcePath>uuid</con:sourcePath><con:targetType>dfuuid</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="generateSourcepath" id="780ad89a-6036-4ab9-a5d1-5319a878a217"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#Project#singlefiledataflowname}')
+log.info(dataflowValue)
+pathsource="/Capillary testing/connectplus/source/"+dataflowValue
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession(ftpUsername,ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathsource.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+  testRunner.getTestCase().setPropertyValue("sourceDirectory", pathsource);
+ 
+  
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="genearteRemotePath" id="a4b37e56-a4a2-47d6-9832-20f1500b0956"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#Project#singlefiledataflowname}')
+def outputHeaderMappings=context.expand('${#TestCase#outputHeaderMappings}')
+log.info dataflowValue
+pathremote="/Capillary testing/connectplus/remote/"+dataflowValue
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession(ftpUsername,ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathremote.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp remotefile path creation process complete")
+
+//destination folder create
+  
+ testRunner.testCase.testSuite.project.setPropertyValue( "remoteDirectory", pathremote )
+ testRunner.testCase.testSuite.project.setPropertyValue( "outputHeaderMappingsvalidate", outputHeaderMappings)
+ log.info(pathremote)
+
+ // testRunner.getTestCase().setPropertyValue("remoteDirectory", pathremote);
+ 
+  
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="genearteDestinationPath" id="15033c05-9d1a-42a8-87f3-d21e11698fe4"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+println("Declare createFolder function....");
+def dataflowValue=context.expand('${#Project#singlefiledataflowname}')
+log.info dataflowValue
+
+pathdes="/Capillary testing/connectplus/destination/"+dataflowValue
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+ 
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ String[] folders = pathdes.split( "/" );
+for ( String folder : folders ) {
+    if ( folder.length() > 0 ) {
+        try {
+            sftp.cd( folder );
+        }
+        catch ( SftpException e ) {
+            sftp.mkdir( folder );
+            sftp.cd( folder );
+        }
+    }
+}
+  
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp file path creation process complete")
+
+//destination folder create
+  
+ 
+
+ 
+  testRunner.getTestCase().setPropertyValue("processedDirectory", pathdes);
+  
+}
+
+</script></con:config></con:testStep><con:testStep type="restrequest" name="updateDataflow" id="03568e36-a223-4cb6-9fad-966bd267feea"><con:settings/><con:config service="UpdateDataflow_Blocks" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}" methodName="Dataflows 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="updateDataflow" id="7a42f0da-2c95-4009-9162-68720f1c72ea" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{
+   "name": "${#Project#singlefiledataflowname}",
+   "uuid": "${#TestCase#dfuuid}",
+   "blocks":    [
+            {
+         "blockTypeId": 15,
+         "name": "Connect-to-destination",
+         "type": "sftp_push",
+         "order": 2,
+         "fields":          [
+                        {
+               "name": "hostname",
+               "displayName": "Hostname",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#host}"
+            },
+                        {
+               "name": "username",
+               "displayName": "Username",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#username}"
+            },
+                        {
+               "name": "password",
+               "displayName": "Password",
+               "htmlType": "password",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#password}"
+            },
+                        {
+               "name": "remotePath",
+               "displayName": "Remote Path",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#remoteDirectory}"
+            },
+                        {
+               "name": "createRemoteDirectory",
+               "displayName": "Create Remote Directory",
+               "htmlType": "checkbox",
+               "value": "true"
+            },
+                        {
+               "name": "conflictResolution",
+               "displayName": "Conflict Resolution",
+               "htmlType": "select",
+               "possibleValues":                [
+                  "NONE",
+                  "REPLACE",
+                  "RENAME",
+                  "IGNORE",
+                  "FAIL"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "REPLACE"
+            },
+                        {
+               "name": "zipFiles",
+               "displayName": "Zip Files",
+               "htmlType": "checkbox",
+               "value": "false"
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "success",
+               "terminated": true
+            },
+                        {
+               "relationship": "failure",
+               "terminated": true
+            },
+                        {
+               "relationship": "reject",
+               "terminated": true
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 12,
+         "name": "Rebuild-headers",
+         "type": "transform_header_data",
+         "order": 1,
+         "fields":          [
+                        {
+               "name": "headersMapping",
+               "displayName": "Headers Mapping",
+               "htmlType": "text",
+               "childrenFields": {},
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#headerMappings}"
+            },
+                        {
+               "name": "outputHeadersOrder",
+               "displayName": "Output Headers Order",
+               "htmlType": "text",
+               "value": "${#TestCase#outputHeaderMappings}"
+            },
+                        {
+               "name": "inputFileDelimiter",
+               "displayName": "Input File Delimiter",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ","
+            },
+                        {
+               "name": "outputFileDelimiter",
+               "displayName": "Output File Delimiter",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ","
+            },
+                        {
+               "name": "outputFileName",
+               "displayName": "Output Filename",
+               "htmlType": "text",
+               "value": "${#Project#singlefiledataflowname}.csv"
+            }
+         ],
+         "connections":          [
+                        {
+               "relationship": "failure",
+               "terminated": true
+            },
+                        {
+               "relationship": "success",
+               "destinationBlockName": "Connect-to-destination"
+            }
+         ],
+         "source": false
+      },
+            {
+         "blockTypeId": 6,
+         "name": "Connect-to-source",
+         "type": "sftp_pull",
+         "order": 0,
+         "fields":          [
+                        {
+               "name": "hostname",
+               "displayName": "Hostname",
+               "htmlType": "text",
+               "rules":                {
+                  "required":                   {
+                     "value": "true",
+                     "message": "this is required"
+                  },
+                  "maxLength":                   {
+                     "value": "100",
+                     "message": "maximum length can't exceed 100"
+                  },
+                  "minLength":                   {
+                     "value": "5",
+                     "message": "minimum length must be 5"
+                  }
+               },
+               "value": "${#TestCase#host}"
+            },
+                        {
+               "name": "username",
+               "displayName": "Username",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#username}"
+            },
+                        {
+               "name": "password",
+               "displayName": "Password",
+               "htmlType": "password",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#Project#password}"
+            },
+                        {
+               "name": "sourceDirectory",
+               "displayName": "Source Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#sourceDirectory}"
+            },
+                        {
+               "name": "fileRegex",
+               "displayName": "Filename Pattern",
+               "htmlType": "text",
+               "possibleValues":                [
+                  ".*.csv",
+                  ".*"
+               ],
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": ".*"
+            },
+                        {
+               "name": "processedDirectory",
+               "displayName": "Processed Directory",
+               "htmlType": "text",
+               "rules": {"required":                {
+                  "value": "true",
+                  "message": "this is required"
+               }},
+               "value": "${#TestCase#processedDirectory}"
+            },
+                        {
+               "name": "unzipFiles",
+               "displayName": "Unzip Files",
+               "htmlType": "checkbox",
+               "value": "true"
+            }
+         ],
+         "connections": [         {
+            "relationship": "success",
+            "destinationBlockName": "Rebuild-headers"
+         }],
+         "source": true
+      }
+   ],
+   "status":    {
+      "state": "Stopped",
+      "runningCount": 0,
+      "stoppedCount": 6,
+      "invalidCount": 0,
+      "disabledCount": 0
+   },
+   "schedule": {"cron": "0 0 12 1 6 ? *"}
+}</con:request><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="scheduleDataflow" id="b02f91ae-addb-4856-b573-8ddc8ac105ad"><con:settings/><con:config service="ScheduleDataFlow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/schedule" methodName="ScheduleDataflow" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="scheduleDataflow" id="1c4027ea-9aa8-4cd5-a9a6-8a528124641a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request>{"cron":"0 0/1 * * * ? *"}</con:request><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/schedule</con:originalUri><con:assertion type="Simple Contains" id="075b1110-a539-4519-8f5f-f27723d8e8c2" name="Contains"><con:configuration><token>{"cron":"0 0/1 * * * ? *"}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="activateDataflow" id="665abfc4-05b1-4e7b-82e2-590afd7bbade"><con:settings/><con:config service="ActivateDataflow" resourcePath="/api/workspaces/{workspaceId}/dataflows/{uuid}/state/Live" methodName="Live 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="activateDataflow" id="b5104e8a-6720-4b63-a452-c3ae3cb832da" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://connectplus-nightly.connectplus.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://connectplusnightly.connectplus.capillarytech.com/api/workspaces/18/dataflows/03ead338-592b-3850-87db-e020bfbd10ea/state/Live</con:originalUri><con:assertion type="Simple Contains" id="e5f9fb5f-d877-4a6f-8cc5-b14c8683dc99" name="Contains"><con:configuration><token>Live</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceId" value="${#TestCase#workspaceid}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceId</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="generateData" id="cbc19185-1282-44b4-bd5a-95186cf9796d"><con:settings/><con:config><script>
+import au.com.bytecode.opencsv.CSVWriter
+
+
+        String customersource="INSTORE";
+   String loyaltyType="loyalty";
+   String customeraccountId="-1";
+   String customeridentifierType="TILL";
+   String customeridentifierValue="hyd_2";
+   String mobile="";
+   String firstName="FN";
+   String lastName="LN";
+   String timestamp = System.currentTimeMillis().toString()
+   def dataflowValue=context.expand('${#Project#singlefiledataflowname}')
+   def fileName=dataflowValue+'.csv'
+   def TEST_OUTPUT_FILE_NAME='D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/'+fileName
+   testRunner.testCase.setPropertyValue( "localFilePath", TEST_OUTPUT_FILE_NAME )
+    testRunner.testCase.setPropertyValue( "fileNameToUpload",fileName )
+testRunner.testCase.testSuite.project.setPropertyValue( "singlefileNameToUpload", fileName )
+
+  testRunner.testCase.testSuite.project.setPropertyValue( "singleFileLocalFilePath", TEST_OUTPUT_FILE_NAME )
+  log.info("singlefileNameToUpload :"+ fileName)
+  log.info("singleFileLocalFilePath:"+ TEST_OUTPUT_FILE_NAME)
+
+	   phone=[]
+	   //Mobile number generation
+	   Random rand = new Random();
+	for(int i=1;i&lt;=2;i++)
+	{
+   String  num1 = 9 * 100 + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   String  num2 = (rand.nextInt(8)+1 * 100) + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   String  num3 = (rand.nextInt(8)+1 * 100) + (rand.nextInt(8)+1 * 10) + rand.nextInt(9);
+   
+   
+
+      phoneNumber = num1+num2+num3+rand.nextInt(9);
+
+   
+    phone.add(phoneNumber);
+    
+	}
+	
+
+
+   line1 = ["source", "loyaltyType", "accountId", "identifierType","identifierValue","mobile"]
+ 
+
+  File csvFile = new File(TEST_OUTPUT_FILE_NAME)
+  csvFile.createNewFile()
+  csvFile.withWriter { writer ->
+  CSVWriter csvWriter = new CSVWriter(writer)
+  
+  csvWriter.writeNext(line1 as String[])
+  for(mobile1 in phone)
+  {
+  line2 = [customersource, loyaltyType, customeraccountId, customeridentifierType,customeridentifierValue,mobile1]
+    csvWriter.writeNext(line2 as String[])	
+  }
+  csvWriter.close()
+ 
+                
+  }
+  log.info("customer Data generated ")
+  
+ </script></con:config></con:testStep><con:testStep type="groovy" name="uploadinputcsv" id="c642c254-91eb-493d-b3da-cf4460853cd0"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+ 
+def String fileContent = testRunner.testCase.testSuite.project.getPropertyValue("singleFileLocalFilePath")
+def String remoteFile = testCase.getPropertyValue("sourceDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp upload process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start uploaded from " + fileContent)
+  
+  sftp.put(fileContent, remoteFile);
+  log.info("File Content uploaded to " + remoteFile)
+     
+} catch (JSchException e) {
+  e.printStackTrace()
+  log.info("JSchException " + e.message)
+} catch (SftpException e) {
+  e.printStackTrace()
+  log.info("SftpException " + e.message)
+} catch (Exception e) {
+  e.printStackTrace()
+  log.info("Exception " + e.message)
+} finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  log.info("sftp upload process complete")
+}</script></con:config></con:testStep><con:testStep type="delay" name="200000" id="478e84a4-ef03-4e84-8ad3-cacfad71c7fa"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="groovy" name="validateFileProcessed" id="f9722a5d-87ab-40a8-828e-7309b54fb965"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+ def String dataflowValue=context.expand('${#Project#singlefiledataflowname}')
+ 
+def String fileName = testRunner.testCase.testSuite.project.getPropertyValue( "singlefileNameToUpload")
+
+def String remoteProcessedDir = testCase.getPropertyValue("processedDirectory")
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp file get process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start verifying file  in" + remoteProcessedDir)
+  log.info(remoteProcessedDir+"/"+fileName)
+  InputStream stream = sftp.get(remoteProcessedDir+'/'+fileName);
+            
+                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+                String line;
+                while ((line = br.readLine()) != null) {
+                	log.info("file exists")
+                    log.info(line);
+                
+
+            } 
+			}catch (IOException io) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + io.getMessage());
+                io.getMessage();
+
+            } catch (Exception e) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + e.getMessage());
+                e.getMessage();
+
+            }
+ finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="validateErrors" id="4dc94add-9a0e-44f7-8c7a-5374a4708cdc"><con:settings/><con:config service="GetErrors" resourcePath="/api/workspaces/{workspaceid}/dataflows/{uuid}/errors" methodName="Errors 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of validateErrors" id="becbb513-3e05-4bf2-97ff-57913de43e82" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Authorization}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#connect_url}</con:endpoint><con:request/><con:originalUri>http://connectplus-nightly.connectplus.capillarytech.com/oauth2/authorization/google</con:originalUri><con:assertion type="Simple Contains" id="543fe7c9-ad9a-4c04-bb49-47b900ee9432" name="Contains"><con:configuration><token>WARNING</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="uuid" value="${#TestCase#dfuuid}"/>
+  <con:entry key="workspaceid" value="${#TestCase#workspaceId}"/>
+</con:parameters><con:parameterOrder><con:entry>workspaceid</con:entry><con:entry>uuid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>uuid</con:name><con:value>9c839789-4a00-3086-8535-da54cd4ef5f2</con:value></con:property><con:property><con:name>workspaceid</con:name><con:value>18</con:value></con:property><con:property><con:name>dfuuid</con:name><con:value>fa39a753-cbc7-3ba5-ab63-266ab2718d45</con:value></con:property><con:property><con:name>dataflowname</con:name><con:value>singlefilemerge_LQl4ULz9B4</con:value></con:property><con:property><con:name>sourceDirectory</con:name><con:value>/Capillary testing/connectplus/source/singlefilemerge_dw5W20T3rP</con:value></con:property><con:property><con:name>remoteDirectory</con:name><con:value>/Capillary testing/connectplus/remote/singlefilemerge_LQl4ULz9B4</con:value></con:property><con:property><con:name>processedDirectory</con:name><con:value>/Capillary testing/connectplus/destination/singlefilemerge_dw5W20T3rP</con:value></con:property><con:property><con:name>headerMappings</con:name><con:value>{\"source\":\"source\",\"loyaltyType\":\"loyaltyType\",\"accountId\":\"accountId\",\"identifierType\":\"identifierType\",\"identifierValue\":\"identifierValue\",\"mobile\":\"mobile\"}</con:value></con:property><con:property><con:name>localFilePath</con:name><con:value>D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/singlefilemerge_dw5W20T3rP.csv</con:value></con:property><con:property><con:name>fileNameToUpload</con:name><con:value>singlefilemerge_dw5W20T3rP.csv</con:value></con:property><con:property><con:name>outputHeaderMappings</con:name><con:value>source,loyaltyType,mobile</con:value></con:property></con:properties></con:testCase><con:testCase id="d5109826-5b9a-4fd0-909f-6cbce493d1bd" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="twoFiles" searchProperties="true" disabled="true"><con:settings/><con:properties/></con:testCase><con:testCase id="67713f3e-2b1c-4774-b110-e1399a6bd927" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="threeFiles" searchProperties="true" disabled="true"><con:settings/><con:properties/></con:testCase><con:properties><con:property><con:name>uuid</con:name><con:value/></con:property></con:properties></con:testSuite><con:testSuite id="666b19db-42dc-4da2-b0ba-647da1cf827c" name="validateMergeData"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="810bcbbd-0c8b-4068-bf82-c0a2f7c4c6e0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="validateSingleFileMerge" searchProperties="true"><con:settings/><con:testStep type="groovy" name="validateFileInRemoteDir" id="3fc21a6c-d641-4904-bd19-29bca925acc1"><con:settings/><con:config><script>import com.jcraft.jsch.*
+import java.nio.charset.StandardCharsets
+//
+// Properties
+// 
+def testCase = testRunner.testCase;
+//
+def String ftpHost = context.expand('${#Project#host}')
+log.info(ftpHost)
+def int ftpPort = context.expand('${#Project#port}') as Integer
+def String ftpUsername = context.expand('${#Project#username}')
+def String ftpPassword =context.expand('${#Project#password}')
+ def dataflowValue=context.expand('${#Project#singlefiledataflowname}')
+def String fileName = testRunner.testCase.testSuite.project.getPropertyValue( "singlefileNameToUpload" )
+
+def String remoteProcessedDir = testRunner.testCase.testSuite.project.getPropertyValue( "remoteDirectory" )
+//
+Channel channel = null
+Session session = null
+try {
+  log.info("Starting sftp file get process")  
+  JSch ssh = new JSch()
+  log.info(ftpUsername)
+       
+  session = ssh.getSession(ftpUsername, ftpHost, ftpPort)
+  session.setConfig("StrictHostKeyChecking", "no"); //auto accept secure host
+  session.setPassword(ftpPassword)
+  session.connect()
+  log.info("Connected to session")
+       
+  channel = session.openChannel("sftp")
+  channel.connect()
+  log.info("Connected to channel")
+       
+  ChannelSftp sftp = (ChannelSftp) channel; 
+ 
+  
+  log.info("Start verifying file  in" + remoteProcessedDir)
+  log.info(remoteProcessedDir+"/"+fileName)
+  InputStream stream = sftp.get(remoteProcessedDir+'/'+fileName);
+            
+                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+                String line;
+                while ((line = br.readLine()) != null) {
+                	log.info("file exists")
+                    log.info(line);
+                
+
+            } 
+			}catch (IOException io) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + io.getMessage());
+                io.getMessage();
+
+            } catch (Exception e) {
+                System.out.println("Exception occurred during reading file from SFTP server due to " + e.getMessage());
+                e.getMessage();
+
+            }
+ finally {
+  if (channel != null) {
+    channel.disconnect()
+    log.info("Disconnected from channel")
+  }
+  if (session != null) {
+    session.disconnect()
+    log.info("Disconnected from session")
+  }
+  
+}</script></con:config></con:testStep><con:testStep type="groovy" name="validateHeaders" id="36fcafbe-2117-4124-b024-bba1eb24d478"><con:settings/><con:config><script>//def prj = testRunner.testCase.getTestSuite().getProject();
+//def groovyUtils=new  com.eviware.soapui.support.GroovyUtils(context)
+//def projectPath = groovyUtils.projectPath+"\\"
+//log.info projectPath
+//def fileName="TestData"+".csv";
+//def filePath=projectPath+fileName;
+//log.info "Loaded "+filePath
+def String filePath = testRunner.testCase.testSuite.project.getPropertyValue( "singleFileLocalFilePath" )
+
+def file = new File(filePath);
+def listofLines=[];
+if(!file.exists()) {
+    log.info "File does not exist"
+    testRunner.cancel("Expected Input Data File:$filePath is Not Avilable,Aborting Test Execution")
+}
+else {
+    (file as List).each {
+		listofLines&lt;&lt;it
+    }
+}
+ 
+for(def line:listofLines){
+	//Skipping Commented Lines From Input data File
+	if(!line[0].equals("#")){
+		def fileds=[];
+		fileds=line.split(",");
+		int filedIndex=0;
+		String propertyName;
+		def propertyValues=[];
+		for(def field:fileds){
+			if(filedIndex==0){
+				propertyName=field;
+			}
+			field=field.trim();
+			if(filedIndex>=1){
+				if(field){
+			 		propertyValues&lt;&lt;field;
+				}
+			}
+			filedIndex++;
+		}
+		String propertyValuesList=propertyValues.join(",");
+		log.info """Property Key: $propertyName	
+				  Property Value: $propertyValuesList"""
+		testRunner.testCase.setPropertyValue(propertyName, propertyValuesList);
+	}
+}
+String logMsg="--------->>>Properies/Input data Loading Completed Successfully From External CSV File: "+filePath
+
+</script></con:config></con:testStep><con:properties><con:property><con:name>"source"</con:name><con:value>"loyaltyType","accountId","identifierType","identifierValue","mobile"</con:value></con:property><con:property><con:name>"INSTORE"</con:name><con:value>"loyalty","-1","TILL","hyd_2","9211161266"</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>endpoint</con:name><con:value/></con:property><con:property><con:name>Authorization</con:name><con:value>Basic YXV0b21hdGlvbl91c2VyOks1MjFyITMzYQ==</con:value></con:property><con:property><con:name>fileNameToUpload</con:name><con:value>transction_a6tK11HKyZ.csv</con:value></con:property><con:property><con:name>localFilePath</con:name><con:value>D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/transction_a6tK11HKyZ.csv</con:value></con:property><con:property><con:name>polling_time</con:name><con:value>20000</con:value></con:property><con:property><con:name>environment</con:name><con:value>nightly</con:value></con:property><con:property><con:name>connect_url</con:name><con:value>connectplus-nightly.connectplus.capillarytech.com</con:value></con:property><con:property><con:name>api_url</con:name><con:value>crm-nightly-new.cc.capillarytech.com</con:value></con:property><con:property><con:name>customers_endpoint</con:name><con:value>/v2/integrations/customer/upsert/bulk?skipChangeIdentifier=true</con:value></con:property><con:property><con:name>transactions_endpoint</con:name><con:value>/v2/transactions/bulk</con:value></con:property><con:property><con:name>clientkey</con:name><con:value>yFsClxbAu7wpFfLIIbZ78qBFg</con:value></con:property><con:property><con:name>clientsecret</con:name><con:value>cQqqhhizfBM3n20jJxawvSBi7A4tpM8ytZc2DQvV</con:value></con:property><con:property><con:name>username</con:name><con:value>capillary</con:value></con:property><con:property><con:name>password</con:name><con:value>captech123</con:value></con:property><con:property><con:name>host</con:name><con:value>data.capillarydata.com</con:value></con:property><con:property><con:name>port</con:name><con:value>22</con:value></con:property><con:property><con:name>singlefileNameToUpload</con:name><con:value>singlefilemerge_dw5W20T3rP.csv</con:value></con:property><con:property><con:name>singleFileLocalFilePath</con:name><con:value>D:/SoapUIAutomation/platform_loyalty_endtoend_tests/apis_tests/src/test/java/com/api/projects/test_data/connectplus_enetoend_test/inputcsv/singlefilemerge_dw5W20T3rP.csv</con:value></con:property><con:property><con:name>remoteDirectory</con:name><con:value>/Capillary testing/connectplus/remote/singlefilemerge_dw5W20T3rP</con:value></con:property><con:property><con:name>singlefiledataflowname</con:name><con:value>singlefilemerge_dw5W20T3rP</con:value></con:property><con:property><con:name>mobilenum2</con:name><con:value>[9161181204, 9211141216]</con:value></con:property><con:property><con:name>txnumbers</con:name><con:value>[9281251245, 9211161308]</con:value></con:property><con:property><con:name>"source"</con:name><con:value>"loyaltyType","accountId","identifierType","identifierValue","mobile","firstName","lastName"</con:value></con:property><con:property><con:name>"INSTORE"</con:name><con:value>"loyalty","-1","TILL","hyd_2","9231141184","FN","LN"</con:value></con:property><con:property><con:name>outputHeaderMappingsvalidate</con:name><con:value>source,loyaltyType,mobile</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:beforeRunScript>import groovy.json.JsonSlurper
+import java.io.FileInputStream;
+
+
+// connect to json data file based on environment specified.
+String environment = context.expand('${#Project#environment}');
+String project_dir = context.expand('${projectDir}');
+String filepath = project_dir + File.separator + "test_data" + File.separator + project.name + File.separator + environment + ".json";
+log.info environment
+try{
+//File data_file = new File(filepath);
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath),"UTF-8"))
+def json = new JsonSlurper().parse(reader);
+
+String connect_url=json.connectplus_baseurl;
+String api_url=json.api_baseurl;
+String customers_endpoint=json.api_endpoint.customers;
+String transactions_endpoint=json.api_endpoint.transactions;
+String clientkey=json.api_Oauth.clientkey;
+String clientsecret=json.api_Oauth.clientsecret;
+String username=json.sftp.username;
+String password=json.sftp.password;
+String host=json.sftp.host;
+String port=json.sftp.port;
+String Authorization=json.connect_Oauth.Authorization;
+project.setPropertyValue("connect_url",connect_url);
+project.setPropertyValue("api_url",api_url);
+project.setPropertyValue("customers_endpoint",customers_endpoint);
+project.setPropertyValue("transactions_endpoint",transactions_endpoint);
+project.setPropertyValue("clientkey",clientkey);
+project.setPropertyValue("clientsecret",clientsecret);
+project.setPropertyValue("username",username);
+project.setPropertyValue("password",password);
+project.setPropertyValue("host",host);
+project.setPropertyValue("port",port);
+project.setPropertyValue("Authorization",Authorization);
+}
+catch(Exception e){
+	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());
+	assert(false)
+}</con:beforeRunScript><con:sensitiveInformation/></con:soapui-project>
