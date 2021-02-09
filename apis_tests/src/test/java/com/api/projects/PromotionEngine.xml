@@ -1,0 +1,2340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8bc84407-5c65-4012-843b-6b83f5633ee6" activeEnvironment="Default" name="PromotionEngine" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="Generic promotion TestSuite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="Generic TestCase"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+  </con:settings>
+  <con:interface xsi:type="con:RestService" id="156d7df1-1c76-43b7-83a9-95f01ac7c3cd" wadlVersion="http://wadl.dev.java.net/2009/02" name="getAllPosPromotions" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Generic" path="/internal/v1/promotions/" id="eb055986-0d18-49be-adf4-bd8b46779854">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="getAllPosPromotions" id="a27ff447-4834-4595-a408-3ca291639dfc" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>404 500</con:status>
+          <con:params/>
+          <con:element xmlns:gen="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic">gen:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="4fef0ebb-b900-4c8f-8bba-f78075aea246" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="f4d0fbef-d160-409a-bbad-2057fe717805" wadlVersion="http://wadl.dev.java.net/2009/02" name="createPosPromotion" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Generic" path="/internal/v1/promotions" id="a2d9af25-a5b7-4aac-8d84-65343878a4ce">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="createPosPromotion" id="4e1cbe9e-805f-467a-93f1-d48ec8056a74" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>500 404 400</con:status>
+          <con:params/>
+          <con:element xmlns:gen="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic">gen:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200 201</con:status>
+          <con:params/>
+          <con:element xmlns:gen="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic">gen:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+          </con:settings>
+          <con:endpoint>${#Project#endpoint}</con:endpoint>
+          <con:request>{
+    "name": "test promotion_${#Project#rnd}",
+    "orgId":  ${#Project#orgid},
+    "priority": 1000,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "type": "ITEMCOUNT",
+            "operator": "EQUALS",
+            "value": 2.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 100.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": 1611046526349,
+    "endDate": 1611219326349,
+    "campaignId": 2013,
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="cd897dbd-bd6a-49f5-9bae-e6b1dde101ce" wadlVersion="http://wadl.dev.java.net/2009/02" name="updateAPosPromotion" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Generic" path="/internal/v1/promotions/{id}" id="abd4c88f-c8c6-49f2-b9c3-86333c30e47d">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>id</con:name>
+          <con:value/>
+          <con:style>TEMPLATE</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="updateAPosPromotion" id="60d6458c-a656-448c-ad3e-0c5995f0138b" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:fed="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a">fed:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>500 404</con:status>
+          <con:params/>
+          <con:element xmlns:fed="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a">fed:Fault</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="6e045065-b147-4f2f-9b42-0de2af36835c" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>${#Project#endpoint}</con:endpoint>
+          <con:request>{
+    "name": "test promotion",
+    "orgId":  ${#Project#orgid},
+    "priority": 5,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "type": "ITEMCOUNT",
+            "operator": "EQUALS",
+            "value": 2.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 100.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": 1611046526349,
+    "endDate": 1611219326349,
+    "campaignId": 2013,
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="id" value="${#TestCase#id}" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="d54507c7-c82b-4033-a075-9c133c1abbff" wadlVersion="http://wadl.dev.java.net/2009/02" name="getSinglePosPromotion" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+      <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="$" path="/internal/v1/promotions/{id}" id="1d9dd1d7-5ead-4d3e-abbd-6b67f4f4cdce">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>id</con:name>
+          <con:value/>
+          <con:style>TEMPLATE</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="getPosPromotionById" id="9e164510-51d0-4694-ad6d-af204ff9a62b" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>404 500</con:status>
+          <con:params/>
+          <con:element xmlns:prom="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/">prom:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>0</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="2b5c0f97-69fe-4ea5-ad39-d9c0e4a4d839" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>${#Project#endpoint}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="id" value="${#TestCase#id}" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="5f781dc4-8721-436a-ba87-4623784188f7" wadlVersion="http://wadl.dev.java.net/2009/02" name="Evaluate" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Evaluate" path="/v1/promotion/evaluate" id="9fab5574-7fda-46a8-814e-d4192b982071">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Evaluate 1" id="bb5e8142-0a24-4bde-8dec-824950c23f33" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:eval="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate">eval:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>500</con:status>
+          <con:params/>
+          <con:element xmlns:eval="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate">eval:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>${#Project#endpoint}</con:endpoint>
+          <con:request>{
+  "id": "110a7293-c789-42ab-a1c8-6b4acbe30681",
+  "txnNumber": "txn-number01",
+  "amount": 500,
+  "customerId": 100,
+  "cartItems": [
+    {
+      "referenceId": "fdc78567-bf4a-494b-9386-83045a910dcb",
+      "sku": "6676557b-a2ee-4334-aa6e-7a64ba15be37",
+      "amount": 200,
+      "qty": 2,
+      "rate": 600
+    },
+    {
+      "referenceId": "7caa090c-9278-4f25-b587-575a6f1f1405",
+      "sku": "d5a5ef5f-1f96-4180-9f31-81940469fbce",
+      "amount": 800,
+      "qty": 2,
+      "rate": 400
+    }
+  ]
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuits" disabled="true">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:properties/>
+  </con:testSuite>
+  <con:testSuite id="de558d39-3385-4245-9b31-98b3da168dd6" name="GenericPromotions_Scenarios">
+    <con:description>TestSuite generated for REST Service [Create generic promotion]</con:description>
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="7023455f-d6c7-48d3-a5c4-c8dfddc03360" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create, Edit, Verify and Disable a POS Promotion" searchProperties="true">
+      <con:description>TestCase generated for REST Resource [Generic] located at [/internal/v1/promotion/generic]</con:description>
+      <con:settings/>
+      <con:testStep type="groovy" name="Given script creates a pre-requisites" id="446a1d74-05bf-4af5-b4df-83be2c7e939e">
+        <con:settings/>
+        <con:config>
+          <script>//String requestId = UUID.randomUUID().toString()
+
+String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+String starttime = System.currentTimeMillis().toString()
+
+String endtime = (System.currentTimeMillis()+86400000).toString()
+
+//storing ids to test case level.
+testRunner.testCase.setPropertyValue("starttime", starttime);
+
+testRunner.testCase.setPropertyValue("endtime", endtime);
+
+testRunner.testCase.setPropertyValue("randomId", randomId);
+
+
+//log.info (requestId);
+//log.info ("starttime" + starttime);
+//log.info ("endtime" + endtime);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="When promotion manager create a generic promotion" id="006254db-fb9a-4031-84d3-30bc1e87debc">
+        <con:settings/>
+        <con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="When promotion manager create a generic promotion" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+              <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "test promotion_${#TestCase#randomId}",
+    "orgId": ${#Project#orgid},
+    "priority": 0,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "SUBTOTAL",
+            "operator": "EQUALS",
+            "value": 250.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+            <con:assertion type="Response SLA Assertion" id="f6ec4498-8cca-4707-94fa-980cc2d05782" name="Response SLA">
+              <con:configuration>
+                <SLA>${#Project#responseSLA}</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="951478e9-763f-4b2d-a4b2-acf1fe980609" name="Save promotion related details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionId",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="090462b5-2d5c-41fd-9736-d0613077d4e1" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Then generic promotion is created successfully" id="e52e7dcd-da77-4948-8920-5985bc664b92">
+        <con:settings/>
+        <con:config service="getSinglePosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="getPosPromotionById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Then generic promotion is created successfully" id="2b5c0f97-69fe-4ea5-ad39-d9c0e4a4d839" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="123"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="123"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="4a9da00c-d3e5-4e4a-86c8-b0ca732b480a" name="Asserting the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+def promotionNameInResponse = json.data.name;
+def promotionIdInResponse = json.data.id;
+
+promotionNameExpected = context.expand('${#TestCase#promotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Given script creates a random name for promotion" id="0f096d9b-118f-4759-ab58-6751bde4ef98">
+        <con:settings/>
+        <con:config>
+          <script>def newName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+
+def updatedName = "test promotion_"+newName
+
+// save the new name at test case level.
+testRunner.testCase.setPropertyValue('newPromotionName', updatedName)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="When promotion manager update the promotion name" id="a039819e-f52e-4d1e-8f77-45232dc001eb">
+        <con:settings/>
+        <con:config service="updateAPosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="updateAPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="When promotion manager update the promotion name" id="6e045065-b147-4f2f-9b42-0de2af36835c" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "${#TestCase#newPromotionName}",
+    "orgId": ${#Project#orgid},
+    "priority": 0,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "SUBTOTAL",
+            "operator": "EQUALS",
+            "value": 250.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="e4d17674-dc0f-496b-922a-dd8b7633a98a" name="assert promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+
+promotionIdInResponse = json.data.id
+promotionNameInResponse = json.data.name
+
+promotionNameExpected = context.expand('${#TestCase#newPromotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="fb00a1e0-6a92-4d65-9f69-dbab3736f1d6" name="Status - 200">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Response SLA Assertion" id="e9e1d31d-c3cd-4823-9b78-8ea2cc8163ae" name="Response SLA">
+              <con:configuration>
+                <SLA>${#Project#responseSLA}</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Then promotion name is updated successfully" id="cde3eef0-b00a-4858-ba5d-9d99cc2cb6f8">
+        <con:settings/>
+        <con:config service="getSinglePosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="getPosPromotionById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Then promotion name is updated successfully" id="2b5c0f97-69fe-4ea5-ad39-d9c0e4a4d839" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="123"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="123"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="4a9da00c-d3e5-4e4a-86c8-b0ca732b480a" name="Asserting the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+def promotionNameInResponse = json.data.name;
+def promotionIdInResponse = json.data.id;
+
+promotionNameExpected = context.expand('${#TestCase#newPromotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="When promotion manager updates the cart condtions" id="6bf3b055-35da-467f-96f4-9d30314fdb96">
+        <con:settings/>
+        <con:config service="updateAPosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="updateAPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="When promotion manager updates the cart condtions" id="6e045065-b147-4f2f-9b42-0de2af36835c" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "${#TestCase#newPromotionName}",
+    "orgId": ${#Project#orgid},
+    "priority": 0,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "ITEMCOUNT",
+            "operator": "LESS_THAN",
+            "value": 3
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="73ea8b69-252d-442d-b3d8-a2b8ac830417" name="assert the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+promotionNameInResponse = json.data.name
+promotionIdInResponse = json.data.id
+
+promotionNameExpected = context.expand('${#TestCase#newPromotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse
+
+
+cartConditionDic = json.data.condition
+expectedCartConditions = [
+        "type": "CART",
+        "cartCondition": [
+            "kpi": "ITEMCOUNT",
+            "operator": "LESS_THAN",
+            "value": 3],
+            "productCondition": null
+        ]
+
+assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Then the promotion cart condition updated successfully" id="51ba352f-8983-4116-bb60-9c3d09efdfb3">
+        <con:settings/>
+        <con:config service="getSinglePosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="getPosPromotionById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Then the promotion cart condition updated successfully" id="2b5c0f97-69fe-4ea5-ad39-d9c0e4a4d839" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="123"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="123"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="4a9da00c-d3e5-4e4a-86c8-b0ca732b480a" name="Asserting the cart condition details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+promotionNameInResponse = json.data.name
+promotionIdInResponse = json.data.id
+
+promotionNameExpected = context.expand('${#TestCase#newPromotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse
+
+
+cartConditionDic = json.data.condition
+expectedCartConditions = [
+        "type": "CART",
+        "cartCondition": [
+            "kpi": "ITEMCOUNT",
+            "operator": "LESS_THAN",
+            "value": 3],
+            "productCondition": null
+        ]
+
+assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Given script create the updated start/end time for promotion" id="365c5adb-491a-46ae-8409-685a2cb8949e">
+        <con:settings/>
+        <con:config>
+          <script>def starttime = testRunner.testCase.getPropertyValue("starttime");
+def updatedStartTime = Long.parseLong(starttime)-86400000;
+
+def endtime = testRunner.testCase.getPropertyValue("endtime");
+def updatedEndTime = Long.parseLong(endtime)+96400000;
+
+testRunner.testCase.setPropertyValue("updatedStartTime", String.valueOf(updatedStartTime));
+testRunner.testCase.setPropertyValue("updatedEndTime", String.valueOf(updatedEndTime));</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="When promotion manager updates the start/end dates" id="867b9d68-a932-464e-8a92-fdcf7d4fb567">
+        <con:settings/>
+        <con:config service="updateAPosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="updateAPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="When promotion manager updates the start/end dates" id="6e045065-b147-4f2f-9b42-0de2af36835c" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "${#TestCase#newPromotionName}",
+    "orgId": ${#Project#orgid},
+    "priority": 0,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "ITEMCOUNT",
+            "operator": "LESS_THAN",
+            "value": 3
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#updatedStartTime},
+    "endDate": ${#TestCase#updatedEndTime},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="51ea1ba9-7e2b-466a-897d-54cd46194fbb" name="assert the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+promotionNameInResponse = json.data.name
+promotionIdInResponse = json.data.id
+
+promotionNameExpected = context.expand('${#TestCase#newPromotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+startDateInResponse = json.data.startDate.toString()
+endDateInResponse = json.data.endDate.toString()
+
+expectedStartDate = context.expand('${#TestCase#updatedStartTime}')
+expectedEndDate = context.expand('${#TestCase#updatedEndTime}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse
+assert(startDateInResponse == expectedStartDate):"Start date is not as expected."
+assert(endDateInResponse == expectedEndDate) : "End date is not expected."</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="2cf9cc94-0c81-47ca-928d-ea0b4ecf31bd" name="status - 200">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Then the promotion start/end dates updated successfully" id="070a61ae-c1c4-49e2-9981-c8164762eef3">
+        <con:settings/>
+        <con:config service="getSinglePosPromotion" resourcePath="/internal/v1/promotions/{id}" methodName="getPosPromotionById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Then the promotion start/end dates updated successfully" id="2b5c0f97-69fe-4ea5-ad39-d9c0e4a4d839" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="123"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="123"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="4a9da00c-d3e5-4e4a-86c8-b0ca732b480a" name="assert the start/end date">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+promotionNameInResponse = json.data.name
+promotionIdInResponse = json.data.id
+
+promotionNameExpected = context.expand('${#TestCase#newPromotionName}')
+promotionIdExpected = context.expand('${#TestCase#promotionId}')
+
+startDateInResponse = json.data.startDate.toString()
+endDateInResponse = json.data.endDate.toString()
+
+expectedStartDate = context.expand('${#TestCase#updatedStartTime}')
+expectedEndDate = context.expand('${#TestCase#updatedEndTime}')
+
+assert(promotionNameInResponse == promotionNameExpected):"Promotion names are not expected. Expected = " + promotionNameExpected + " Actual = " + promotionNameInResponse
+assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse
+assert(startDateInResponse == expectedStartDate):"Start date is not as expected."
+assert(endDateInResponse == expectedEndDate) : "End date is not expected."</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="befc64c9-e3d0-4c48-9978-b2b91a8d0bd0" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#promotionId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Get all generic promotion" id="c33a15da-e18b-4d39-a285-8421d10ee9b9" disabled="true">
+        <con:settings/>
+        <con:config service="getAllPosPromotions" resourcePath="/internal/v1/promotions/" methodName="getAllPosPromotions" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get all generic promotion" id="4fef0ebb-b900-4c8f-8bba-f78075aea246" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+            <con:assertion type="Simple Contains" id="1b1f9399-f253-422a-9b14-ce6c725d7bd0" name="Contains" disabled="true">
+              <con:configuration>
+                <token>test_promotion_${name#updatedName}</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="8cca65dd-aca3-49e0-8a3f-51938034cb0d" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:setupScript/>
+      <con:tearDownScript/>
+      <con:properties>
+        <con:property>
+          <con:name>starttime</con:name>
+          <con:value>1612850115182</con:value>
+        </con:property>
+        <con:property>
+          <con:name>endtime</con:name>
+          <con:value>1612936515182</con:value>
+        </con:property>
+        <con:property>
+          <con:name>randomId</con:name>
+          <con:value>58BE1E3VI6</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId</con:name>
+          <con:value>602223c4669d8d234ac10d6a</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName</con:name>
+          <con:value>test promotion_58BE1E3VI6</con:value>
+        </con:property>
+        <con:property>
+          <con:name>newPromotionName</con:name>
+          <con:value>test promotion_763MYD56FF</con:value>
+        </con:property>
+        <con:property>
+          <con:name>updatedStartTime</con:name>
+          <con:value>1612763715182</con:value>
+        </con:property>
+        <con:property>
+          <con:name>updatedEndTime</con:name>
+          <con:value>1613032915182</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase>
+    <con:testCase id="74567e05-576c-4b30-9166-36ba0e4f428e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create a POS promotion, Evaluate to check" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="Given script creates a pre-requisites" id="eb9b3c30-b533-47e4-96b7-78b7c5300190">
+        <con:settings/>
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+
+
+
+String starttime = System.currentTimeMillis().toString()
+
+String endtime = (System.currentTimeMillis()+86400000).toString()
+
+//storing ids to test case level.
+testRunner.testCase.setPropertyValue("starttime", starttime);
+
+testRunner.testCase.setPropertyValue("endtime", endtime);
+
+testRunner.testCase.setPropertyValue('promotionName', promotionName)
+
+tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
+tnxNumber = "txn-number01"
+sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
+referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
+userId = "100"
+testRunner.testCase.setPropertyValue("tnxId",tnxId)
+testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
+testRunner.testCase.setPropertyValue("sku",sku)
+testRunner.testCase.setPropertyValue("referenceId",referenceId)
+testRunner.testCase.setPropertyValue("userId",userId)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Then promotion manager creates a generic promotion" id="dc8db42a-7945-47f3-bc1e-7668758b8321">
+        <con:settings/>
+        <con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Then promotion manager creates a generic promotion" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+              <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "test promotion_${#TestCase#promotionName}",
+    "orgId": ${#Project#orgid},
+    "priority": 0,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "SUBTOTAL",
+            "operator": "EQUALS",
+            "value": 25000.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+            <con:assertion type="Response SLA Assertion" id="f6ec4498-8cca-4707-94fa-980cc2d05782" name="Response SLA" disabled="true">
+              <con:configuration>
+                <SLA>300</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="fc484aac-700e-4a86-b678-32221180ff2e" name="save promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionId",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="40fa3494-84e9-49ec-b6d8-9120b653e218" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="And evaluate a promotion against a transaction" id="8f8d1aae-44b0-4b26-865b-f87d649991e8">
+        <con:settings/>
+        <con:config service="Evaluate" resourcePath="/v1/promotion/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="And evaluate a promotion against a transaction" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+  "id": "${#TestCase#tnxId}",
+  "txnNumber": "${#TestCase#tnxNumber}",
+  "amount": 25000,
+  "customerId": "${#TestCase#userId}",
+  "cartItems": [
+    {
+      "referenceId": "${#TestCase#referenceId}",
+      "sku": "${#TestCase#sku}",
+      "amount": 25000,
+      "qty": 1,
+      "rate": 25000
+    }
+  ]
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="0f2cf3c0-ee6a-44eb-9274-4981e0e1388c" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="29579e1b-af29-4b59-82a3-b3c70bb36c7f" name="Script Assertion" disabled="true">
+              <con:configuration>
+                <scriptText>//imports
+import groovy.json.JsonSlurper
+//grab the response
+def ResponseMessage = messageExchange.response.responseContent
+// replace "(starting&amp;ending), [](starting&amp;ending) and \ with space from response
+def TrimResponse =ResponseMessage.replaceAll('^\"|\"$','').replaceAll('^\\[|\\]$','')replaceAll('\\\\','')
+//define a JsonSlurper
+def response = new JsonSlurper().parseText(TrimResponse)
+//verify the slurper isn't empty
+assert !(response.isEmpty())
+def totalAppPromo= response.data.appliedPromotions.size()
+
+log.info(totalAppPromo)
+def createdPromotionId = messageExchange.modelItem.testStep.testCase.testSuite.getPropertyValue( "promotionid" )
+boolean flag = false;
+
+for(int i=0;i&lt;totalAppPromo;i++){
+	def appliedPromotionId = response.data.appliedPromotions[i].id
+	if( createdPromotionId == appliedPromotionId){
+		flag = true;
+		break;
+		}
+	}
+assert flag == true</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="3f66b6bc-2d51-44eb-8adb-2271b6aba827" name="assert the transaction details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// Get and verify the transaction details.
+tnxIdInResponse = json.data.id
+tnxNumberInResponse = json.data.txnNumber
+tnxAmountInResponse = json.data.amount
+customerIdInResponse = json.data.customerId.toString()
+tnxReferenceIdInResponse = json.data.cartItems[0].referenceId
+skuInResponse = json.data.cartItems[0].sku
+
+expectedTnxId = context.expand('${#TestCase#tnxId}')
+expectedTnxNumber = context.expand('${#TestCase#tnxNumber}')
+expectedSku = context.expand('${#TestCase#sku}')
+expectedRefId = context.expand('${#TestCase#referenceId}')
+expectedUserId = context.expand('${#TestCase#userId}')
+
+assert(expectedTnxId == tnxIdInResponse) : "Tnx Id is not as expected";
+assert(expectedTnxNumber == tnxNumberInResponse): "Tnx Number is not as expected";
+assert(tnxAmountInResponse == 25000)
+assert(customerIdInResponse == expectedUserId): "Customer Id is not as expected";
+assert(tnxReferenceIdInResponse == expectedRefId):"Reference Id is not as expected";
+assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="dfe46d0e-0ab3-4d5f-818e-0ac2bc3e55a2" name="assert the applied promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+lstOfAppliedPromotions = json.data.appliedPromotions
+
+promotionId = context.expand('${#TestCase#promotionId}')
+promotionName = context.expand('${#TestCase#promotionName}')
+expectedPromotion = [
+            "id": "${promotionId}",
+            "name": "${promotionName}",
+            "messageLabel": "test!!",
+            "discount": 250,
+            "discountAppliedOnQuantity": null,
+            "promotionAppliedOnQuantity": null
+         ]
+isCreatedPromotionInAppliedPromotions = false;
+for(promotion in lstOfAppliedPromotions){
+	if(promotion.equals(expectedPromotion)){
+		isCreatedPromotionInAppliedPromotions = true;
+		break;
+	}
+}
+
+log.info isCreatedPromotionInAppliedPromotions
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:setupScript/>
+      <con:properties>
+        <con:property>
+          <con:name>starttime</con:name>
+          <con:value>1612850118414</con:value>
+        </con:property>
+        <con:property>
+          <con:name>endtime</con:name>
+          <con:value>1612936518414</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName</con:name>
+          <con:value>test promotion_JFYARJ5OHV</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId</con:name>
+          <con:value>602223c6669d8d234ac10d6b</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnxId</con:name>
+          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnxNumber</con:name>
+          <con:value>txn-number01</con:value>
+        </con:property>
+        <con:property>
+          <con:name>sku</con:name>
+          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+        </con:property>
+        <con:property>
+          <con:name>referenceId</con:name>
+          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+        </con:property>
+        <con:property>
+          <con:name>userId</con:name>
+          <con:value>100</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase>
+    <con:testCase id="18c68673-3a12-45a2-9cdc-794ed3daf18f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="EndUser apply on cart based on pos promo expiry date" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="Given script sets the start/end times" id="8a1cf9ac-4cc3-4b0b-8aaa-718fa26a5d45">
+        <con:settings/>
+        <con:config>
+          <script>String starttime = System.currentTimeMillis().toString()
+
+String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+
+// set expiry time as after 5 mins
+String time1 = (System.currentTimeMillis()+300000).toString()
+
+// set expiry time as after 10 mins
+String time2 = (System.currentTimeMillis()+600000).toString()
+
+// set expiry time as after 15 mins
+String time3 = (System.currentTimeMillis()+900000).toString()
+
+//storing ids to test case level.
+testRunner.testCase.setPropertyValue("starttime", starttime);
+
+testRunner.testCase.setPropertyValue("time1", time1);
+
+testRunner.testCase.setPropertyValue("time2", time2);
+
+testRunner.testCase.setPropertyValue("time3", time3);
+testRunner.testCase.setPropertyValue("randomId", randomId)
+
+tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30691"
+tnxNumber = "txn-number" + randomId
+sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
+referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
+userId = "100"
+testRunner.testCase.setPropertyValue("tnxId",tnxId)
+testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
+testRunner.testCase.setPropertyValue("sku",sku)
+testRunner.testCase.setPropertyValue("referenceId",referenceId)
+testRunner.testCase.setPropertyValue("userId",userId)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="And promotion is created with the expiry of 5 mins from now" id="f48d653e-4326-4dca-8526-9b2d1229d19b">
+        <con:settings/>
+        <con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="And promotion is created with the expiry of 5 mins from now" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+              <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "test promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
+    "orgId": ${#Project#orgid},
+    "priority": 1,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "SUBTOTAL",
+            "operator": "GREATER_THAN_OR_EQUAL",
+            "value": 250.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#time1},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="0a8c97be-4333-4cbb-a4ea-b1e439fab4ff" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="65663dc1-56c0-42f9-873a-77e2b45566b0" name="assert/save the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionId5min",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName5min",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"
+
+promotionDetail_5min = [
+            "id": promotionId,
+            "name": promotionName,
+            "messageLabel": "test!!",
+            "discount": 250,
+            "discountAppliedOnQuantity": null,
+            "promotionAppliedOnQuantity": null
+         ]
+
+messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_5min",promotionDetail_5min.inspect())</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="And promotion is created with the expiry of 10 mins from now" id="150a842c-0bdc-496a-bdd3-03388c6530da">
+        <con:settings/>
+        <con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="And promotion is created with the expiry of 10 mins from now" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+              <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "test promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
+    "orgId": ${#Project#orgid},
+    "priority": 1,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "SUBTOTAL",
+            "operator": "GREATER_THAN_OR_EQUAL",
+            "value": 250.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#time2},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="b8c1c7cc-177d-445a-8b19-aea057ff34c2" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="0a6857eb-0cfa-4984-935e-463faf2aa98a" name="save/assert the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionId10min",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName10min",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"
+
+promotionDetails_10min = [
+            "id": promotionId,
+            "name": promotionName,
+            "messageLabel": "test!!",
+            "discount": 250,
+            "discountAppliedOnQuantity": null,
+            "promotionAppliedOnQuantity": null
+         ]
+messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_10min",promotionDetails_10min.inspect())</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="And promotion is created with the expiry of 15 mins from now" id="ee174273-a40f-4dbd-9c75-16b58b402f42">
+        <con:settings/>
+        <con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="And promotion is created with the expiry of 15 mins from now" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-USER-ID" value="${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+              <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+    "name": "test promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
+    "orgId": ${#Project#orgid},
+    "priority": 1,
+    "active": true,
+    "messageLabel": "test!!",
+    "type": "POS",
+    "condition": {
+        "type": "CART",
+        "cartCondition": {
+            "kpi": "SUBTOTAL",
+            "operator": "GREATER_THAN_OR_EQUAL",
+            "value": 250.0
+        }
+    },
+    "action": {
+        "type": "CART_BASED",
+        "cartBasedAction": {
+            "type": "ABSOLUTE",
+            "value": 250.0
+        }
+    },
+    "createdBy": 100,
+    "createdOn": 0,
+    "lastUpdatedBy": 100,
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#time3},
+    "campaignId": ${#TestSuite#rnd},
+    "maxRedemptionRestriction": {
+        "repeatFrequency": "DAYS",
+        "minTimeBetweenRedemption": 1,
+        "maxRedemptionAllowed": 1
+    }
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="bd0383a2-9323-4430-90f8-5cba36d338d4" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="77b1eb22-c4e3-467c-8ea5-fd89b2e0d16a" name="save/assert the promotion details">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionId15min",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName15min",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"
+
+promotionDetails_15min = [
+            "id": promotionId,
+            "name": promotionName,
+            "messageLabel": "test!!",
+            "discount": 250,
+            "discountAppliedOnQuantity": null,
+            "promotionAppliedOnQuantity": null
+         ]
+messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",promotionDetails_15min.inspect())</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="When promotion evaluation happened for a transaction more than 250 Then applied promotions are based on expiry" id="ff236aef-dfd8-4076-9c40-7ed619c2293e">
+        <con:settings/>
+        <con:config service="Evaluate" resourcePath="/v1/promotion/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="When promotion evaluation happened for a transaction more than 250 Then applied promotions are based on expiry" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request>{
+  "id": "${#TestCase#tnxId}",
+  "txnNumber": "${#TestCase#tnxNumber}",
+  "amount": 500,
+  "customerId": "${#TestCase#userId}",
+  "cartItems": [
+    {
+      "referenceId": "${#TestCase#referenceId}",
+      "sku": "${#TestCase#sku}",
+      "amount": 500,
+      "qty": 1,
+      "rate": 250
+    }
+  ]
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="0f2cf3c0-ee6a-44eb-9274-4981e0e1388c" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="4a4861e2-2f42-4a56-865c-a2795cc2d505" name="assert the applied promotions based on expiry">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+lstOfAppliedPromotions = json.data.appliedPromotions
+numOfPromotions = lstOfAppliedPromotions.size()
+
+
+//get and assert th elast promotion applied.
+lastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-1]
+secondLastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-2]
+thirdLastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-3]
+
+expectedLastAppliedPromotion = Eval.me(context.expand('${#TestCase#promotionDetailsMap_15min}'))
+expectedSecondLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetailsMap_10min}'))
+expectedThirdLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetailsMap_5min}'))
+
+assert(expectedLastAppliedPromotion.equals(lastAppliedPromotion))
+assert(expectedSecondLastPromotion.equals(secondLastAppliedPromotion))
+assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:setupScript/>
+      <con:properties>
+        <con:property>
+          <con:name>starttime</con:name>
+          <con:value>1612850119174</con:value>
+        </con:property>
+        <con:property>
+          <con:name>time1</con:name>
+          <con:value>1612850419175</con:value>
+        </con:property>
+        <con:property>
+          <con:name>time2</con:name>
+          <con:value>1612850719175</con:value>
+        </con:property>
+        <con:property>
+          <con:name>time3</con:name>
+          <con:value>1612851019175</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId5min</con:name>
+          <con:value>602223c7669d8d234ac10d6c</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName5min</con:name>
+          <con:value>test promotion_45510977</con:value>
+        </con:property>
+        <con:property>
+          <con:name>randomId</con:name>
+          <con:value>S6PEVVTQ7G</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId10min</con:name>
+          <con:value>602223c7669d8d234ac10d6d</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName10min</con:name>
+          <con:value>test promotion_55083135</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId15min</con:name>
+          <con:value>602223c7669d8d234ac10d6e</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName15min</con:name>
+          <con:value>test promotion_89848435</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnxId</con:name>
+          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30691</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnxNumber</con:name>
+          <con:value>txn-numberS6PEVVTQ7G</con:value>
+        </con:property>
+        <con:property>
+          <con:name>sku</con:name>
+          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+        </con:property>
+        <con:property>
+          <con:name>referenceId</con:name>
+          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+        </con:property>
+        <con:property>
+          <con:name>userId</con:name>
+          <con:value>100</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionDetailsMap_5min</con:name>
+          <con:value>['id':'602223c7669d8d234ac10d6c', 'name':'test promotion_45510977', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null]</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionDetailsMap_10min</con:name>
+          <con:value>['id':'602223c7669d8d234ac10d6d', 'name':'test promotion_55083135', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null]</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionDetailsMap_15min</con:name>
+          <con:value>['id':'602223c7669d8d234ac10d6e', 'name':'test promotion_89848435', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null]</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>rnd</con:name>
+        <con:value>39077</con:value>
+      </con:property>
+    </con:properties>
+    <con:setupScript/>
+    <con:tearDownScript/>
+  </con:testSuite>
+  <con:properties>
+    <con:property>
+      <con:name>environment</con:name>
+      <con:value>nightly</con:value>
+    </con:property>
+    <con:property>
+      <con:name>execution_group</con:name>
+      <con:value>regression</con:value>
+    </con:property>
+    <con:property>
+      <con:name>responseSLA</con:name>
+      <con:value>1500</con:value>
+    </con:property>
+    <con:property>
+      <con:name>endpoint</con:name>
+      <con:value>promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>orgid</con:name>
+      <con:value>50371</con:value>
+    </con:property>
+    <con:property>
+      <con:name>tillid</con:name>
+      <con:value>10</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:beforeRunScript>import groovy.json.JsonSlurper
+import java.io.FileInputStream;
+
+////////////////////// Functions /////////////////////////
+
+def filterList(commaSperatedListContent){
+	def list = commaSperatedListContent.split(",");
+	def filteredList = [];
+	list.each(){
+	def entry = it.toLowerCase().replaceAll("^\\s+", "");
+	entry = entry.trim();
+	if(entry != ""){
+	filteredList.add(entry);}
+	}
+	return filteredList;
+}
+
+def customListCompare(list1,list2){
+	//list1 is the list of tags that are given by user to execute.
+	//list2 is the list of tags for specific test suite.
+	boolean isRunnable = false;
+	for(int l1 in 0 .. list1.size()-1)
+	{
+		def inputTag = list1.get(l1);
+		for(int l2 in 0 .. list2.size()-1){
+
+			if(inputTag.toString() == list2.get(l2).toString()){
+				isRunnable =  true;
+				break;
+			}
+		}
+		if(isRunnable){
+			break;
+		}
+	}
+	return isRunnable;
+}
+///////////////////// Function //////////////////////////////////////////////
+
+
+// connect to json data file based on environment specified.
+String environment = context.expand('${#Project#environment}');
+
+String project_dir = context.expand('${projectDir}');
+String filepath = project_dir + File.separator + "test_data" + File.separator + project.name + File.separator + environment + ".json";
+log.info environment
+try{
+//File data_file = new File(filepath);
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath),"UTF-8"))
+
+def json = new JsonSlurper().parse(reader);
+
+def endpoint = json.endpoint;
+
+def orgId = json.orgId;
+
+def tillId = json.authorization.tillId;
+
+project.setPropertyValue("endpoint",endpoint);
+project.setPropertyValue("orgid",orgId);
+project.setPropertyValue("tillid",tillId);
+}
+catch(Exception e){
+	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());
+	assert(false)
+}
+
+
+// Selecting the test suites to run based on the group.
+
+String executionGroups = project.getPropertyValue("execution_group")
+def filteredTags = filterList(executionGroups) ;
+
+def Conf_input = "";
+
+log.info "Reading the Configuration file.....";
+
+try{
+
+Conf_input = new File(project_dir + "/test_data/" + project.getName() + "/TestData.xml");
+
+def parser = new XmlParser(); //Get XML Parser.
+
+def Configuration = parser.parse(Conf_input);//Point parser to configration file.
+
+context.Configuration = Configuration;
+
+}
+catch(Exception e){
+		assert false : "Error in reading configuration file -- " + e.getMessage();
+}
+
+def testSuiteListToExecute = [];
+
+log.info "Fetching Test-Scenarios to execute....";
+
+def testSuites = project.getTestSuiteList();
+
+//Enable all TestSuites.
+for(j in 0 .. testSuites.size()-1){
+	//log.info testSuites.get(j).getName();
+	testSuites.get(j).setDisabled(false);
+}
+//Decide which test suites to execute and eventually disabled the non-relevant test suites.
+		for(i in 0 .. testSuites.size()-1) {
+   			def testSuiteName = testSuites.get(i).getName();
+   			def tags = context.Configuration.TestSuite."${testSuiteName}".tags.text()
+   			def testSuiteTags = filterList(tags);
+
+   			if(filteredTags == null || filteredTags.empty){
+   				break;
+   			}
+   			else{
+   				if(testSuiteTags == null || testSuiteTags.empty){
+   					testSuites.get(i).setDisabled(true);
+   				}
+   				else{
+   					def isRunnable = customListCompare(filteredTags,testSuiteTags);
+   					log.info testSuiteName+":::"+isRunnable
+   					if(!isRunnable){
+   						testSuites.get(i).setDisabled(true);
+   					}
+   				}
+   			}
+
+		}</con:beforeRunScript>
+  <con:sensitiveInformation/>
+</con:soapui-project>

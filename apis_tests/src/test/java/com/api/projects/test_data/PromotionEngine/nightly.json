@@ -1,0 +1,6 @@
+{
+"endpoint" : "promotion-engine-api.crm-nightly-new.cc.capillarytech.com",
+"orgId": "50371",
+"authorization":{
+  "tillId": "10"
+}}
