@@ -165,7 +165,7 @@
                           </dependency>
                         </dependencies>
                         <configuration>
-                            <projectFile>${basedir}/apis_tests/src/test/java/com/api/projects/PromotionEngine.xml</projectFile>
+                            <projectFile>${basedir}/apis_tests/src/test/java/com/api/projects/${projectname}.xml</projectFile>
                             <!--<testSuite>IntegrationTestSuite</testSuite>-->
                             <!--<testCase></testCase>-->
                             <outputFolder>${project.build.directory}/surefire-reports</outputFolder>
