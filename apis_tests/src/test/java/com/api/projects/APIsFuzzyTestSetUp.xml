@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="cb40d130-0486-4f5f-8093-9bd80b5e44b6" activeEnvironment="Default" name="platform_loyalty_endtoend_tests" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.support.SecurityTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="cb40d130-0486-4f5f-8093-9bd80b5e44b6" activeEnvironment="Default" name="APIsFuzzyTestSetUp" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.support.SecurityTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Report Format(s)" value=""/>
   <con:entry key="Host:Port" value=""/>
   <con:entry key="Export JUnit Results" value="true"/>
@@ -31,11 +32,12 @@
   <con:entry key="Domain" value=""/>
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="false"/>
-</xml-fragment>]]></con:setting></con:settings>
+</xml-fragment>]]></con:setting>
+  </con:settings>
   <con:interface xsi:type="con:RestService" id="f83c5208-a573-4edc-b9ee-e1dbc68b757a" wadlVersion="http://wadl.dev.java.net/2009/02" name="customer_add" type="rest" definitionUrl="http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT"/><con:endpoints>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
       <con:endpoint>https://nightly.capillary.in</con:endpoint>
     </con:endpoints>
@@ -702,8 +704,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="1486e61e-cd35-4606-b74b-5c6406abb01d" wadlVersion="http://wadl.dev.java.net/2009/02" name="getCustomerV1" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT"/><con:endpoints>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
     </con:endpoints>
     <con:resource name="get" path="/v1.1/customer/get" id="5e983fb5-e4dc-456e-bead-4a470764829c">
@@ -1633,10 +1635,10 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
       "gross_amount": "101",
       "redemptions": {
         "points_redemptions": {
-          
+
         },
         "coupon_redemptions": {
-          
+
         }
       },
       "customer": {
@@ -1890,7 +1892,10 @@ log.info("Greeting" + demoinstance.hello());</script>
           <con:endpoint>http://${#Project#webhook_workspace}/api/events/reset</con:endpoint>
           <con:request/>
           <con:credentials>
-            <con:username/><con:password/><con:domain/><con:authType>No Authorization</con:authType>
+            <con:username/>
+            <con:password/>
+            <con:domain/>
+            <con:authType>No Authorization</con:authType>
           </con:credentials>
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
@@ -1973,14 +1978,19 @@ testRunner.testCase.testSuite.setPropertyValue("mobile","919" + mobile);</script
 }</con:request>
             <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
             <con:assertion type="Valid HTTP Status Codes" id="6561825e-a822-4b5a-8d71-764b779e304e" name="Status - 200">
-              <con:configuration><codes>200</codes></con:configuration>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="5b1e5a91-9733-4e79-a8df-37a1c6ca91ff" name="capture request id">
-              <con:configuration><scriptText>String req_id = messageExchange.responseHeaders["X-CAP-REQUEST-ID"][0].toString();
-messageExchange.modelItem.testCase.setPropertyValue("request_id",req_id);</scriptText></con:configuration>
+              <con:configuration>
+                <scriptText>String req_id = messageExchange.responseHeaders["X-CAP-REQUEST-ID"][0].toString();
+messageExchange.modelItem.testCase.setPropertyValue("request_id",req_id);</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="358bd7c4-10af-4b97-9e52-6af837cb76b9" name="validate customer registration data">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -2040,7 +2050,8 @@ if(json.response.customers.customer.item_status[0].message == "Customer registra
 }
 else{
 	assert false : "customer registration not done! " + json.response.customers.customer.item_status[0].message
-}</scriptText></con:configuration>
+}</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:username>${#Project#auth_username}</con:username>
@@ -2402,7 +2413,7 @@ for(consumer in consumers){
 		String event_name = json.data.eventName[index];
 		def consumerResponse = json.data.consumerResponse[index]
 		assert(consumerResponse != null)
-		
+
 	}
 	index++;
 }</scriptText>
@@ -3745,7 +3756,7 @@ for(int i = 0;i&lt;bodyCount;i++){
 	String event_name = json.body[i].eventName;
 	log.info event_name;
 	if(event_name == "pointsRedeemed"){
-		
+
 		def totalPointsRedeemed = json.body[i].data.totalPointsRedeemed;
 		def redeemedPointsCurrencyValue = json.body[i].data.redeemedPointsCurrencyValue
     assert(totalPointsRedeemed == Integer.parseInt(pointsRedeemableValue))
@@ -4463,7 +4474,7 @@ for(int i = 0;i&lt;bodyCount;i++){
 	String event_name = json.body[i].eventName;
 	log.info event_name;
 	if(event_name == "pointsRedeemed"){
-		
+
 		def totalPointsRedeemed = json.body[i].data.totalPointsRedeemed;
 		def redeemedPointsCurrencyValue = json.body[i].data.redeemedPointsCurrencyValue
     assert(totalPointsRedeemed == Integer.parseInt(pointsRedeemableValue))
@@ -5401,7 +5412,7 @@ for(int i = 0;i&lt;bodyCount;i++){
 		assert(recMobile == mobile1)
 		assert(recEmail == mobile1 + "@gmail.com")
 		assert(earningProgramPoints == 2)
-		
+
 
 	}
 	else if(event_name == "pointsTransferredReceived"){
@@ -8256,9 +8267,9 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
   "root": {
     "redeem": {
       "points_redeemed": "${#non_default_tnx_totalPoints_afterTnx} ",
-      "customer": 
-				{ 
-					"mobile": "${#non_default_tnx_mobile}" 
+      "customer":
+				{
+					"mobile": "${#non_default_tnx_mobile}"
 				},
       "group_redemption": "true",
       "notes": "redeem",
@@ -8279,7 +8290,7 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
-//get the customer and transaction details from transaction add and point redeem api response 
+//get the customer and transaction details from transaction add and point redeem api response
 String pointsToBeRedeem =  context.expand('${#non_default_tnx_totalPoints_afterTnx}')
 String tnx_user_id = context.expand('${#non_default_tnx_user_id}')
 String mob = context.expand('${#non_default_tnx_mobile}')
@@ -8483,9 +8494,9 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
   "root": {
     "redeem": {
       "points_redeemed": "${=Math.round(${#non_default_tnx_totalPoints_afterTnx}/2)}",
-      "customer": 
-				{ 
-					"mobile": "${#non_default_tnx_mobile}" 
+      "customer":
+				{
+					"mobile": "${#non_default_tnx_mobile}"
 				},
       "group_redemption": "true",
       "notes": "redeem",
@@ -8506,7 +8517,7 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
-//get the customer and transaction details from transaction add and point redeem api response 
+//get the customer and transaction details from transaction add and point redeem api response
 String pointsToBeRedeem =  context.expand('${=Math.round(${#non_default_tnx_totalPoints_afterTnx}/2)}')//dividing the awarded point and rounding off
 String tnx_user_id = context.expand('${#non_default_tnx_user_id}')
 String mob = context.expand('${#non_default_tnx_mobile}')
@@ -8720,9 +8731,9 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
     "redeem": {
       "points_redeemed": "${#non_default_tnx_totalPoints_afterTnx} ",
       "transaction_number": "${#non_default_tnx_number}",
-      "customer": 
-				{ 
-					"mobile": "${#non_default_tnx_mobile}" 
+      "customer":
+				{
+					"mobile": "${#non_default_tnx_mobile}"
 				},
       "group_redemption": "true",
       "notes": "redeem",
@@ -8743,7 +8754,7 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
-//get the customer and transaction details from transaction add and point redeem api response 
+//get the customer and transaction details from transaction add and point redeem api response
 String pointsToBeRedeem =  context.expand('${#non_default_tnx_totalPoints_afterTnx}')
 String tnx_user_id = context.expand('${#non_default_tnx_user_id}')
 String mob = context.expand('${#non_default_tnx_mobile}')
@@ -8949,9 +8960,9 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
     "redeem": {
       "points_redeemed": "${=Math.round(${#non_default_tnx_totalPoints_afterTnx}/2)}",
       "transaction_number": "${#non_default_tnx_number}",
-      "customer": 
-				{ 
-					"mobile": "${#non_default_tnx_mobile}" 
+      "customer":
+				{
+					"mobile": "${#non_default_tnx_mobile}"
 				},
       "group_redemption": "true",
       "notes": "redeem",
@@ -8972,7 +8983,7 @@ testRunner.testCase.setPropertyValue("current_time",current_time);</script>
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
-//get the customer and transaction details from transaction add and point redeem api response 
+//get the customer and transaction details from transaction add and point redeem api response
 String pointsToBeRedeem =  context.expand('${=Math.round(${#non_default_tnx_totalPoints_afterTnx}/2)}')
 String tnx_user_id = context.expand('${#non_default_tnx_user_id}')
 String mob = context.expand('${#non_default_tnx_mobile}')
@@ -9111,7 +9122,7 @@ testRunner.testCase.setPropertyValue("tnx_number",timestamp);</script>
           ]
         },
         "coupon_redemptions": {
-          
+
         }
       },
       "customer": {
@@ -9743,7 +9754,7 @@ assert('pointsIssued' in eventsInConsumer)
 for(int i = 0;i&lt;bodyCount;i++){
 	String event_name = json.body[i].eventName;
 	if(event_name == "pointsIssued"){
-		
+
 	int pointsIssued = json.body[i].data.totalPointsIssued;
 	assert(pointsIssued == 100)
 
@@ -10212,7 +10223,7 @@ int loyaltyPointsAfterEvent = json.groupLoyaltyProgramDetails.loyaltyPoints[0]
 
 int loyaltyPointsBeforeEvent = Integer.parseInt(context.expand('${#TestCase#loyalty_points}'))
 
-// Program is configured to allocate 100 points from default program and 50 points 
+// Program is configured to allocate 100 points from default program and 50 points
 // from non-defualt aplpha program whenever
 // event is triggered from aplha program.
 
@@ -10821,7 +10832,7 @@ int loyaltyPointsAfterEvent = json.groupLoyaltyProgramDetails.loyaltyPoints[0]
 
 int loyaltyPointsBeforeEvent = Integer.parseInt(context.expand('${#TestCase#loyalty_points}'))
 
-// Program is configured to allocate 100 points from default program and 50 points 
+// Program is configured to allocate 100 points from default program and 50 points
 // from non-defualt aplpha program whenever
 // event is triggered from aplha program.
 
@@ -11135,17 +11146,33 @@ for(consumer in consumers){
       </con:property>
     </con:properties>
   </con:testSuite>
-  <con:testSuite id="0f730890-7b19-4b62-b602-c57ed6cb7994" name="customer_add TestSuite"><con:description>TestSuite generated for REST Service [customer_add]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="fdafc387-ca70-497b-9861-efcd76196219" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addTestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [add] located at [/{version}/customer/add]</con:description><con:settings/><con:testStep type="groovy" name="getMobile" id="2d635a15-e83d-4cc8-92ad-5bd821d3bddd" disabled="true"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+  <con:testSuite id="0f730890-7b19-4b62-b602-c57ed6cb7994" name="v1.1/customer_SecurityTestSuite">
+    <con:description>TestSuite generated for REST Service [customer_add]</con:description>
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="fdafc387-ca70-497b-9861-efcd76196219" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="v1.1/customer_SecurityTestCase" searchProperties="true">
+      <con:description>TestCase generated for REST Resource [add] located at [/{version}/customer/add]</con:description>
+      <con:settings/>
+      <con:testStep type="groovy" name="getMobile" id="2d635a15-e83d-4cc8-92ad-5bd821d3bddd" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>String timestamp = System.currentTimeMillis().toString()
 String mobile = timestamp.substring(4);
-testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script></con:config></con:testStep><con:testStep type="restrequest" name="customerAdd" id="1ac6515e-6bb7-4d0b-8d0c-7813c59e5202"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="customerAdd" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="customerAdd" id="1ac6515e-6bb7-4d0b-8d0c-7813c59e5202">
+        <con:settings/>
+        <con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="customerAdd" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
   &lt;con:entry key="Content-Type" value="application/json"/>
 &lt;/xml-fragment></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
-          <con:request>{
+            </con:settings>
+            <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+            <con:request>{
    "root":{
       "customer":[
          {
@@ -11210,78 +11237,139 @@ testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script></con:con
       ]
    }
 }</con:request>
-          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
-          <con:assertion type="Valid HTTP Status Codes" id="6cb8c8e5-1744-4b70-8753-687c12f2c671" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7d3bafc4-aa3e-437d-a60a-90f967241801" name="get the user id"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+            <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="6cb8c8e5-1744-4b70-8753-687c12f2c671" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="7d3bafc4-aa3e-437d-a60a-90f967241801" name="get the user id">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 def user_id = json.response.customers.customer[0].user_id
-messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toString())</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:username>${#Project#auth_username}</con:username>
-            <con:password>${#Project#auth_password}</con:password>
-            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
-            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-            <con:authType>Global HTTP Settings</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-            <con:entry key="format" value="json"/>
-            <con:entry key="version" value="v1.1"/>
-          </con:parameters>
-        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="customerGet" id="c580c34b-159b-4b10-8d97-4dfd21f576d7"><con:settings/><con:config service="getCustomerV1" resourcePath="/v1.1/customer/get" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="customerGet" id="fffb4960-10e1-4ff0-982b-f7255dbe25c3" mediaType="application/json">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-CAP-CLIENT-COUNTRYCODE" value="1" xmlns="http://eviware.com/soapui/config"/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://nightly.capillary.in/v1.1/customer/get</con:originalUri>
-          <con:assertion type="Valid HTTP Status Codes" id="7729bcc6-9338-4f0b-b0ed-ef67aa99c1af" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="ad6adc78-e27d-4dbe-ba14-9d7a04123433" name="Contains valid message"><con:configuration><token>Customer successfully retrieved</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials>
-            <con:username>${#Project#auth_username}</con:username>
-            <con:password>${#Project#auth_password}</con:password>
-            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
-            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-            <con:authType>Global HTTP Settings</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters><entry key="id" value="${#TestCase#customerId}" xmlns="http://eviware.com/soapui/config"/></con:parameters>
-        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Copy of customerAdd" id="8970add0-7aa0-4f69-a970-101bc8de292d" disabled="true"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of customerAdd" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toString())</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>${#Project#auth_username}</con:username>
+              <con:password>${#Project#auth_password}</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="format" value="json"/>
+              <con:entry key="version" value="v1.1"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="customerGet" id="c580c34b-159b-4b10-8d97-4dfd21f576d7">
+        <con:settings/>
+        <con:config service="getCustomerV1" resourcePath="/v1.1/customer/get" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="customerGet" id="fffb4960-10e1-4ff0-982b-f7255dbe25c3" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-CAP-CLIENT-COUNTRYCODE" value="1" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://nightly.capillary.in/v1.1/customer/get</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="7729bcc6-9338-4f0b-b0ed-ef67aa99c1af" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="ad6adc78-e27d-4dbe-ba14-9d7a04123433" name="Contains valid message">
+              <con:configuration>
+                <token>Customer successfully retrieved</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>${#Project#auth_username}</con:username>
+              <con:password>${#Project#auth_password}</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="${#TestCase#customerId}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Copy of customerAdd" id="8970add0-7aa0-4f69-a970-101bc8de292d" disabled="true">
+        <con:settings/>
+        <con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Copy of customerAdd" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
   &lt;con:entry key="Content-Type" value="application/json"/>
 &lt;/xml-fragment></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
-          <con:request>{"1":"0"}</con:request>
-          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
-          <con:assertion type="Valid HTTP Status Codes" id="6cb8c8e5-1744-4b70-8753-687c12f2c671" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7d3bafc4-aa3e-437d-a60a-90f967241801" name="get the user id"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+            </con:settings>
+            <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+            <con:request>{"1":"0"}</con:request>
+            <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="6cb8c8e5-1744-4b70-8753-687c12f2c671" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="7d3bafc4-aa3e-437d-a60a-90f967241801" name="get the user id">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 def user_id = json.response.customers.customer[0].user_id
-messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toString())</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:username>${#Project#auth_username}</con:username>
-            <con:password>${#Project#auth_password}</con:password>
-            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
-            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-            <con:authType>Global HTTP Settings</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-            <con:entry key="format" value="json"/>
-            <con:entry key="version" value="v1.1"/>
-          </con:parameters>
-        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>customerId</con:name><con:value>373278342</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919957559156</con:value></con:property></con:properties><con:securityTest id="0c7c2962-0084-4a35-b827-0499e098583c" name="SecurityTest" failOnError="false" failSecurityTestOnScanErrors="true"><con:settings/><con:setupScript>def jsonData = [
+messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toString())</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>${#Project#auth_username}</con:username>
+              <con:password>${#Project#auth_password}</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="format" value="json"/>
+              <con:entry key="version" value="v1.1"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>customerId</con:name>
+          <con:value>373278342</con:value>
+        </con:property>
+        <con:property>
+          <con:name>mobile</con:name>
+          <con:value>919957559156</con:value>
+        </con:property>
+      </con:properties>
+      <con:securityTest id="0c7c2962-0084-4a35-b827-0499e098583c" name="v1.1/customer_SecurityTest" failOnError="false" failSecurityTestOnScanErrors="true">
+        <con:settings/>
+        <con:setupScript>def jsonData = [
 ]
 context.jsonData = jsonData;
 
 String project_dir = context.expand('${projectDir}');
-fuzzDBLocation = project_dir + File.separator + "test_data" + File.separator + "fuzzdb"; 
+fuzzDBLocation = project_dir + File.separator + "test_data" + File.separator + "fuzzdb";
 
 //Get data from JSON Fuzzing.
 def lstOfJsons = []
@@ -11291,7 +11379,7 @@ log.info("Reading JSON_fuzzing......")
 
 new File(fuzzDBLocation + File.separator + "JSON_fuzzing.txt").withReader('UTF-8') { reader ->
 def line
-    while ((line = reader.readLine()) != null) { 
+    while ((line = reader.readLine()) != null) {
         lstOfJsons.add(line)
     }
 }
@@ -11299,7 +11387,7 @@ log.info("Reading Emails data.......")
 
 new File(fuzzDBLocation + File.separator + "invalid-email-addresses.txt").withReader('UTF-8') { reader ->
 def line
-    while ((line = reader.readLine()) != null) { 
+    while ((line = reader.readLine()) != null) {
         lstOfInvalidEmails.add(line)
     }
 }
@@ -11308,18 +11396,23 @@ def line
 //set to context.
 context.lstOfJsons = lstOfJsons
 context.lstOfInvalidEmails = lstOfInvalidEmails
-log.info("Context set!")
-</con:setupScript><con:tearDownScript>import groovy.json.JsonOutput;
+log.info("Context set!")</con:setupScript>
+        <con:tearDownScript>import groovy.json.JsonOutput;
 String project_dir = context.expand('${projectDir}');
+
+def result = context.getProperty('SecurityScanRequestResult')
+log.info ("Result Type: " + result.getResultType())
+log.info("status: " + result.getStatus())
+log.info("Messages: " + result.getMessages())
+log.info("Actions: "+ result.getActions())
 
 def jsonStr = JsonOutput.toJson(context.jsonData)
 def prettyJson = JsonOutput.prettyPrint(jsonStr)
-log.info("jsonObj -- " + prettyJson);
+//log.info("jsonObj -- " + prettyJson);
 
 File reportFile = new File(project_dir + File.separator + "details.json");
 
 saveToFile(reportFile, prettyJson)
-
 
 //Save the contents to a file
 def saveToFile(file, content) {
@@ -11327,12 +11420,38 @@ def saveToFile(file, content) {
          file.parentFile.mkdirs()
          log.info "Directory did not exist, created"
     }
-    file.write(content) 
+    file.write(content)
     assert file.exists(), "${file.name} not created"
-}
-
-</con:tearDownScript><con:testStepSecurityTest><con:testStepId>1ac6515e-6bb7-4d0b-8d0c-7813c59e5202</con:testStepId><con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="ee919c71-f498-41f8-832e-81fa5b7f6db4" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:minimal>5</con:minimal><con:maximal>10</con:maximal><con:numberOfRequest>10</con:numberOfRequest></con:config><con:assertion type="Sensitive Information Exposure" id="879610ca-d462-417d-bcd7-3b6e2ba9f405" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="ecb6b0b7-fea2-41dd-9013-d9e255f7e7c9" name="Script Assertion"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
-String request = messageExchange.getRequestContent();
+}</con:tearDownScript>
+        <con:testStepSecurityTest>
+          <con:testStepId>1ac6515e-6bb7-4d0b-8d0c-7813c59e5202</con:testStepId>
+          <con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="ee919c71-f498-41f8-832e-81fa5b7f6db4" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:minimal>5</con:minimal>
+              <con:maximal>10</con:maximal>
+              <con:numberOfRequest>10</con:numberOfRequest>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="879610ca-d462-417d-bcd7-3b6e2ba9f405" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="ecb6b0b7-fea2-41dd-9013-d9e255f7e7c9" name="capture req/resp data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
 def timeTaken = messageExchange.getTimeTaken();
 def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
 def securityTestName = context.getCurrentScan().getParent().getName();
@@ -11342,10 +11461,24 @@ KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentT
 
 
 
-context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "timeTaken": timeTaken.toString()]];
-
-
-</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="Username" parameterName="Username" xpath="" checked="true"/><con:parameters label="Password" parameterName="Password" xpath="" checked="true"/><con:parameters label="API version" parameterName="version" xpath="" checked="false"/></con:checkedParameters><con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ALL_AT_ONCE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan><con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="657af876-e19a-4339-880c-84aff4391c85" applyForFailedStep="false" disabled="false" runOnlyOnce="false"><con:settings/><con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:executeScript>import groovy.json.JsonSlurper;
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="Username" parameterName="Username" xpath="" checked="true"/>
+              <con:parameters label="Password" parameterName="Password" xpath="" checked="true"/>
+              <con:parameters label="API version" parameterName="version" xpath="" checked="false"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="657af876-e19a-4339-880c-84aff4391c85" applyForFailedStep="false" disabled="false" runOnlyOnce="false">
+            <con:settings/>
+            <con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:executeScript>import groovy.json.JsonSlurper;
 import groovy.json.JsonBuilder;
 def req = testStep.getPropertyValue("Request")
 def requestJson = new JsonSlurper().parseText(req);
@@ -11380,7 +11513,211 @@ else if(context.invalidEmailFuzzIndex &lt;= invalidEmailsMaxIndex){
 }
 else{
 	return false
-}</con:executeScript></con:config><con:assertion type="Sensitive Information Exposure" id="83009db4-a61f-4971-b8ef-074088a9d8b8" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="1b8b77a1-a682-440d-94b6-b8dd95549b0b" name="capture request response"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
+}</con:executeScript>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="83009db4-a61f-4971-b8ef-074088a9d8b8" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="1b8b77a1-a682-440d-94b6-b8dd95549b0b" name="capture request response">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentTimeMillis().toString();
+
+
+
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="payload" parameterName="Request" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ONE_BY_ONE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="49b64523-9131-482e-90f0-e949277da80c" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:InvalidSecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:typesList>
+                <con:type>3</con:type>
+                <con:value>true</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>4</con:type>
+                <con:value>GpM7</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>5</con:type>
+                <con:value>0FB7</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>9</con:type>
+                <con:value>-1E4f</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>10</con:type>
+                <con:value>12.45E+12</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>11</con:type>
+                <con:value>-1.23</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>12</con:type>
+                <con:value>SoapUI is	 the
+ best</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>13</con:type>
+                <con:value>P1Y2M3DT10H30M12.3S</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>14</con:type>
+                <con:value>1999-05-31T13:20:00.000-05:00</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>16</con:type>
+                <con:value>1999-05-31</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>22</con:type>
+                <con:value>-1267896799</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>23</con:type>
+                <con:value>-882223334991111111</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>24</con:type>
+                <con:value>-2147483647</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>25</con:type>
+                <con:value>-32768</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>26</con:type>
+                <con:value>127</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>27</con:type>
+                <con:value>0</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>28</con:type>
+                <con:value>-1</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>29</con:type>
+                <con:value>1</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>30</con:type>
+                <con:value>1267896799</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>31</con:type>
+                <con:value>882223334991111111</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>32</con:type>
+                <con:value>294967295</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>33</con:type>
+                <con:value>65535</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>34</con:type>
+                <con:value>255</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>35</con:type>
+                <con:value>SoapUI is the best</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>36</con:type>
+                <con:value>SoapUI is the best</con:value>
+              </con:typesList>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="420a430f-4afe-4096-bc50-0e06d479679d" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="48bcd880-2d2a-48f2-8105-141e4f62ea93" name="capture req/resp data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentTimeMillis().toString();
+
+
+
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="Username" parameterName="Username" xpath="" checked="false"/>
+              <con:parameters label="Password" parameterName="Password" xpath="" checked="false"/>
+              <con:parameters label="format" parameterName="format" xpath="" checked="false"/>
+              <con:parameters label="version" parameterName="version" xpath="" checked="false"/>
+              <con:parameters label="payload" parameterName="Request" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="BoundaryScan" name="Boundary Scan" id="82e7d7d2-1bf1-40e4-97f7-a91deb7c8538" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:assertion type="Sensitive Information Exposure" id="55c99a50-de49-41ae-8bcb-dc3b930be39b" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="0a6af70b-a10b-462b-9edc-b1097600330a" name="Script Assertion">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
 String request = messageExchange.getRequestContent();
 def timeTaken = messageExchange.getTimeTaken();
 def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
@@ -11391,9 +11728,48 @@ KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentT
 
 
 
-context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "timeTaken": timeTaken.toString()]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="payload" parameterName="Request" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ONE_BY_ONE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan><con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="49b64523-9131-482e-90f0-e949277da80c" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:type="con:InvalidSecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:typesList><con:type>3</con:type><con:value>true</con:value></con:typesList><con:typesList><con:type>4</con:type><con:value>GpM7</con:value></con:typesList><con:typesList><con:type>5</con:type><con:value>0FB7</con:value></con:typesList><con:typesList><con:type>9</con:type><con:value>-1E4f</con:value></con:typesList><con:typesList><con:type>10</con:type><con:value>12.45E+12</con:value></con:typesList><con:typesList><con:type>11</con:type><con:value>-1.23</con:value></con:typesList><con:typesList><con:type>12</con:type><con:value>SoapUI is	 the&#13; best
-</con:value></con:typesList><con:typesList><con:type>13</con:type><con:value>P1Y2M3DT10H30M12.3S</con:value></con:typesList><con:typesList><con:type>14</con:type><con:value>1999-05-31T13:20:00.000-05:00</con:value></con:typesList><con:typesList><con:type>16</con:type><con:value>1999-05-31</con:value></con:typesList><con:typesList><con:type>22</con:type><con:value>-1267896799</con:value></con:typesList><con:typesList><con:type>23</con:type><con:value>-882223334991111111</con:value></con:typesList><con:typesList><con:type>24</con:type><con:value>-2147483647</con:value></con:typesList><con:typesList><con:type>25</con:type><con:value>-32768</con:value></con:typesList><con:typesList><con:type>26</con:type><con:value>127</con:value></con:typesList><con:typesList><con:type>27</con:type><con:value>0</con:value></con:typesList><con:typesList><con:type>28</con:type><con:value>-1</con:value></con:typesList><con:typesList><con:type>29</con:type><con:value>1</con:value></con:typesList><con:typesList><con:type>30</con:type><con:value>1267896799</con:value></con:typesList><con:typesList><con:type>31</con:type><con:value>882223334991111111</con:value></con:typesList><con:typesList><con:type>32</con:type><con:value>294967295</con:value></con:typesList><con:typesList><con:type>33</con:type><con:value>65535</con:value></con:typesList><con:typesList><con:type>34</con:type><con:value>255</con:value></con:typesList><con:typesList><con:type>35</con:type><con:value>SoapUI is the best</con:value></con:typesList><con:typesList><con:type>36</con:type><con:value>SoapUI is the best</con:value></con:typesList></con:config><con:assertion type="Sensitive Information Exposure" id="420a430f-4afe-4096-bc50-0e06d479679d" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="48bcd880-2d2a-48f2-8105-141e4f62ea93" name="Script Assertion"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
-String request = messageExchange.getRequestContent();
+context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "timeTaken": timeTaken.toString()]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="payload" parameterName="Request" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+        </con:testStepSecurityTest>
+        <con:testStepSecurityTest>
+          <con:testStepId>c580c34b-159b-4b10-8d97-4dfd21f576d7</con:testStepId>
+          <con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="20f10a7e-f5b1-4d04-b01a-1b43e8dd5a2f" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:minimal>5</con:minimal>
+              <con:maximal>15</con:maximal>
+              <con:numberOfRequest>20</con:numberOfRequest>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="1dd47175-578d-4d4f-a152-18a7e97bd088" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="b25ceb36-8b12-4692-9183-7c6c466d1448" name="capture req/resp data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
 def timeTaken = messageExchange.getTimeTaken();
 def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
 def securityTestName = context.getCurrentScan().getParent().getName();
@@ -11403,8 +11779,147 @@ KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentT
 
 
 
-context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "timeTaken": timeTaken.toString()]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="Username" parameterName="Username" xpath="" checked="true"/><con:parameters label="Password" parameterName="Password" xpath="" checked="true"/><con:parameters label="format" parameterName="format" xpath="" checked="true"/><con:parameters label="version" parameterName="version" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ONE_BY_ONE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan></con:testStepSecurityTest><con:testStepSecurityTest><con:testStepId>c580c34b-159b-4b10-8d97-4dfd21f576d7</con:testStepId><con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="20f10a7e-f5b1-4d04-b01a-1b43e8dd5a2f" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:minimal>5</con:minimal><con:maximal>15</con:maximal><con:numberOfRequest>20</con:numberOfRequest></con:config><con:assertion type="Sensitive Information Exposure" id="1dd47175-578d-4d4f-a152-18a7e97bd088" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b25ceb36-8b12-4692-9183-7c6c466d1448" name="Script Assertion"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
-String request = messageExchange.getRequestContent();
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="username" parameterName="Username" xpath="" checked="true"/>
+              <con:parameters label="password" parameterName="Password" xpath="" checked="true"/>
+              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
+              <con:parameters label="format" parameterName="format" xpath="" checked="true"/>
+              <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="95528999-6042-4762-ab3a-30d34fa699ef" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:InvalidSecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:typesList>
+                <con:type>3</con:type>
+                <con:value>true</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>4</con:type>
+                <con:value>GpM7</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>5</con:type>
+                <con:value>0FB7</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>9</con:type>
+                <con:value>-1E4f</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>10</con:type>
+                <con:value>12.45E+12</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>11</con:type>
+                <con:value>-1.23</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>12</con:type>
+                <con:value>SoapUI is	 the
+ best</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>13</con:type>
+                <con:value>P1Y2M3DT10H30M12.3S</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>14</con:type>
+                <con:value>1999-05-31T13:20:00.000-05:00</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>16</con:type>
+                <con:value>1999-05-31</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>22</con:type>
+                <con:value>-1267896799</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>23</con:type>
+                <con:value>-882223334991111111</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>24</con:type>
+                <con:value>-2147483647</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>25</con:type>
+                <con:value>-32768</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>26</con:type>
+                <con:value>127</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>27</con:type>
+                <con:value>0</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>28</con:type>
+                <con:value>-1</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>29</con:type>
+                <con:value>1</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>30</con:type>
+                <con:value>1267896799</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>31</con:type>
+                <con:value>882223334991111111</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>32</con:type>
+                <con:value>294967295</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>33</con:type>
+                <con:value>65535</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>34</con:type>
+                <con:value>255</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>35</con:type>
+                <con:value>SoapUI is the best</con:value>
+              </con:typesList>
+              <con:typesList>
+                <con:type>36</con:type>
+                <con:value>SoapUI is the best</con:value>
+              </con:typesList>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="c22e4cff-9b0e-49e9-9398-cf100800440a" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="c3c9fe27-d081-4593-ad89-850d16bcd3a7" name="capture req/resp data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
 def timeTaken = messageExchange.getTimeTaken();
 def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
 def securityTestName = context.getCurrentScan().getParent().getName();
@@ -11414,9 +11929,45 @@ KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentT
 
 
 
-context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "timeTaken": timeTaken.toString()]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="username" parameterName="Username" xpath="" checked="true"/><con:parameters label="password" parameterName="Password" xpath="" checked="true"/><con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/><con:parameters label="format" parameterName="format" xpath="" checked="true"/><con:parameters label="userId" parameterName="id" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ALL_AT_ONCE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan><con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="95528999-6042-4762-ab3a-30d34fa699ef" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:type="con:InvalidSecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:typesList><con:type>3</con:type><con:value>true</con:value></con:typesList><con:typesList><con:type>4</con:type><con:value>GpM7</con:value></con:typesList><con:typesList><con:type>5</con:type><con:value>0FB7</con:value></con:typesList><con:typesList><con:type>9</con:type><con:value>-1E4f</con:value></con:typesList><con:typesList><con:type>10</con:type><con:value>12.45E+12</con:value></con:typesList><con:typesList><con:type>11</con:type><con:value>-1.23</con:value></con:typesList><con:typesList><con:type>12</con:type><con:value>SoapUI is	 the&#13; best
-</con:value></con:typesList><con:typesList><con:type>13</con:type><con:value>P1Y2M3DT10H30M12.3S</con:value></con:typesList><con:typesList><con:type>14</con:type><con:value>1999-05-31T13:20:00.000-05:00</con:value></con:typesList><con:typesList><con:type>16</con:type><con:value>1999-05-31</con:value></con:typesList><con:typesList><con:type>22</con:type><con:value>-1267896799</con:value></con:typesList><con:typesList><con:type>23</con:type><con:value>-882223334991111111</con:value></con:typesList><con:typesList><con:type>24</con:type><con:value>-2147483647</con:value></con:typesList><con:typesList><con:type>25</con:type><con:value>-32768</con:value></con:typesList><con:typesList><con:type>26</con:type><con:value>127</con:value></con:typesList><con:typesList><con:type>27</con:type><con:value>0</con:value></con:typesList><con:typesList><con:type>28</con:type><con:value>-1</con:value></con:typesList><con:typesList><con:type>29</con:type><con:value>1</con:value></con:typesList><con:typesList><con:type>30</con:type><con:value>1267896799</con:value></con:typesList><con:typesList><con:type>31</con:type><con:value>882223334991111111</con:value></con:typesList><con:typesList><con:type>32</con:type><con:value>294967295</con:value></con:typesList><con:typesList><con:type>33</con:type><con:value>65535</con:value></con:typesList><con:typesList><con:type>34</con:type><con:value>255</con:value></con:typesList><con:typesList><con:type>35</con:type><con:value>SoapUI is the best</con:value></con:typesList><con:typesList><con:type>36</con:type><con:value>SoapUI is the best</con:value></con:typesList></con:config><con:assertion type="Sensitive Information Exposure" id="c22e4cff-9b0e-49e9-9398-cf100800440a" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="c3c9fe27-d081-4593-ad89-850d16bcd3a7" name="Script Assertion"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
-String request = messageExchange.getRequestContent();
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
+              <con:parameters label="username" parameterName="Username" xpath="" checked="false"/>
+              <con:parameters label="format" parameterName="format" xpath="" checked="false"/>
+              <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
+              <con:parameters label="password" parameterName="Password" xpath="" checked="false"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="BoundaryScan" name="Boundary Scan" id="165c66d2-b948-4a70-846f-b159522aa4ad" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:assertion type="Sensitive Information Exposure" id="53acb4c1-81db-4a7d-96fd-493a3a5e6040" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="df959ad3-a93b-4197-b27e-12e0c33451fd" name="capture req/resp data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
 def timeTaken = messageExchange.getTimeTaken();
 def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
 def securityTestName = context.getCurrentScan().getParent().getName();
@@ -11426,7 +11977,276 @@ KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentT
 
 
 
-context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "timeTaken": timeTaken.toString()]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/><con:parameters label="username" parameterName="Username" xpath="" checked="true"/><con:parameters label="format" parameterName="format" xpath="" checked="true"/><con:parameters label="userId" parameterName="id" xpath="" checked="true"/><con:parameters label="password" parameterName="Password" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ONE_BY_ONE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan><con:testStepSecurityScan type="BoundaryScan" name="Boundary Scan" id="165c66d2-b948-4a70-846f-b159522aa4ad" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:assertion type="Sensitive Information Exposure" id="53acb4c1-81db-4a7d-96fd-493a3a5e6040" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="userId" parameterName="id" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ONE_BY_ONE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan></con:testStepSecurityTest><con:properties/></con:securityTest></con:testCase><con:properties/></con:testSuite><con:properties>
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="365b3f75-bc33-4389-8b09-2c07fa3f4420" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:CrossSiteScriptingScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameterExposureStrings>&lt;PLAINTEXT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//-->&lt;/SCRIPT>">'>&lt;SCRIPT>alert(String.fromCharCode(88,83,83))&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>'';!--"&lt;XSS>=&amp;{()}</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT SRC=http://soapui.org/xss.js>&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC=javascript:alert('XSS')></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC=JaVaScRiPt:alert('XSS')></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC=javascript:alert(&amp;quot;XSS&amp;quot;)></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC=`javascript:alert("RSnake says, 'XSS'")`></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG """>&lt;SCRIPT>alert("XSS")&lt;/SCRIPT>"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC=javascript:alert(String.fromCharCode(88,83,83))></con:parameterExposureStrings>
+              <con:parameterExposureStrings><![CDATA[<IMG SRC=&#106;&#97;&#118;&#97;&#115;&#99;&#114;&#105;&#112;&#116;&#58;&#97;&#108;&#101;&#114;&#116;&#40;&#39;&#88;&#83;&#83;&#39;&#41;>]]></con:parameterExposureStrings>
+              <con:parameterExposureStrings><![CDATA[<IMG SRC=&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041>]]></con:parameterExposureStrings>
+              <con:parameterExposureStrings><![CDATA[<IMG SRC=&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29>]]></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="jav	ascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="jav&amp;#x09;ascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="jav&amp;#x0A;ascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="jav&amp;#x0D;ascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>perl -e 'print "&lt;IMG SRC=java\0script:alert(\"XSS\")>";' > out</con:parameterExposureStrings>
+              <con:parameterExposureStrings>perl -e 'print "&lt;SCR\0IPT>alert(\"XSS\")&lt;/SCR\0IPT>";' > out</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC=" &amp;#14;  javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT/XSS SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;BODY onload!#$%&amp;()*~+-_.,:;?@[/|\]^`=alert("XSS")></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT/SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;&lt;SCRIPT>alert("XSS");//&lt;&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT SRC=http://soapui.org/xss.js?&lt;B></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT SRC=//ha.ckers.org/.j></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="javascript:alert('XSS')"</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;iframe src=http://soapui.org/scriptlet.html &lt;</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT>a=/XSS/alert(a.source)&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>\";alert('XSS');//</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;/TITLE>&lt;SCRIPT>alert("XSS");&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;BODY BACKGROUND="javascript:alert('XSS')"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;BODY ONLOAD=alert('XSS')></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG DYNSRC="javascript:alert('XSS')"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG LOWSRC="javascript:alert('XSS')"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;BGSOUND SRC="javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;BR SIZE="&amp;{alert('XSS')}"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;LAYER SRC="http://soapui.org/scriptlet.html">&lt;/LAYER></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;LINK REL="stylesheet" HREF="javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;LINK REL="stylesheet" HREF="http://soapui.org/xss.css"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE>@import'http://soapui.org/xss.css';&lt;/STYLE></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;META HTTP-EQUIV="Link" Content="&lt;http://soapui.org/xss.css>; REL=stylesheet"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE>BODY{-moz-binding:url("http://soapui.org/xssmoz.xml#xss")}&lt;/STYLE></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;XSS STYLE="behavior: url(xss.htc);"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE>li {list-style-image: url("javascript:alert('XSS')");}&lt;/STYLE>&lt;UL>&lt;LI>XSS</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC='vbscript:msgbox("XSS")'></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="mocha:[code]"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="livescript:[code]"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>�script�alert(�XSS�)�/script�</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;META HTTP-EQUIV="refresh" CONTENT="0; URL=http://;URL=javascript:alert('XSS');"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IFRAME SRC="javascript:alert('XSS');">&lt;/IFRAME></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;FRAMESET>&lt;FRAME SRC="javascript:alert('XSS');">&lt;/FRAMESET></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;TABLE BACKGROUND="javascript:alert('XSS')"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;TABLE>&lt;TD BACKGROUND="javascript:alert('XSS')"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;DIV STYLE="background-image: url(javascript:alert('XSS'))"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;DIV STYLE="background-image:\0075\0072\006C\0028'\006a\0061\0076\0061\0073\0063\0072\0069\0070\0074\003a\0061\006c\0065\0072\0074\0028.1027\0058.1053\0053\0027\0029'\0029"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;DIV STYLE="background-image: url(&amp;#1;javascript:alert('XSS'))"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;DIV STYLE="width: expression(alert('XSS'));"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE>@im\port'\ja\vasc\ript:alert("XSS")';&lt;/STYLE></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG STYLE="xss:expr/*XSS*/ession(alert('XSS'))"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;XSS STYLE="xss:expression(alert('XSS'))"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>exp/*&lt;A STYLE='no\xss:noxss("*//*");xss:&amp;#101;x&amp;#x2F;*XSS*//*/*/pression(alert("XSS"))'></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE TYPE="text/javascript">alert('XSS');&lt;/STYLE></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE>.XSS{background-image:url("javascript:alert('XSS')");}&lt;/STYLE>&lt;A CLASS=XSS>&lt;/A></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}&lt;/STYLE></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;!--[if gte IE 4]>&lt;SCRIPT>alert('XSS');&lt;/SCRIPT>&lt;![endif]--></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;BASE HREF="javascript:alert('XSS');//"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;OBJECT TYPE="text/x-scriptlet" DATA="http://soapui.org/scriptlet.html">&lt;/OBJECT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389>&lt;param name=url value=javascript:alert('XSS')>&lt;/OBJECT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;EMBED SRC="http://soapui.org/xss.swf" AllowScriptAccess="always">&lt;/EMBED></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;EMBED SRC="data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dH A6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hs aW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxOTQiIGhlaWdodD0iMjAw IiBpZD0ieHNzIj48c2NyaXB0IHR5cGU9InRleHQvZWNtYXNjcmlwdCI+YWxlcnQoIlh TUyIpOzwvc2NyaXB0Pjwvc3ZnPg==" type="image/svg+xml" AllowScriptAccess="always">&lt;/EMBED></con:parameterExposureStrings>
+              <con:parameterExposureStrings>a="get";b="URL(\"";c="javascript:";d="alert('XSS');\")";eval(a+b+c+d);</con:parameterExposureStrings>
+              <con:parameterExposureStrings><![CDATA[<XML ID=I><X><C><![CDATA[<IMG SRC="javas]]]]>><![CDATA[<![CDATA[cript:alert('XSS');">]]]]>><![CDATA[</C></X></xml><SPAN DATASRC=#I DATAFLD=C DATAFORMATAS=HTML></SPAN>]]></con:parameterExposureStrings>
+              <con:parameterExposureStrings><![CDATA[<XML ID="xss"><I><B>&lt;IMG SRC="javas<!-- -->cript:alert('XSS')"&gt;</B></I></XML><SPAN DATASRC="#xss" DATAFLD="B" DATAFORMATAS="HTML"></SPAN>]]></con:parameterExposureStrings>
+              <con:parameterExposureStrings><![CDATA[<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS&lt;SCRIPT DEFER&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;"></BODY></HTML>]]></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT SRC="http://soapui.org/xss.jpg">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;? echo('&lt;SCR)';echo('IPT>alert("XSS")&lt;/SCRIPT>'); ?></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;IMG SRC="http://soapui.org/somecommand.php?somevariables=maliciouscode"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>Redirect 302 /a.jpg http://soapui.org/admin.asp&amp;deleteuser</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;META HTTP-EQUIV="Set-Cookie" Content="USERID=&amp;lt;SCRIPT&amp;gt;alert('XSS')&amp;lt;/SCRIPT&amp;gt;"></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;HEAD>&lt;META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-7"> &lt;/HEAD>+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-</con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT a=">" SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT =">" SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT a=">" '' SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT "a='>'" SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT a=`>` SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT a=">'>" SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+              <con:parameterExposureStrings>&lt;SCRIPT>document.write("&lt;SCRI");&lt;/SCRIPT>PT SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+            </con:config>
+            <con:assertion type="CrosSiteScript" id="09b7830e-ded3-4e15-ad56-9379a62ee5f5" name="Cross Site Scripting Detection">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="6e9e956c-aa7c-49a7-b6d3-3eb345fd7abb" name="Script Assertion">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentTimeMillis().toString();
+
+
+
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
+              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="SQLInjectionScan" name="SQL Injection" id="aba1ae8b-06b9-48b4-bce4-bc4e9f43cc63" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:SQLInjectionScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:sqlInjectionStrings>' or '1'='1</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>'--</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>1'</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>admin'--</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>/*!10000%201/0%20*/</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>/*!10000 1/0 */</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>1/0</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>'%20o/**/r%201/0%20--</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>' o/**/r 1/0 --</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>;</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>'%20and%201=2%20--</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>' and 1=2 --</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>test�%20UNION%20select%201,%20@@version,%201,%201;�</con:sqlInjectionStrings>
+              <con:sqlInjectionStrings>test� UNION select 1, @@version, 1, 1;�</con:sqlInjectionStrings>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="439666c8-c9bd-4b33-a57b-8a948e573a53" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="7bf76a8a-43d7-4cc4-8a87-c89124fc4c7e" name="Script Assertion">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentTimeMillis().toString();
+
+
+
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
+              <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+          <con:testStepSecurityScan type="XPathInjectionSecurityScan" name="XPath Injection" id="baf0f67e-815d-4561-a1b9-c92020cdf7f9" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:XPathInjection" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:xpathList>or name(//users/LoginID[1]) = 'LoginID' or 'a'='b</con:xpathList>
+              <con:xpathList>' or '1'='1</con:xpathList>
+              <con:xpathList>1/0</con:xpathList>
+              <con:xpathList>'%20o/**/r%201/0%20--</con:xpathList>
+              <con:xpathList>' o/**/r 1/0 --</con:xpathList>
+              <con:xpathList>;</con:xpathList>
+              <con:xpathList>'%20and%201=2%20--</con:xpathList>
+              <con:xpathList>' and 1=2 --</con:xpathList>
+              <con:xpathList>test�%20UNION%20select%201,%20@@version,%201,%201;�</con:xpathList>
+              <con:xpathList>test� UNION select 1, @@version, 1, 1;�</con:xpathList>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="2a14818b-57a4-43dd-ac70-b49ddb29339d" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="86c3887b-726f-4565-ac6f-b100422b751f" name="Script Assertion">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentTimeMillis().toString();
+
+
+
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
+              <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ALL_AT_ONCE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+        </con:testStepSecurityTest>
+        <con:properties/>
+      </con:securityTest>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties>
     <con:property>
       <con:name>environment</con:name>
       <con:value>nightly</con:value>
@@ -11495,7 +12315,7 @@ def filterList(commaSperatedListContent){
 	def entry = it.toLowerCase().replaceAll("^\\s+", "");
 	entry = entry.trim();
 	if(entry != ""){
-	filteredList.add(entry);}	
+	filteredList.add(entry);}
 	}
 	return filteredList;
 }
@@ -11506,9 +12326,9 @@ def customListCompare(list1,list2){
 	boolean isRunnable = false;
 	for(int l1 in 0 .. list1.size()-1)
 	{
-		def inputTag = list1.get(l1);		
+		def inputTag = list1.get(l1);
 		for(int l2 in 0 .. list2.size()-1){
-			
+
 			if(inputTag.toString() == list2.get(l2).toString()){
 				isRunnable =  true;
 				break;
@@ -11586,14 +12406,14 @@ def testSuites = project.getTestSuiteList();
 //Enable all TestSuites.
 for(j in 0 .. testSuites.size()-1){
 	//log.info testSuites.get(j).getName();
-	testSuites.get(j).setDisabled(false); 
+	testSuites.get(j).setDisabled(false);
 }
 //Decide which test suites to execute and eventually disabled the non-relevant test suites.
 		for(i in 0 .. testSuites.size()-1) {
    			def testSuiteName = testSuites.get(i).getName();
    			def tags = context.Configuration.TestSuite."${testSuiteName}".tags.text()
    			def testSuiteTags = filterList(tags);
-   			   			
+
    			if(filteredTags == null || filteredTags.empty){
    				break;
    			}
@@ -11609,7 +12429,7 @@ for(j in 0 .. testSuites.size()-1){
    					}
    				}
    			}
-   			
+
 		}</con:beforeRunScript>
   <con:sensitiveInformation/>
 </con:soapui-project>
