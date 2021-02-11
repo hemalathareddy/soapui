@@ -607,8 +607,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="5f781dc4-8721-436a-ba87-4623784188f7" wadlVersion="http://wadl.dev.java.net/2009/02" name="Evaluate" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache type="TEXT" rootPart=""/>
-    <con:endpoints>
+    
+    <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
     <con:resource name="Evaluate" path="/v1/promotion/evaluate" id="9fab5574-7fda-46a8-814e-d4192b982071">
@@ -675,7 +675,7 @@
       </con:method>
     </con:resource>
   </con:interface>
-  <con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuits" disabled="true">
+  <con:interface xsi:type="con:RestService" id="1b0ea5c2-4b9a-4799-b78d-f7d34d5228df" wadlVersion="http://wadl.dev.java.net/2009/02" name="PromotionEngine" type="rest" definitionUrl="6024c1d90d93ed13c0ea1bb1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints/></con:interface><con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuits" disabled="true">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
     <con:properties/>
@@ -750,12 +750,7 @@ testRunner.testCase.setPropertyValue("randomId", randomId);
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#endtime},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="Response SLA Assertion" id="f6ec4498-8cca-4707-94fa-980cc2d05782" name="Response SLA">
@@ -898,12 +893,7 @@ testRunner.testCase.setPropertyValue('newPromotionName', updatedName)</script>
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#endtime},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="e4d17674-dc0f-496b-922a-dd8b7633a98a" name="assert promotion details">
@@ -1039,12 +1029,7 @@ assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expe
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#endtime},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="73ea8b69-252d-442d-b3d8-a2b8ac830417" name="assert the promotion details">
@@ -1209,12 +1194,7 @@ testRunner.testCase.setPropertyValue("updatedEndTime", String.valueOf(updatedEnd
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#updatedStartTime},
     "endDate": ${#TestCase#updatedEndTime},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="51ea1ba9-7e2b-466a-897d-54cd46194fbb" name="assert the promotion details">
@@ -1367,35 +1347,35 @@ assert(endDateInResponse == expectedEndDate) : "End date is not expected."</scri
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1612850115182</con:value>
+          <con:value>1613021652329</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1612936515182</con:value>
+          <con:value>1613108052329</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>58BE1E3VI6</con:value>
+          <con:value>391ULO7QA3</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>602223c4669d8d234ac10d6a</con:value>
+          <con:value>6024c1d50d93ed13c0ea1bad</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_58BE1E3VI6</con:value>
+          <con:value>test promotion_391ULO7QA3</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_763MYD56FF</con:value>
+          <con:value>test promotion_HKQPR9K9L1</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1612763715182</con:value>
+          <con:value>1612935252329</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1613032915182</con:value>
+          <con:value>1613204452329</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -1471,12 +1451,7 @@ testRunner.testCase.setPropertyValue("userId",userId)</script>
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#endtime},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="Response SLA Assertion" id="f6ec4498-8cca-4707-94fa-980cc2d05782" name="Response SLA" disabled="true">
@@ -1527,8 +1502,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
           <con:restRequest name="And evaluate a promotion against a transaction" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
-  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#tillid}"/>
   &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
 &lt;/xml-fragment></con:setting>
             </con:settings>
@@ -1616,8 +1590,7 @@ assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="dfe46d0e-0ab3-4d5f-818e-0ac2bc3e55a2" name="assert the applied promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -1632,7 +1605,8 @@ expectedPromotion = [
             "messageLabel": "test!!",
             "discount": 250,
             "discountAppliedOnQuantity": null,
-            "promotionAppliedOnQuantity": null
+            "promotionAppliedOnQuantity": null,
+            "type": "POS"
          ]
 isCreatedPromotionInAppliedPromotions = false;
 for(promotion in lstOfAppliedPromotions){
@@ -1643,8 +1617,7 @@ for(promotion in lstOfAppliedPromotions){
 }
 
 log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1659,19 +1632,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1612850118414</con:value>
+          <con:value>1613022220105</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1612936518414</con:value>
+          <con:value>1613108620105</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_JFYARJ5OHV</con:value>
+          <con:value>test promotion_HXJBCIC6XH</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>602223c6669d8d234ac10d6b</con:value>
+          <con:value>6024c40d0d93ed13c0ea1bb2</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -1775,12 +1748,7 @@ testRunner.testCase.setPropertyValue("userId",userId)</script>
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#time1},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="Valid HTTP Status Codes" id="0a8c97be-4333-4cbb-a4ea-b1e439fab4ff" name="Valid HTTP Status Codes">
@@ -1789,8 +1757,7 @@ testRunner.testCase.setPropertyValue("userId",userId)</script>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="65663dc1-56c0-42f9-873a-77e2b45566b0" name="assert/save the promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1815,11 +1782,11 @@ promotionDetail_5min = [
             "messageLabel": "test!!",
             "discount": 250,
             "discountAppliedOnQuantity": null,
-            "promotionAppliedOnQuantity": null
+            "promotionAppliedOnQuantity": null,
+            "type":"POS"
          ]
 
-messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_5min",promotionDetail_5min.inspect())</scriptText>
-              </con:configuration>
+messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_5min",promotionDetail_5min.inspect())</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1871,12 +1838,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_5min",p
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#time2},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="Valid HTTP Status Codes" id="b8c1c7cc-177d-445a-8b19-aea057ff34c2" name="Valid HTTP Status Codes">
@@ -1885,8 +1847,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_5min",p
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="0a6857eb-0cfa-4984-935e-463faf2aa98a" name="save/assert the promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1912,10 +1873,10 @@ promotionDetails_10min = [
             "messageLabel": "test!!",
             "discount": 250,
             "discountAppliedOnQuantity": null,
-            "promotionAppliedOnQuantity": null
+            "promotionAppliedOnQuantity": null,
+            "type": "POS"
          ]
-messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_10min",promotionDetails_10min.inspect())</scriptText>
-              </con:configuration>
+messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_10min",promotionDetails_10min.inspect())</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1967,12 +1928,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_10min",
     "lastUpdatedBy": 100,
     "startDate": ${#TestCase#starttime},
     "endDate": ${#TestCase#time3},
-    "campaignId": ${#TestSuite#rnd},
-    "maxRedemptionRestriction": {
-        "repeatFrequency": "DAYS",
-        "minTimeBetweenRedemption": 1,
-        "maxRedemptionAllowed": 1
-    }
+    "campaignId": ${#TestSuite#rnd}
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="Valid HTTP Status Codes" id="bd0383a2-9323-4430-90f8-5cba36d338d4" name="Valid HTTP Status Codes">
@@ -1981,8 +1937,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_10min",
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="77b1eb22-c4e3-467c-8ea5-fd89b2e0d16a" name="save/assert the promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 String response = messageExchange.getResponseContent();
@@ -2006,10 +1961,10 @@ promotionDetails_15min = [
             "messageLabel": "test!!",
             "discount": 250,
             "discountAppliedOnQuantity": null,
-            "promotionAppliedOnQuantity": null
+            "promotionAppliedOnQuantity": null,
+            "type":"POS"
          ]
-messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",promotionDetails_15min.inspect())</scriptText>
-              </con:configuration>
+messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",promotionDetails_15min.inspect())</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -2055,8 +2010,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="4a4861e2-2f42-4a56-865c-a2795cc2d505" name="assert the applied promotions based on expiry">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -2066,6 +2020,7 @@ def json = new JsonSlurper().parseText(response);
 
 
 lstOfAppliedPromotions = json.data.appliedPromotions
+log.info(lstOfAppliedPromotions)
 numOfPromotions = lstOfAppliedPromotions.size()
 
 
@@ -2080,8 +2035,7 @@ expectedThirdLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetail
 
 assert(expectedLastAppliedPromotion.equals(lastAppliedPromotion))
 assert(expectedSecondLastPromotion.equals(secondLastAppliedPromotion))
-assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText>
-              </con:configuration>
+assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -2096,47 +2050,47 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1612850119174</con:value>
+          <con:value>1613021656292</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value>1612850419175</con:value>
+          <con:value>1613021956298</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value>1612850719175</con:value>
+          <con:value>1613022256298</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value>1612851019175</con:value>
+          <con:value>1613022556298</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value>602223c7669d8d234ac10d6c</con:value>
+          <con:value>6024c1d80d93ed13c0ea1baf</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value>test promotion_45510977</con:value>
+          <con:value>test promotion_79285559</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>S6PEVVTQ7G</con:value>
+          <con:value>AM8UHWD045</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value>602223c7669d8d234ac10d6d</con:value>
+          <con:value>6024c1d90d93ed13c0ea1bb0</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value>test promotion_55083135</con:value>
+          <con:value>test promotion_75159653</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value>602223c7669d8d234ac10d6e</con:value>
+          <con:value>6024c1d90d93ed13c0ea1bb1</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value>test promotion_89848435</con:value>
+          <con:value>test promotion_03341336</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2144,7 +2098,7 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-numberS6PEVVTQ7G</con:value>
+          <con:value>txn-numberAM8UHWD045</con:value>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
@@ -2160,15 +2114,15 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value>['id':'602223c7669d8d234ac10d6c', 'name':'test promotion_45510977', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null]</con:value>
+          <con:value>['id':'6024c1d80d93ed13c0ea1baf', 'name':'test promotion_79285559', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value>['id':'602223c7669d8d234ac10d6d', 'name':'test promotion_55083135', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null]</con:value>
+          <con:value>['id':'6024c1d90d93ed13c0ea1bb0', 'name':'test promotion_75159653', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value>['id':'602223c7669d8d234ac10d6e', 'name':'test promotion_89848435', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null]</con:value>
+          <con:value>['id':'6024c1d90d93ed13c0ea1bb1', 'name':'test promotion_03341336', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -2204,7 +2158,7 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
     </con:property>
     <con:property>
       <con:name>tillid</con:name>
-      <con:value>10</con:value>
+      <con:value>50022818</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
