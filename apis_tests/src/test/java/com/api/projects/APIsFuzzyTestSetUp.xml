@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="cb40d130-0486-4f5f-8093-9bd80b5e44b6" activeEnvironment="Default" name="APIsFuzzyTestSetUp" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="cb40d130-0486-4f5f-8093-9bd80b5e44b6" activeEnvironment="Default" name="APIsFuzzyTestSetUp" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.support.SecurityTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Report Format(s)" value=""/>
@@ -36,8 +36,8 @@
   </con:settings>
   <con:interface xsi:type="con:RestService" id="f83c5208-a573-4edc-b9ee-e1dbc68b757a" wadlVersion="http://wadl.dev.java.net/2009/02" name="customer_add" type="rest" definitionUrl="http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache type="TEXT"/>
-    <con:endpoints>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
       <con:endpoint>https://nightly.capillary.in</con:endpoint>
     </con:endpoints>
@@ -1354,7 +1354,51 @@
     <con:definitionCache/>
     <con:endpoints/>
   </con:interface>
-  <con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true">
+  <con:interface xsi:type="con:RestService" id="804e1d35-c0ce-40b6-9c5a-a0a6a7d7f735" wadlVersion="http://wadl.dev.java.net/2009/02" name="ReportPortal" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT"/><con:endpoints><con:endpoint>http://qareportportal.capillary.in</con:endpoint></con:endpoints><con:resource name="Start Launch" path="/api/v1/superadmin_personal/launch" id="7dfaecaf-f157-4518-a01a-659f76fc2b18"><con:settings/><con:parameters/><con:method name="Method 1" id="4c375672-2e69-4852-8fdc-c9f77f6e7052" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="240e4a6f-472b-4bcb-8174-58f0c32192bc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+   "name":"Demo_SecurityTestLaunch",
+   "description":"My first launch for Security Tests",
+   "startTime":"1613029316000",
+   "mode":"DEFAULT",
+   "attributes":[
+      {
+         "key":"env",
+         "value":"nightly"
+      },
+      {
+         "value":"test"
+      }
+   ]
+}</con:request><con:originalUri>http://qareportportal.capillary.in/api/v1/superadmin_personal/launch</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="StartTestSuite" path="/api/v1/superadmin_personal/item" id="5b0813cd-0dde-4305-9221-74c4db6a9e8b"><con:settings/><con:parameters/><con:method name="Method 1" id="2ff59c6b-328b-488b-a023-fee0dfc26d3b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="3ee5b2d3-d2de-4b83-ad07-14aa3a57b2e6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+   "name":"SecurityTestSuits",
+   "startTime":"1613029822000",
+   "type":"suite",
+   "launchUuid":"831de321-d599-4758-9d92-ceac899bf0da",
+   "description":"Security Test Suits"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/api/v1/superadmin_personal/item</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="startTestCase" path="/api/v1/superadmin_personal/item/{itemId}" id="78064d81-cae0-4d7b-8d31-3d57d3ef8692"><con:settings/><con:parameters><con:parameter><con:name>itemId</con:name><con:value>itemId</con:value><con:style>TEMPLATE</con:style><con:default>itemId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="fa3ba7a9-bf74-4c0b-8862-e2e5c1d9c52e" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="bf804461-2728-4247-b175-2cd2dcdbb747" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+   "name":"CustomerAddSecurityTest",
+   "startTime":"1613029822000",
+   "type":"test",
+   "launchUuid":"831de321-d599-4758-9d92-ceac899bf0da",
+   "description":"CustomerAddSecurityTest"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/api/v1/superadmin_personal/item/auto%3Aeee9059fa62091ec6e87f2d2f8937ba0</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemId" value="fd25798b-974f-4b2d-b5c0-20311b7c1d1e" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="startTestStep" path="/api/v1/superadmin_personal/item/{itemId}" id="78064d81-cae0-4d7b-8d31-3d57d3ef8692"><con:settings/><con:parameters><con:parameter><con:name>itemId</con:name><con:value>itemId</con:value><con:style>TEMPLATE</con:style><con:default>itemId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="fa3ba7a9-bf74-4c0b-8862-e2e5c1d9c52e" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="bf804461-2728-4247-b175-2cd2dcdbb747" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+   "name":"CustomerAddFuzzyScan",
+   "startTime":"1613029822000",
+   "type":"step",
+   "launchUuid":"831de321-d599-4758-9d92-ceac899bf0da",
+   "description":"CustomerAddFuzzyScan"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/api/v1/superadmin_personal/item/auto%3Aeee9059fa62091ec6e87f2d2f8937ba0</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemId" value="62940bb8-23a6-4a38-997f-73f72e3893fd" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="addLog" path="/api/v1/superadmin_personal/log" id="78064d81-cae0-4d7b-8d31-3d57d3ef8692"><con:settings/><con:parameters><con:parameter><con:name>itemId</con:name><con:value>itemId</con:value><con:style>TEMPLATE</con:style><con:default>itemId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="fa3ba7a9-bf74-4c0b-8862-e2e5c1d9c52e" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="bf804461-2728-4247-b175-2cd2dcdbb747" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+   "launchUuid":"831de321-d599-4758-9d92-ceac899bf0da",
+   "itemUuid":"8a2b667e-6ce2-4405-870e-db8713b377b5",
+   "time":"1613029822000",
+   "message":"",
+   "level":"info"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/api/v1/superadmin_personal/item/auto%3Aeee9059fa62091ec6e87f2d2f8937ba0</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemId" value="62940bb8-23a6-4a38-997f-73f72e3893fd" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface><con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting>
       <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@errors_only">false</con:setting>
@@ -1866,6 +1910,7 @@ else{
       </con:property>
     </con:properties>
   </con:testSuite>
+  <con:testSuite id="08af953c-11b1-4045-afcf-a530baaaf3b1" name="ReportPortal"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="dadfd790-cd07-40e0-8a74-f7e9ffe0572a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Start launch" searchProperties="true"><con:settings/><con:properties/></con:testCase><con:properties/></con:testSuite>
   <con:testSuite id="b7186296-ce49-40a4-8956-65b39421bc62" name="Events_pushing_fine_to_webhook">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
@@ -11366,7 +11411,9 @@ messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toStri
         <con:settings/>
         <con:setupScript>def jsonData = [
 ]
+def newJson = []
 context.jsonData = jsonData;
+context.newJson = newJson;
 
 String project_dir = context.expand('${projectDir}');
 fuzzDBLocation = project_dir + File.separator + "test_data" + File.separator + "fuzzdb";
@@ -11398,6 +11445,7 @@ context.lstOfJsons = lstOfJsons
 context.lstOfInvalidEmails = lstOfInvalidEmails
 log.info("Context set!")</con:setupScript>
         <con:tearDownScript>import groovy.json.JsonOutput;
+import com.eviware.soapui.security.*;
 String project_dir = context.expand('${projectDir}');
 
 def result = context.getProperty('SecurityScanRequestResult')
@@ -11406,13 +11454,17 @@ log.info("status: " + result.getStatus())
 log.info("Messages: " + result.getMessages())
 log.info("Actions: "+ result.getActions())
 
+def newJsonStr = JsonOutput.toJson(context.newJson)
+def newPrettyJson = JsonOutput.prettyPrint(newJsonStr)
 def jsonStr = JsonOutput.toJson(context.jsonData)
 def prettyJson = JsonOutput.prettyPrint(jsonStr)
 //log.info("jsonObj -- " + prettyJson);
 
 File reportFile = new File(project_dir + File.separator + "details.json");
+File reportFileNew = new File(project_dir + File.separator + "newReport.json");
 
 saveToFile(reportFile, prettyJson)
+saveToFile(reportFileNew, newPrettyJson)
 
 //Save the contents to a file
 def saveToFile(file, content) {
@@ -11439,8 +11491,7 @@ def saveToFile(file, content) {
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="ecb6b0b7-fea2-41dd-9013-d9e255f7e7c9" name="capture req/resp data">
-              <con:configuration>
-                <scriptText>String response = messageExchange.getResponseContent();
+              <con:configuration><scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 HashMap&lt;String,String> properties = messageExchange.getProperties()
@@ -11461,8 +11512,7 @@ KEY = securityTestName + "_" + testStepName + "_" + scan + "_" + System.currentT
 
 
 
-context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
-              </con:configuration>
+context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration>
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -11475,7 +11525,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="657af876-e19a-4339-880c-84aff4391c85" applyForFailedStep="false" disabled="false" runOnlyOnce="false">
+          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="657af876-e19a-4339-880c-84aff4391c85" applyForFailedStep="false" disabled="true" runOnlyOnce="false">
             <con:settings/>
             <con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:executeScript>import groovy.json.JsonSlurper;
@@ -11556,7 +11606,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="49b64523-9131-482e-90f0-e949277da80c" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="49b64523-9131-482e-90f0-e949277da80c" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:InvalidSecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:typesList>
@@ -11743,7 +11793,7 @@ context.jsonData &lt;&lt; [(KEY):["request": request, "response": response, "tim
         </con:testStepSecurityTest>
         <con:testStepSecurityTest>
           <con:testStepId>c580c34b-159b-4b10-8d97-4dfd21f576d7</con:testStepId>
-          <con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="20f10a7e-f5b1-4d04-b01a-1b43e8dd5a2f" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="20f10a7e-f5b1-4d04-b01a-1b43e8dd5a2f" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:minimal>5</con:minimal>
@@ -11795,7 +11845,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="95528999-6042-4762-ab3a-30d34fa699ef" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types" id="95528999-6042-4762-ab3a-30d34fa699ef" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:InvalidSecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:typesList>
@@ -11945,7 +11995,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="BoundaryScan" name="Boundary Scan" id="165c66d2-b948-4a70-846f-b159522aa4ad" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="BoundaryScan" name="Boundary Scan" id="165c66d2-b948-4a70-846f-b159522aa4ad" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:assertion type="Sensitive Information Exposure" id="53acb4c1-81db-4a7d-96fd-493a3a5e6040" name="Sensitive Information Exposure">
@@ -11989,7 +12039,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="365b3f75-bc33-4389-8b09-2c07fa3f4420" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="365b3f75-bc33-4389-8b09-2c07fa3f4420" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:CrossSiteScriptingScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameterExposureStrings>&lt;PLAINTEXT></con:parameterExposureStrings>
@@ -12124,7 +12174,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="SQLInjectionScan" name="SQL Injection" id="aba1ae8b-06b9-48b4-bce4-bc4e9f43cc63" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="SQLInjectionScan" name="SQL Injection" id="aba1ae8b-06b9-48b4-bce4-bc4e9f43cc63" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:SQLInjectionScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:sqlInjectionStrings>' or '1'='1</con:sqlInjectionStrings>
@@ -12184,7 +12234,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="XPathInjectionSecurityScan" name="XPath Injection" id="baf0f67e-815d-4561-a1b9-c92020cdf7f9" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="XPathInjectionSecurityScan" name="XPath Injection" id="baf0f67e-815d-4561-a1b9-c92020cdf7f9" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:XPathInjection" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:xpathList>or name(//users/LoginID[1]) = 'LoginID' or 'a'='b</con:xpathList>
@@ -12245,8 +12295,7 @@ context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "tim
       </con:securityTest>
     </con:testCase>
     <con:properties/>
-  </con:testSuite>
-  <con:properties>
+  </con:testSuite><con:properties>
     <con:property>
       <con:name>environment</con:name>
       <con:value>nightly</con:value>
