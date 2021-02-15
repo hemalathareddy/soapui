@@ -1534,11 +1534,13 @@
         <con:parameterOrder/></con:request>
       </con:method>
     </con:resource>
-  <con:resource name="closeItem" path="/api/v1/superadmin_personal/item/{itemId}" id="410182c2-0558-42dc-8447-4a674ada2d4e"><con:settings/><con:parameters><con:parameter><con:name>itemId</con:name><con:value>itemId</con:value><con:style>TEMPLATE</con:style><con:default>itemId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="6d890730-06d0-45e1-9e63-aa259675a123" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" id="919c021c-cfaa-4322-82fb-4ee4d3039cbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+  <con:resource name="closeItem" path="/api/v1/superadmin_personal/item/{itemID}" id="410182c2-0558-42dc-8447-4a674ada2d4e"><con:settings/><con:parameters><con:parameter><con:name>itemID</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/></con:parameter></con:parameters><con:method name="Method 1" id="6d890730-06d0-45e1-9e63-aa259675a123" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" id="919c021c-cfaa-4322-82fb-4ee4d3039cbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
   "endTime": "1574423239000",
   "status": "failed",
   "launchUuid": "96d1bc02-6a3f-451e-b706-719149d51ce4"
-}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface>
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemID" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>itemID</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="closeLaunch" path="/api/v1/superadmin_personal/launch/{launchID}/finish" id="7300943f-09a5-458d-a388-adc5c3c3308f"><con:settings/><con:parameters><con:parameter><con:name>launchID</con:name><con:value>launchID</con:value><con:style>TEMPLATE</con:style><con:default>launchID</con:default></con:parameter></con:parameters><con:method name="Method 1" id="29aa468a-e1d6-4973-a7a7-f31fc4c01954" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" id="d29ecd9a-c8e5-4630-9271-641335e91b93" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+  "endTime": "1574423255000"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="launchID" value="launchID" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface>
   <con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting>
@@ -2091,7 +2093,7 @@ messageExchange.modelItem.testCase.testSuite.setPropertyValue("launchId", json.i
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters/>
-        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>startTime</con:name><con:value>1613128700972</con:value></con:property><con:property><con:name>launchName</con:name><con:value>APIFuzzyTEsts</con:value></con:property></con:properties></con:testCase>
+        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>startTime</con:name><con:value>1613384532637</con:value></con:property><con:property><con:name>launchName</con:name><con:value>APIFuzzyTEsts</con:value></con:property></con:properties></con:testCase>
     <con:testCase id="66851c6a-d050-4570-98ed-6c31e6c5f853" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartTestSuite" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="cf16a911-51a9-4829-868c-2cc9291caa87"><con:settings/><con:config><script>Date now = new Date();
 def timestamp = now.getTime().toString();
 testRunner.testCase.setPropertyValue("startTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="startTestSuite" id="f40fcf9b-6015-4e19-ad00-3d5ba3be5207"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/item" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="startTestSuite" id="3ee5b2d3-d2de-4b83-ad07-14aa3a57b2e6" mediaType="application/json" postQueryString="false">
@@ -2121,7 +2123,7 @@ messageExchange.modelItem.testCase.testSuite.setPropertyValue("suiteId", json.id
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters/>
-        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>suiteName</con:name><con:value>v1.1/customer_SecurityTestSuite</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613128701537</con:value></con:property></con:properties></con:testCase><con:testCase id="dd466267-edb9-4688-a9bd-8b50c8a66c8b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="b1974040-37e0-46cf-b024-dfdd6017dddc"><con:settings/><con:config><script>Date now = new Date();
+        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>suiteName</con:name><con:value>v1.1/customer_SecurityTestSuite</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613384533302</con:value></con:property></con:properties></con:testCase><con:testCase id="dd466267-edb9-4688-a9bd-8b50c8a66c8b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="b1974040-37e0-46cf-b024-dfdd6017dddc"><con:settings/><con:config><script>Date now = new Date();
 def timestamp = now.getTime().toString();
 testRunner.testCase.setPropertyValue("startTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="startTestCase" id="e2779b9d-7794-4d9b-a732-d50ff399cf1b"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/item/{itemId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="startTestCase" id="bf804461-2728-4247-b175-2cd2dcdbb747" mediaType="application/json" postQueryString="false">
           <con:settings>
@@ -2147,7 +2149,7 @@ messageExchange.modelItem.testCase.testSuite.setPropertyValue("caseId", json.id)
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters><entry key="itemId" value="${#TestSuite#suiteId}" xmlns="http://eviware.com/soapui/config"/></con:parameters>
-        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>caseName</con:name><con:value>v1.1/customer_SecurityTestCase</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613128701822</con:value></con:property></con:properties></con:testCase><con:testCase id="ce65d8d3-3867-4f28-9563-3067a612509d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartTestStep" searchProperties="true">
+        </con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>caseName</con:name><con:value>v1.1/customer_SecurityTestCase</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613384533585</con:value></con:property></con:properties></con:testCase><con:testCase id="ce65d8d3-3867-4f28-9563-3067a612509d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartTestStep" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Groovy Script" id="3c2add20-c480-4f25-917d-bb22e2a15453"><con:settings/><con:config><script>Date now = new Date();
 def timestamp = now.getTime().toString();
@@ -2186,7 +2188,7 @@ messageExchange.modelItem.testCase.testSuite.setPropertyValue("stepId", json.id)
       </con:testStep>
       <con:properties>
         
-      <con:property><con:name>stepName</con:name><con:value>FuzzyScan</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613128721780</con:value></con:property></con:properties>
+      <con:property><con:name>stepName</con:name><con:value>Custom Scan for [customerAdd]</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613384829913</con:value></con:property></con:properties>
     </con:testCase><con:testCase id="096e6dfa-f1e2-4478-91c5-fce49349871d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="addLog" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="926b8d73-e02d-4338-ad89-14cb99c7343e"><con:settings/><con:config><script>Date now = new Date();
 def timestamp = now.getTime().toString();
 
@@ -2212,13 +2214,29 @@ testRunner.testCase.setPropertyValue("startTime",timestamp)</script></con:config
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters/>
-        <con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>message</con:name><con:value> HTTP/1.1 401 Unauthorized  Server: nginx/1.17.8  Date: Fri, 12 Feb 2021 11:18:41 GMT  Content-Type: application/json  Transfer-Encoding: chunked  Connection: keep-alive    { \"response\": { \"status\": { \"code\": 401, \"success\": \"false\", \"message\": \"Please check your username password or authentication token\" } } }</con:value></con:property><con:property><con:name>level</con:name><con:value>info</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613129388057</con:value></con:property></con:properties></con:testCase><con:testCase id="cc16831b-ce2e-41cc-8f45-4b07846a83b6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="closeTestStep" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="ad4eb75a-254d-422a-b5c2-2e896bf9ed38"><con:settings/><con:config><script>Date now = new Date();
+        <con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>message</con:name><con:value>============Properties===============[\"HTTP Version\":\"HTTP/1.1\", \"SecurityChangedParameters\":\"&lt;entry key=\"payload\" value=\"&amp;quot;{}&amp;quot;\" xmlns=\"http://eviware.com/soapui/config\"/>\", \"Endpoint\":\"https://crm-nightly-new.cc.capillarytech.com\", \"Username\":\"api.auto1\", \"Encoding\":null, \"Method\":\"POST\", \"Domain\":null, \"StatusCode\":\"400\", \"URL\":\"https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/add?format=json\", \"Password\":\"202cb962ac59075b964b07152d234b70\"]====================Request=======================POST https://crm-nightly-new.cc.capillarytech.com/v1.1/customer/add?format=json HTTP/1.1Accept-Encoding: gzip,deflateX-CAP-CLIENT-COUNTRYCODE: 1Content-Type: application/jsonContent-Length: 4Host: crm-nightly-new.cc.capillarytech.comConnection: Keep-AliveUser-Agent: Apache-HttpClient/4.5.5 (Java/11.0.10)Authorization: Basic YXBpLmF1dG8xOjIwMmNiOTYyYWM1OTA3NWI5NjRiMDcxNTJkMjM0Yjcw\"{}\"====================Response======================HTTP/1.1 400 Bad RequestServer: nginx/1.17.8Date: Mon, 15 Feb 2021 10:27:09 GMTContent-Type: application/json; charset=UTF-8Content-Length: 259Connection: keep-aliveX-Application-Context: application:1900Host: intouch-api-5ccbfd949f-ppkbsorg_id: 50660status_code: 400success: 0fail: 0X-CAP-REQUEST-ID: 88997090996096c3f32d9614b79b1f01till: api.auto1X-Cap-RequestID: 88997090996096c3f32d9614b79b1f01{   \"response\" : {      \"status\" : {         \"code\" : 400,         \"message\" : \"Input is invalid, Please check request parameters or input xml/json\",         \"success\" : false,         \"warnings\" : {            \"warning\" : [ ]         }      }   }}</con:value></con:property><con:property><con:name>level</con:name><con:value>info</con:value></con:property><con:property><con:name>startTime</con:name><con:value>1613384830488</con:value></con:property></con:properties></con:testCase><con:testCase id="cc16831b-ce2e-41cc-8f45-4b07846a83b6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="closeTestStep" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="ad4eb75a-254d-422a-b5c2-2e896bf9ed38"><con:settings/><con:config><script>Date now = new Date();
 def timestamp = now.getTime().toString();
-testRunner.testCase.setPropertyValue("endTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="closeTestStep" id="2d8cd336-3613-406f-a2ca-0f629057c813"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/item/{itemId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="closeTestStep" id="919c021c-cfaa-4322-82fb-4ee4d3039cbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+testRunner.testCase.setPropertyValue("endTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="closeStep" id="927594c7-31cd-4cef-a9f8-16bf54bf52b2"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/item/{itemID}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="closeStep" id="919c021c-cfaa-4322-82fb-4ee4d3039cbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
   "endTime": "${#TestCase#endTime}",
   "status": "${#TestCase#status}",
   "launchUuid": "${#TestSuite#launchId}"
-}</con:request><con:originalUri>http://qareportportal.capillary.in/ui/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemId" value="${#TestSuite#stepId}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>status</con:name><con:value>passed</con:value></con:property><con:property><con:name>endTime</con:name><con:value>1613128722352</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>launchId</con:name><con:value>02311b33-145c-4b0b-9f3e-7f6dc7d0b812</con:value></con:property><con:property><con:name>suiteId</con:name><con:value>1df4128a-b8f8-4d25-ae82-24e5f7331020</con:value></con:property><con:property><con:name>caseId</con:name><con:value>a89838e4-f2db-40dc-a5b8-8beec3861c3a</con:value></con:property><con:property><con:name>stepId</con:name><con:value>9f7802c4-ba5f-407b-a01c-eb7b0d92500b</con:value></con:property></con:properties>
+}</con:request><con:originalUri>http://qareportportal.capillary.in/ui/</con:originalUri><con:assertion type="Simple NotContains" id="f1c40bbb-4a87-43ef-8ca2-070362f7ef4f" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemID" value="${#TestSuite#stepId}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>itemID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>status</con:name><con:value>passed</con:value></con:property><con:property><con:name>endTime</con:name><con:value>1613384830768</con:value></con:property></con:properties></con:testCase><con:testCase id="930a0bef-3e50-4e06-b51a-2e0066477b4b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="closeTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="85d9395c-d8b9-41f5-9ef9-8f8f9d49f5be"><con:settings/><con:config><script>Date now = new Date();
+def timestamp = now.getTime().toString();
+testRunner.testCase.setPropertyValue("endTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="closeCase" id="6d24848f-8886-496b-a3f3-37fa008292b2"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/item/{itemID}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="closeCase" id="919c021c-cfaa-4322-82fb-4ee4d3039cbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+  "endTime": "${#TestCase#endTime}",
+  "status": "${#TestCase#status}",
+  "launchUuid": "${#TestSuite#launchId}"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/ui/</con:originalUri><con:assertion type="Simple NotContains" id="3c82623a-c0de-4caa-a280-ecd71bc47702" name="Not Contains"><con:configuration><token>error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemID" value="${#TestSuite#suiteId}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>itemID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>status</con:name><con:value>passed</con:value></con:property><con:property><con:name>endTime</con:name><con:value>1613383252128</con:value></con:property></con:properties></con:testCase><con:testCase id="9b0940e8-0ee0-48ab-af3a-7ea8d445879d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="closeTestSuite" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="e2d96e47-7072-43d8-a2f0-5d24515af334"><con:settings/><con:config><script>Date now = new Date();
+def timestamp = now.getTime().toString();
+testRunner.testCase.setPropertyValue("endTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="closeSuite" id="049f72a7-aa65-48bf-95cf-671459759691"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/item/{itemID}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="closeSuite" id="919c021c-cfaa-4322-82fb-4ee4d3039cbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+  "endTime": "${#TestCase#endTime}",
+  "status": "${#TestCase#status}",
+  "launchUuid": "${#TestSuite#launchId}"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/ui/</con:originalUri><con:assertion type="Simple NotContains" id="052b92c1-31df-43f4-acf0-eccd06967f0c" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="itemID" value="${#TestSuite#suiteId}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>itemID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>status</con:name><con:value>passed</con:value></con:property><con:property><con:name>endTime</con:name><con:value>1613383252426</con:value></con:property></con:properties></con:testCase><con:testCase id="e5d9f014-2354-4a6e-91fc-0b9c35c0c3c6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="closeLaunch" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="b1d7f92d-b3eb-4f5e-82cd-51345f2f9b3c"><con:settings/><con:config><script>Date now = new Date();
+def timestamp = now.getTime().toString();
+testRunner.testCase.setPropertyValue("endTime",timestamp)</script></con:config></con:testStep><con:testStep type="restrequest" name="closeLaunch" id="caa55fef-4a08-4a38-b9e2-9ad9d5d12e2d"><con:settings/><con:config service="ReportPortal" resourcePath="/api/v1/superadmin_personal/launch/{launchID}/finish" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="closeLaunch" id="d29ecd9a-c8e5-4630-9271-641335e91b93" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 3c24e31f-e667-4ecd-8b80-91b42abccc8f" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://qareportportal.capillary.in</con:endpoint><con:request>{
+  "endTime": "${#TestCase#endTime}"
+}</con:request><con:originalUri>http://qareportportal.capillary.in/api/v1/superadmin_personal/launch/2ab3a6e0-636e-440a-a144-7b284f536092</con:originalUri><con:assertion type="Simple NotContains" id="f060ddaf-beda-469c-a986-8111719c5857" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="launchID" value="${#TestSuite#launchId}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>endTime</con:name><con:value>1613383616110</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>launchId</con:name><con:value>151128bb-cc81-4aea-8bdc-740e09b681ca</con:value></con:property><con:property><con:name>suiteId</con:name><con:value>f4caf3c6-7347-4402-9283-93e941357871</con:value></con:property><con:property><con:name>caseId</con:name><con:value>9c037f20-7022-4fa9-9fd8-a2022b50535d</con:value></con:property><con:property><con:name>stepId</con:name><con:value>e85cf1db-784f-48f4-85d4-09f557ab0438</con:value></con:property></con:properties>
   </con:testSuite>
   <con:testSuite id="b7186296-ce49-40a4-8956-65b39421bc62" name="Events_pushing_fine_to_webhook">
     <con:settings/>
@@ -11759,7 +11777,34 @@ def saveToFile(file, content) {
     }
     file.write(content)
     assert file.exists(), "${file.name} not created"
-}</con:tearDownScript>
+}
+
+// closing the testcase and suite over reportportal.
+def reportPortalTestSuites = context.testCase.testSuite.project.testSuites['ReportPortal'];
+
+def closeTestCase = reportPortalTestSuites.testCases['closeTestCase']
+closeTestCase.setPropertyValue("status", "passed");
+def closeTestCaseRunner = closeTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeTestCaseResults = closeTestCaseRunner.getResults();
+log.info("TestCase closed - " + closeTestCaseResults[1].getStatus());
+
+def closeTestSuite = reportPortalTestSuites.testCases['closeTestSuite']
+closeTestSuite.setPropertyValue("status", "passed");
+def closeTestSuiteRunner = closeTestSuite.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeTestSuiteRunnerResults = closeTestSuiteRunner.getResults();
+log.info("TestSuite closed - " + closeTestSuiteRunnerResults[1].getStatus());
+
+def closeLaunch = reportPortalTestSuites.testCases['closeLaunch']
+def closeLaunchRunner = closeLaunch.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeLaunchRunnerResults = closeLaunchRunner.getResults();
+log.info("Launch Closed - " + closeLaunchRunnerResults[1].getStatus());
+
+
+
+
+
+
+</con:tearDownScript>
         <con:testStepSecurityTest>
           <con:testStepId>1ac6515e-6bb7-4d0b-8d0c-7813c59e5202</con:testStepId>
           <con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="ee919c71-f498-41f8-832e-81fa5b7f6db4" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
@@ -11767,7 +11812,7 @@ def saveToFile(file, content) {
             <con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:minimal>5</con:minimal>
               <con:maximal>10</con:maximal>
-              <con:numberOfRequest>10</con:numberOfRequest>
+              <con:numberOfRequest>5</con:numberOfRequest>
             </con:config>
             <con:assertion type="Sensitive Information Exposure" id="879610ca-d462-417d-bcd7-3b6e2ba9f405" name="Sensitive Information Exposure">
               <con:configuration>
@@ -11779,7 +11824,10 @@ def saveToFile(file, content) {
               <con:configuration><scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
+
+
 HashMap&lt;String,String> properties = messageExchange.getProperties()
+
 def parameterJson = [:]
 properties.each{ key,value ->
   parameterJson[(key)] = value;
@@ -11807,9 +11855,56 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
 
 //context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];
 
+
+
 </scriptText></con:configuration>
             </con:assertion>
-            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:assertion type="GroovyScriptAssertion" id="07a0071a-e4b2-4320-be05-13bcd2375075" name="Add step data to Reportportal"><con:configuration><scriptText>String rawRequest = new String(messageExchange.getRawRequestData())
+String rawResponse = new String(messageExchange.getRawResponseData())
+
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def scan = context.getCurrentScan().getName();
+
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+propertiesString = properties.inspect();
+
+message = "============Properties===============\\n";
+message = message + propertiesString + "\\n";
+message = message + "====================Request=======================";
+message = message + rawRequest + "\\n";
+message = message + "====================Response======================"
+message = message + rawResponse + "\\n";
+message = message.replace("\"", '\\\"');
+message = message.replace("'", '\\\"');
+message = message.replace("\t", '');
+message = message.replace('\n','')
+message = message.replace('\r','');
+
+log.info("Step Message::" + message);
+
+
+def reportPortalTestSuites = context.testCase.testSuite.project.testSuites['ReportPortal'];
+//Start a TestStep.
+def startTestStepTestCase = reportPortalTestSuites.testCases['StartTestStep']
+startTestStepTestCase.setPropertyValue("stepName", scan + "for [" + testStepName + "]");
+def startTestStepRunner = startTestStepTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def stepResults = startTestStepRunner.getResults();
+log.info("TestStep Created - " + stepResults[1].getStatus());
+
+//add a log
+def addLogTestCase = reportPortalTestSuites.testCases['addLog']
+addLogTestCase.setPropertyValue("message", message);
+addLogTestCase.setPropertyValue("level", "info");
+def addLogRunner = addLogTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def addLogResults = addLogRunner.getResults();
+log.info("Log Added Status - " + addLogResults[1].getStatus());
+
+//close the test step.
+def closeTestStepTestCase = reportPortalTestSuites.testCases['closeTestStep']
+closeTestStepTestCase.setPropertyValue("status", "passed");
+def closeTestStepRunner = closeTestStepTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeTestStepResults = closeTestStepRunner.getResults();
+log.info("TestStep closed - " + closeTestStepResults[1].getStatus());</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="Username" parameterName="Username" xpath="" checked="true"/>
               <con:parameters label="Password" parameterName="Password" xpath="" checked="true"/>
@@ -11820,7 +11915,7 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="657af876-e19a-4339-880c-84aff4391c85" applyForFailedStep="false" disabled="true" runOnlyOnce="false">
+          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="657af876-e19a-4339-880c-84aff4391c85" applyForFailedStep="false" disabled="false" runOnlyOnce="false">
             <con:settings/>
             <con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:executeScript>import groovy.json.JsonSlurper;
@@ -11900,7 +11995,49 @@ context.newJson << [(KEY): [(context.INDEX): ["request": reqBody, "response": re
 //context.jsonData << [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];]]></scriptText>
               </con:configuration>
             </con:assertion>
-            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:assertion type="GroovyScriptAssertion" id="9b9dc556-583d-463e-b5b3-fb0f9af2241c" name="add step data to reportportal"><con:configuration><scriptText>String rawRequest = new String(messageExchange.getRawRequestData())
+String rawResponse = new String(messageExchange.getRawResponseData())
+
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+propertiesString = properties.inspect();
+
+message = "============Properties===============";
+message = message + propertiesString;
+message = message + "====================Request=======================";
+message = message + rawRequest;
+message = message + "====================Response======================"
+message = message + rawResponse;
+message = message.replace("\"", '\\\"');
+message = message.replace("'", '\\\"');
+message = message.replace("\t", '');
+message = message.replace('\n','')
+message = message.replace('\r','');
+
+log.info("Step Message::" + message);
+
+
+def reportPortalTestSuites = context.testCase.testSuite.project.testSuites['ReportPortal'];
+//Start a TestStep.
+def startTestStepTestCase = reportPortalTestSuites.testCases['StartTestStep']
+startTestStepTestCase.setPropertyValue("stepName", "Fuzzy Scan");
+def startTestStepRunner = startTestStepTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def stepResults = startTestStepRunner.getResults();
+log.info("TestStep Created - " + stepResults[1].getStatus());
+
+//add a log
+def addLogTestCase = reportPortalTestSuites.testCases['addLog']
+addLogTestCase.setPropertyValue("message", message);
+addLogTestCase.setPropertyValue("level", "info");
+def addLogRunner = addLogTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def addLogResults = addLogRunner.getResults();
+log.info("Log Added Status - " + addLogResults[1].getStatus());
+
+//close the test step.
+def closeTestStepTestCase = reportPortalTestSuites.testCases['closeTestStep']
+closeTestStepTestCase.setPropertyValue("status", "passed");
+def closeTestStepRunner = closeTestStepTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeTestStepResults = closeTestStepRunner.getResults();
+log.info("TestStep closed - " + closeTestStepResults[1].getStatus());</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="payload" parameterName="Request" xpath="" checked="true"/>
             </con:checkedParameters>
