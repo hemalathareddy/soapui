@@ -1033,8 +1033,7 @@ assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expe
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="73ea8b69-252d-442d-b3d8-a2b8ac830417" name="assert the promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1059,12 +1058,11 @@ expectedCartConditions = [
         "cartCondition": [
             "kpi": "ITEMCOUNT",
             "operator": "LESS_THAN",
-            "value": 3],
+            "value": "3.000000"],
             "productCondition": null
         ]
 
-assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText>
-              </con:configuration>
+assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1095,8 +1093,7 @@ assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are no
             <con:request/>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="4a9da00c-d3e5-4e4a-86c8-b0ca732b480a" name="Asserting the cart condition details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1121,12 +1118,11 @@ expectedCartConditions = [
         "cartCondition": [
             "kpi": "ITEMCOUNT",
             "operator": "LESS_THAN",
-            "value": 3],
+            "value": "3.000000"],
             "productCondition": null
         ]
 
-assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText>
-              </con:configuration>
+assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1347,35 +1343,35 @@ assert(endDateInResponse == expectedEndDate) : "End date is not expected."</scri
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1613021652329</con:value>
+          <con:value>1613130440797</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1613108052329</con:value>
+          <con:value>1613216840797</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>391ULO7QA3</con:value>
+          <con:value>COD2VC4WYM</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6024c1d50d93ed13c0ea1bad</con:value>
+          <con:value>60266ac8e3e3bf6429cb5a77</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_391ULO7QA3</con:value>
+          <con:value>test promotion_COD2VC4WYM</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_HKQPR9K9L1</con:value>
+          <con:value>test promotion_L3EQS6R570</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1612935252329</con:value>
+          <con:value>1613044040797</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1613204452329</con:value>
+          <con:value>1613313240797</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -1557,8 +1553,7 @@ assert flag == true</scriptText>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="3f66b6bc-2d51-44eb-8adb-2271b6aba827" name="assert the transaction details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1583,11 +1578,10 @@ expectedUserId = context.expand('${#TestCase#userId}')
 
 assert(expectedTnxId == tnxIdInResponse) : "Tnx Id is not as expected";
 assert(expectedTnxNumber == tnxNumberInResponse): "Tnx Number is not as expected";
-assert(tnxAmountInResponse == 25000)
+assert(tnxAmountInResponse == "25000.000000")
 assert(customerIdInResponse == expectedUserId): "Customer Id is not as expected";
 assert(tnxReferenceIdInResponse == expectedRefId):"Reference Id is not as expected";
-assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText>
-              </con:configuration>
+assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText></con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="dfe46d0e-0ab3-4d5f-818e-0ac2bc3e55a2" name="assert the applied promotion details">
               <con:configuration><scriptText>import groovy.json.JsonSlurper;
@@ -1632,19 +1626,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1613022220105</con:value>
+          <con:value>1613130451448</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1613108620105</con:value>
+          <con:value>1613216851448</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_HXJBCIC6XH</con:value>
+          <con:value>test promotion_MSBEA8BMHC</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6024c40d0d93ed13c0ea1bb2</con:value>
+          <con:value>60266ad3e3e3bf6429cb5a78</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2050,47 +2044,47 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1613021656292</con:value>
+          <con:value>1613130259253</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value>1613021956298</con:value>
+          <con:value>1613130559254</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value>1613022256298</con:value>
+          <con:value>1613130859254</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value>1613022556298</con:value>
+          <con:value>1613131159254</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value>6024c1d80d93ed13c0ea1baf</con:value>
+          <con:value>60266a13e3e3bf6429cb5a74</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value>test promotion_79285559</con:value>
+          <con:value>test promotion_34295492</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>AM8UHWD045</con:value>
+          <con:value>DA5NGCWBUA</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value>6024c1d90d93ed13c0ea1bb0</con:value>
+          <con:value>60266a13e3e3bf6429cb5a75</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value>test promotion_75159653</con:value>
+          <con:value>test promotion_07609300</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value>6024c1d90d93ed13c0ea1bb1</con:value>
+          <con:value>60266a13e3e3bf6429cb5a76</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value>test promotion_03341336</con:value>
+          <con:value>test promotion_59143718</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2098,7 +2092,7 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-numberAM8UHWD045</con:value>
+          <con:value>txn-numberDA5NGCWBUA</con:value>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
@@ -2114,15 +2108,15 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value>['id':'6024c1d80d93ed13c0ea1baf', 'name':'test promotion_79285559', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'60266a13e3e3bf6429cb5a74', 'name':'test promotion_34295492', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value>['id':'6024c1d90d93ed13c0ea1bb0', 'name':'test promotion_75159653', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'60266a13e3e3bf6429cb5a75', 'name':'test promotion_07609300', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value>['id':'6024c1d90d93ed13c0ea1bb1', 'name':'test promotion_03341336', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'60266a13e3e3bf6429cb5a76', 'name':'test promotion_59143718', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
