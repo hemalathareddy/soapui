@@ -271,8 +271,8 @@
                         </dependencies>
                         <configuration>
                             <projectFile>${basedir}/apis_tests/src/test/java/com/api/projects/${projectName}.xml</projectFile>
-                            <testSuite>v1.1/customer_SecurityTestSuite</testSuite>
-                            <testCase>v1.1/customer_SecurityTestCase</testCase>
+                            <testSuite>${testSuite}</testSuite>
+                            <testCase>${testCase}</testCase>
                             <outputFolder>${project.build.directory}/surefire-reports</outputFolder>
                             <!--Make the jUnit results file-->
                             <junitReport>true</junitReport>
@@ -286,12 +286,7 @@
                             <projectProperties>
                                 <value>environment=${environment}</value>
                                 <value>execution_group=${execution_group}</value>
-                                <value>rp.uuid=3c24e31f-e667-4ecd-8b80-91b42abccc8f</value>
-                                <value>rp.endpoint=https://qareportportal.capillary.in</value>
-                                <value>rp.launch=TestExecution_${environment}_Security</value>
-                                <value>rp.project=superadmin_personal</value>
-                                <value>rp.attributes=key:value;value;</value>
-                                <value>rp.description=Security test execution on ${environment}</value>
+                                <value>outputFolder=${project.build.directory}/surefire-reports</value>
                             </projectProperties>
                             <soapuiProperties>
                                 <property>
