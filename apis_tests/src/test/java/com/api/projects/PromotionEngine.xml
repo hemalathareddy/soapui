@@ -1597,7 +1597,7 @@ expectedPromotion = [
             "id": "${promotionId}",
             "name": "${promotionName}",
             "messageLabel": "test!!",
-            "discount": 250,
+            "discount": "250.000000",
             "discountAppliedOnQuantity": null,
             "promotionAppliedOnQuantity": null,
             "type": "POS"
@@ -1774,7 +1774,7 @@ promotionDetail_5min = [
             "id": promotionId,
             "name": promotionName,
             "messageLabel": "test!!",
-            "discount": 250,
+            "discount": "250.000000",
             "discountAppliedOnQuantity": null,
             "promotionAppliedOnQuantity": null,
             "type":"POS"
@@ -1865,7 +1865,7 @@ promotionDetails_10min = [
             "id": promotionId,
             "name": promotionName,
             "messageLabel": "test!!",
-            "discount": 250,
+            "discount": "250.000000",
             "discountAppliedOnQuantity": null,
             "promotionAppliedOnQuantity": null,
             "type": "POS"
@@ -1953,7 +1953,7 @@ promotionDetails_15min = [
             "id": promotionId,
             "name": promotionName,
             "messageLabel": "test!!",
-            "discount": 250,
+            "discount": "250.000000",
             "discountAppliedOnQuantity": null,
             "promotionAppliedOnQuantity": null,
             "type":"POS"
