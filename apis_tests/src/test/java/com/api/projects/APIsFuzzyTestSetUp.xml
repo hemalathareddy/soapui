@@ -365,8 +365,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="0568445a-36d0-42b5-9933-89df50b53456" wadlVersion="http://wadl.dev.java.net/2009/02" name="addRegularTransaction" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache type="TEXT"/>
-    <con:endpoints>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
     </con:endpoints>
     <con:resource name="add" path="/v1.1/transaction/add" id="dee9310e-99b0-48cf-acb7-ec04400c84c4">
@@ -1636,8 +1636,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="43b4172c-d39c-4d47-8c86-d83a44bf8e42" wadlVersion="http://wadl.dev.java.net/2009/02" name="getTransactionV1" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache type="TEXT"/>
-    <con:endpoints>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
     </con:endpoints>
     <con:resource name="get" path="/{version}/transaction/get" id="e5934aae-e313-4e85-b69a-9d7acd63e186">
@@ -4813,7 +4813,7 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
         </con:config>
       </con:testStep>
       <con:properties/>
-      <con:securityTest id="6a5cc651-835f-44ef-957e-5b74bb9682a5" name="getTransactionFuzzyTests" failOnError="true">
+      <con:securityTest id="6a5cc651-835f-44ef-957e-5b74bb9682a5" name="getTransactionFuzzyTests" failOnError="false" failSecurityTestOnScanErrors="true">
         <con:settings/>
         <con:setupScript>import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus;
 
@@ -4957,7 +4957,7 @@ log.info("Launch Closed - " + closeLaunchRunnerResults[1].getStatus());
 */</con:tearDownScript>
         <con:testStepSecurityTest>
           <con:testStepId>ceac7917-827b-4c43-aba7-0df57d4bc4a7</con:testStepId>
-          <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="4719af9d-3477-4e53-a53a-29035681f608" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+          <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="4719af9d-3477-4e53-a53a-29035681f608" applyForFailedStep="false" disabled="true" runOnlyOnce="true">
             <con:settings/>
             <con:config xsi:type="con:CrossSiteScriptingScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameterExposureStrings>&lt;PLAINTEXT></con:parameterExposureStrings>
@@ -5062,9 +5062,13 @@ log.info("Launch Closed - " + closeLaunchRunnerResults[1].getStatus());
                 <IncludeGlobal>true</IncludeGlobal>
               </con:configuration>
             </con:assertion>
+            
+            
+            <con:assertion type="Simple NotContains" id="0a1c3beb-d7ce-4802-bebb-a0d8de2b486d" name="transaction not retreived">
+              <con:configuration><token>Transaction retrieved successfully</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration>
+            </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="fc621fc7-e85c-4c82-8299-65318709e29f" name="capture request data">
-              <con:configuration>
-                <scriptText>String response = messageExchange.getResponseContent();
+              <con:configuration><scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
@@ -5096,24 +5100,8 @@ stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.
 
 context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
 
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="Simple Contains" id="4cf459f1-32d2-4141-90af-3213c40e7b0e" name="call not success">
-              <con:configuration>
-                <token>"success":"false"</token>
-                <ignoreCase>false</ignoreCase>
-                <useRegEx>false</useRegEx>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="Simple NotContains" id="0a1c3beb-d7ce-4802-bebb-a0d8de2b486d" name="transaction not retreived">
-              <con:configuration>
-                <token>Transaction retrieved successfully</token>
-                <ignoreCase>true</ignoreCase>
-                <useRegEx>false</useRegEx>
-              </con:configuration>
-            </con:assertion>
-            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration>
+            </con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="format" parameterName="format" xpath="" checked="true"/>
               <con:parameters label="id" parameterName="id" xpath="" checked="true"/>
@@ -5250,8 +5238,7 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="e35b0099-dbae-42aa-90fd-24c70499f722" name="capture request data">
-              <con:configuration>
-                <scriptText>String response = messageExchange.getResponseContent();
+              <con:configuration><scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
@@ -5283,8 +5270,7 @@ stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.
 
 context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
 
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
-              </con:configuration>
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration>
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -5327,7 +5313,39 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
                 <useRegEx>false</useRegEx>
               </con:configuration>
             </con:assertion>
-            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:assertion type="GroovyScriptAssertion" id="1bba3032-26af-4b98-9949-091185647402" name="capture request data"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+
+
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+if(context.INDEX == null){
+	context.INDEX = 0;
+	//context.stepData = [];
+}
+context.INDEX = context.INDEX + 1;
+
+KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
+
+stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]
+
+context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
+
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="id" parameterName="id" xpath="" checked="true"/>
               <con:parameters label="type" parameterName="type" xpath="" checked="true"/>
@@ -5372,7 +5390,7 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
 		"transaction": {
 			"bill_client_id": "1121888",
 			"type": "regular",
-			"number": "BILL_69353507",
+			"number": "BILL_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(5)}",
 			"notes": "2 lin1e items",
 			"amount" : 50000,
 			"gross_amount": "100",
@@ -5547,7 +5565,203 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
         </con:config>
       </con:testStep>
       <con:properties/>
-    </con:testCase>
+    <con:securityTest id="79ea0997-dab2-47ef-9cd8-7dd6febbdf76" name="addTransactionFuzzyTests" failOnError="true"><con:settings/><con:setupScript>import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus;
+
+def newJson = []
+
+context.newJson = newJson;
+def testSuiteName = context.testCase.testSuite.getLabel();
+def testCaseName = context.testCase.getLabel();
+def reportPortalTestSuites = context.testCase.testSuite.project.testSuites['ReportPortal'];
+
+String project_dir = context.expand('${projectDir}');
+fuzzDBLocation = project_dir + File.separator + "test_data" + File.separator + "fuzzdb";
+
+//Get data from JSON Fuzzing.
+def lstOfJsons = []
+def lstOfInvalidEmails = []
+def lstOfInvalidMobiles = []
+def lstOfFuzzString = []
+
+log.info("Reading JSON_fuzzing......")
+
+new File(fuzzDBLocation + File.separator + "JSON_fuzzing.txt").withReader('UTF-8') { reader ->
+def line
+    while ((line = reader.readLine()) != null) {
+        lstOfJsons.add(line)
+    }
+}
+log.info("Reading invalid-emails.......")
+
+new File(fuzzDBLocation + File.separator + "invalid-email-addresses.txt").withReader('UTF-8') { reader ->
+def line
+    while ((line = reader.readLine()) != null) {
+        lstOfInvalidEmails.add(line)
+    }
+}
+log.info("Reading the numeric fuzz data.....")
+new File(fuzzDBLocation + File.separator + "numeric.txt").withReader('UTF-8') { reader ->
+def line
+    while ((line = reader.readLine()) != null) {
+        lstOfInvalidMobiles.add(line)
+    }
+}
+
+log.info("Reading the fuzz strings data.....")
+new File(fuzzDBLocation + File.separator + "fuzzString.txt").withReader('UTF-8') { reader ->
+def line
+    while ((line = reader.readLine()) != null) {
+        lstOfFuzzString.add(line)
+    }
+}
+
+
+
+//set to context.
+context.lstOfJsons = lstOfJsons
+context.lstOfInvalidEmails = lstOfInvalidEmails
+context.lstOfInvalidMobiles = lstOfInvalidMobiles
+context.lstOfFuzzString = lstOfFuzzString
+log.info("Context set!")
+
+/*
+//Start a launch.
+def startLaunchTestCase = reportPortalTestSuites.testCases['StartLaunch']
+startLaunchTestCase.setPropertyValue("launchName", "APIFuzzyTEsts");
+def startLaunchRunner = startLaunchTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def stepResults = startLaunchRunner.getResults();
+log.info("Lauch Created - " + stepResults[1].getStatus());
+
+//Start a TestSuite.
+def startTestSuiteTestCase = reportPortalTestSuites.testCases['StartTestSuite']
+startTestSuiteTestCase.setPropertyValue("suiteName", testSuiteName)
+def startTestSuiteRunner = startTestSuiteTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def ts_stepResults = startTestSuiteRunner.getResults();
+log.info("TestSuite Created - " + ts_stepResults[1].getStatus());
+
+//Start a TestCase.
+def startTestCaseTestCase = reportPortalTestSuites.testCases['StartTestCase']
+startTestCaseTestCase.setPropertyValue("caseName", testCaseName);
+def startTestCaseRunner = startTestCaseTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def tc_stepResults = startTestCaseRunner.getResults();
+log.info("TestCase Created - " + tc_stepResults[1].getStatus());
+
+log.info("LaunchID = " + reportPortalTestSuites.getPropertyValue('launchId'));
+log.info("SuiteID = " + reportPortalTestSuites.getPropertyValue('suiteId'));
+log.info("CaseId = " + reportPortalTestSuites.getPropertyValue('caseId'));
+*/</con:setupScript><con:tearDownScript>import groovy.json.JsonOutput;
+import com.eviware.soapui.security.*;
+
+String project_dir = context.expand('${projectDir}');
+log.info("test name = " + context.testCase.getSecurityTestAt(0).getName())
+def result = context.getProperty('SecurityScanRequestResult')
+
+log.info ("Result Type: " + result.getResultType())
+
+log.info("status: " + result.getStatus())
+
+log.info("Messages: " + result.getMessages())
+
+log.info("Actions: "+ result.getActions())
+
+def newJsonStr = JsonOutput.toJson(context.newJson)
+def newPrettyJson = JsonOutput.prettyPrint(newJsonStr)
+
+String outputFolder = context.testCase.testSuite.project.getPropertyValue("outputFolder");
+String reportFileName = context.testCase.getSecurityTestAt(0).getName();
+File reportFileObj = new File(outputFolder + File.separator + reportFileName + ".json");
+
+saveToFile(reportFileObj, newPrettyJson)
+
+//Save the contents to a file
+def saveToFile(file, content) {
+    if (!file.parentFile.exists()) {
+         file.parentFile.mkdirs()
+         log.info "Directory did not exist, created"
+    }
+    file.write(content)
+    assert file.exists(), "${file.name} not created"
+}
+
+/*
+// closing the testcase and suite over reportportal.
+def reportPortalTestSuites = context.testCase.testSuite.project.testSuites['ReportPortal'];
+
+def closeTestCase = reportPortalTestSuites.testCases['closeTestCase']
+closeTestCase.setPropertyValue("status", "passed");
+def closeTestCaseRunner = closeTestCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeTestCaseResults = closeTestCaseRunner.getResults();
+log.info("TestCase closed - " + closeTestCaseResults[1].getStatus());
+
+def closeTestSuite = reportPortalTestSuites.testCases['closeTestSuite']
+closeTestSuite.setPropertyValue("status", "passed");
+def closeTestSuiteRunner = closeTestSuite.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeTestSuiteRunnerResults = closeTestSuiteRunner.getResults();
+log.info("TestSuite closed - " + closeTestSuiteRunnerResults[1].getStatus());
+
+def closeLaunch = reportPortalTestSuites.testCases['closeLaunch']
+def closeLaunchRunner = closeLaunch.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
+def closeLaunchRunnerResults = closeLaunchRunner.getResults();
+log.info("Launch Closed - " + closeLaunchRunnerResults[1].getStatus());
+*/</con:tearDownScript><con:testStepSecurityTest><con:testStepId>1aa23cc2-3717-48db-99e6-e79cbe44755c</con:testStepId><con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="71b4854e-9edc-406b-bb89-04e59a0608b3" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:executeScript>import groovy.json.JsonSlurper;
+import groovy.json.JsonBuilder;
+
+def req = testStep.getPropertyValue("Request")
+
+def requestJson = new JsonSlurper().parseText(req);
+
+int jsonFuzzMaxIndex = context.lstOfJsons.size -1;
+
+if(context.jsonFuzzIndex == null){
+	context.jsonFuzzIndex = 0
+}
+
+JsonBuilder builder = new JsonBuilder(requestJson)
+
+// modify the request body with fuzzy json data.
+if(context.jsonFuzzIndex &lt;= jsonFuzzMaxIndex){
+	log.info("Content at index - " + context.jsonFuzzIndex + "==> " + context.lstOfJsons.get(context.jsonFuzzIndex))
+	builder.content = context.lstOfJsons.get(context.jsonFuzzIndex)
+	parameters.payload = builder.toString();
+	log.info("Payload set -- " + parameters.payload)
+	context.jsonFuzzIndex++
+	return true
+}
+else{
+	return false
+}</con:executeScript></con:config><con:assertion type="Sensitive Information Exposure" id="4e85253c-9692-4a3e-ad66-4b08d2903040" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="adbe29ff-1f5e-43d5-9714-e371ffccf80f" name="capture request data"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+
+
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  //log.info ("Property - " + key + "::" + value);
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+if(context.INDEX == null){
+	context.INDEX = 0;
+	//context.stepData = [];
+}
+context.INDEX = context.INDEX + 1;
+
+KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
+
+stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]
+
+context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
+
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="payload" parameterName="Request" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ONE_BY_ONE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan></con:testStepSecurityTest><con:properties/></con:securityTest></con:testCase>
     <con:properties/>
   </con:testSuite>
   <con:properties>
@@ -5573,7 +5787,7 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
     </con:property>
     <con:property>
       <con:name>outputFolder</con:name>
-      <con:value>/Users/nayan.gaur/Documents/bitbucket_repo/endtoendtests/platform_loyalty_endtoend_tests/target/surefire-reports</con:value>
+      <con:value>/home/tft/Documents/Nayan/Repos/platform_loyalty_endtoend_tests/target/surefire-reports</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
