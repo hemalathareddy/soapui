@@ -365,8 +365,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="0568445a-36d0-42b5-9933-89df50b53456" wadlVersion="http://wadl.dev.java.net/2009/02" name="addRegularTransaction" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT"/><con:endpoints>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
     </con:endpoints>
     <con:resource name="add" path="/v1.1/transaction/add" id="dee9310e-99b0-48cf-acb7-ec04400c84c4">
@@ -1636,8 +1636,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="43b4172c-d39c-4d47-8c86-d83a44bf8e42" wadlVersion="http://wadl.dev.java.net/2009/02" name="getTransactionV1" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT"/><con:endpoints>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
       <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
     </con:endpoints>
     <con:resource name="get" path="/{version}/transaction/get" id="e5934aae-e313-4e85-b69a-9d7acd63e186">
@@ -5062,13 +5062,16 @@ log.info("Launch Closed - " + closeLaunchRunnerResults[1].getStatus());
                 <IncludeGlobal>true</IncludeGlobal>
               </con:configuration>
             </con:assertion>
-            
-            
             <con:assertion type="Simple NotContains" id="0a1c3beb-d7ce-4802-bebb-a0d8de2b486d" name="transaction not retreived">
-              <con:configuration><token>Transaction retrieved successfully</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration>
+              <con:configuration>
+                <token>Transaction retrieved successfully</token>
+                <ignoreCase>true</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="fc621fc7-e85c-4c82-8299-65318709e29f" name="capture request data">
-              <con:configuration><scriptText>String response = messageExchange.getResponseContent();
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
@@ -5100,8 +5103,10 @@ stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.
 
 context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
 
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration>
-            </con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="format" parameterName="format" xpath="" checked="true"/>
               <con:parameters label="id" parameterName="id" xpath="" checked="true"/>
@@ -5238,7 +5243,8 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="e35b0099-dbae-42aa-90fd-24c70499f722" name="capture request data">
-              <con:configuration><scriptText>String response = messageExchange.getResponseContent();
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
@@ -5270,7 +5276,8 @@ stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.
 
 context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
 
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration>
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -5313,7 +5320,9 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
                 <useRegEx>false</useRegEx>
               </con:configuration>
             </con:assertion>
-            <con:assertion type="GroovyScriptAssertion" id="1bba3032-26af-4b98-9949-091185647402" name="capture request data"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
+            <con:assertion type="GroovyScriptAssertion" id="1bba3032-26af-4b98-9949-091185647402" name="capture request data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
@@ -5345,7 +5354,10 @@ stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.
 
 context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
 
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="id" parameterName="id" xpath="" checked="true"/>
               <con:parameters label="type" parameterName="type" xpath="" checked="true"/>
@@ -5565,7 +5577,9 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
         </con:config>
       </con:testStep>
       <con:properties/>
-    <con:securityTest id="79ea0997-dab2-47ef-9cd8-7dd6febbdf76" name="addTransactionFuzzyTests" failOnError="true"><con:settings/><con:setupScript>import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus;
+      <con:securityTest id="79ea0997-dab2-47ef-9cd8-7dd6febbdf76" name="addTransactionFuzzyTests" failOnError="true">
+        <con:settings/>
+        <con:setupScript>import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus;
 
 def newJson = []
 
@@ -5649,7 +5663,8 @@ log.info("TestCase Created - " + tc_stepResults[1].getStatus());
 log.info("LaunchID = " + reportPortalTestSuites.getPropertyValue('launchId'));
 log.info("SuiteID = " + reportPortalTestSuites.getPropertyValue('suiteId'));
 log.info("CaseId = " + reportPortalTestSuites.getPropertyValue('caseId'));
-*/</con:setupScript><con:tearDownScript>import groovy.json.JsonOutput;
+*/</con:setupScript>
+        <con:tearDownScript>import groovy.json.JsonOutput;
 import com.eviware.soapui.security.*;
 
 String project_dir = context.expand('${projectDir}');
@@ -5703,7 +5718,13 @@ def closeLaunch = reportPortalTestSuites.testCases['closeLaunch']
 def closeLaunchRunner = closeLaunch.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);
 def closeLaunchRunnerResults = closeLaunchRunner.getResults();
 log.info("Launch Closed - " + closeLaunchRunnerResults[1].getStatus());
-*/</con:tearDownScript><con:testStepSecurityTest><con:testStepId>1aa23cc2-3717-48db-99e6-e79cbe44755c</con:testStepId><con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="71b4854e-9edc-406b-bb89-04e59a0608b3" applyForFailedStep="false" disabled="false" runOnlyOnce="true"><con:settings/><con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:executeScript>import groovy.json.JsonSlurper;
+*/</con:tearDownScript>
+        <con:testStepSecurityTest>
+          <con:testStepId>1aa23cc2-3717-48db-99e6-e79cbe44755c</con:testStepId>
+          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="71b4854e-9edc-406b-bb89-04e59a0608b3" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:executeScript>import groovy.json.JsonSlurper;
 import groovy.json.JsonBuilder;
 
 def req = testStep.getPropertyValue("Request")
@@ -5729,7 +5750,17 @@ if(context.jsonFuzzIndex &lt;= jsonFuzzMaxIndex){
 }
 else{
 	return false
-}</con:executeScript></con:config><con:assertion type="Sensitive Information Exposure" id="4e85253c-9692-4a3e-ad66-4b08d2903040" name="Sensitive Information Exposure"><con:configuration><IncludeProjectSpecific>true</IncludeProjectSpecific><IncludeGlobal>true</IncludeGlobal></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="adbe29ff-1f5e-43d5-9714-e371ffccf80f" name="capture request data"><con:configuration><scriptText>String response = messageExchange.getResponseContent();
+}</con:executeScript>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="4e85253c-9692-4a3e-ad66-4b08d2903040" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="adbe29ff-1f5e-43d5-9714-e371ffccf80f" name="capture request data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
@@ -5761,7 +5792,22 @@ stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.
 
 context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
 
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText></con:configuration></con:assertion><con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:parameters label="payload" parameterName="Request" xpath="" checked="true"/></con:checkedParameters><con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:strategy>ONE_BY_ONE</con:strategy><con:delay>100</con:delay></con:executionStrategy></con:testStepSecurityScan></con:testStepSecurityTest><con:properties/></con:securityTest></con:testCase>
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="payload" parameterName="Request" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ONE_BY_ONE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+        </con:testStepSecurityTest>
+        <con:properties/>
+      </con:securityTest>
+    </con:testCase>
     <con:properties/>
   </con:testSuite>
   <con:properties>
