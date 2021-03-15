@@ -1339,35 +1339,35 @@ assert(responseData):"Promotion disable failed"
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615812623417</con:value>
+          <con:value>1615812721459</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1615899023419</con:value>
+          <con:value>1615899121459</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>XDPQ1796ZS</con:value>
+          <con:value>CDTKG2DG32</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>604f581195151b573d859cb2</con:value>
+          <con:value>604f587295151b573d859cb3</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_XDPQ1796ZS</con:value>
+          <con:value>test promotion_CDTKG2DG32</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_GZ5XAUQQMB</con:value>
+          <con:value>test promotion_ESCN70OI2D</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1615726223417</con:value>
+          <con:value>1615726321459</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1615995423419</con:value>
+          <con:value>1615995521459</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -1620,7 +1620,21 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript/>
+      <con:testStep type="restrequest" name="disable the created Promotion" id="2ce63632-2152-4040-b52c-8140b26a5924"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="disable the created Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri><con:assertion type="GroovyScriptAssertion" id="18155b33-e3f2-4899-a1ad-112880b3aa45" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+</con:parameters><con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>X-CAP-TILL-ID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
