@@ -2054,51 +2054,93 @@ assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion)
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:setupScript/>
+      <con:testStep type="restrequest" name="Deactivate Promotion 1" id="a386d9a5-ddf0-4d1a-9ad3-3e5bb1ddb4b1"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Deactivate Promotion 1" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri><con:assertion type="GroovyScriptAssertion" id="243d0116-2e2b-4e0a-a291-0076af5017b9" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId5min}"/>
+  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+</con:parameters><con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>X-CAP-TILL-ID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Deactivate Promotion 2" id="dd30a0cd-ba8f-4535-a98e-552a81718997"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Deactivate Promotion 2" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri><con:assertion type="GroovyScriptAssertion" id="27998339-bf52-4fb1-a232-6fed372591ce" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId10min}"/>
+  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+</con:parameters><con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>X-CAP-TILL-ID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Deactivate Promotion 3" id="ef7395e9-eed3-45ae-bc1d-125f46aad415"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Deactivate Promotion 3" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri><con:assertion type="GroovyScriptAssertion" id="25f6df3f-008a-4990-8016-14876d0e1fe2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId15min}"/>
+  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+</con:parameters><con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>X-CAP-TILL-ID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:setupScript/>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615811593669</con:value>
+          <con:value>1615812964774</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value>1615811893670</con:value>
+          <con:value>1615813264776</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value>1615812193670</con:value>
+          <con:value>1615813564776</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value>1615812493670</con:value>
+          <con:value>1615813864776</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value>604f540a95151b573d859ca8</con:value>
+          <con:value>604f596595151b573d859cb4</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value>test promotion_85226944</con:value>
+          <con:value>test promotion_13960709</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>UNSXR6Q9JJ</con:value>
+          <con:value>SMO7YR89RQ</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value>604f540a95151b573d859ca9</con:value>
+          <con:value>604f596595151b573d859cb5</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value>test promotion_97538105</con:value>
+          <con:value>test promotion_20756557</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value>604f540b95151b573d859caa</con:value>
+          <con:value>604f596695151b573d859cb6</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value>test promotion_89542985</con:value>
+          <con:value>test promotion_85009562</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2106,7 +2148,7 @@ assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion)
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-numberUNSXR6Q9JJ</con:value>
+          <con:value>txn-numberSMO7YR89RQ</con:value>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
@@ -2122,15 +2164,15 @@ assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion)
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value>['id':'604f540a95151b573d859ca8', 'name':'test promotion_85226944', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'604f596595151b573d859cb4', 'name':'test promotion_13960709', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value>['id':'604f540a95151b573d859ca9', 'name':'test promotion_97538105', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'604f596595151b573d859cb5', 'name':'test promotion_20756557', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value>['id':'604f540b95151b573d859caa', 'name':'test promotion_89542985', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'604f596695151b573d859cb6', 'name':'test promotion_85009562', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
