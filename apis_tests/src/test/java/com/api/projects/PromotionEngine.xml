@@ -633,7 +633,7 @@
           <con:params/>
           <con:element xmlns:eval="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate">eval:Fault</con:element>
         </con:representation>
-        <con:request name="Request 1" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+        <con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
@@ -1343,35 +1343,35 @@ assert(endDateInResponse == expectedEndDate) : "End date is not expected."</scri
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1613130440797</con:value>
+          <con:value>1615811589521</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1613216840797</con:value>
+          <con:value>1615897989521</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>COD2VC4WYM</con:value>
+          <con:value>0XP99RYWE9</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>60266ac8e3e3bf6429cb5a77</con:value>
+          <con:value>604f540795151b573d859ca6</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_COD2VC4WYM</con:value>
+          <con:value>test promotion_0XP99RYWE9</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_L3EQS6R570</con:value>
+          <con:value>test promotion_WZBYQDI0GF</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1613044040797</con:value>
+          <con:value>1615725189521</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1613313240797</con:value>
+          <con:value>1615994389521</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -1504,8 +1504,6 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-  "id": "${#TestCase#tnxId}",
-  "txnNumber": "${#TestCase#tnxNumber}",
   "amount": 25000,
   "customerId": "${#TestCase#userId}",
   "cartItems": [
@@ -1514,9 +1512,10 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
       "sku": "${#TestCase#sku}",
       "amount": 25000,
       "qty": 1,
-      "rate": 25000
-    }
-  ]
+      "discount": null,
+      "appliedPromotions": null
+    }],
+    "appliedPromotions": null
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="Valid HTTP Status Codes" id="0f2cf3c0-ee6a-44eb-9274-4981e0e1388c" name="Valid HTTP Status Codes">
@@ -1563,8 +1562,7 @@ def json = new JsonSlurper().parseText(response);
 
 
 // Get and verify the transaction details.
-tnxIdInResponse = json.data.id
-tnxNumberInResponse = json.data.txnNumber
+
 tnxAmountInResponse = json.data.amount
 customerIdInResponse = json.data.customerId.toString()
 tnxReferenceIdInResponse = json.data.cartItems[0].referenceId
@@ -1576,8 +1574,6 @@ expectedSku = context.expand('${#TestCase#sku}')
 expectedRefId = context.expand('${#TestCase#referenceId}')
 expectedUserId = context.expand('${#TestCase#userId}')
 
-assert(expectedTnxId == tnxIdInResponse) : "Tnx Id is not as expected";
-assert(expectedTnxNumber == tnxNumberInResponse): "Tnx Number is not as expected";
 assert(tnxAmountInResponse == "25000.000000")
 assert(customerIdInResponse == expectedUserId): "Customer Id is not as expected";
 assert(tnxReferenceIdInResponse == expectedRefId):"Reference Id is not as expected";
@@ -1604,7 +1600,13 @@ expectedPromotion = [
          ]
 isCreatedPromotionInAppliedPromotions = false;
 for(promotion in lstOfAppliedPromotions){
-	if(promotion.equals(expectedPromotion)){
+	if(promotion.id.equalsIgnoreCase("${promotionId}")){
+		assert(promotion.name.equalsIgnoreCase("${promotionName}")):"Created Promotion name mismatch"
+		assert(promotion.messageLabel.equalsIgnoreCase("test!!")):"Created Promotion messageLabel mismatch"
+		assert(promotion.discount.equalsIgnoreCase("250.000000")):"Created Promotion discount mismatch"
+		assert(promotion.type.equalsIgnoreCase("POS")):"Created Promotion type mismatch"
+		
+		assert(promotion.redemptionIdentifier != null):"Created Promotion redemptionIdentifier mismatch"
 		isCreatedPromotionInAppliedPromotions = true;
 		break;
 	}
@@ -1626,19 +1628,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1613130451448</con:value>
+          <con:value>1615811592928</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1613216851448</con:value>
+          <con:value>1615897992928</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_MSBEA8BMHC</con:value>
+          <con:value>test promotion_97W7XBAO4Y</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>60266ad3e3e3bf6429cb5a78</con:value>
+          <con:value>604f540995151b573d859ca7</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -1983,8 +1985,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-  "id": "${#TestCase#tnxId}",
-  "txnNumber": "${#TestCase#tnxNumber}",
+  
   "amount": 500,
   "customerId": "${#TestCase#userId}",
   "cartItems": [
@@ -1993,9 +1994,11 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",
       "sku": "${#TestCase#sku}",
       "amount": 500,
       "qty": 1,
-      "rate": 250
+      "discount": null,
+      "appliedPromotions": null
     }
-  ]
+  ],
+  "appliedPromotions": null
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="Valid HTTP Status Codes" id="0f2cf3c0-ee6a-44eb-9274-4981e0e1388c" name="Valid HTTP Status Codes">
@@ -2014,22 +2017,23 @@ def json = new JsonSlurper().parseText(response);
 
 
 lstOfAppliedPromotions = json.data.appliedPromotions
-log.info(lstOfAppliedPromotions)
+//log.info(lstOfAppliedPromotions)
 numOfPromotions = lstOfAppliedPromotions.size()
 
 
 //get and assert th elast promotion applied.
-lastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-1]
-secondLastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-2]
-thirdLastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-3]
+lastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-1].id
+secondLastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-2].id
+thirdLastAppliedPromotion = lstOfAppliedPromotions[numOfPromotions-3].id
 
 expectedLastAppliedPromotion = Eval.me(context.expand('${#TestCase#promotionDetailsMap_15min}'))
 expectedSecondLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetailsMap_10min}'))
 expectedThirdLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetailsMap_5min}'))
 
-assert(expectedLastAppliedPromotion.equals(lastAppliedPromotion))
-assert(expectedSecondLastPromotion.equals(secondLastAppliedPromotion))
-assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText></con:configuration>
+
+assert(expectedLastAppliedPromotion.id.equalsIgnoreCase(lastAppliedPromotion))
+assert(expectedSecondLastPromotion.id.equalsIgnoreCase(secondLastAppliedPromotion))
+assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion))</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -2044,47 +2048,47 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1613130259253</con:value>
+          <con:value>1615811593669</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value>1613130559254</con:value>
+          <con:value>1615811893670</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value>1613130859254</con:value>
+          <con:value>1615812193670</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value>1613131159254</con:value>
+          <con:value>1615812493670</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value>60266a13e3e3bf6429cb5a74</con:value>
+          <con:value>604f540a95151b573d859ca8</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value>test promotion_34295492</con:value>
+          <con:value>test promotion_85226944</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>DA5NGCWBUA</con:value>
+          <con:value>UNSXR6Q9JJ</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value>60266a13e3e3bf6429cb5a75</con:value>
+          <con:value>604f540a95151b573d859ca9</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value>test promotion_07609300</con:value>
+          <con:value>test promotion_97538105</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value>60266a13e3e3bf6429cb5a76</con:value>
+          <con:value>604f540b95151b573d859caa</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value>test promotion_59143718</con:value>
+          <con:value>test promotion_89542985</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2092,7 +2096,7 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-numberDA5NGCWBUA</con:value>
+          <con:value>txn-numberUNSXR6Q9JJ</con:value>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
@@ -2108,15 +2112,15 @@ assert(expectedThirdLastPromotion.equals(thirdLastAppliedPromotion))</scriptText
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value>['id':'60266a13e3e3bf6429cb5a74', 'name':'test promotion_34295492', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'604f540a95151b573d859ca8', 'name':'test promotion_85226944', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value>['id':'60266a13e3e3bf6429cb5a75', 'name':'test promotion_07609300', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'604f540a95151b573d859ca9', 'name':'test promotion_97538105', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value>['id':'60266a13e3e3bf6429cb5a76', 'name':'test promotion_59143718', 'messageLabel':'test!!', 'discount':250, 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value>['id':'604f540b95151b573d859caa', 'name':'test promotion_89542985', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
