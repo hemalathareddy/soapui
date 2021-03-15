@@ -675,7 +675,23 @@
       </con:method>
     </con:resource>
   </con:interface>
-  <con:interface xsi:type="con:RestService" id="1b0ea5c2-4b9a-4799-b78d-f7d34d5228df" wadlVersion="http://wadl.dev.java.net/2009/02" name="PromotionEngine" type="rest" definitionUrl="6024c1d90d93ed13c0ea1bb1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints/></con:interface><con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuits" disabled="true">
+  <con:interface xsi:type="con:RestService" id="1b0ea5c2-4b9a-4799-b78d-f7d34d5228df" wadlVersion="http://wadl.dev.java.net/2009/02" name="PromotionEngine" type="rest" definitionUrl="6024c1d90d93ed13c0ea1bb1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints/></con:interface><con:interface xsi:type="con:RestService" id="9a4657da-86a9-4ff5-abba-927d5cbf247b" wadlVersion="http://wadl.dev.java.net/2009/02" name="DeactivatePromotion" type="rest" basePath="" definitionUrl="/home/srinivas/Documents/test wadl/DeactivatePromotion_1.wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/srinivas/Documents/test%20wadl/DeactivatePromotion_1.wadl"><con:part><con:url>file:/home/srinivas/Documents/test%20wadl/DeactivatePromotion_1.wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="DeactivatePromotion"/>
+  <resources base="https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com">
+    <resource path="internal/v1/promotions/{promotionid}/deactivate" id="Deactivate">
+      <doc xml:lang="en" title="Deactivate"/>
+      <param name="promotionid" type="xs:string" required="false" default="" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <method name="GET" id="Deactivate 1">
+        <doc xml:lang="en" title="Deactivate 1"/>
+        <request/>
+      </method>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Deactivate" path="/internal/v1/promotions/{promotionid}/deactivate" id="5e6be19b-46b7-4de1-870f-ce78b6300272"><con:settings/><con:parameters><con:parameter><con:name>promotionid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/></con:parameter></con:parameters><con:method name="Deactivate 1" id="2d939943-dc8a-4e57-9086-8c98692c7eb4" method="PUT"><con:settings/><con:parameters><con:parameter><con:name>X-CAP-API-AUTH-ORG-ID</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>X-CAP-USER-ID</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>X-CAP-TILL-ID</con:name><con:value>${#Project#tillid}</con:value><con:style>HEADER</con:style><con:default>${#Project#tillid}</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:request name="Request 1" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+</con:parameters><con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>X-CAP-TILL-ID</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuits" disabled="true">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
     <con:properties/>
@@ -1303,75 +1319,55 @@ assert(endDateInResponse == expectedEndDate) : "End date is not expected."</scri
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="Get all generic promotion" id="c33a15da-e18b-4d39-a285-8421d10ee9b9" disabled="true">
-        <con:settings/>
-        <con:config service="getAllPosPromotions" resourcePath="/internal/v1/promotions/" methodName="getAllPosPromotions" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Get all generic promotion" id="4fef0ebb-b900-4c8f-8bba-f78075aea246" mediaType="application/json">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="X-CAP-TILL-ID" value=" ${#Project#orgid}"/>
-  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
-  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
-&lt;/xml-fragment></con:setting>
-            </con:settings>
-            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-            <con:request/>
-            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
-            <con:assertion type="Simple Contains" id="1b1f9399-f253-422a-9b14-ce6c725d7bd0" name="Contains" disabled="true">
-              <con:configuration>
-                <token>test_promotion_${name#updatedName}</token>
-                <ignoreCase>false</ignoreCase>
-                <useRegEx>false</useRegEx>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="Valid HTTP Status Codes" id="8cca65dd-aca3-49e0-8a3f-51938034cb0d" name="Valid HTTP Status Codes">
-              <con:configuration>
-                <codes>200</codes>
-              </con:configuration>
-            </con:assertion>
-            <con:credentials>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-          </con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:setupScript/>
+      
+      <con:testStep type="restrequest" name="Disable the promotion" id="26d8e22e-15dc-49e0-abb1-1823fa704d7e"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Disable the promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri><con:assertion type="GroovyScriptAssertion" id="d3df132c-09de-4b16-bed5-5796e9dd068e" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+</con:parameters><con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>X-CAP-TILL-ID</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:setupScript/>
       <con:tearDownScript/>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615811589521</con:value>
+          <con:value>1615812623417</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1615897989521</con:value>
+          <con:value>1615899023419</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>0XP99RYWE9</con:value>
+          <con:value>XDPQ1796ZS</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>604f540795151b573d859ca6</con:value>
+          <con:value>604f581195151b573d859cb2</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_0XP99RYWE9</con:value>
+          <con:value>test promotion_XDPQ1796ZS</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_WZBYQDI0GF</con:value>
+          <con:value>test promotion_GZ5XAUQQMB</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1615725189521</con:value>
+          <con:value>1615726223417</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1615994389521</con:value>
+          <con:value>1615995423419</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
