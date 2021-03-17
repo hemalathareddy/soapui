@@ -221,7 +221,7 @@
             </build>
         </profile>
          <profile>
-            <id>apis_security</id>
+            <id>apisFuzz</id>
             <properties>
                 <projectname>crm_apis_tests</projectname>
             </properties>
@@ -263,11 +263,11 @@
                             <artifactId>proxy-vole</artifactId>
                             <version>20131209</version>
                           </dependency>
-							<dependency>
-							    <groupId>au.com.bytecode</groupId>
-							    <artifactId>opencsv</artifactId>
-							    <version>2.4</version>
-							</dependency>
+							            <dependency>
+							              <groupId>au.com.bytecode</groupId>
+							              <artifactId>opencsv</artifactId>
+							              <version>2.4</version>
+							            </dependency>
                         </dependencies>
                         <configuration>
                             <projectFile>${basedir}/apis_tests/src/test/java/com/api/projects/${projectName}.xml</projectFile>
@@ -279,13 +279,12 @@
                             <exportAll>true</exportAll>
                             <!-- Print small report to the console -->
                             <printreport>true</printreport>
-                            <!--<testFailIgnore>true</testFailIgnore>-->
+                            <testFailIgnore>false</testFailIgnore>
                             <reportName>Data Export</reportName>
                             <reportFormat>XML,CSV,PDF,TXT,HTML</reportFormat>
                             <settingsFile>${basedir}/apis_tests/ext/soapui-settings.xml</settingsFile>
                             <projectProperties>
                                 <value>environment=${environment}</value>
-                                <value>execution_group=${execution_group}</value>
                                 <value>outputFolder=${project.build.directory}/surefire-reports</value>
                             </projectProperties>
                             <soapuiProperties>
