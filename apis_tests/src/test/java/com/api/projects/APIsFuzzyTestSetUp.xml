@@ -2264,6 +2264,8 @@ messageExchange.modelItem.testCase.testSuite.setPropertyValue("launchId", json.i
               </con:configuration>
             </con:assertion>
             <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
               <con:authType>No Authorization</con:authType>
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -2793,8 +2795,8 @@ testRunner.testCase.setPropertyValue("endTime",timestamp)</script>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-              <con:entry key="mlp" value="jncejv"/>
-              <con:entry key="id" value="${#TestCase#customerId}"/>
+              <con:entry key="mlp" value="heihvfer"/>
+              <con:entry key="id" value="373278342"/>
             </con:parameters>
           </con:restRequest>
         </con:config>
@@ -2836,6 +2838,7 @@ assert(json.id == 373401894);</scriptText>
             <con:parameters>
               <con:entry key="accountId" value="~71680076"/>
               <con:entry key="user_id" value="373401894"/>
+              <con:entry key="source" value="WEB_ENGAGE"/>
             </con:parameters>
           </con:restRequest>
         </con:config>
@@ -3124,9 +3127,11 @@ return message;
 }</scriptText>
               </con:configuration>
             </con:assertion>
-            <con:assertion type="Invalid HTTP Status Codes" id="5f1de1e7-c0d1-4f5d-95e9-67d89ea1717d" name="status != 200">
+            <con:assertion type="Simple NotContains" id="c58ea827-4cc5-4d12-9354-1ac243ae7f72" name="customer not retreived">
               <con:configuration>
-                <codes>200</codes>
+                <token>Customer successfully retrieved</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
               </con:configuration>
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -3376,7 +3381,6 @@ return message;
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
-              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:strategy>ONE_BY_ONE</con:strategy>
@@ -3405,11 +3409,6 @@ return message;
               <con:configuration>
                 <IncludeProjectSpecific>true</IncludeProjectSpecific>
                 <IncludeGlobal>true</IncludeGlobal>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="Invalid HTTP Status Codes" id="1552714d-a3a0-4b99-a45a-619cbbaecc61" name="status != 200">
-              <con:configuration>
-                <codes>200</codes>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="fa27de44-09f7-4443-ab94-24bc97b20f0c" name="capture request data">
@@ -3449,9 +3448,15 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
 //context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
               </con:configuration>
             </con:assertion>
+            <con:assertion type="Simple NotContains" id="de64bb3b-bd3d-428c-8c60-91daae76190b" name="customer not retreived">
+              <con:configuration>
+                <token>Customer successfully retrieved</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
               <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -3616,7 +3621,6 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <con:parameters label="mlp" parameterName="mlp" xpath="" checked="true"/>
               <con:parameters label="userId" parameterName="id" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -3686,6 +3690,9 @@ status = messageExchange.getResponseHeaders().get('status_code')[0]
 log.info status
 if(status == "200"){
 String response = messageExchange.getResponseContent();
+if(response == null){
+	response = "null";
+}
 def json = new JsonSlurper().parseText(response);
 assert(json.id == null);	
 }</scriptText>
@@ -3696,7 +3703,6 @@ assert(json.id == null);
               <con:parameters label="accountId" parameterName="accountId" xpath="" checked="true"/>
               <con:parameters label="userId" parameterName="user_id" xpath="" checked="true"/>
               <con:parameters label="source" parameterName="source" xpath="" checked="true"/>
-              <con:parameters label="embed" parameterName="embed" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:strategy>ALL_AT_ONCE</con:strategy>
@@ -3845,7 +3851,7 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
 //context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
               </con:configuration>
             </con:assertion>
-            <con:assertion type="GroovyScriptAssertion" id="a1b6c9ec-18fa-42cd-b5e9-276c5fcba8ee" name="Script Assertion">
+            <con:assertion type="GroovyScriptAssertion" id="a1b6c9ec-18fa-42cd-b5e9-276c5fcba8ee" name="customer not retreived">
               <con:configuration>
                 <scriptText>import groovy.json.JsonSlurper;
 
@@ -3854,6 +3860,9 @@ status = messageExchange.getResponseHeaders().get('status_code')[0]
 
 if(status == "200"){
 String response = messageExchange.getResponseContent();
+if(response == null){
+	response = "null";
+}
 def json = new JsonSlurper().parseText(response);
 assert(json.id == null);	
 }</scriptText>
@@ -3864,7 +3873,6 @@ assert(json.id == null);
               <con:parameters label="accoundId" parameterName="accountId" xpath="" checked="true"/>
               <con:parameters label="userId" parameterName="user_id" xpath="" checked="true"/>
               <con:parameters label="source" parameterName="source" xpath="" checked="true"/>
-              <con:parameters label="embed" parameterName="embed" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:strategy>ONE_BY_ONE</con:strategy>
@@ -4022,10 +4030,15 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
             <con:assertion type="GroovyScriptAssertion" id="830ed9aa-350c-4ddb-a1c6-85594db3da88" name="Customer details not retreived">
               <con:configuration>
                 <scriptText>import groovy.json.JsonSlurper;
+
+
 status = messageExchange.getResponseHeaders().get('status_code')[0]
 
 if(status == "200"){
 String response = messageExchange.getResponseContent();
+if(response == null){
+	response = "null";
+}
 def json = new JsonSlurper().parseText(response);
 assert(json.id == null);	
 }</scriptText>
@@ -4036,7 +4049,6 @@ assert(json.id == null);
               <con:parameters label="accountId" parameterName="accountId" xpath="" checked="true"/>
               <con:parameters label="userId" parameterName="user_id" xpath="" checked="true"/>
               <con:parameters label="source" parameterName="source" xpath="" checked="true"/>
-              <con:parameters label="embed" parameterName="embed" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:strategy>ONE_BY_ONE</con:strategy>
@@ -4107,10 +4119,15 @@ context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "respons
             <con:assertion type="GroovyScriptAssertion" id="c18337c6-40b5-4526-b3ef-70bfc7cbb763" name="Customer details not retreived">
               <con:configuration>
                 <scriptText>import groovy.json.JsonSlurper;
+
+
 status = messageExchange.getResponseHeaders().get('status_code')[0]
 
 if(status == "200"){
 String response = messageExchange.getResponseContent();
+if(response == null){
+	response = "null";
+}
 def json = new JsonSlurper().parseText(response);
 assert(json.id == null);	
 }</scriptText>
@@ -4121,7 +4138,6 @@ assert(json.id == null);
               <con:parameters label="accountId" parameterName="accountId" xpath="" checked="true"/>
               <con:parameters label="userId" parameterName="user_id" xpath="" checked="true"/>
               <con:parameters label="source" parameterName="source" xpath="" checked="true"/>
-              <con:parameters label="embed" parameterName="embed" xpath="" checked="true"/>
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:strategy>ONE_BY_ONE</con:strategy>
@@ -4149,8 +4165,8 @@ assert(json.id == null);
    "root":{
       "customer":[
          {
-            "mobile":"9765764353",
-            "email":"9765764353@gmail.com",
+            "mobile":"9765764354",
+            "email":"9765764354@gmail.com",
             "firstname":"firstname_9765764354",
             "lastname":"lastname_9765764354",
             "gender":"M",
@@ -4264,7 +4280,7 @@ messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toStri
     "lastName": "Lname_test",
     "identifiers": [{
       "type": "mobile",
-      "value": "9776864463"
+      "value": "9776864464"
     },{
       "type": "cuid",
       "value": "cuid_9776864464"
@@ -4275,7 +4291,7 @@ messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toStri
     },
     {
       "type": "email",
-      "value": "9776864463@gmail.com"
+      "value": "9776864464@gmail.com"
     },
     {
       "type": "externalId",
@@ -4299,7 +4315,7 @@ messageExchange.modelItem.testCase.setPropertyValue('customerId', user_id.toStri
         "verified":true
     }],
     "source": "INSTORE",
-    "accountId": "~71680076"
+    "accountId": "-NANE/1"
   }],
   "loyaltyInfo": {
     "loyaltyType": "loyalty"
@@ -4343,7 +4359,7 @@ messageExchange.modelItem.testCase.setPropertyValue("userIdV2",json.createdId.to
         </con:property>
         <con:property>
           <con:name>customerId</con:name>
-          <con:value>373469121</con:value>
+          <con:value>373405745</con:value>
         </con:property>
       </con:properties>
       <con:securityTest id="5484d5ad-5d50-41ab-ab10-1bb6aa5146e4" name="addCustomerFuzzyTests" failOnError="false" failSecurityTestOnScanErrors="true">
@@ -4524,24 +4540,36 @@ if(context.jsonFuzzIndex &lt;= jsonFuzzMaxIndex){
 	builder.content = context.lstOfJsons.get(context.jsonFuzzIndex)
 	parameters.payload = builder.toString();
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "json body"
+	context.changedParamsValue =  context.lstOfJsons.get(context.jsonFuzzIndex)
+     context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.jsonFuzzIndex++
 	return true
 }
 //modify the email param in request body with invalid emails.
 else if(context.invalidEmailFuzzIndex &lt;= invalidEmailsMaxIndex){
 	log.info("Content at index - " + context.invalidEmailFuzzIndex + "==> " + context.lstOfInvalidEmails.get(context.invalidEmailFuzzIndex))
+	String timestamp = System.currentTimeMillis().toString();
+	mobile = "91" + timestamp.substring(3);
+	builder.content.root.customer[0].mobile = mobile;
 	builder.content.root.customer[0].email = context.lstOfInvalidEmails.get(context.invalidEmailFuzzIndex)
 	parameters.payload = builder.toString()
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "customer.email"
+	context.changedParamsValue =  context.lstOfInvalidEmails.get(context.invalidEmailFuzzIndex)
+	context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.invalidEmailFuzzIndex++
 	return true
 }
 // modify the mobile in request body with invalid mobiles.
 else if(context.lstOfInvalidMobilesIndex &lt;= invalidMobilesMaxIndex){
 log.info("Content at index - " + context.lstOfInvalidMobilesIndex + "==> " + context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex))
-builder.content.root.customer[0].mobile = context.lstOfInvalidMobiles.get(context.lstOfInvalidMobiles)
+builder.content.root.customer[0].mobile = context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex)
 parameters.payload = builder.toString()
 log.info("Payload set -- " + parameters.payload)
+context.changedParamsField = "customer.mobile"
+context.changedParamsValue =  context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex)
+context.status = securityScan.getSecurityScanResult().getStatusString()
 context.lstOfInvalidMobilesIndex++
 return true
 }
@@ -4561,13 +4589,10 @@ else{
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
-
 HashMap&lt;String,String> properties = messageExchange.getProperties()
-
 def parameterJson = [:]
 properties.each{ key,value ->
   parameterJson[(key)] = value;
-  //log.info ("Property - " + key + "::" + value);
   }
 parameterString = parameterJson.toMapString()
 //log.info("params -- " + parameterString);
@@ -4585,9 +4610,9 @@ context.INDEX = context.INDEX + 1;
 
 KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
 
-stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]
+stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue]
 
-context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
+context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue, "status": context.status]]]
 
 //context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
               </con:configuration>
@@ -4615,70 +4640,6 @@ if(code == "200"){
             </con:checkedParameters>
             <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
               <con:strategy>ONE_BY_ONE</con:strategy>
-              <con:delay>100</con:delay>
-            </con:executionStrategy>
-          </con:testStepSecurityScan>
-          <con:testStepSecurityScan type="FuzzingScan" name="Fuzzing Scan" id="945c9420-e789-45b6-8034-b80983fe484e" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
-            <con:settings/>
-            <con:config xsi:type="con:FuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <con:minimal>5</con:minimal>
-              <con:maximal>10</con:maximal>
-              <con:numberOfRequest>1</con:numberOfRequest>
-            </con:config>
-            <con:assertion type="Sensitive Information Exposure" id="77789402-0d06-4259-9deb-79e275749a32" name="Sensitive Information Exposure">
-              <con:configuration>
-                <IncludeProjectSpecific>true</IncludeProjectSpecific>
-                <IncludeGlobal>true</IncludeGlobal>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="Invalid HTTP Status Codes" id="52e4f09d-814e-4a51-a3a6-4a9e476b0e1c" name="status != 200">
-              <con:configuration>
-                <codes>200</codes>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="GroovyScriptAssertion" id="59f54236-b840-4f31-ad78-612b80828330" name="capture request data">
-              <con:configuration>
-                <scriptText>String response = messageExchange.getResponseContent();
-String reqBody = messageExchange.getRequestContent();
-String endPoint = messageExchange.getEndpoint()
-
-
-HashMap&lt;String,String> properties = messageExchange.getProperties()
-
-def parameterJson = [:]
-properties.each{ key,value ->
-  parameterJson[(key)] = value;
-  //log.info ("Property - " + key + "::" + value);
-  }
-parameterString = parameterJson.toMapString()
-//log.info("params -- " + parameterString);
-//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
-def timeTaken = messageExchange.getTimeTaken();
-def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
-def securityTestName = context.getCurrentScan().getParent().getName();
-def scan = context.getCurrentScan().getName();
-
-if(context.INDEX == null){
-	context.INDEX = 0;
-	//context.stepData = [];
-}
-context.INDEX = context.INDEX + 1;
-
-KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
-
-stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]
-
-context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
-
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
-              </con:configuration>
-            </con:assertion>
-            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <con:parameters label="format" parameterName="format" xpath="" checked="true"/>
-            </con:checkedParameters>
-            <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-              <con:strategy>ALL_AT_ONCE</con:strategy>
               <con:delay>100</con:delay>
             </con:executionStrategy>
           </con:testStepSecurityScan>
@@ -4729,26 +4690,38 @@ if(context.jsonFuzzIndex &lt;= jsonFuzzMaxIndex){
 	builder.content = context.lstOfJsons.get(context.jsonFuzzIndex)
 	parameters.payload = builder.toString();
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "json body"
+	context.changedParamsValue =  context.lstOfJsons.get(context.jsonFuzzIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.jsonFuzzIndex++
 	return true
 }
 //modify the email param in request body with invalid emails.
 else if(context.invalidEmailFuzzIndex &lt;= invalidEmailsMaxIndex){
 	log.info("Content at index - " + context.invalidEmailFuzzIndex + "==> " + context.lstOfInvalidEmails.get(context.invalidEmailFuzzIndex))
+  String timestamp = System.currentTimeMillis().toString();
+  String mobile = "91" + timestamp.substring(3);
+  builder.content.profiles[0].identifiers[0].value = mobile;
 	builder.content.profiles[0].identifiers[3].value = context.lstOfInvalidEmails.get(context.invalidEmailFuzzIndex)
 	parameters.payload = builder.toString()
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "identifier.email"
+	context.changedParamsValue =  context.lstOfInvalidEmails.get(context.invalidEmailFuzzIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.invalidEmailFuzzIndex++
 	return true;
 }
 // modify the mobile in request body with invalid mobiles.
 else if(context.lstOfInvalidMobilesIndex &lt;= invalidMobilesMaxIndex){
-log.info("Content at index - " + context.lstOfInvalidMobilesIndex + "==> " + context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex))
-builder.content.profiles[0].identifiers[0].value = context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex)
-parameters.payload = builder.toString()
-log.info("Payload set -- " + parameters.payload)
-context.lstOfInvalidMobilesIndex++
-return true;
+	log.info("Content at index - " + context.lstOfInvalidMobilesIndex + "==> " + context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex))
+	builder.content.profiles[0].identifiers[0].value = context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex)
+	parameters.payload = builder.toString()
+	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "identifier.mobile"
+	context.changedParamsValue =  context.lstOfInvalidMobiles.get(context.lstOfInvalidMobilesIndex)
+	context.status = securityScan.getSecurityScanResult().getStatusString()
+	context.lstOfInvalidMobilesIndex++
+	return true;
 }
 //modify the source with fuzz strings.
 else if(context.fuzzStringsIndex &lt;= fuzzStringsMaxIndex){
@@ -4756,6 +4729,9 @@ else if(context.fuzzStringsIndex &lt;= fuzzStringsMaxIndex){
   builder.content.profiles[0].source = context.lstOfFuzzString.get(context.fuzzStringsIndex)
   parameters.payload = builder.toString()
   log.info("Payload set -- " + parameters.payload)
+  context.changedParamsField = "profile.source"
+  context.changedParamsValue =  context.lstOfFuzzString.get(context.fuzzStringsIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
   context.fuzzStringsIndex++;
   return true;
 }
@@ -4765,6 +4741,9 @@ else if(context.numericFuzzIndex &lt;= numericFuzzMaxIndex){
   builder.content.profiles[0].accountId = context.lstOfInvalidMobiles.get(context.numericFuzzIndex)
   parameters.payload = builder.toString()
   log.info("Payload set -- " + parameters.payload)
+  context.changedParamsField = "profile.accountId"
+  context.changedParamsValue =  context.lstOfInvalidMobiles.get(context.numericFuzzIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
   context.numericFuzzIndex++;
   return true;
 }
@@ -4778,24 +4757,16 @@ else{
                 <IncludeGlobal>true</IncludeGlobal>
               </con:configuration>
             </con:assertion>
-            <con:assertion type="Invalid HTTP Status Codes" id="e4bc2b53-4146-46a4-a5ee-a9656ff2c0ed" name="status != 201,200">
-              <con:configuration>
-                <codes>201,200</codes>
-              </con:configuration>
-            </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="e9d109f3-f305-4a4a-ad91-bbe9647241e5" name="capture request data">
               <con:configuration>
                 <scriptText>String response = messageExchange.getResponseContent();
 String reqBody = messageExchange.getRequestContent();
 String endPoint = messageExchange.getEndpoint()
 
-
 HashMap&lt;String,String> properties = messageExchange.getProperties()
-
 def parameterJson = [:]
 properties.each{ key,value ->
   parameterJson[(key)] = value;
-  //log.info ("Property - " + key + "::" + value);
   }
 parameterString = parameterJson.toMapString()
 //log.info("params -- " + parameterString);
@@ -4813,11 +4784,30 @@ context.INDEX = context.INDEX + 1;
 
 KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
 
-stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]
+stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue]
 
-context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
+context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue, "status": context.status]]]
 
 //context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="2378dea9-3fe6-4c33-9573-d8f277f7003c" name="customer not added">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+if(response == null){
+	response = "null";
+}
+def json = new JsonSlurper().parseText(response);
+
+status = messageExchange.getResponseHeaders().get('#status#')
+code = (status =~ "[1-5]\\d\\d")[0]
+
+
+if(code == "200" || code == "201"){
+assert(json.createdId != null)
+}</scriptText>
               </con:configuration>
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -5820,6 +5810,9 @@ if(context.jsonFuzzIndex &lt;= jsonFuzzMaxIndex){
 	builder.content = context.lstOfJsons.get(context.jsonFuzzIndex)
 	parameters.payload = builder.toString();
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "jsonBody"
+	context.changedParamsValue =  context.lstOfJsons.get(context.jsonFuzzIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.jsonFuzzIndex++
 	return true
 }
@@ -5829,6 +5822,9 @@ if(context.fuzzStringIndex &lt;= fuzzStringMaxIndex){
 	builder.content.root.transaction.type = context.lstOfFuzzString.get(context.fuzzStringIndex)
 	parameters.payload = builder.toString();
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "transaction.type"
+	context.changedParamsValue =  context.lstOfFuzzString.get(context.fuzzStringIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.fuzzStringIndex++
 	return true
 }
@@ -5838,6 +5834,9 @@ if(context.invalidTypesIndex &lt;= invalidTypesMaxIndex){
 	builder.content.root.transaction.number = context.lstOfInvalidTypes.get(context.invalidTypesIndex)
 	parameters.payload = builder.toString();
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "transaction.number"
+	context.changedParamsValue =  context.lstOfInvalidTypes.get(context.invalidTypesIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.invalidTypesIndex++
 	return true
 }
@@ -5849,6 +5848,9 @@ if(context.numericFuzzIndex &lt;= numericFuzzMaxIndex){
 	builder.content.root.transaction.discount = context.lstOfInvalidMobiles.get(context.numericFuzzIndex)
 	parameters.payload = builder.toString();
 	log.info("Payload set -- " + parameters.payload)
+	context.changedParamsField = "transaction.amount,transaction.gross_amount,transaction.discount"
+	context.changedParamsValue =  context.lstOfInvalidMobiles.get(context.numericFuzzIndex)
+  context.status = securityScan.getSecurityScanResult().getStatusString()
 	context.numericFuzzIndex++
 	return true
 }
@@ -5860,43 +5862,6 @@ else{
               <con:configuration>
                 <IncludeProjectSpecific>true</IncludeProjectSpecific>
                 <IncludeGlobal>true</IncludeGlobal>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="GroovyScriptAssertion" id="adbe29ff-1f5e-43d5-9714-e371ffccf80f" name="capture request data">
-              <con:configuration>
-                <scriptText>String response = messageExchange.getResponseContent();
-String reqBody = messageExchange.getRequestContent();
-String endPoint = messageExchange.getEndpoint()
-
-
-HashMap&lt;String,String> properties = messageExchange.getProperties()
-
-def parameterJson = [:]
-properties.each{ key,value ->
-  parameterJson[(key)] = value;
-  //log.info ("Property - " + key + "::" + value);
-  }
-parameterString = parameterJson.toMapString()
-//log.info("params -- " + parameterString);
-//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
-def timeTaken = messageExchange.getTimeTaken();
-def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
-def securityTestName = context.getCurrentScan().getParent().getName();
-def scan = context.getCurrentScan().getName();
-
-if(context.INDEX == null){
-	context.INDEX = 0;
-	//context.stepData = [];
-}
-context.INDEX = context.INDEX + 1;
-
-KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
-
-stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]
-
-context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]]]
-
-//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="380924fd-3e90-4150-b361-599475f71171" name="Transaction not successfull">
@@ -5919,6 +5884,40 @@ if(code == "200"){
 		assert false: "Transaction is duplicate but added successfully";
 	}
 }</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="adbe29ff-1f5e-43d5-9714-e371ffccf80f" name="capture request data">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+
+HashMap&lt;String,String> properties = messageExchange.getProperties()
+def parameterJson = [:]
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  }
+parameterString = parameterJson.toMapString()
+//log.info("params -- " + parameterString);
+//String changedParams = messageExchange.getProperty("SecurityChangedParameters");
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+if(context.INDEX == null){
+	context.INDEX = 0;
+	//context.stepData = [];
+}
+context.INDEX = context.INDEX + 1;
+
+KEY = securityTestName + "_" + testStepName + "_" + scan //+ "_" + System.currentTimeMillis().toString();
+
+stepMessage = ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue]
+
+context.newJson &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue]]]
+
+//context.jsonData &lt;&lt; [(KEY):["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString]];</scriptText>
               </con:configuration>
             </con:assertion>
             <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -5959,7 +5958,7 @@ if(code == "200"){
     </con:property>
     <con:property>
       <con:name>outputFolder</con:name>
-      <con:value>/home/tft/Documents/Nayan/Repos/platform_loyalty_endtoend_tests/target/surefire-reports</con:value>
+      <con:value>/Users/nayan.gaur/Documents/bitbucket_repo/endtoendtests/platform_loyalty_endtoend_tests/target/surefire-reports</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
