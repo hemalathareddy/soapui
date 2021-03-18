@@ -1110,26 +1110,17 @@ messageExchange.modelItem.project.setPropertyValue("token","Bearer "+token);</sc
       </con:testStep>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="446a1d74-05bf-4af5-b4df-83be2c7e939e">
         <con:settings/>
-        <con:config>
-          <script>//String requestId = UUID.randomUUID().toString()
-
+        <con:config><script>
+String requestId = UUID.randomUUID().toString()
 String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
 testRunner.testCase.setPropertyValue("randomId", randomId);
-
-
-//log.info (requestId);
-//log.info ("starttime" + starttime);
-//log.info ("endtime" + endtime);</script>
-        </con:config>
+testRunner.testCase.setPropertyValue("requestid",requestId);</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="When promotion manager create a generic promotion" id="006254db-fb9a-4031-84d3-30bc1e87debc">
         <con:settings/>
@@ -1265,14 +1256,11 @@ assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expe
       </con:testStep>
       <con:testStep type="groovy" name="Given script creates a random name for promotion" id="0f096d9b-118f-4759-ab58-6751bde4ef98">
         <con:settings/>
-        <con:config>
-          <script>def newName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
+        <con:config><script>def newName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 def updatedName = "test promotion_"+newName
 
 // save the new name at test case level.
-testRunner.testCase.setPropertyValue('newPromotionName', updatedName)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('newPromotionName', updatedName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="When promotion manager update the promotion name" id="a039819e-f52e-4d1e-8f77-45232dc001eb">
         <con:settings/>
@@ -1564,16 +1552,15 @@ assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are no
       </con:testStep>
       <con:testStep type="groovy" name="Given script create the updated start/end time for promotion" id="365c5adb-491a-46ae-8409-685a2cb8949e">
         <con:settings/>
-        <con:config>
-          <script>def starttime = testRunner.testCase.getPropertyValue("starttime");
+        <con:config><script>def starttime = testRunner.testCase.getPropertyValue("starttime");
 def updatedStartTime = Long.parseLong(starttime)-86400000;
 
 def endtime = testRunner.testCase.getPropertyValue("endtime");
 def updatedEndTime = Long.parseLong(endtime)+96400000;
 
+//Setting the range from yesterday with current time to tommorrow current time
 testRunner.testCase.setPropertyValue("updatedStartTime", String.valueOf(updatedStartTime));
-testRunner.testCase.setPropertyValue("updatedEndTime", String.valueOf(updatedEndTime));</script>
-        </con:config>
+testRunner.testCase.setPropertyValue("updatedEndTime", String.valueOf(updatedEndTime));</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="When promotion manager updates the start/end dates" id="867b9d68-a932-464e-8a92-fdcf7d4fb567">
         <con:settings/>
@@ -1771,73 +1758,54 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615983849105</con:value>
+          <con:value>1616065429416</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616070249105</con:value>
+          <con:value>1616151829418</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>91THPYBSDY</con:value>
+          <con:value>9OHTKDQ1UR</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051f4eab814490e3935c4b2</con:value>
+          <con:value>60533397b814490e3935c550</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_91THPYBSDY</con:value>
+          <con:value>test promotion_9OHTKDQ1UR</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_08BTZXRGQI</con:value>
+          <con:value>test promotion_BSUDKBWF5M</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1615897449105</con:value>
+          <con:value>1615979029416</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1616166649105</con:value>
+          <con:value>1616248229418</con:value>
         </con:property>
         <con:property>
           <con:name>token</con:name>
-          <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE1OTg2NjMwLCJpYXQiOjE2MTU5MDAyMzIsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.9yLMYr9x3qYEee0dzIwXJX74UQeB0F4FaDMfdPQNaIE</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-      </con:properties>
+      <con:property><con:name>requestid</con:name><con:value>cbb219fb-db61-4382-b002-ffcf6b51cd31</con:value></con:property></con:properties>
     </con:testCase>
     <con:testCase id="74567e05-576c-4b30-9166-36ba0e4f428e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create a POS promotion, Evaluate to check" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="eb9b3c30-b533-47e4-96b7-78b7c5300190">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-tnxNumber = "txn-number01"
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', "auto_promotion_"+promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="Then promotion manager creates a generic promotion" id="dc8db42a-7945-47f3-bc1e-7668758b8321">
         <con:settings/>
@@ -1937,7 +1905,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 25000,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -1984,8 +1952,7 @@ assert flag == true</scriptText>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="3f66b6bc-2d51-44eb-8adb-2271b6aba827" name="assert the transaction details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -2005,13 +1972,12 @@ expectedTnxId = context.expand('${#TestCase#tnxId}')
 expectedTnxNumber = context.expand('${#TestCase#tnxNumber}')
 expectedSku = context.expand('${#TestCase#sku}')
 expectedRefId = context.expand('${#TestCase#referenceId}')
-expectedUserId = context.expand('${#TestCase#userId}')
+expectedUserId = context.expand('${#Project#customerid}')
 
 assert(tnxAmountInResponse == "25000.000000")
 assert(customerIdInResponse == expectedUserId): "Customer Id is not as expected";
-assert(tnxReferenceIdInResponse == expectedRefId):"Reference Id is not as expected";
-assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText>
-              </con:configuration>
+//assert(tnxReferenceIdInResponse == expectedRefId):"Reference Id is not as expected";
+//assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText></con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="dfe46d0e-0ab3-4d5f-818e-0ac2bc3e55a2" name="assert the applied promotion details">
               <con:configuration>
@@ -2100,39 +2066,39 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615983866956</con:value>
+          <con:value>1616065950077</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616070266957</con:value>
+          <con:value>1616152350077</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_IG9VHIYB6D</con:value>
+          <con:value>test promotion_auto_promotion_XIV0OE6MPF</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051f4fcb814490e3935c4b3</con:value>
+          <con:value>6053359fb814490e3935c564</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-number01</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -2140,41 +2106,21 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script sets the start/end times" id="8a1cf9ac-4cc3-4b0b-8aaa-718fa26a5d45">
         <con:settings/>
-        <con:config>
-          <script>String starttime = System.currentTimeMillis().toString()
-
+        <con:config><script>String starttime = System.currentTimeMillis().toString()
 String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
 // set expiry time as after 5 mins
 String time1 = (System.currentTimeMillis()+300000).toString()
-
 // set expiry time as after 10 mins
 String time2 = (System.currentTimeMillis()+600000).toString()
-
 // set expiry time as after 15 mins
 String time3 = (System.currentTimeMillis()+900000).toString()
-
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("time1", time1);
-
 testRunner.testCase.setPropertyValue("time2", time2);
-
 testRunner.testCase.setPropertyValue("time3", time3);
 testRunner.testCase.setPropertyValue("randomId", randomId)
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30691"
-tnxNumber = "txn-number" + randomId
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="And promotion is created with the expiry of 5 mins from now" id="f48d653e-4326-4dca-8526-9b2d1229d19b">
         <con:settings/>
@@ -2461,7 +2407,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",
             <con:request>{
 
   "amount": 500,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -2636,79 +2582,79 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615983881318</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value>1615984181322</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value>1615984481322</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value>1615984781322</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value>6051f50ab814490e3935c4b4</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value>test promotion_66010086</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>4DIVMFZMPF</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value>6051f50bb814490e3935c4b5</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value>test promotion_00443750</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value>6051f50bb814490e3935c4b6</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value>test promotion_18922840</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30691</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-number4DIVMFZMPF</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value>['id':'6051f50ab814490e3935c4b4', 'name':'test promotion_66010086', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value>['id':'6051f50bb814490e3935c4b5', 'name':'test promotion_00443750', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value>['id':'6051f50bb814490e3935c4b6', 'name':'test promotion_18922840', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -2717,26 +2663,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="4019ebb3-d06d-47bf-ac09-d0940dbdd719">
         <con:settings/>
-        <con:config>
-          <script>//String requestId = UUID.randomUUID().toString()
-
+        <con:config><script>//String requestId = UUID.randomUUID().toString()
 String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue("randomId", randomId);
-
-
-//log.info (requestId);
-//log.info ("starttime" + starttime);
-//log.info ("endtime" + endtime);</script>
-        </con:config>
+testRunner.testCase.setPropertyValue("randomId", randomId);</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="Promo manager will create a promotion with perticular till id and Campaign id" id="5e93e91b-942d-4efe-843e-37f8ed0d60d8">
         <con:settings/>
@@ -2944,19 +2879,19 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615983901262</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616065437793</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616070301262</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616151837793</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>DU7GX5SHXO</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Z8CKAVTEV0</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051f51eb814490e3935c4b7</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6053339eb814490e3935c555</con:value>
         </con:property>
         <con:property>
           <con:name>campaignId</con:name>
@@ -2968,33 +2903,14 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="5248dc91-fe9d-4a63-89a2-f61187cf2468">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-tnxNumber = "txn-number01"
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The Promo manager will set a promo strtegy as 'PRIORITY'" id="a153f366-a3ae-4ccf-94b3-5545fd3cda02">
         <con:settings/>
@@ -3274,7 +3190,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 25000,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -3428,39 +3344,39 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615984009108</con:value>
+          <con:value>1616065439168</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616070409108</con:value>
+          <con:value>1616151839168</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_1JEV02YOGW</con:value>
+          <con:value>test promotion_I84DC5CR32</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-number01</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051f58bb814490e3935c4bb</con:value>
+          <con:value>605333a1b814490e3935c557</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
@@ -3476,11 +3392,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId1</con:name>
-          <con:value>6051f58bb814490e3935c4ba</con:value>
+          <con:value>605333a1b814490e3935c556</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName1</con:name>
-          <con:value>test promotion_1JEV02YOGW</con:value>
+          <con:value>test promotion_I84DC5CR32</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3488,33 +3404,18 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="6f604853-d225-465e-9171-61667310dcc9">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 
 
 
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
 testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-tnxNumber = "txn-number01"
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The Promo manager will set a promo strtegy as 'EXPIRY_BASED" id="d31b9f28-62d2-4623-9c93-0629f07be5ad">
         <con:settings/>
@@ -3709,7 +3610,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 25000,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -3810,35 +3711,35 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615984636123</con:value>
+          <con:value>1616065441624</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616071036123</con:value>
+          <con:value>1616151841624</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_BDR4T36G0K</con:value>
+          <con:value>test promotion_TB41KF3PMK</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-number01</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionRankingStrategy</con:name>
@@ -3850,7 +3751,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051f7feb814490e3935c4bd</con:value>
+          <con:value>605333a3b814490e3935c558</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3858,33 +3759,14 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="75fbc234-54c5-40a3-bdbc-2e74b1433e50">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-tnxNumber = "txn-number01"
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The Promo manager will set a promo strtegy as 'MAX_discount'" id="45489279-21b5-42b4-8ab5-bb18084c145f">
         <con:settings/>
@@ -4079,7 +3961,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 25000,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -4221,39 +4103,39 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615984773394</con:value>
+          <con:value>1616065443368</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616071173394</con:value>
+          <con:value>1616151843369</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_WGULZXEV6L</con:value>
+          <con:value>test promotion_FDYXGL4TIC</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-number01</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051f887b814490e3935c4bf</con:value>
+          <con:value>605333a5b814490e3935c559</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4261,32 +4143,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="97a0f277-90e7-412a-ba49-36acc7a81d21">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+log.info(promotionName)
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-tnxNumber = "txn-number01"
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue("promotionName", promotionName);</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with operator IN store scriteria" id="fdd13fdd-99ef-4d43-b2e6-7efde19ee208">
         <con:settings/>
@@ -4485,83 +4350,53 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615984788701</con:value>
+          <con:value>1616065893344</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616071188701</con:value>
+          <con:value>1616152293344</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>7EKSUAOUHM</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-        <con:property>
-          <con:name>promotionId</con:name>
-          <con:value>6051f896b814490e3935c4c0</con:value>
-        </con:property>
-        <con:property>
-          <con:name>promoationName</con:name>
-          <con:value>test promotion_RLPV9L6MLP</con:value>
-        </con:property>
-        <con:property>
-          <con:name>promotionName</con:name>
-          <con:value>test promotion_test promotion_RLPV9L6MLP</con:value>
-        </con:property>
+        
+        
+        
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>txn-number01</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-      </con:properties>
+      <con:property><con:name>promotionName</con:name><con:value>8YXNHARGAC</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60533566b814490e3935c562</con:value></con:property></con:properties>
     </con:testCase>
     <con:testCase id="c112126c-cae0-4fe2-834b-154691d3882f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as CATEGORY with IN operator &amp; evaluate it" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="9d1d3301-48a4-42b3-8a3f-f4c5d1ce5e58">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxNumber = "test"
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-sku = "Red1"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-category = "category_1"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)
-testRunner.testCase.setPropertyValue("category",category)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as CATEGORY operator IN" id="1f1b406e-2063-4a5e-9288-2f0c2e35aa03">
         <con:settings/>
@@ -4595,7 +4430,7 @@ testRunner.testCase.setPropertyValue("category",category)</script>
           "entity": "CATEGORY",
           "operator": "IN",
           "values": [
-            "${#TestCase#category}"
+            "${#Project#category}"
           ],
           "attributeName": null
         }
@@ -4670,11 +4505,11 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionNam
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 150,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
-      "sku": "${#TestCase#sku}",
+      "sku": "${#Project#sku}",
       "amount": "150.000000",
       "qty": "1.000000",
       "discount": null,
@@ -4685,27 +4520,20 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionNam
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="2e8d1096-5387-4d82-b8b0-d0108607fff1" name="Assert appied promo details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
+log.info(lstOfAppliedPromotions)
 
 promotionId = context.expand('${#TestCase#promotionId}')
 promotionName = context.expand('${#TestCase#promotionName}')
-expectedPromotion = [
-            "id": "${promotionId}",
-            "name": "${promotionName}",
-            "messageLabel": "test!!",
-            "discount": "75.000000",
-            "discountAppliedOnQuantity": "1.000000",
-            "promotionAppliedOnQuantity": "1.000000",
-            "type": null
-         ]
 isCreatedPromotionInAppliedPromotions = false;
+log.info("${promotionId}")
 for(promotion in lstOfAppliedPromotions){
+	log.info(promotion.id)
 	if(promotion.id.equalsIgnoreCase("${promotionId}")){
 		isCreatedPromotionInAppliedPromotions = true;
 		break;
@@ -4713,8 +4541,7 @@ for(promotion in lstOfAppliedPromotions){
 }
 
 log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="6f398ed1-1134-41e7-b97d-9fa2dc71469f" name="Response SLA" disabled="true">
               <con:configuration>
@@ -4760,15 +4587,15 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:restRequest></con:config></con:testStep><con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615976831430</con:value>
+          <con:value>1616066265490</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616063231430</con:value>
+          <con:value>1616152665490</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>2HMK5OU6AR</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionRankingStrategy</con:name>
@@ -4780,35 +4607,35 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051c47fb814490e3935c48a</con:value>
+          <con:value>605336dab814490e3935c568</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>CWXOMT0Z5N</con:value>
+          <con:value>test promotion_</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>test</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>Red1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>category</con:name>
-          <con:value>category_1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4816,37 +4643,15 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="ce864d24-716f-4f2e-8d3b-5c1d2583b25e">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
 testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxNumber = "test"
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-sku = "HANDBAGSKU112"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-category = "category_1"
-brand="Brand1"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)
-testRunner.testCase.setPropertyValue("category",category)
-testRunner.testCase.setPropertyValue("brand",brand)</script>
-        </con:config>
+</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as CATEGORY operator NOT_IN" id="bf1a2030-6b66-41cb-ab04-05103706c788">
         <con:settings/>
@@ -4880,7 +4685,7 @@ testRunner.testCase.setPropertyValue("brand",brand)</script>
           "entity": "CATEGORY",
           "operator": "NOT_IN",
           "values": [
-            "50672_category1"
+            "${#TestCase#category}"
           ],
           "attributeName": null
         }
@@ -4919,9 +4724,7 @@ testRunner.testCase.setPropertyValue("brand",brand)</script>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="970e7c29-d9a3-4386-8852-fb47d394cc7a" name="Save promo details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
-
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -4937,8 +4740,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionNam
 orgIdInResponse = json.data.orgId.toString()
 orgIdExpected = context.expand('${#Project#orgid}')
 
-assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
-              </con:configuration>
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="172d4cd2-261f-4e20-91a5-a86f424d3eca" name="Response SLA" disabled="true">
               <con:configuration>
@@ -4965,7 +4767,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 100,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -4980,36 +4782,13 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="d06a2726-14df-4b84-bf73-6ebbbf813b8f" name="Asserting applied promo">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
-
-promotionId = context.expand('${#TestCase#promotionId}')
-promotionName = context.expand('${#TestCase#promotionName}')
-expectedPromotion = [
-            "id": "${promotionId}",
-            "name": "${promotionName}",
-            "messageLabel": "test!!",
-            "discount": "50.000000",
-            "discountAppliedOnQuantity": "1.000000",
-            "promotionAppliedOnQuantity": "1.000000",
-            "type": null
-         ]
-isCreatedPromotionInAppliedPromotions = false;
-for(promotion in lstOfAppliedPromotions){
-	if(promotion != expectedPromotion){
-		isCreatedPromotionInAppliedPromotions = true;
-		break;
-	}
-}
-
-log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert (lstOfAppliedPromotions == null)</scriptText></con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="2df59aec-0d37-412a-b9ae-db60a576c979" name="Response SLA">
               <con:configuration>
@@ -5055,51 +4834,45 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:restRequest></con:config></con:testStep><con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615985373948</con:value>
+          <con:value>1616065446200</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616071773948</con:value>
+          <con:value>1616151846200</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>0F4AKGRKZ1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051fae0b814490e3935c4c1</con:value>
+          <con:value>605333a7b814490e3935c55b</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_0F4AKGRKZ1</con:value>
+          <con:value>test promotion_</con:value>
         </con:property>
-        <con:property>
-          <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
-        </con:property>
-        <con:property>
-          <con:name>tnxNumber</con:name>
-          <con:value>test</con:value>
-        </con:property>
+        
+        
         <con:property>
           <con:name>sku</con:name>
-          <con:value>HANDBAGSKU112</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>category</con:name>
-          <con:value>category_1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>brand</con:name>
-          <con:value>Brand1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5107,37 +4880,14 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="b6f68194-8f10-4709-9c37-03ed3a767f91">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxNumber = "test"
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-sku = "HANDBAGSKU112"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-category = "50672_category1"
-brand="50672_brand1"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)
-testRunner.testCase.setPropertyValue("category",category)
-testRunner.testCase.setPropertyValue("brand",brand)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as BRAND operator IN" id="363ec1fd-958e-4235-92d0-a606c071aeba">
         <con:settings/>
@@ -5147,7 +4897,6 @@ testRunner.testCase.setPropertyValue("brand",brand)</script>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
   &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
-  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
 &lt;/xml-fragment></con:setting>
               <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
             </con:settings>
@@ -5171,7 +4920,7 @@ testRunner.testCase.setPropertyValue("brand",brand)</script>
           "entity": "BRAND",
           "operator": "IN",
           "values": [
-            "${#TestCase#brand}"
+            "${#Project#brand}"
           ],
           "attributeName": null
         }
@@ -5261,11 +5010,11 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 100,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
-      "sku": "${#TestCase#sku}",
+      "sku": "${#Project#sku}",
       "amount": "100.000000",
       "qty": "1.000000",
       "discount": null,
@@ -5356,51 +5105,51 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:restRequest></con:config></con:testStep><con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615985486903</con:value>
+          <con:value>1616066373538</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616071886903</con:value>
+          <con:value>1616152773538</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>QQXTP4XGCM</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051fb51b814490e3935c4c2</con:value>
+          <con:value>60533746b814490e3935c56c</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_QQXTP4XGCM</con:value>
+          <con:value>test promotion_</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>test</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>HANDBAGSKU112</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>category</con:name>
-          <con:value>50672_category1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>brand</con:name>
-          <con:value>50672_brand1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5408,37 +5157,14 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="1afa33df-70cf-4e7e-82ce-e2d19552b5f6">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxNumber = "test"
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-sku = "HANDBAGSKU112"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-category = "50672_category1"
-brand="50672_brand1"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)
-testRunner.testCase.setPropertyValue("category",category)
-testRunner.testCase.setPropertyValue("brand",brand)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as BRAND operator NOT_IN" id="20adda61-a0b2-4919-84fe-4a75d8d9adf0">
         <con:settings/>
@@ -5472,7 +5198,7 @@ testRunner.testCase.setPropertyValue("brand",brand)</script>
           "entity": "BRAND",
           "operator": "NOT_IN",
           "values": [
-            "${#TestCase#brand}"
+            "${#Project#brand}"
           ],
           "attributeName": null
         }
@@ -5557,11 +5283,11 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 100,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
-      "sku": "${#TestCase#sku}",
+      "sku": "${#Project#sku}",
       "amount": "100.000000",
       "qty": "1.000000",
       "discount": null,
@@ -5572,8 +5298,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="c915aba9-c941-4304-8012-cc68d73f0187" name="Assert applied promo details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5582,26 +5307,8 @@ lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
 
 promotionId = context.expand('${#TestCase#promotionId}')
 promotionName = context.expand('${#TestCase#promotionName}')
-expectedPromotion = [
-            "id": "${promotionId}",
-            "name": "${promotionName}",
-            "messageLabel": "test!!",
-            "discount": "50.000000",
-            "discountAppliedOnQuantity": "1.000000",
-            "promotionAppliedOnQuantity": "1.000000",
-            "type": null
-         ]
-isCreatedPromotionInAppliedPromotions = false;
-for(promotion in lstOfAppliedPromotions){
-	if(!promotion.id.equalsIgnoreCase("${promotionId")){
-		isCreatedPromotionInAppliedPromotions = true;
-		break;
-	}
-}
 
-log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert lstOfAppliedPromotions==null</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -5642,51 +5349,51 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:restRequest></con:config></con:testStep><con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615985602626</con:value>
+          <con:value>1616066506702</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616072002626</con:value>
+          <con:value>1616152906703</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>CATN2N1NVV</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_CATN2N1NVV</con:value>
+          <con:value>test promotion_</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>test</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>HANDBAGSKU112</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>category</con:name>
-          <con:value>50672_category1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>brand</con:name>
-          <con:value>50672_brand1</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051fbc5b814490e3935c4c3</con:value>
+          <con:value>605337cbb814490e3935c56e</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5694,33 +5401,14 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="24cb5414-6db7-47e0-81d4-821148b884b2">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxNumber = "test"
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-sku = "HANDBAGSKU112"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as SKU operator IN" id="49c2c927-1e19-4540-b62e-0aff2e5f7386">
         <con:settings/>
@@ -5839,7 +5527,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 100,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
       "referenceId": "${#TestCase#referenceId}",
@@ -5854,8 +5542,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="c915aba9-c941-4304-8012-cc68d73f0187" name="Assert applied promo details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5864,26 +5551,17 @@ lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
 
 promotionId = context.expand('${#TestCase#promotionId}')
 promotionName = context.expand('${#TestCase#promotionName}')
-expectedPromotion = [
-            "id": "${promotionId}",
-            "name": "${promotionName}",
-            "messageLabel": "test!!",
-            "discount": "50.000000",
-            "discountAppliedOnQuantity": "1.000000",
-            "promotionAppliedOnQuantity": "1.000000",
-            "type": null
-         ]
+
 isCreatedPromotionInAppliedPromotions = false;
 for(promotion in lstOfAppliedPromotions){
-	if(promotion.equals(expectedPromotion)){
+	if(promotion.id.equalsIgnoreCase("${promotionId}")){
 		isCreatedPromotionInAppliedPromotions = true;
 		break;
 	}
 }
 
 log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -5924,43 +5602,43 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:restRequest></con:config></con:testStep><con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1615985707740</con:value>
+          <con:value>1616065448613</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616072107741</con:value>
+          <con:value>1616151848613</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>CATN2N1NVV</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_CATN2N1NVV</con:value>
+          <con:value>test promotion_</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>tnxNumber</con:name>
-          <con:value>test</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
-          <con:value>HANDBAGSKU112</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051fc2eb814490e3935c4c4</con:value>
+          <con:value>605333a9b814490e3935c55e</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5968,32 +5646,13 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="85448a7d-6492-4067-844c-06e2150685ea">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
-testRunner.testCase.setPropertyValue("endtime", endtime);
-
-
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-tnxNumber = "txn-number01"
-sku = "6676557b-a2ee-4334-aa6e-7a64ba15be37"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue("endtime", endtime);</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with operator NOT_IN store scriteria" id="32158364-e3ee-4b88-b199-26f86c744423">
         <con:settings/>
@@ -6180,87 +5839,49 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
 </con:parameters>
           <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
         </con:restRequest></con:config></con:testStep><con:properties>
-        <con:property>
-          <con:name>starttime</con:name>
-          <con:value>1615985787352</con:value>
-        </con:property>
+        
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616072187352</con:value>
+          <con:value>1616151849619</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>CL0AF0078Q</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6051fc7db814490e3935c4c5</con:value>
+          <con:value>605333aab814490e3935c55f</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
-          <con:value>test promotion_9T3HY3JZJW</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
           <con:value>{#TestCase#promotionName}</con:value>
         </con:property>
-        <con:property>
-          <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
-        </con:property>
-        <con:property>
-          <con:name>tnxNumber</con:name>
-          <con:value>txn-number01</con:value>
-        </con:property>
-        <con:property>
-          <con:name>sku</con:name>
-          <con:value>6676557b-a2ee-4334-aa6e-7a64ba15be37</con:value>
-        </con:property>
-        <con:property>
-          <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
-        </con:property>
+        
+        
+        
+        
         <con:property>
           <con:name>userId</con:name>
-          <con:value>100</con:value>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-      </con:properties>
+      <con:property><con:name>starttime</con:name><con:value>1616065449619</con:value></con:property></con:properties>
     </con:testCase>
     <con:testCase id="5121ee93-792d-4968-8393-93669b8141b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as SKU with NOT_IN operator &amp; evaluate it" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="869278b5-8db7-4fee-9f09-be26297b6dd7">
         <con:settings/>
-        <con:config>
-          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
-
-
-
+        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
-
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-
 testRunner.testCase.setPropertyValue("endtime", endtime);
-
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-
-tnxNumber = "test"
-tnxId = "110a7293-c789-42ab-a1c8-6b4acbe30681"
-sku = "HANDBAGSKU112"
-referenceId = "fdc78567-bf4a-494b-9386-83045a910dcb"
-userId = "100"
-category = "50672_category1"
-brand="50672_brand1"
-testRunner.testCase.setPropertyValue("tnxId",tnxId)
-testRunner.testCase.setPropertyValue("tnxNumber",tnxNumber)
-testRunner.testCase.setPropertyValue("sku",sku)
-testRunner.testCase.setPropertyValue("referenceId",referenceId)
-testRunner.testCase.setPropertyValue("userId",userId)
-testRunner.testCase.setPropertyValue("category",category)
-testRunner.testCase.setPropertyValue("brand",brand)</script>
-        </con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as SKU operator NOT_IN" id="2a546d73-e7c5-4e1e-a63a-f879e6262925">
         <con:settings/>
@@ -6294,7 +5915,7 @@ testRunner.testCase.setPropertyValue("brand",brand)</script>
           "entity": "SKU",
           "operator": "NOT_IN",
           "values": [
-            "${#TestCase#sku}"
+            "${#Project#sku}"
           ],
           "attributeName": null
         }
@@ -6379,11 +6000,11 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
             <con:request>{
   "amount": 100,
-  "customerId": "${#TestCase#userId}",
+  "customerId": "${#Project#customerid}",
   "cartItems": [
     {
-      "referenceId": "${#TestCase#referenceId}",
-      "sku": "${#TestCase#sku}",
+      "referenceId": "TestCasereferenceId",
+      "sku": "${#Project#sku}",
       "amount": "100.000000",
       "qty": "1.000000",
       "discount": null,
@@ -6394,36 +6015,13 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="c915aba9-c941-4304-8012-cc68d73f0187" name="Assert applied promo details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
-
-promotionId = context.expand('${#TestCase#promotionId}')
-promotionName = context.expand('${#TestCase#promotionName}')
-expectedPromotion = [
-            "id": "${promotionId}",
-            "name": "${promotionName}",
-            "messageLabel": "test!!",
-            "discount": "50.000000",
-            "discountAppliedOnQuantity": "1.000000",
-            "promotionAppliedOnQuantity": "1.000000",
-            "type": null
-         ]
-isCreatedPromotionInAppliedPromotions = false;
-for(promotion in lstOfAppliedPromotions){
-	if(promotion != expectedPromotion){
-		isCreatedPromotionInAppliedPromotions = true;
-		break;
-	}
-}
-
-log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert (lstOfAppliedPromotions == null)</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -6462,55 +6060,19 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
 </con:parameters>
           <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
         </con:restRequest></con:config></con:testStep><con:properties>
-        <con:property>
-          <con:name>starttime</con:name>
-          <con:value>1615985902452</con:value>
-        </con:property>
-        <con:property>
-          <con:name>endtime</con:name>
-          <con:value>1616072302452</con:value>
-        </con:property>
-        <con:property>
-          <con:name>randomId</con:name>
-          <con:value>CATN2N1NVV</con:value>
-        </con:property>
-        <con:property>
-          <con:name>promotionName</con:name>
-          <con:value>test promotion_CATN2N1NVV</con:value>
-        </con:property>
-        <con:property>
-          <con:name>tnxId</con:name>
-          <con:value>110a7293-c789-42ab-a1c8-6b4acbe30681</con:value>
-        </con:property>
-        <con:property>
-          <con:name>tnxNumber</con:name>
-          <con:value>test</con:value>
-        </con:property>
-        <con:property>
-          <con:name>sku</con:name>
-          <con:value>HANDBAGSKU112</con:value>
-        </con:property>
-        <con:property>
-          <con:name>referenceId</con:name>
-          <con:value>fdc78567-bf4a-494b-9386-83045a910dcb</con:value>
-        </con:property>
-        <con:property>
-          <con:name>userId</con:name>
-          <con:value>100</con:value>
-        </con:property>
-        <con:property>
-          <con:name>category</con:name>
-          <con:value>50672_category1</con:value>
-        </con:property>
-        <con:property>
-          <con:name>brand</con:name>
-          <con:value>50672_brand1</con:value>
-        </con:property>
-        <con:property>
-          <con:name>promotionId</con:name>
-          <con:value>6051fcf0b814490e3935c4c6</con:value>
-        </con:property>
-      </con:properties>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      <con:property><con:name>starttime</con:name><con:value>1616066564978</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1616152964978</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>test promotion_</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60533806b814490e3935c570</con:value></con:property></con:properties>
     </con:testCase>
     <con:properties>
       <con:property>
@@ -6532,7 +6094,7 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
     </con:property>
     <con:property>
       <con:name>responseSLA</con:name>
-      <con:value>1500</con:value>
+      <con:value>3000</con:value>
     </con:property>
     <con:property>
       <con:name>endpoint</con:name>
@@ -6544,17 +6106,17 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
     </con:property>
     <con:property>
       <con:name>tillid</con:name>
-      <con:value>50016386</con:value>
+      <con:value>50022820</con:value>
     </con:property>
     <con:property>
       <con:name>store</con:name>
-      <con:value>50016384</con:value>
+      <con:value>50022813</con:value>
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2MDcwMjQ5LCJpYXQiOjE2MTU5ODM4NTAsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.06466K46cF3Bk-b9vhPT5JJbHOXoOMohbbU6f5U77b4</con:value>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2MTUxODI4LCJpYXQiOjE2MTYwNjU0MzAsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.qT9sKH48-sJ2XRbhreay6nkF-CnNVIf-H6WJxO6fpbo</con:value>
     </con:property>
-  <con:property><con:name>externalEndpoint</con:name><con:value>crm-nightly-new.cc.capillarytech.com/api_gateway</con:value></con:property><con:property><con:name>authorization</con:name><con:value>Basic bHVjaWF1dG9fdGlsbF8xMDoyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==</con:value></con:property></con:properties>
+  <con:property><con:name>externalEndpoint</con:name><con:value>crm-nightly-new.cc.capillarytech.com/api_gateway</con:value></con:property><con:property><con:name>authorization</con:name><con:value>Basic bHVjaWF1dG9fdGlsbF8xMDoyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==</con:value></con:property><con:property><con:name>sku</con:name><con:value>Red1</con:value></con:property><con:property><con:name>brand</con:name><con:value>Brand1</con:value></con:property><con:property><con:name>category</con:name><con:value>category_1</con:value></con:property><con:property><con:name>customerid</con:name><con:value>10</con:value></con:property></con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
