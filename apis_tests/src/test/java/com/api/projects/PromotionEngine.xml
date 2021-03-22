@@ -6173,17 +6173,26 @@ def reader = new BufferedReader(new InputStreamReader(new FileInputStream(filepa
 def json = new JsonSlurper().parse(reader);
 
 def endpoint = json.endpoint;
-
 def orgId = json.orgId;
-
 def externalEndpoint = json.externalEndpoint;
-
-def tillId = json.authorization.tillId;
+def responseSLA = json.responseSLA;
+def store = json.store;
+def authorization = json.authorization;
+def tillid = json.tillid;
+def sku = json.sku;
+def brand = json.brand;
+def category = json.category;
 
 project.setPropertyValue("endpoint",endpoint);
 project.setPropertyValue("orgid",orgId);
-project.setPropertyValue("tillid",tillId);
 project.setPropertyValue("externalEndpoint",externalEndpoint);
+project.setPropertyValue("tillid",tillid);
+project.setPropertyValue("responseSLA",responseSLA);
+project.setPropertyValue("store",store);
+project.setPropertyValue("authorization",authorization);
+project.setPropertyValue("sku",sku);
+project.setPropertyValue("brand",brand);
+project.setPropertyValue("category",category);
 }
 catch(Exception e){
 	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());
