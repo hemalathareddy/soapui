@@ -1166,16 +1166,17 @@
 }</con:request>
             <con:originalUri>https://crm-nightly-new.cc.capillarytech.com/arya/api/v1/auth/login</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="f3989af3-6bdd-41c9-b97f-25c62c5e8cbf" name="Script Assertion">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 log.info(json)
 def token= json.token
 
-messageExchange.modelItem.project.setPropertyValue("token","Bearer "+token);</scriptText>
-              </con:configuration>
+messageExchange.modelItem.project.setPropertyValue("token","Bearer "+token);
+
+newToken = context.expand('${#Project#token}')
+assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
