@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="8bc84407-5c65-4012-843b-6b83f5633ee6" activeEnvironment="Default" name="PromotionEngine2" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="8bc84407-5c65-4012-843b-6b83f5633ee6" activeEnvironment="Default" name="PromotionEngine2" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Report Format(s)" value=""/>
@@ -81,8 +81,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="f4d0fbef-d160-409a-bbad-2057fe717805" wadlVersion="http://wadl.dev.java.net/2009/02" name="createPosPromotion" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
     <con:resource name="Generic" path="/internal/v1/promotions" id="a2d9af25-a5b7-4aac-8d84-65343878a4ce">
@@ -624,8 +624,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="5f781dc4-8721-436a-ba87-4623784188f7" wadlVersion="http://wadl.dev.java.net/2009/02" name="Evaluate" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
     <con:resource name="Evaluate" path="/v1/promotions/evaluate" id="9fab5574-7fda-46a8-814e-d4192b982071">
@@ -662,7 +662,85 @@
           <con:params/>
           <con:element>data</con:element>
         </con:representation>
-        <con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>401</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}" xmlns="http://eviware.com/soapui/config"/></con:setting>
           </con:settings>
@@ -692,7 +770,11 @@
 }</con:request>
           <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
           <con:credentials>
-            <con:username>${#Project#tillusername}</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType>
+            <con:username>${#Project#tillusername}</con:username>
+            <con:password>202cb962ac59075b964b07152d234b70</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
           </con:credentials>
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
@@ -743,7 +825,6 @@
       <con:method name="Deactivate 1" id="2d939943-dc8a-4e57-9086-8c98692c7eb4" method="PUT">
         <con:settings/>
         <con:parameters>
-          
           <con:parameter>
             <con:name>X-CAP-API-AUTH-ORG-ID</con:name>
             <con:value/>
@@ -772,11 +853,15 @@
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:jmsPropertyConfig/>
           <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+            <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+            <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+            <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>promotionid</con:entry>
+            <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+            <con:entry>AUTH-COOKIE</con:entry>
+          </con:parameterOrder>
         </con:request>
       </con:method>
     </con:resource>
@@ -1110,8 +1195,8 @@ messageExchange.modelItem.project.setPropertyValue("token","Bearer "+token);</sc
       </con:testStep>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="446a1d74-05bf-4af5-b4df-83be2c7e939e">
         <con:settings/>
-        <con:config><script>
-String requestId = UUID.randomUUID().toString()
+        <con:config>
+          <script>String requestId = UUID.randomUUID().toString()
 String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
@@ -1120,7 +1205,8 @@ String endtime = (System.currentTimeMillis()+86400000).toString()
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
 testRunner.testCase.setPropertyValue("randomId", randomId);
-testRunner.testCase.setPropertyValue("requestid",requestId);</script></con:config>
+testRunner.testCase.setPropertyValue("requestid",requestId);</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="When promotion manager create a generic promotion" id="006254db-fb9a-4031-84d3-30bc1e87debc">
         <con:settings/>
@@ -1256,11 +1342,13 @@ assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expe
       </con:testStep>
       <con:testStep type="groovy" name="Given script creates a random name for promotion" id="0f096d9b-118f-4759-ab58-6751bde4ef98">
         <con:settings/>
-        <con:config><script>def newName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def newName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 def updatedName = "test promotion_"+newName
 
 // save the new name at test case level.
-testRunner.testCase.setPropertyValue('newPromotionName', updatedName)</script></con:config>
+testRunner.testCase.setPropertyValue('newPromotionName', updatedName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="When promotion manager update the promotion name" id="a039819e-f52e-4d1e-8f77-45232dc001eb">
         <con:settings/>
@@ -1552,7 +1640,8 @@ assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are no
       </con:testStep>
       <con:testStep type="groovy" name="Given script create the updated start/end time for promotion" id="365c5adb-491a-46ae-8409-685a2cb8949e">
         <con:settings/>
-        <con:config><script>def starttime = testRunner.testCase.getPropertyValue("starttime");
+        <con:config>
+          <script>def starttime = testRunner.testCase.getPropertyValue("starttime");
 def updatedStartTime = Long.parseLong(starttime)-86400000;
 
 def endtime = testRunner.testCase.getPropertyValue("endtime");
@@ -1560,7 +1649,8 @@ def updatedEndTime = Long.parseLong(endtime)+96400000;
 
 //Setting the range from yesterday with current time to tommorrow current time
 testRunner.testCase.setPropertyValue("updatedStartTime", String.valueOf(updatedStartTime));
-testRunner.testCase.setPropertyValue("updatedEndTime", String.valueOf(updatedEndTime));</script></con:config>
+testRunner.testCase.setPropertyValue("updatedEndTime", String.valueOf(updatedEndTime));</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="When promotion manager updates the start/end dates" id="867b9d68-a932-464e-8a92-fdcf7d4fb567">
         <con:settings/>
@@ -1744,12 +1834,16 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+              <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -1792,20 +1886,26 @@ assert(responseData):"Promotion disable failed"</scriptText>
           <con:name>token</con:name>
           <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-      <con:property><con:name>requestid</con:name><con:value>cbb219fb-db61-4382-b002-ffcf6b51cd31</con:value></con:property></con:properties>
+        <con:property>
+          <con:name>requestid</con:name>
+          <con:value>cbb219fb-db61-4382-b002-ffcf6b51cd31</con:value>
+        </con:property>
+      </con:properties>
     </con:testCase>
     <con:testCase id="74567e05-576c-4b30-9166-36ba0e4f428e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create a POS promotion, Evaluate to check" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="eb9b3c30-b533-47e4-96b7-78b7c5300190">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', "auto_promotion_"+promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', "auto_promotion_"+promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="Then promotion manager creates a generic promotion" id="dc8db42a-7945-47f3-bc1e-7668758b8321">
         <con:settings/>
@@ -1952,7 +2052,8 @@ assert flag == true</scriptText>
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="3f66b6bc-2d51-44eb-8adb-2271b6aba827" name="assert the transaction details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1977,7 +2078,8 @@ expectedUserId = context.expand('${#Project#customerid}')
 assert(tnxAmountInResponse == "25000.000000")
 assert(customerIdInResponse == expectedUserId): "Customer Id is not as expected";
 //assert(tnxReferenceIdInResponse == expectedRefId):"Reference Id is not as expected";
-//assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText></con:configuration>
+//assert(skuInResponse == expectedSku): "SKU is not as expected";</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="dfe46d0e-0ab3-4d5f-818e-0ac2bc3e55a2" name="assert the applied promotion details">
               <con:configuration>
@@ -2018,7 +2120,12 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
               </con:configuration>
             </con:assertion>
             <con:credentials>
-              <con:username>luciauto_till_10</con:username><con:password>202cb962ac59075b964b07152d234b70</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>false</con:preemptive><con:authType>No Authorization</con:authType>
+              <con:username>luciauto_till_10</con:username>
+              <con:password>202cb962ac59075b964b07152d234b70</con:password>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:preemptive>false</con:preemptive>
+              <con:authType>No Authorization</con:authType>
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
@@ -2037,7 +2144,8 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
             <con:request/>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="18155b33-e3f2-4899-a1ad-112880b3aa45" name="Script Assertion">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -2046,7 +2154,8 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -2054,11 +2163,15 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -2106,7 +2219,8 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script sets the start/end times" id="8a1cf9ac-4cc3-4b0b-8aaa-718fa26a5d45">
         <con:settings/>
-        <con:config><script>String starttime = System.currentTimeMillis().toString()
+        <con:config>
+          <script>String starttime = System.currentTimeMillis().toString()
 String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 // set expiry time as after 5 mins
 String time1 = (System.currentTimeMillis()+300000).toString()
@@ -2119,8 +2233,8 @@ testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("time1", time1);
 testRunner.testCase.setPropertyValue("time2", time2);
 testRunner.testCase.setPropertyValue("time3", time3);
-testRunner.testCase.setPropertyValue("randomId", randomId)
-</script></con:config>
+testRunner.testCase.setPropertyValue("randomId", randomId)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="And promotion is created with the expiry of 5 mins from now" id="f48d653e-4326-4dca-8526-9b2d1229d19b">
         <con:settings/>
@@ -2427,7 +2541,8 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="4a4861e2-2f42-4a56-865c-a2795cc2d505" name="assert the applied promotions based on expiry">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -2453,7 +2568,8 @@ expectedThirdLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetail
 
 assert(expectedLastAppliedPromotion.id.equalsIgnoreCase(lastAppliedPromotion))
 assert(expectedSecondLastPromotion.id.equalsIgnoreCase(secondLastAppliedPromotion))
-assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion))</scriptText></con:configuration>
+assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion))</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -2494,11 +2610,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId5min}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId5min}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -2532,11 +2652,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId10min}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId10min}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -2570,11 +2694,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId15min}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId15min}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -2663,7 +2791,8 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="4019ebb3-d06d-47bf-ac09-d0940dbdd719">
         <con:settings/>
-        <con:config><script>//String requestId = UUID.randomUUID().toString()
+        <con:config>
+          <script>//String requestId = UUID.randomUUID().toString()
 String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
@@ -2671,7 +2800,8 @@ String endtime = (System.currentTimeMillis()+86400000).toString()
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue("randomId", randomId);</script></con:config>
+testRunner.testCase.setPropertyValue("randomId", randomId);</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="Promo manager will create a promotion with perticular till id and Campaign id" id="5e93e91b-942d-4efe-843e-37f8ed0d60d8">
         <con:settings/>
@@ -2868,11 +2998,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -2903,14 +3037,16 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="5248dc91-fe9d-4a63-89a2-f61187cf2468">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The Promo manager will set a promo strtegy as 'PRIORITY'" id="a153f366-a3ae-4ccf-94b3-5545fd3cda02">
         <con:settings/>
@@ -3205,7 +3341,8 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="da0d5ca6-508a-44e8-96fd-7cc2db746f60" name="Asserting applied promo details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -3254,7 +3391,8 @@ assert(isCreatedPromotionInAppliedPromotions)
 assert(isCreatedPromotionInAppliedPromotions2)
 assert(promotionIndex2&lt;promotionIndex)
 log.info (isCreatedPromotionInAppliedPromotions)
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -3295,11 +3433,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -3333,11 +3475,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId1}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId1}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -3404,7 +3550,8 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="6f604853-d225-465e-9171-61667310dcc9">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 
 
 
@@ -3414,8 +3561,8 @@ String endtime = (System.currentTimeMillis()+86400000).toString()
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The Promo manager will set a promo strtegy as 'EXPIRY_BASED" id="d31b9f28-62d2-4623-9c93-0629f07be5ad">
         <con:settings/>
@@ -3699,12 +3846,16 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+              <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -3759,14 +3910,16 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="75fbc234-54c5-40a3-bdbc-2e74b1433e50">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The Promo manager will set a promo strtegy as 'MAX_discount'" id="45489279-21b5-42b4-8ab5-bb18084c145f">
         <con:settings/>
@@ -4083,12 +4236,16 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+              <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -4143,7 +4300,8 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="97a0f277-90e7-412a-ba49-36acc7a81d21">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 log.info(promotionName)
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
@@ -4151,7 +4309,8 @@ String endtime = (System.currentTimeMillis()+86400000).toString()
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue("promotionName", promotionName);</script></con:config>
+testRunner.testCase.setPropertyValue("promotionName", promotionName);</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with operator IN store scriteria" id="fdd13fdd-99ef-4d43-b2e6-7efde19ee208">
         <con:settings/>
@@ -4260,7 +4419,8 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionNam
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="40ded90a-f939-44df-bf99-fbeee694138e" name="Script Assertion">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -4292,7 +4452,8 @@ for(promotion in lstOfAppliedPromotions){
 
 log.info isCreatedPromotionInAppliedPromotions
 log.info ("${promotionId}")
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="ef273703-79fb-475e-a77c-ffe9f218ae85" name="Response SLA" disabled="true">
               <con:configuration>
@@ -4338,12 +4499,16 @@ assert(responseData):"Promotion disable failed"</scriptText>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
             <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-  <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
-</con:parameters>
-            <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-USER-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+              <con:entry key="X-CAP-USER-ID" value="${#Project#tillid}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-USER-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
           </con:restRequest>
         </con:config>
       </con:testStep>
@@ -4360,9 +4525,6 @@ assert(responseData):"Promotion disable failed"</scriptText>
           <con:name>randomId</con:name>
           <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-        
-        
-        
         <con:property>
           <con:name>tnxId</con:name>
           <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -4383,20 +4545,30 @@ assert(responseData):"Promotion disable failed"</scriptText>
           <con:name>userId</con:name>
           <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-      <con:property><con:name>promotionName</con:name><con:value>8YXNHARGAC</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60533566b814490e3935c562</con:value></con:property></con:properties>
+        <con:property>
+          <con:name>promotionName</con:name>
+          <con:value>8YXNHARGAC</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId</con:name>
+          <con:value>60533566b814490e3935c562</con:value>
+        </con:property>
+      </con:properties>
     </con:testCase>
     <con:testCase id="c112126c-cae0-4fe2-834b-154691d3882f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as CATEGORY with IN operator &amp; evaluate it" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="9d1d3301-48a4-42b3-8a3f-f4c5d1ce5e58">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as CATEGORY operator IN" id="1f1b406e-2063-4a5e-9288-2f0c2e35aa03">
         <con:settings/>
@@ -4520,7 +4692,8 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionNam
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="2e8d1096-5387-4d82-b8b0-d0108607fff1" name="Assert appied promo details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -4541,7 +4714,8 @@ for(promotion in lstOfAppliedPromotions){
 }
 
 log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="6f398ed1-1134-41e7-b97d-9fa2dc71469f" name="Response SLA" disabled="true">
               <con:configuration>
@@ -4557,14 +4731,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate promotion" id="d4d7ff2b-0130-4b94-b071-ca0e978c98b0"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="c6b8437c-f7c7-449e-a875-5e774ae8ad44" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate promotion" id="d4d7ff2b-0130-4b94-b071-ca0e978c98b0">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="c6b8437c-f7c7-449e-a875-5e774ae8ad44" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -4573,18 +4752,28 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
         <con:property>
           <con:name>starttime</con:name>
           <con:value>1616066265490</con:value>
@@ -4643,15 +4832,16 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="ce864d24-716f-4f2e-8d3b-5c1d2583b25e">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)
-</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as CATEGORY operator NOT_IN" id="bf1a2030-6b66-41cb-ab04-05103706c788">
         <con:settings/>
@@ -4724,7 +4914,8 @@ testRunner.testCase.setPropertyValue('promotionName', promotionName)
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="970e7c29-d9a3-4386-8852-fb47d394cc7a" name="Save promo details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -4740,7 +4931,8 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionNam
 orgIdInResponse = json.data.orgId.toString()
 orgIdExpected = context.expand('${#Project#orgid}')
 
-assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></con:configuration>
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="172d4cd2-261f-4e20-91a5-a86f424d3eca" name="Response SLA" disabled="true">
               <con:configuration>
@@ -4782,13 +4974,15 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="d06a2726-14df-4b84-bf73-6ebbbf813b8f" name="Asserting applied promo">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
-assert (lstOfAppliedPromotions == null)</scriptText></con:configuration>
+assert (lstOfAppliedPromotions == null)</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:assertion type="Response SLA Assertion" id="2df59aec-0d37-412a-b9ae-db60a576c979" name="Response SLA">
               <con:configuration>
@@ -4804,14 +4998,19 @@ assert (lstOfAppliedPromotions == null)</scriptText></con:configuration>
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate Promotion" id="dcfaab81-f0c1-4568-a584-b92d333dce77"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="935de802-dde1-46a9-9833-cf5247287e8a" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate Promotion" id="dcfaab81-f0c1-4568-a584-b92d333dce77">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="935de802-dde1-46a9-9833-cf5247287e8a" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -4820,18 +5019,28 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
         <con:property>
           <con:name>starttime</con:name>
           <con:value>1616065446200</con:value>
@@ -4852,8 +5061,6 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
           <con:name>promotionName</con:name>
           <con:value>test promotion_</con:value>
         </con:property>
-        
-        
         <con:property>
           <con:name>sku</con:name>
           <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -4880,14 +5087,16 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="b6f68194-8f10-4709-9c37-03ed3a767f91">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as BRAND operator IN" id="363ec1fd-958e-4235-92d0-a606c071aeba">
         <con:settings/>
@@ -5075,14 +5284,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate Promotion" id="69cbe5f9-0b7b-4a49-a592-650302c8aad6"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="01db65d0-2396-4932-9867-1cbd238cce3d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate Promotion" id="69cbe5f9-0b7b-4a49-a592-650302c8aad6">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="01db65d0-2396-4932-9867-1cbd238cce3d" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5091,18 +5305,28 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
         <con:property>
           <con:name>starttime</con:name>
           <con:value>1616066373538</con:value>
@@ -5157,14 +5381,16 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="1afa33df-70cf-4e7e-82ce-e2d19552b5f6">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as BRAND operator NOT_IN" id="20adda61-a0b2-4919-84fe-4a75d8d9adf0">
         <con:settings/>
@@ -5298,7 +5524,8 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="c915aba9-c941-4304-8012-cc68d73f0187" name="Assert applied promo details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5308,7 +5535,8 @@ lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
 promotionId = context.expand('${#TestCase#promotionId}')
 promotionName = context.expand('${#TestCase#promotionName}')
 
-assert lstOfAppliedPromotions==null</scriptText></con:configuration>
+assert lstOfAppliedPromotions==null</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -5319,14 +5547,19 @@ assert lstOfAppliedPromotions==null</scriptText></con:configuration>
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate Promotion" id="7e275add-7820-445f-9641-07af7400b664"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="3c43a3d4-a430-4f59-8e08-45f2e3ad8f28" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate Promotion" id="7e275add-7820-445f-9641-07af7400b664">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="3c43a3d4-a430-4f59-8e08-45f2e3ad8f28" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5335,18 +5568,28 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
         <con:property>
           <con:name>starttime</con:name>
           <con:value>1616066506702</con:value>
@@ -5401,14 +5644,16 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="24cb5414-6db7-47e0-81d4-821148b884b2">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as SKU operator IN" id="49c2c927-1e19-4540-b62e-0aff2e5f7386">
         <con:settings/>
@@ -5542,7 +5787,8 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="c915aba9-c941-4304-8012-cc68d73f0187" name="Assert applied promo details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5561,7 +5807,8 @@ for(promotion in lstOfAppliedPromotions){
 }
 
 log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -5572,14 +5819,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate promotion" id="d5d6b24e-d5dc-4df4-b82a-cb7898a8fd01"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="00fb8087-f9f0-4053-bcfb-ccc845396698" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate promotion" id="d5d6b24e-d5dc-4df4-b82a-cb7898a8fd01">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="00fb8087-f9f0-4053-bcfb-ccc845396698" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5588,18 +5840,28 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
         <con:property>
           <con:name>starttime</con:name>
           <con:value>1616065448613</con:value>
@@ -5646,13 +5908,15 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="85448a7d-6492-4067-844c-06e2150685ea">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
-testRunner.testCase.setPropertyValue("endtime", endtime);</script></con:config>
+testRunner.testCase.setPropertyValue("endtime", endtime);</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with operator NOT_IN store scriteria" id="32158364-e3ee-4b88-b199-26f86c744423">
         <con:settings/>
@@ -5811,14 +6075,19 @@ assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is no
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate Promotion" id="906c4ac1-83dd-4fda-a49b-9337183a637f"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="54049dc6-1c2c-46ee-a941-fa1f735abcc0" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate Promotion" id="906c4ac1-83dd-4fda-a49b-9337183a637f">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="54049dc6-1c2c-46ee-a941-fa1f735abcc0" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -5827,19 +6096,28 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
-        
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
         <con:property>
           <con:name>endtime</con:name>
           <con:value>1616151849619</con:value>
@@ -5860,28 +6138,30 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
           <con:name>promotionName</con:name>
           <con:value>{#TestCase#promotionName}</con:value>
         </con:property>
-        
-        
-        
-        
         <con:property>
           <con:name>userId</con:name>
           <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </con:property>
-      <con:property><con:name>starttime</con:name><con:value>1616065449619</con:value></con:property></con:properties>
+        <con:property>
+          <con:name>starttime</con:name>
+          <con:value>1616065449619</con:value>
+        </con:property>
+      </con:properties>
     </con:testCase>
     <con:testCase id="5121ee93-792d-4968-8393-93669b8141b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as SKU with NOT_IN operator &amp; evaluate it" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="869278b5-8db7-4fee-9f09-be26297b6dd7">
         <con:settings/>
-        <con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+        <con:config>
+          <script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 
 //storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config>
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script>
+        </con:config>
       </con:testStep>
       <con:testStep type="restrequest" name="The promo manager will create the promo with product criteria as SKU operator NOT_IN" id="2a546d73-e7c5-4e1e-a63a-f879e6262925">
         <con:settings/>
@@ -6015,13 +6295,15 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="c915aba9-c941-4304-8012-cc68d73f0187" name="Assert applied promo details">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
 
 lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
-assert (lstOfAppliedPromotions == null)</scriptText></con:configuration>
+assert (lstOfAppliedPromotions == null)</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -6032,14 +6314,19 @@ assert (lstOfAppliedPromotions == null)</scriptText></con:configuration>
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="De-activate Promotion" id="ece10818-6946-4778-9891-ae5aeb5a7011"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
-          <con:request/>
-          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
-          <con:assertion type="GroovyScriptAssertion" id="fde6296a-4c71-4d0b-8b83-89daa06f3c38" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+      <con:testStep type="restrequest" name="De-activate Promotion" id="ece10818-6946-4778-9891-ae5aeb5a7011">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="fde6296a-4c71-4d0b-8b83-89daa06f3c38" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -6048,31 +6335,45 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 responseData = json.data
 log.info(responseData)
-assert(responseData):"Promotion disable failed"</scriptText></con:configuration></con:assertion><con:credentials>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:jmsPropertyConfig/>
-          <con:parameters>
-  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
-  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
-  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
-</con:parameters>
-          <con:parameterOrder><con:entry>promotionid</con:entry><con:entry>X-CAP-API-AUTH-ORG-ID</con:entry><con:entry>AUTH-COOKIE</con:entry></con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      <con:property><con:name>starttime</con:name><con:value>1616066564978</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1616152964978</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>test promotion_</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60533806b814490e3935c570</con:value></con:property></con:properties>
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+              <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+              <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>starttime</con:name>
+          <con:value>1616066564978</con:value>
+        </con:property>
+        <con:property>
+          <con:name>endtime</con:name>
+          <con:value>1616152964978</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName</con:name>
+          <con:value>test promotion_</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionId</con:name>
+          <con:value>60533806b814490e3935c570</con:value>
+        </con:property>
+      </con:properties>
     </con:testCase>
     <con:properties>
       <con:property>
@@ -6082,6 +6383,298 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
     </con:properties>
     <con:setupScript/>
     <con:tearDownScript/>
+  </con:testSuite>
+  <con:testSuite id="b592181d-40df-4619-bee1-292bf09b55e1" name="PromotionAPIFuzzTest" disabled="true">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="1939f894-fd28-4c6d-b3cf-9f9808258504" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="evaluatePromotionTest" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="evaluatePromotion" id="30c8ec1b-9844-4535-950e-16e71bba7bc5">
+        <con:settings/>
+        <con:config service="Evaluate" resourcePath="/v1/promotions/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="evaluatePromotion" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${#Project#authorization}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}"/>
+&lt;/xml-fragment></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
+            <con:request>{
+  "amount": "25000",
+  "customerId": "10",
+  "cartItems": [
+    {
+      "referenceId": "reference-id",
+      "sku": "sku",
+      "amount": 25000,
+      "qty": "1",
+      "discount": "10",
+      "appliedPromotions": null
+    }],
+    "appliedPromotions": null
+}</con:request>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="0f2cf3c0-ee6a-44eb-9274-4981e0e1388c" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="803a88f6-2b26-4644-a8f4-3023f37459a3" name="Script Assertion" disabled="true">
+              <con:configuration>
+                <scriptText>def status = messageExchange.getResponseHeaders().get('#status#');
+String code = (status =~ "[1-5]\\d\\d")[0];
+requestStatus = "UNKNOWN";
+if(code != '200' &amp;&amp; code != '201'){
+	requestStatus = "OK";
+}
+else{
+	requestStatus = "FAILED"
+}
+log.info requestStatus</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>luciauto_till_10</con:username>
+              <con:password>202cb962ac59075b964b07152d234b70</con:password>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:preemptive>false</con:preemptive>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>promotionId</con:name>
+          <con:value>605341d3b814490e3935c586</con:value>
+        </con:property>
+        <con:property>
+          <con:name>promotionName</con:name>
+          <con:value>cbdwhvguev</con:value>
+        </con:property>
+      </con:properties>
+      <con:securityTest id="2d53631a-953f-4fba-910c-22d1c0259944" name="evaluatePromotionAPIFuzzTest" failOnError="true">
+        <con:settings/>
+        <con:setupScript>import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus;
+import groovy.json.JsonSlurper;
+
+context.JsonContent = [];
+context.lstOfStatus = []
+
+//Accessing the fuzz data for tests.
+String project_dir = context.expand('${projectDir}');
+fuzzDBLocation = project_dir + File.separator + "test_data" + File.separator + "fuzzdb";
+filepath = fuzzDBLocation + File.separator + "evaluatePromotionAPIFuzzData.json";
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath),"UTF-8"))
+def json = new JsonSlurper().parse(reader);
+
+
+def lstOfInvalidJsons = [];
+new File(fuzzDBLocation + File.separator + "JSON_fuzzing.txt").withReader('UTF-8') { readerfile ->
+def line
+    while ((line = readerfile.readLine()) != null) {
+        lstOfInvalidJsons.add(line);
+    }
+}
+
+def lstOfFuzzForAmountField = json.amount;
+def lstOfFuzzForCustomerIdField = json.customerId;
+def lstOfFuzzForCartItemsAmountField = json.cartItemsAmount;
+def lstOfFuzzForCartItemsQtyField = json.cartItemsQty;
+
+context.lstOfFuzzForAmountField = lstOfFuzzForAmountField;
+context.lstOfFuzzForCustomerIdField = lstOfFuzzForCustomerIdField;
+context.lstOfFuzzForCartItemsAmountField = lstOfFuzzForCartItemsAmountField;
+context.lstOfFuzzForCartItemsQtyField = lstOfFuzzForCartItemsQtyField;
+context.lstOfInvalidJsons = lstOfInvalidJsons;</con:setupScript>
+        <con:tearDownScript>import groovy.json.JsonOutput;
+import com.eviware.soapui.security.*;
+
+String project_dir = context.expand('${projectDir}');
+
+def newJsonStr = JsonOutput.toJson(context.JsonContent)
+
+def newPrettyJson = JsonOutput.prettyPrint(newJsonStr)
+
+String outputFolder = context.testCase.testSuite.project.getPropertyValue("outputFolder");
+
+String reportFileName = context.testCase.getSecurityTestAt(0).getName();
+
+File reportFileObj = new File(outputFolder + File.separator + reportFileName + ".json");
+
+saveToFile(reportFileObj, newPrettyJson)
+
+log.info("Status details == " + context.lstOfStatus)
+
+//Save the contents to a file
+def saveToFile(file, content) {
+    if (!file.parentFile.exists()) {
+         file.parentFile.mkdirs()
+         log.info "Directory did not exist, created"
+    }
+    file.write(content)
+    assert file.exists(), "${file.name} not created"
+}</con:tearDownScript>
+        <con:testStepSecurityTest>
+          <con:testStepId>30c8ec1b-9844-4535-950e-16e71bba7bc5</con:testStepId>
+          <con:testStepSecurityScan type="GroovySecurityScan" name="Custom Script" id="4ed66603-0830-4a9c-895f-03f313b21fbd" applyForFailedStep="false" disabled="false" runOnlyOnce="true">
+            <con:settings/>
+            <con:config xsi:type="con:GroovySecurityScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:executeScript>import groovy.json.JsonSlurper;
+import groovy.json.JsonBuilder;
+
+//create a builder for each request created.
+def req = testStep.getPropertyValue("Request");
+def requestJson = new JsonSlurper().parseText(req);
+JsonBuilder builder = new JsonBuilder(requestJson);
+
+int amountFieldFuzzDataSize = context.lstOfFuzzForAmountField.size -1;
+int customerIdFieldFuzzDataSize = context.lstOfFuzzForCustomerIdField.size -1;
+int cartItemsAmountFieldFuzzDataSize = context.lstOfFuzzForCartItemsAmountField.size -1;
+int cartItemsQtyFieldFuzzDataSize = context.lstOfFuzzForCartItemsQtyField.size -1;
+int invalidFuzzJsonDataSize = context.lstOfInvalidJsons.size - 1;
+
+//initializing the index variable to iterate.
+if(context.amountFieldFuzzDataIndex == null){
+  context.amountFieldFuzzDataIndex = 0;
+}
+if(context.customerIdFieldFuzzDataIndex == null){
+  context.customerIdFieldFuzzDataIndex = 0;
+}
+if(context.cartItemsAmountFieldFuzzDataIndex == null){
+  context.cartItemsAmountFieldFuzzDataIndex = 0;
+}
+if(context.cartItemsQtyFieldFuzzDataIndex == null){
+  context.cartItemsQtyFieldFuzzDataIndex = 0;
+}
+if(context.invalidFuzzJsonDataIndex == null){
+  context.invalidFuzzJsonDataIndex = 0;
+}
+
+if(context.invalidFuzzJsonDataIndex &lt;= invalidFuzzJsonDataSize){
+  log.info("Content at index - " + context.invalidFuzzJsonDataIndex + "==> " + context.lstOfInvalidJsons.get(context.invalidFuzzJsonDataIndex));
+  builder.content = context.lstOfInvalidJsons.get(context.invalidFuzzJsonDataIndex);
+  parameters.payload = builder.toString();
+  context.changedParamsField = "json body";
+  context.changedParamsValue = context.lstOfInvalidJsons.get(context.invalidFuzzJsonDataIndex);
+  context.status = securityScan.getSecurityScanResult().getStatusString();
+  context.invalidFuzzJsonDataIndex++;
+  return true;
+}
+//modify the "amount" field in request body using fuzz data captured.
+if(context.amountFieldFuzzDataIndex &lt;= amountFieldFuzzDataSize){
+  log.info("Content at index - " + context.amountFieldFuzzDataIndex + "==> " + context.lstOfFuzzForAmountField.get(context.amountFieldFuzzDataIndex));
+  builder.content.amount = context.lstOfFuzzForAmountField.get(context.amountFieldFuzzDataIndex);
+  parameters.payload = builder.toString();
+  context.changedParamsField = "amount";
+  context.changedParamsValue = context.lstOfFuzzForAmountField.get(context.amountFieldFuzzDataIndex);
+  context.status = securityScan.getSecurityScanResult().getStatusString();
+  context.amountFieldFuzzDataIndex++;
+  return true;
+}
+if(context.customerIdFieldFuzzDataIndex &lt;= customerIdFieldFuzzDataSize){
+  log.info("Content at index - " + context.customerIdFieldFuzzDataIndex + "==> " + context.lstOfFuzzForCustomerIdField.get(context.customerIdFieldFuzzDataIndex));
+  builder.content.customerId = context.lstOfFuzzForCustomerIdField.get(context.customerIdFieldFuzzDataIndex);
+  parameters.payload = builder.toString();
+  context.changedParamsField = "customerId";
+  context.changedParamsValue = context.lstOfFuzzForCustomerIdField.get(context.customerIdFieldFuzzDataIndex);
+  context.status = securityScan.getSecurityScanResult().getStatusString();
+  context.customerIdFieldFuzzDataIndex++;
+  return true;
+}
+if(context.cartItemsAmountFieldFuzzDataIndex &lt;= cartItemsAmountFieldFuzzDataSize){
+  log.info("Content at index - " + context.cartItemsAmountFieldFuzzDataIndex + "==> " + context.lstOfFuzzForCartItemsAmountField.get(context.cartItemsAmountFieldFuzzDataIndex));
+  builder.content.cartItems[0].amount = context.lstOfFuzzForCartItemsAmountField.get(context.cartItemsAmountFieldFuzzDataIndex)
+  parameters.payload = builder.toString();
+  context.changedParamsField = "cartItems.amount";
+  context.changedParamsValue = context.lstOfFuzzForCartItemsAmountField.get(context.cartItemsAmountFieldFuzzDataIndex);
+  context.status = securityScan.getSecurityScanResult().getStatusString();
+  context.cartItemsAmountFieldFuzzDataIndex++;
+  return true;
+}
+if(context.cartItemsQtyFieldFuzzDataIndex &lt;= cartItemsQtyFieldFuzzDataSize){
+  log.info("Content at index - " + context.cartItemsQtyFieldFuzzDataIndex + "==> " + context.lstOfFuzzForCartItemsQtyField.get(context.cartItemsQtyFieldFuzzDataIndex));
+  builder.content.cartItems[0].qty = context.lstOfFuzzForCartItemsQtyField.get(context.cartItemsQtyFieldFuzzDataIndex);
+  parameters.payload = builder.toString();
+  context.changedParamsField = "cartItems.qty";
+  context.changedParamsValue = context.lstOfFuzzForCartItemsQtyField.get(context.cartItemsQtyFieldFuzzDataIndex);
+  context.status = securityScan.getSecurityScanResult().getStatusString();
+  context.cartItemsQtyFieldFuzzDataIndex++;
+  return true;
+}
+else{
+  def lstOfStatus = securityScan.getSecurityScanResult().getSecurityRequestResultList();
+  for(def statusObj : lstOfStatus){
+    context.lstOfStatus.add(statusObj.getStatus());
+  }
+  return false;
+}</con:executeScript>
+            </con:config>
+            <con:assertion type="Sensitive Information Exposure" id="0f71c508-bab3-478d-933c-adbfb42e2869" name="Sensitive Information Exposure">
+              <con:configuration>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Invalid HTTP Status Codes" id="3976242f-5689-4cd3-8fdf-d465d1fe8515" name="Invalid HTTP Status Codes">
+              <con:configuration>
+                <codes>201,200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="e16dce6e-f764-4f6f-952b-237dd99b51a9" name="capture request data.">
+              <con:configuration>
+                <scriptText>String response = messageExchange.getResponseContent();
+String reqBody = messageExchange.getRequestContent();
+String endPoint = messageExchange.getEndpoint()
+
+def status = messageExchange.getResponseHeaders().get('#status#');
+String code = (status =~ "[1-5]\\d\\d")[0];
+requestStatus = "UNKNOWN";
+if(code != '200' &amp;&amp; code != '201'){
+	requestStatus = "OK";
+}
+else{
+	requestStatus = "FAILED"
+}
+// get request call information to log.
+HashMap&lt;String,String> properties = messageExchange.getProperties();
+def parameterJson = [:];
+properties.each{ key,value ->
+  parameterJson[(key)] = value;
+  }
+parameterString = parameterJson.toMapString()
+def timeTaken = messageExchange.getTimeTaken();
+def testStepName = context.testCase.getTestStepAt(context.getCurrentStepIndex()).getLabel();
+def securityTestName = context.getCurrentScan().getParent().getName();
+def scan = context.getCurrentScan().getName();
+
+if(context.INDEX == null){
+	context.INDEX = 0;
+}
+context.INDEX = context.INDEX + 1;
+KEY = securityTestName + "_" + testStepName + "_" + scan;
+context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "response": response, "timeTaken": timeTaken.toString(), "parameters": parameterString, "changedFieldKey": context.changedParamsField, "changedFieldValue": context.changedParamsValue, "status": requestStatus]]]</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:parameters label="payload" parameterName="Request" xpath="" checked="true"/>
+            </con:checkedParameters>
+            <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <con:strategy>ONE_BY_ONE</con:strategy>
+              <con:delay>100</con:delay>
+            </con:executionStrategy>
+          </con:testStepSecurityScan>
+        </con:testStepSecurityTest>
+        <con:properties/>
+      </con:securityTest>
+    </con:testCase>
+    <con:properties/>
   </con:testSuite>
   <con:properties>
     <con:property>
@@ -6116,7 +6709,31 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:name>token</con:name>
       <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2MTUxODI4LCJpYXQiOjE2MTYwNjU0MzAsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.qT9sKH48-sJ2XRbhreay6nkF-CnNVIf-H6WJxO6fpbo</con:value>
     </con:property>
-  <con:property><con:name>externalEndpoint</con:name><con:value>crm-nightly-new.cc.capillarytech.com/api_gateway</con:value></con:property><con:property><con:name>authorization</con:name><con:value>Basic bHVjaWF1dG9fdGlsbF8xMDoyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==</con:value></con:property><con:property><con:name>sku</con:name><con:value>Red1</con:value></con:property><con:property><con:name>brand</con:name><con:value>Brand1</con:value></con:property><con:property><con:name>category</con:name><con:value>category_1</con:value></con:property><con:property><con:name>customerid</con:name><con:value>10</con:value></con:property></con:properties>
+    <con:property>
+      <con:name>externalEndpoint</con:name>
+      <con:value>crm-nightly-new.cc.capillarytech.com/api_gateway</con:value>
+    </con:property>
+    <con:property>
+      <con:name>authorization</con:name>
+      <con:value>Basic bHVjaWF1dG9fdGlsbF8xMDoyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==</con:value>
+    </con:property>
+    <con:property>
+      <con:name>sku</con:name>
+      <con:value>Red1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>brand</con:name>
+      <con:value>Brand1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>category</con:name>
+      <con:value>category_1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>customerid</con:name>
+      <con:value>10</con:value>
+    </con:property>
+  </con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
