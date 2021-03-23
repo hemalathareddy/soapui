@@ -1173,7 +1173,7 @@ def json = new JsonSlurper().parseText(response);
 log.info(json)
 def token= json.token
 
-messageExchange.modelItem.project.setPropertyValue("token","Bearer "+token);
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("token","Bearer "+token);
 
 newToken = context.expand('${#Project#token}')
 assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText></con:configuration>
