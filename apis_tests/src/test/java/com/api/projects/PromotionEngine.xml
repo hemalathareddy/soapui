@@ -1150,7 +1150,7 @@
       <con:testStep type="restrequest" name="add token" id="a856f0da-91e7-4ad8-95cc-7d194e2e9e44">
         <con:settings/>
         <con:config service="Arya Auth Api" resourcePath="/arya/api/v1/auth/login" methodName="Login 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Copy of Adding Token" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json" postQueryString="false">
+          <con:restRequest name="add token" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json" postQueryString="false">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -1200,48 +1200,6 @@ assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText>
     <con:testCase id="7023455f-d6c7-48d3-a5c4-c8dfddc03360" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create, Edit, Verify and Disable a POS Promotion" searchProperties="true">
       <con:description>TestCase generated for REST Resource [Generic] located at [/internal/v1/promotion/generic]</con:description>
       <con:settings/>
-      <con:testStep type="restrequest" name="Adding Token" id="0ff4eb59-940e-4217-8259-f428f202c875" disabled="true">
-        <con:settings/>
-        <con:config service="Arya Auth Api" resourcePath="/arya/api/v1/auth/login" methodName="Login 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Adding Token" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint>
-            <con:request>{"username":"ashish", "password": "123"
-}</con:request>
-            <con:originalUri>https://crm-nightly-new.cc.capillarytech.com/arya/api/v1/auth/login</con:originalUri>
-            <con:assertion type="GroovyScriptAssertion" id="f3989af3-6bdd-41c9-b97f-25c62c5e8cbf" name="Script Assertion">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
-
-String response = messageExchange.getResponseContent();
-def json = new JsonSlurper().parseText(response);
-log.info(json)
-def token= json.token
-
-messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("token","Bearer "+token);
-
-newToken = context.expand('${#Project#token}')
-assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText>
-              </con:configuration>
-            </con:assertion>
-            <con:credentials>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters>
-              <con:entry key="Accept" value="*/*"/>
-              <con:entry key="Content-Type" value="application/json"/>
-            </con:parameters>
-            <con:parameterOrder>
-              <con:entry>Accept</con:entry>
-              <con:entry>Content-Type</con:entry>
-            </con:parameterOrder>
-          </con:restRequest>
-        </con:config>
-      </con:testStep>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="446a1d74-05bf-4af5-b4df-83be2c7e939e">
         <con:settings/>
         <con:config>
@@ -1307,6 +1265,8 @@ testRunner.testCase.setPropertyValue("requestid",requestId);</script>
             <con:assertion type="GroovyScriptAssertion" id="951478e9-763f-4b2d-a4b2-acf1fe980609" name="Save promotion related details">
               <con:configuration>
                 <scriptText>import groovy.json.JsonSlurper;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompareMode
 
 
 String response = messageExchange.getResponseContent();
@@ -1901,23 +1861,23 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616065429416</con:value>
+          <con:value>1616502818118</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616151829418</con:value>
+          <con:value>1616589218118</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>9OHTKDQ1UR</con:value>
+          <con:value>444AFSXYJB</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>60533397b814490e3935c550</con:value>
+          <con:value>6059cd800e8e8f3f025823fb</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_9OHTKDQ1UR</con:value>
+          <con:value>test promotion_KK8USGUQJJ</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
@@ -1937,7 +1897,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>requestid</con:name>
-          <con:value>cbb219fb-db61-4382-b002-ffcf6b51cd31</con:value>
+          <con:value>312d9f36-90f5-4650-a754-db7d808f7834</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -6780,7 +6740,7 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2NTgzNTA5LCJpYXQiOjE2MTY0OTcxMTAsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.7oHtiP2HyLyHXW-l3qpxS53u0wnpsY92rdIKo0vkqr4</con:value>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2NTg3ODg0LCJpYXQiOjE2MTY1MDE0ODQsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.LAmjfqEUAKQHClftx3PLFqAGl5HbzYYDkNQSl0QNPuw</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
@@ -6788,6 +6748,26 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
   <con:oAuth1ProfileContainer/>
   <con:beforeRunScript>import groovy.json.JsonSlurper
 import java.io.FileInputStream;
+import groovy.lang.Binding
+import groovy.util.GroovyScriptEngine
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+
+// location of script file is relative to SOAPUI project file.
+String scriptPath = System.properties["soapui.scripting.library"];
+
+// Create Groovy Script Engine to run the script.
+GroovyScriptEngine gse = new GroovyScriptEngine(scriptPath) 
+
+// Load the Groovy Script file 
+externalScript = gse.loadScriptByName("demo.groovy")  
+
+// Create a runtime instance of script
+instance = externalScript.newInstance()
+
+context.externalScript = instance;
+
+
 
 ////////////////////// Functions /////////////////////////
 
@@ -6924,6 +6904,7 @@ for(j in 0 .. testSuites.size()-1){
    			}
 
 		}
+//Invoke Set up tests.		
 aryaLoginTestCase = project.testSuites['ReUsableTestSuites'].testCases['Do_Arya_login']
 aryaLoginTestCase.run(null, false)</con:beforeRunScript>
   <con:sensitiveInformation/>
