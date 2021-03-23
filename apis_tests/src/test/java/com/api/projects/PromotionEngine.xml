@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="8bc84407-5c65-4012-843b-6b83f5633ee6" activeEnvironment="Default" name="PromotionEngine" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="8bc84407-5c65-4012-843b-6b83f5633ee6" activeEnvironment="Default" name="PromotionEngine" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Report Format(s)" value=""/>
@@ -1142,9 +1142,55 @@
       </con:method>
     </con:resource>
   </con:interface>
-  <con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuits" disabled="true">
+  <con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuites" disabled="true">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="108a5bd1-d480-4715-8d3c-11fcab2f9ab2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Do_Arya_login" searchProperties="true" disabled="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="add token" id="a856f0da-91e7-4ad8-95cc-7d194e2e9e44">
+        <con:settings/>
+        <con:config service="Arya Auth Api" resourcePath="/arya/api/v1/auth/login" methodName="Login 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Copy of Adding Token" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint>
+            <con:request>{"username":"ashish", "password": "123"
+}</con:request>
+            <con:originalUri>https://crm-nightly-new.cc.capillarytech.com/arya/api/v1/auth/login</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="f3989af3-6bdd-41c9-b97f-25c62c5e8cbf" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+log.info(json)
+def token= json.token
+
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("token","Bearer "+token);
+
+newToken = context.expand('${#Project#token}')
+assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="Accept" value="*/*"/>
+              <con:entry key="Content-Type" value="application/json"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>Accept</con:entry>
+              <con:entry>Content-Type</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
     <con:properties/>
   </con:testSuite>
   <con:testSuite id="de558d39-3385-4245-9b31-98b3da168dd6" name="GenericPromotions_Scenarios">
@@ -1154,7 +1200,7 @@
     <con:testCase id="7023455f-d6c7-48d3-a5c4-c8dfddc03360" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create, Edit, Verify and Disable a POS Promotion" searchProperties="true">
       <con:description>TestCase generated for REST Resource [Generic] located at [/internal/v1/promotion/generic]</con:description>
       <con:settings/>
-      <con:testStep type="restrequest" name="Adding Token" id="0ff4eb59-940e-4217-8259-f428f202c875">
+      <con:testStep type="restrequest" name="Adding Token" id="0ff4eb59-940e-4217-8259-f428f202c875" disabled="true">
         <con:settings/>
         <con:config service="Arya Auth Api" resourcePath="/arya/api/v1/auth/login" methodName="Login 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:restRequest name="Adding Token" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json" postQueryString="false">
@@ -1166,7 +1212,8 @@
 }</con:request>
             <con:originalUri>https://crm-nightly-new.cc.capillarytech.com/arya/api/v1/auth/login</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="f3989af3-6bdd-41c9-b97f-25c62c5e8cbf" name="Script Assertion">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper;
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -1176,7 +1223,8 @@ def token= json.token
 messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("token","Bearer "+token);
 
 newToken = context.expand('${#Project#token}')
-assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText></con:configuration>
+assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText>
+              </con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -6688,7 +6736,7 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     </con:property>
     <con:property>
       <con:name>responseSLA</con:name>
-      <con:value>3000</con:value>
+      <con:value>300000</con:value>
     </con:property>
     <con:property>
       <con:name>endpoint</con:name>
@@ -6705,10 +6753,6 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     <con:property>
       <con:name>store</con:name>
       <con:value>50022813</con:value>
-    </con:property>
-    <con:property>
-      <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2MTUxODI4LCJpYXQiOjE2MTYwNjU0MzAsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.qT9sKH48-sJ2XRbhreay6nkF-CnNVIf-H6WJxO6fpbo</con:value>
     </con:property>
     <con:property>
       <con:name>externalEndpoint</con:name>
@@ -6733,6 +6777,10 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     <con:property>
       <con:name>customerid</con:name>
       <con:value>10</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token</con:name>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2NTgzNTA5LCJpYXQiOjE2MTY0OTcxMTAsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.7oHtiP2HyLyHXW-l3qpxS53u0wnpsY92rdIKo0vkqr4</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
@@ -6875,6 +6923,8 @@ for(j in 0 .. testSuites.size()-1){
    				}
    			}
 
-		}</con:beforeRunScript>
+		}
+aryaLoginTestCase = project.testSuites['ReUsableTestSuites'].testCases['Do_Arya_login']
+aryaLoginTestCase.run(null, false)</con:beforeRunScript>
   <con:sensitiveInformation/>
 </con:soapui-project>
