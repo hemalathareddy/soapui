@@ -61,12 +61,11 @@
         <con:request name="Request 1" id="4fef0ebb-b900-4c8f-8bba-f78075aea246" mediaType="application/json">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
-  &lt;con:entry key="" value=" ${#Project#orgid}"/>
-  &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
+  &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
 &lt;/xml-fragment></con:setting>
           </con:settings>
-          <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
           <con:request/>
           <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
           <con:credentials>
@@ -495,8 +494,8 @@
         <con:request name="Request 1" id="6e045065-b147-4f2f-9b42-0de2af36835c" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="X-CAP-ORG" value=" ${#Project#orgid}"/>
   &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
   &lt;con:entry key="X-CAP-USER-ID" value=" ${#Project#orgid}"/>
 &lt;/xml-fragment></con:setting>
           </con:settings>
@@ -742,7 +741,10 @@
         </con:representation>
         <con:request name="Request 1" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
           <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${#Project#authorization}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}"/>
+&lt;/xml-fragment></con:setting>
           </con:settings>
           <con:endpoint>${#Project#externalEndpoint}</con:endpoint>
           <con:request>{
@@ -893,8 +895,8 @@
           <con:description xsi:nil="true"/>
         </con:representation>
         <con:request name="Request 1" id="32910ca5-bad9-4930-b44e-73b00090454a" mediaType="application/json">
-          <con:settings/>
-          <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+          <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
           <con:request/>
           <con:credentials>
             <con:authType>No Authorization</con:authType>
@@ -912,7 +914,7 @@
     <con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
-    <con:resource name="Filters" path="internal/v1/promotions/filters" id="5dc11faf-68d4-49d1-a6a2-d56753e96851">
+    <con:resource name="Filters" path="/internal/v1/promotions/filters" id="5dc11faf-68d4-49d1-a6a2-d56753e96851">
       <con:settings/>
       <con:parameters/>
       <con:method name="FilterPromobyTillid" id="a77f41be-f38a-4baa-92d7-27b5d0b4500f" method="GET">
@@ -926,11 +928,11 @@
           <con:description xsi:nil="true"/>
         </con:representation>
         <con:request name="Request 1" id="c34a1a87-cf3e-421b-b658-fb971a490969" mediaType="application/json">
-          <con:settings/>
-          <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+          <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
           <con:request/>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:parameters/>
+          <con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/><con:parameters/>
         </con:request>
       </con:method>
     </con:resource>
@@ -967,7 +969,7 @@
     <con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
-    <con:resource name="Strategy" path="internal/v1/promotions/settings/strategy" id="8bc405df-caa0-4151-b99f-14a2e12d2d95">
+    <con:resource name="Strategy" path="/internal/v1/promotions/settings/strategy" id="8bc405df-caa0-4151-b99f-14a2e12d2d95">
       <con:settings/>
       <con:parameters/>
       <con:method name="Strategy 1" id="1769a45b-d200-401f-9399-5db0d6139881" method="GET">
@@ -995,11 +997,11 @@
           <con:description xsi:nil="true"/>
         </con:representation>
         <con:request name="Request 1" id="d5d3313d-9241-4d2b-8d09-79490b580cd8" mediaType="application/json">
-          <con:settings/>
-          <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+          <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
           <con:request/>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:parameters/>
+          <con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/><con:parameters/>
         </con:request>
       </con:method>
     </con:resource>
@@ -1039,7 +1041,7 @@
     <con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
-    <con:resource name="Strategy" path="internal/v1/promotions/settings/strategy" id="ffb31485-f97b-4567-bd9c-6948aaab61c9">
+    <con:resource name="Strategy" path="/internal/v1/promotions/settings/strategy" id="ffb31485-f97b-4567-bd9c-6948aaab61c9">
       <con:settings/>
       <con:parameters/>
       <con:method name="Strategy 1" id="0c11e7fb-ee4b-4f48-976b-05eb0ca550f4" method="POST">
@@ -1079,12 +1081,12 @@
           <con:element xsi:nil="true"/>
           <con:description xsi:nil="true"/>
         </con:representation>
-        <con:request name="Request 1" id="3ef482cf-b20b-4f71-ac17-8d05e46e1680" mediaType="application/json">
-          <con:settings/>
-          <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
+        <con:request name="Request 1" id="3ef482cf-b20b-4f71-ac17-8d05e46e1680" mediaType="application/json" postQueryString="false">
+          <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
           <con:request/>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:parameters/>
+          <con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/><con:parameters/>
         </con:request>
       </con:method>
     </con:resource>
@@ -1124,13 +1126,13 @@
           <con:mediaType>application/json</con:mediaType>
           <con:params/>
         </con:representation>
-        <con:request name="" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json">
-          <con:settings/>
-          <con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint>
+        <con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Arya Login API" id="9a39b489-1b3a-4950-ba1c-555c994bf1b8" mediaType="application/json" postQueryString="false">
+          <con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings>
+          <con:endpoint>https://${#Project#intouchurl}</con:endpoint>
           <con:request>{"username":"ashish", "password": "123"
 }</con:request>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:parameters>
+          <con:originalUri>https://null///arya/api/v1/auth/login</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/><con:parameters>
             <con:entry key="Accept" value="*/*"/>
             <con:entry key="Content-Type" value="application/json"/>
           </con:parameters>
@@ -6821,6 +6823,7 @@ def tillid = json.tillid;
 def sku = json.sku;
 def brand = json.brand;
 def category = json.category;
+def intouchurl = json.intouchurl;
 
 project.setPropertyValue("endpoint",endpoint);
 project.setPropertyValue("orgid",orgId);
@@ -6832,6 +6835,7 @@ project.setPropertyValue("authorization",authorization);
 project.setPropertyValue("sku",sku);
 project.setPropertyValue("brand",brand);
 project.setPropertyValue("category",category);
+project.setPropertyValue("intouchurl",intouchurl);
 }
 catch(Exception e){
 	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());
