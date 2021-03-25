@@ -1147,7 +1147,7 @@
   <con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuites" disabled="true">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="108a5bd1-d480-4715-8d3c-11fcab2f9ab2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Do_Arya_login" searchProperties="true">
+    <con:testCase id="108a5bd1-d480-4715-8d3c-11fcab2f9ab2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Do_Arya_login" searchProperties="true" disabled="true">
       <con:settings/>
       <con:testStep type="restrequest" name="add token" id="a856f0da-91e7-4ad8-95cc-7d194e2e9e44">
         <con:settings/>
@@ -1191,7 +1191,7 @@ assert (("Bearer "+token).equalsIgnoreCase(newToken))</scriptText></con:configur
       </con:testStep>
       <con:properties/>
     </con:testCase>
-    <con:testCase id="a2ef64b0-2da9-4624-9d6a-248000a7da5d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get_All_Promotions" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Get All Promotions" id="4510cf0b-5709-41e4-bf48-d243b313e806"><con:settings/><con:config service="getAllPosPromotions" methodName="getAllPosPromotions" resourcePath="/internal/v1/promotions/" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get All Promotions" id="fe223ea1-ca72-45f8-95dc-11dfdee2e1f7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+    <con:testCase id="a2ef64b0-2da9-4624-9d6a-248000a7da5d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get_All_Promotions" searchProperties="true" disabled="true"><con:settings/><con:testStep type="restrequest" name="Get All Promotions" id="4510cf0b-5709-41e4-bf48-d243b313e806"><con:settings/><con:config service="getAllPosPromotions" methodName="getAllPosPromotions" resourcePath="/internal/v1/promotions/" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get All Promotions" id="fe223ea1-ca72-45f8-95dc-11dfdee2e1f7" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
   &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#endpoint}</con:endpoint><con:request/><con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="ff348e58-def6-4b29-9b7a-8436810d8079" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
@@ -1212,7 +1212,7 @@ for (promotion in promotions){
 
 messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("disableids",""+test+"");
 
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8403a484-342c-492e-a798-d6d88cac6964" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Disable_All_Promotions" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="DisableById" id="17867c46-3bb8-403d-a6e5-cafef743e360"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DisableById" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8403a484-342c-492e-a798-d6d88cac6964" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Disable_All_Promotions" searchProperties="true" disabled="true"><con:settings/><con:testStep type="restrequest" name="DisableById" id="17867c46-3bb8-403d-a6e5-cafef743e360"><con:settings/><con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="DisableById" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
           </con:settings>
@@ -1906,35 +1906,35 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595710290</con:value>
+          <con:value>1616597664530</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682110290</con:value>
+          <con:value>1616684064530</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>ZZIT0J590U</con:value>
+          <con:value>LVV0SOI32Z</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4afeb9745354a532bad9</con:value>
+          <con:value>605b52a0b9745354a532bb15</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_ZZIT0J590U</con:value>
+          <con:value>test promotion_LVV0SOI32Z</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_ZVFSER158W</con:value>
+          <con:value>test promotion_Z9680TK5SQ</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1616509310290</con:value>
+          <con:value>1616511264530</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1616778510290</con:value>
+          <con:value>1616780464530</con:value>
         </con:property>
         <con:property>
           <con:name>token</con:name>
@@ -1942,7 +1942,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>requestid</con:name>
-          <con:value>e41d3b4e-41e7-433e-b569-f55424fc7fcd</con:value>
+          <con:value>6e87ae80-3dfe-48b3-b962-f4df8bd870a1</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -2229,19 +2229,19 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595712987</con:value>
+          <con:value>1616597667830</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682112987</con:value>
+          <con:value>1616684067830</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_auto_promotion_R64DX5VIDX</con:value>
+          <con:value>test promotion_auto_promotion_T7BKN3AYVD</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4b01b9745354a532bada</con:value>
+          <con:value>605b52a3b9745354a532bb16</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2760,47 +2760,47 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616595713962</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616597669269</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616596013965</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616597969271</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616596313965</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616598269271</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616596613965</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616598569271</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b4b02b9745354a532badb</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a5b9745354a532bb17</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_05251216</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_06960448</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">LHXZ0MK2IC</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">X33EXUZ02H</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b4b02b9745354a532badc</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a5b9745354a532bb18</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_83860766</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_10199086</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b4b02b9745354a532badd</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a6b9745354a532bb19</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_81581983</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_82462765</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2824,15 +2824,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b4b02b9745354a532badb', 'name':'test promotion_05251216', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b52a5b9745354a532bb17', 'name':'test promotion_06960448', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b4b02b9745354a532badc', 'name':'test promotion_83860766', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b52a5b9745354a532bb18', 'name':'test promotion_10199086', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b4b02b9745354a532badd', 'name':'test promotion_81581983', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b52a6b9745354a532bb19', 'name':'test promotion_82462765', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3063,19 +3063,19 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616595716379</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616597671604</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616682116379</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616684071604</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AMWSISO9OF</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">A21A926RY9</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b4b04b9745354a532bade</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a8b9745354a532bb1a</con:value>
         </con:property>
         <con:property>
           <con:name>campaignId</con:name>
@@ -3540,15 +3540,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595613792</con:value>
+          <con:value>1616597673449</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682013792</con:value>
+          <con:value>1616684073449</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_FNJC6I69UE</con:value>
+          <con:value>test promotion_ZIFTEUJXKK</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -3572,7 +3572,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4a9eb9745354a532bace</con:value>
+          <con:value>605b52aab9745354a532bb1c</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
@@ -3588,11 +3588,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId1</con:name>
-          <con:value>605b4a9eb9745354a532bacd</con:value>
+          <con:value>605b52aab9745354a532bb1b</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName1</con:name>
-          <con:value>test promotion_FNJC6I69UE</con:value>
+          <con:value>test promotion_ZIFTEUJXKK</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3912,15 +3912,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595616494</con:value>
+          <con:value>1616597675863</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682016494</con:value>
+          <con:value>1616684075863</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_PRXZT8KGT8</con:value>
+          <con:value>test promotion_P8M58SYZEC</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -3952,7 +3952,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa1b9745354a532bacf</con:value>
+          <con:value>605b52acb9745354a532bb1d</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4310,15 +4310,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595618001</con:value>
+          <con:value>1616597677338</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682018002</con:value>
+          <con:value>1616684077339</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_5M5FTGLKQC</con:value>
+          <con:value>test promotion_1YBGT1H0MS</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -4342,7 +4342,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa2b9745354a532bad0</con:value>
+          <con:value>605b52aeb9745354a532bb1e</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4565,11 +4565,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595619880</con:value>
+          <con:value>1616597679181</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682019880</con:value>
+          <con:value>1616684079181</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -4597,11 +4597,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>Y3NLVY7VVJ</con:value>
+          <con:value>FCUTIMQI9L</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa4b9745354a532bad1</con:value>
+          <con:value>605b52afb9745354a532bb1f</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4824,11 +4824,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595620864</con:value>
+          <con:value>1616597680105</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682020864</con:value>
+          <con:value>1616684080105</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -4844,7 +4844,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa5b9745354a532bad2</con:value>
+          <con:value>605b52b0b9745354a532bb20</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -5091,11 +5091,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595621471</con:value>
+          <con:value>1616597680814</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682021471</con:value>
+          <con:value>1616684080814</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5103,7 +5103,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa5b9745354a532bad3</con:value>
+          <con:value>605b52b0b9745354a532bb21</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -5377,11 +5377,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595622405</con:value>
+          <con:value>1616597681669</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682022405</con:value>
+          <con:value>1616684081669</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5389,7 +5389,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa6b9745354a532bad4</con:value>
+          <con:value>605b52b1b9745354a532bb22</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -5640,11 +5640,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595623031</con:value>
+          <con:value>1616597682218</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682023031</con:value>
+          <con:value>1616684082218</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5684,7 +5684,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa7b9745354a532bad5</con:value>
+          <con:value>605b52b2b9745354a532bb23</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5912,11 +5912,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595623649</con:value>
+          <con:value>1616597682832</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682023649</con:value>
+          <con:value>1616684082832</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5948,7 +5948,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa7b9745354a532bad6</con:value>
+          <con:value>605b52b2b9745354a532bb24</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -6168,7 +6168,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682024739</con:value>
+          <con:value>1616684083738</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -6176,7 +6176,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa8b9745354a532bad7</con:value>
+          <con:value>605b52b3b9745354a532bb25</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
@@ -6192,7 +6192,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595624739</con:value>
+          <con:value>1616597683738</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -6407,11 +6407,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616595625671</con:value>
+          <con:value>1616597684567</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616682025671</con:value>
+          <con:value>1616684084567</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -6419,7 +6419,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b4aa9b9745354a532bad8</con:value>
+          <con:value>605b52b4b9745354a532bb26</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -6779,9 +6779,9 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2NjgzNDUyLCJpYXQiOjE2MTY1OTcwNTMsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.RL_PO06nDNuX4ofxDvvWiv4Vw7SUDsKk-kPPDQKmxLY</con:value>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2NjgzNjE4LCJpYXQiOjE2MTY1OTcyMTgsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.sJb63VJM54zoXt4wX82e-qOGzdQVuPrfdWkjeACgWxk</con:value>
     </con:property>
-  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[605b312eb9745354a532bab4, 605b3f3db9745354a532bac0, 605b3f3eb9745354a532bac2, 605b3f3eb9745354a532bac3, 605b3f3fb9745354a532bac6, 605b4aa5b9745354a532bad2, 605b4aa6b9745354a532bad4, 605b4aa7b9745354a532bad5, 605b4aa9b9745354a532bad8, 605b4b04b9745354a532bade, 605b4d4fb9745354a532baea, 605b4d50b9745354a532baec, 605b4d51b9745354a532baed, 605b4d51b9745354a532baf0]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>605b4d51b9745354a532baf0</con:value></con:property></con:properties>
+  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[605c1231b9745354a532bbda]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>605c1231b9745354a532bbda</con:value></con:property></con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
@@ -6964,5 +6964,17 @@ for (promotion in idList){
 	}
 
 </con:beforeRunScript>
-  <con:sensitiveInformation/>
+  <con:afterRunScript>getAllPromotion = project.testSuites['ReUsableTestSuites'].testCases['Get_All_Promotions']
+getAllPromotion.run(null, false)
+
+def testVar = project.getPropertyValue("disableids");
+log.info(testVar)
+testVar*.trim()
+def idList = testVar.tokenize(',[]')
+for (promotion in idList){
+	project.setPropertyValue("disableid",promotion.trim())
+	log.info(project.getPropertyValue("disableid"))
+	diasablePromotion = project.testSuites['ReUsableTestSuites'].testCases['Disable_All_Promotions']
+	diasablePromotion.run(null, false)
+	}</con:afterRunScript><con:sensitiveInformation/>
 </con:soapui-project>
