@@ -80,8 +80,8 @@
   </con:interface>
   <con:interface xsi:type="con:RestService" id="f4d0fbef-d160-409a-bbad-2057fe717805" wadlVersion="http://wadl.dev.java.net/2009/02" name="createPosPromotion" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache type="TEXT" rootPart=""/>
-    <con:endpoints>
+    
+    <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
       <con:endpoint>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com</con:endpoint>
     </con:endpoints>
     <con:resource name="Generic" path="/internal/v1/promotions" id="a2d9af25-a5b7-4aac-8d84-65343878a4ce">
@@ -322,7 +322,7 @@
           <con:params/>
           <con:element>data</con:element>
         </con:representation>
-        <con:request name="Request 1" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+        <con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>308</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value=" ${#Project#orgid}"/>
@@ -1144,7 +1144,49 @@
       </con:method>
     </con:resource>
   </con:interface>
-  <con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuites" disabled="true">
+  <con:interface xsi:type="con:RestService" id="7f38156c-9a15-4dff-b258-e04d2b509996" wadlVersion="http://wadl.dev.java.net/2009/02" name="Create Campaign" type="rest" basePath="" definitionUrl="/home/srinivas/back_up/Create Campaign_1.wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/srinivas/back_up/Create%20Campaign_1.wadl"><con:part><con:url>file:/home/srinivas/back_up/Create%20Campaign_1.wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="Create Campaign"/>
+  <resources base="https://crm-nightly-new.cc.capillarytech.com">
+    <resource path="iris/v2/campaigns" id="Campaigns">
+      <doc xml:lang="en" title="Campaigns"/>
+      <method name="POST" id="Campaigns 1">
+        <doc xml:lang="en" title="Campaigns 1"/>
+        <request>
+          <param name="X-CAP-ORG" default="50146" type="xs:string" required="false" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="Authorization" default="Basic YXNoaXNoOjEyMw==" type="xs:string" required="false" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="content-type" default="application/json" type="xs:string" required="false" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="X-CAP-OU" default="-1" type="xs:string" required="false" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <representation mediaType="application/json"/>
+        </request>
+        <response status="">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="400">
+          <representation mediaType="application/json;charset=utf-8"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+        </response>
+        <response status="200">
+          <representation mediaType="application/json;charset=utf-8"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint></con:endpoints><con:resource name="Campaigns" path="/iris/v2/campaigns" id="bf4bf4de-3b41-4210-b6d9-518bde9703d1"><con:settings/><con:parameters/><con:method name="Campaigns 1" id="2006f960-5bce-45d4-b9b2-50e918cc0c48" method="POST"><con:settings/><con:parameters><con:parameter><con:name>X-CAP-ORG</con:name><con:value>50146</con:value><con:style>HEADER</con:style><con:default>50146</con:default></con:parameter><con:parameter><con:name>Authorization</con:name><con:value>Basic YXNoaXNoOjEyMw==</con:value><con:style>HEADER</con:style><con:default>Basic YXNoaXNoOjEyMw==</con:default></con:parameter><con:parameter><con:name>content-type</con:name><con:value>application/json</con:value><con:style>HEADER</con:style><con:default>application/json</con:default></con:parameter><con:parameter><con:name>X-CAP-OU</con:name><con:value>-1</con:value><con:style>HEADER</con:style><con:default>-1</con:default></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:status/><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="FAULT" id=""><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType/><con:status>0</con:status><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="6ddd6275-50a7-4c96-aeff-34a825a57d6d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request>{
+    "endDate": 1619807399999,
+    "startDate": 1616610600000,
+    "description": "",
+    "testControl": {
+        "type": "ORG"
+    },
+    "name": "123 dsddjbkjdkbddjnf",
+    "campaignsAttached": [],
+    "gaEnabled": false,
+    "objective": {
+        "objectiveName": "Boost_Sales"
+    }
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/iris/v2/campaigns</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="ed9ab839-1d80-402b-b084-5cfb2be1f1dc" name="ReUsableTestSuites" disabled="true">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
     <con:testCase id="108a5bd1-d480-4715-8d3c-11fcab2f9ab2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Do_Arya_login" searchProperties="true" disabled="true">
@@ -1241,7 +1283,40 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
             <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
             <con:entry>AUTH-COOKIE</con:entry>
           </con:parameterOrder>
-        </con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/>
+        </con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4c491765-83bd-419c-93db-e25b73e06c61" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create_Campaign" searchProperties="true" disabled="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="d83752bc-2a5d-4804-a1c1-2ac442520a6b"><con:settings/><con:config><script>String requestId = UUID.randomUUID().toString()
+String randomId = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+String starttime = System.currentTimeMillis().toString()
+String endtime = (System.currentTimeMillis()+86400000).toString()
+
+//storing ids to test case level.
+testRunner.testCase.setPropertyValue("starttime", starttime);
+testRunner.testCase.setPropertyValue("endtime", endtime);
+testRunner.testCase.setPropertyValue("randomId", randomId);
+testRunner.testCase.setPropertyValue("requestid",requestId);</script></con:config></con:testStep><con:testStep type="restrequest" name="Add Campaign" id="c86bde45-16a1-4849-b26e-4fa7218e4aab"><con:settings/><con:config service="Create Campaign" resourcePath="/iris/v2/campaigns" methodName="Campaigns 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add Campaign" id="6ddd6275-50a7-4c96-aeff-34a825a57d6d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://crm-nightly-new.cc.capillarytech.com</con:endpoint><con:request>{
+    "endDate": ${#TestCase#endtime},
+    "startDate": ${#TestCase#starttime},
+    "description": "",
+    "testControl": {
+        "type": "ORG"
+    },
+    "name": "Promo_auto_${#TestCase#starttime}",
+    "campaignsAttached": [],
+    "gaEnabled": false,
+    "objective": {
+        "objectiveName": "Boost_Sales"
+    }
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/iris/v2/campaigns</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="074143af-1ffd-45a6-b0cc-7b05042dc9a4" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="03bdfb22-7cdf-4d0a-bb81-e299340f7b0c" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+def campaignid = json.entity.campaignId;
+log.info campaignid
+log.info(context.getCurrentStep().getLabel())
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("campaignid",""+campaignid+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-CAP-ORG" value="${#Project#orgid}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617042796492</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617129196492</con:value></con:property><con:property><con:name>randomId</con:name><con:value>HIRCVBOETZ</con:value></con:property><con:property><con:name>requestid</con:name><con:value>d360b544-22dd-441e-9d67-1142a9edd856</con:value></con:property></con:properties></con:testCase><con:properties/>
   </con:testSuite>
   <con:testSuite id="de558d39-3385-4245-9b31-98b3da168dd6" name="GenericPromotions_Scenarios">
     <con:description>TestSuite generated for REST Service [Create generic promotion]</con:description>
@@ -1906,35 +1981,35 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597664530</con:value>
+          <con:value>1617040954906</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684064530</con:value>
+          <con:value>1617127354907</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>LVV0SOI32Z</con:value>
+          <con:value>FJXITJ83JK</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52a0b9745354a532bb15</con:value>
+          <con:value>6062163b1368530b0a281793</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_LVV0SOI32Z</con:value>
+          <con:value>test promotion_FJXITJ83JK</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_Z9680TK5SQ</con:value>
+          <con:value>test promotion_KRIA3SY9AS</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1616511264530</con:value>
+          <con:value>1616954554906</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1616780464530</con:value>
+          <con:value>1617223754907</con:value>
         </con:property>
         <con:property>
           <con:name>token</con:name>
@@ -1942,7 +2017,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>requestid</con:name>
-          <con:value>6e87ae80-3dfe-48b3-b962-f4df8bd870a1</con:value>
+          <con:value>425c8ab1-6d5b-450a-99e0-e7cd88af7d7a</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -1975,7 +2050,7 @@ testRunner.testCase.setPropertyValue('promotionName', "auto_promotion_"+promotio
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-    "name": "test promotion_${#TestCase#promotionName}",
+    "name": "${#TestCase#promotionName}",
     "orgId": ${#Project#orgid},
     "priority": 0,
     "active": true,
@@ -2229,19 +2304,19 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597667830</con:value>
+          <con:value>1617040958581</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684067830</con:value>
+          <con:value>1617127358582</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_auto_promotion_T7BKN3AYVD</con:value>
+          <con:value>auto_promotion_P88PEGUP6A</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52a3b9745354a532bb16</con:value>
+          <con:value>6062163e1368530b0a2817a2</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2760,47 +2835,47 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616597669269</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617040959519</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616597969271</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617041259522</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616598269271</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617041559522</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616598569271</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617041859522</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a5b9745354a532bb17</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6062163f1368530b0a2817ab</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_06960448</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_67910498</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">X33EXUZ02H</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">D81DZWPBKK</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a5b9745354a532bb18</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606216401368530b0a2817b2</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_10199086</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_69109366</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a6b9745354a532bb19</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606216401368530b0a2817b9</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_82462765</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_87405630</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2824,15 +2899,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b52a5b9745354a532bb17', 'name':'test promotion_06960448', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'6062163f1368530b0a2817ab', 'name':'test promotion_67910498', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b52a5b9745354a532bb18', 'name':'test promotion_10199086', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606216401368530b0a2817b2', 'name':'test promotion_69109366', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'605b52a6b9745354a532bb19', 'name':'test promotion_82462765', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606216401368530b0a2817b9', 'name':'test promotion_87405630', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3063,19 +3138,19 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616597671604</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617040962790</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1616684071604</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617127362790</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">A21A926RY9</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0IKHLJ3AL4</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">605b52a8b9745354a532bb1a</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606216421368530b0a2817c6</con:value>
         </con:property>
         <con:property>
           <con:name>campaignId</con:name>
@@ -3540,15 +3615,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597673449</con:value>
+          <con:value>1617040964320</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684073449</con:value>
+          <con:value>1617127364320</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_ZIFTEUJXKK</con:value>
+          <con:value>test promotion_FFXUXRQOXD</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -3572,7 +3647,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52aab9745354a532bb1c</con:value>
+          <con:value>606216451368530b0a2817d7</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
@@ -3588,11 +3663,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId1</con:name>
-          <con:value>605b52aab9745354a532bb1b</con:value>
+          <con:value>606216451368530b0a2817d0</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName1</con:name>
-          <con:value>test promotion_ZIFTEUJXKK</con:value>
+          <con:value>test promotion_FFXUXRQOXD</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -3912,15 +3987,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597675863</con:value>
+          <con:value>1617040967086</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684075863</con:value>
+          <con:value>1617127367086</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_P8M58SYZEC</con:value>
+          <con:value>test promotion_N1KL0DGM7R</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -3952,7 +4027,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52acb9745354a532bb1d</con:value>
+          <con:value>606216481368530b0a2817e4</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4310,15 +4385,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597677338</con:value>
+          <con:value>1617040968925</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684077339</con:value>
+          <con:value>1617127368926</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_1YBGT1H0MS</con:value>
+          <con:value>test promotion_XV82UIDOQG</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -4342,7 +4417,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52aeb9745354a532bb1e</con:value>
+          <con:value>6062164a1368530b0a2817ef</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4565,11 +4640,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597679181</con:value>
+          <con:value>1617040972000</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684079181</con:value>
+          <con:value>1617127372000</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -4597,11 +4672,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>FCUTIMQI9L</con:value>
+          <con:value>1N4TBYTD8R</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52afb9745354a532bb1f</con:value>
+          <con:value>6062164c1368530b0a2817fa</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -4824,11 +4899,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597680105</con:value>
+          <con:value>1617040973085</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684080105</con:value>
+          <con:value>1617127373085</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -4844,7 +4919,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b0b9745354a532bb20</con:value>
+          <con:value>6062164d1368530b0a281804</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -5091,11 +5166,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597680814</con:value>
+          <con:value>1617040974011</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684080814</con:value>
+          <con:value>1617127374011</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5103,7 +5178,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b0b9745354a532bb21</con:value>
+          <con:value>6062164e1368530b0a28180d</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -5377,11 +5452,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597681669</con:value>
+          <con:value>1617040975400</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684081669</con:value>
+          <con:value>1617127375400</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5389,7 +5464,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b1b9745354a532bb22</con:value>
+          <con:value>6062164f1368530b0a281816</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -5640,11 +5715,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597682218</con:value>
+          <con:value>1617040976840</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684082218</con:value>
+          <con:value>1617127376840</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5684,7 +5759,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b2b9745354a532bb23</con:value>
+          <con:value>606216511368530b0a28181f</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -5912,11 +5987,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597682832</con:value>
+          <con:value>1617040978057</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684082832</con:value>
+          <con:value>1617127378057</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5948,7 +6023,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b2b9745354a532bb24</con:value>
+          <con:value>606216521368530b0a281828</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -6168,7 +6243,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684083738</con:value>
+          <con:value>1617127379267</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -6176,7 +6251,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b3b9745354a532bb25</con:value>
+          <con:value>606216531368530b0a281831</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
@@ -6192,11 +6267,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597683738</con:value>
+          <con:value>1617040979267</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="5121ee93-792d-4968-8393-93669b8141b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as SKU with NOT_IN operator &amp; evaluate it" searchProperties="true">
+    <con:testCase id="5121ee93-792d-4968-8393-93669b8141b7" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as SKU with NOT_IN operator &amp; evaluate it" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="869278b5-8db7-4fee-9f09-be26297b6dd7">
         <con:settings/>
@@ -6407,11 +6482,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1616597684567</con:value>
+          <con:value>1617041007145</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1616684084567</con:value>
+          <con:value>1617127407145</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
@@ -6419,11 +6494,218 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>605b52b4b9745354a532bb26</con:value>
+          <con:value>6062166f1368530b0a281844</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:properties>
+    <con:testCase id="66fc5e66-f4e6-46df-9139-9ace38185ae2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Buy X Get Y Free" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Pre-requisite" id="87372893-914b-4ad3-9853-7c91b471c9ac"><con:settings/><con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+String starttime = System.currentTimeMillis().toString()
+String endtime = (System.currentTimeMillis()+86400000).toString()
+log.info promotionName
+//storing ids to test case level.
+testRunner.testCase.setPropertyValue("starttime", starttime);
+testRunner.testCase.setPropertyValue("endtime", endtime);
+testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config></con:testStep><con:testStep type="restrequest" name="Promotion Manager Creates a promotion with condition buy x get y" id="ba727012-5a4a-499e-9798-948237863f29"><con:settings/><con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Promotion Manager Creates a promotion with condition buy x get y" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+&lt;/xml-fragment></con:setting>
+            <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+          <con:request>{
+    "name": "Auto_Free_product",
+    "messageLabel": "Buy X and get Y free",
+    "type": "POS",
+    "condition": {
+        "type": "PRODUCT",
+        "productCondition": {
+            "criteriaList": [
+                {
+                    "entity": "SKU",
+                    "operator": "IN",
+                    "values": [
+                        "${#Project#sku}"
+                    ]
+                }
+            ],
+            "kpi": "QUANTITY",
+            "value": "1.000000",
+            "operator": "GREATER_THAN_OR_EQUAL"
+        }
+    },
+    "action": {
+        "type": "FREE_PRODUCT",
+        "freeProductAction": {
+            "productCondition": {
+                "criteriaList": [
+                    {
+                        "entity": "SKU",
+                        "operator": "IN",
+                        "values": [
+                            "${#Project#sku2}"
+                        ]
+                    }
+                ],
+                "kpi": "QUANTITY",
+                "value": "1.000000",
+                "operator": "EQUALS"
+            }
+        }
+    },
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#Project#campaignid},
+    "loyaltyEarningExpiryDays": 10,
+    "maxEarningPerCustomer": 2147483647,
+    "earnLimitedToSpecificAudience": false
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="e7bccfed-08ec-48ea-97ea-4113a14e57a5" name="Save Promotion Details"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionId",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Evaluate for buy x get y free condition" id="317d15ee-d61a-43df-b5a8-03676ffd181e"><con:settings/><con:config service="Evaluate" resourcePath="/v1/promotions/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Evaluate for buy x get y free condition" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${#Project#authorization}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
+          <con:request>{
+  "amount": "1000.000000",
+  "customerId": 373429184,
+  "cartItems": [
+    {
+      "referenceId": "ccff6637-545e-407f-96b3-9d60d70b6e51",
+      "sku": "${#Project#sku}",
+      "amount": "1000.000000",
+      "qty":  "1.000000"
+    },
+     {
+      "referenceId": "ccff6637-545e-407f-96b3-9760d70b6e51",
+      "sku": "${#Project#sku2}",
+      "amount": "200.000000",
+      "qty": "1.000000"
+    }]
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="dc57020c-e5e6-4fb3-bd8e-11837e808767" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
+appliedSku = json.data.cartItems[0].sku
+lstOfAppliedPromotions2 = json.data.cartItems[1].appliedPromotions
+appliedSku1 = json.data.cartItems[1].sku
+
+promotionId = context.expand('${#TestCase#promotionId}')
+promotionName = context.expand('${#TestCase#promotionName}')
+
+isCreatedPromotionInAppliedPromotions = false;
+
+for(promotion in lstOfAppliedPromotions){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+		if (appliedSku.equalsIgnoreCase(context.expand('${#TestCase#sku}')))
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+		else
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		isCreatedPromotionInAppliedPromotions = true;
+		break;
+	}
+}
+
+log.info isCreatedPromotionInAppliedPromotions
+
+isCreatedPromotionInAppliedPromotions2 = false;
+for(promotion in lstOfAppliedPromotions2){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku1+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+	    if (appliedSku1.equalsIgnoreCase(context.expand('${#TestCase#sku}')))
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		else
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+		isCreatedPromotionInAppliedPromotions2 = true;
+		break;
+	}
+}
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";
+assert(isCreatedPromotionInAppliedPromotions2 == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#tillusername}</con:username>
+            <con:password>202cb962ac59075b964b07152d234b70</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="De-activate Promotion" id="c0196912-24a5-42a4-89c9-e5cf3e639eff">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="54049dc6-1c2c-46ee-a941-fa1f735abcc0" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionId}"/>
+</con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617040981000</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617127381000</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>Auto_Free_product</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60621cd11368530b0a281865</con:value></con:property></con:properties></con:testCase><con:properties>
       <con:property>
         <con:name>rnd</con:name>
         <con:value>39077</con:value>
@@ -6779,9 +7061,9 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE2NjgzNjE4LCJpYXQiOjE2MTY1OTcyMTgsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.sJb63VJM54zoXt4wX82e-qOGzdQVuPrfdWkjeACgWxk</con:value>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE3MTI5MTkzLCJpYXQiOjE2MTcwNDI3OTQsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.OudQaKRiFUWmcgKpMGJNPfYp_pjrj-N-JrV6wf_wXdc</con:value>
     </con:property>
-  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[605c1231b9745354a532bbda]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>605c1231b9745354a532bbda</con:value></con:property></con:properties>
+  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[60621d0b1368530b0a28191a]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>60621d0b1368530b0a28191a</con:value></con:property><con:property><con:name>sku2</con:name><con:value>White1</con:value></con:property><con:property><con:name>campaignid</con:name><con:value>1022221</con:value></con:property></con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
@@ -6865,6 +7147,7 @@ def store = json.store;
 def authorization = json.authorization;
 def tillid = json.tillid;
 def sku = json.sku;
+def sku2 = json.sku2;
 def brand = json.brand;
 def category = json.category;
 def intouchurl = json.intouchurl;
@@ -6877,6 +7160,7 @@ project.setPropertyValue("responseSLA",responseSLA);
 project.setPropertyValue("store",store);
 project.setPropertyValue("authorization",authorization);
 project.setPropertyValue("sku",sku);
+project.setPropertyValue("sku2",sku2);
 project.setPropertyValue("brand",brand);
 project.setPropertyValue("category",category);
 project.setPropertyValue("intouchurl",intouchurl);
@@ -6949,6 +7233,7 @@ for(j in 0 .. testSuites.size()-1){
 aryaLoginTestCase = project.testSuites['ReUsableTestSuites'].testCases['Do_Arya_login']
 aryaLoginTestCase.run(null, false)
 
+
 getAllPromotion = project.testSuites['ReUsableTestSuites'].testCases['Get_All_Promotions']
 getAllPromotion.run(null, false)
 
@@ -6962,6 +7247,9 @@ for (promotion in idList){
 	diasablePromotion = project.testSuites['ReUsableTestSuites'].testCases['Disable_All_Promotions']
 	diasablePromotion.run(null, false)
 	}
+
+createCampaign = project.testSuites['ReUsableTestSuites'].testCases['Create_Campaign']
+createCampaign.run(null, false)
 
 </con:beforeRunScript>
   <con:afterRunScript>getAllPromotion = project.testSuites['ReUsableTestSuites'].testCases['Get_All_Promotions']
