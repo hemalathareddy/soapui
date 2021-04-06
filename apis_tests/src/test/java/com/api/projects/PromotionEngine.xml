@@ -1316,13 +1316,13 @@ log.info campaignid
 log.info(context.getCurrentStep().getLabel())
 messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("campaignid",""+campaignid+"");
 
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-CAP-ORG" value="${#Project#orgid}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617042796492</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617129196492</con:value></con:property><con:property><con:name>randomId</con:name><con:value>HIRCVBOETZ</con:value></con:property><con:property><con:name>requestid</con:name><con:value>d360b544-22dd-441e-9d67-1142a9edd856</con:value></con:property></con:properties></con:testCase><con:properties/>
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-CAP-ORG" value="${#Project#orgid}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617698154217</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617784554217</con:value></con:property><con:property><con:name>randomId</con:name><con:value>VFXC8TV90C</con:value></con:property><con:property><con:name>requestid</con:name><con:value>cc138840-f68a-440e-aa92-69aa6d4cef62</con:value></con:property></con:properties></con:testCase><con:properties/>
   </con:testSuite>
   <con:testSuite id="de558d39-3385-4245-9b31-98b3da168dd6" name="GenericPromotions_Scenarios">
     <con:description>TestSuite generated for REST Service [Create generic promotion]</con:description>
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="7023455f-d6c7-48d3-a5c4-c8dfddc03360" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create, Edit, Verify and Disable a POS Promotion" searchProperties="true">
+    <con:testCase id="7023455f-d6c7-48d3-a5c4-c8dfddc03360" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create, Edit, Verify and Disable a POS Promotion" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:description>TestCase generated for REST Resource [Generic] located at [/internal/v1/promotion/generic]</con:description>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="446a1d74-05bf-4af5-b4df-83be2c7e939e">
@@ -1658,15 +1658,10 @@ assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expe
 }</con:request>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic/5fed87a8d72a841c67a1a46a</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="73ea8b69-252d-442d-b3d8-a2b8ac830417" name="assert the promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
-
-
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
-
-
 
 promotionNameInResponse = json.data.name
 promotionIdInResponse = json.data.id
@@ -1678,18 +1673,13 @@ assert(promotionNameInResponse == promotionNameExpected):"Promotion names are no
 assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse
 
 
-cartConditionDic = json.data.condition
+cartConditionDic = json.data.condition.cartCondition
 expectedCartConditions = [
-        "type": "CART",
-        "cartCondition": [
             "kpi": "ITEMCOUNT",
             "operator": "LESS_THAN",
-            "value": "3.000000"],
-            "productCondition": null
-        ]
+            "value": "3.000000"]
 
-assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText>
-              </con:configuration>
+assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1720,8 +1710,7 @@ assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are no
             <con:request/>
             <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/</con:originalUri>
             <con:assertion type="GroovyScriptAssertion" id="4a9da00c-d3e5-4e4a-86c8-b0ca732b480a" name="Asserting the cart condition details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -1740,18 +1729,13 @@ assert(promotionNameInResponse == promotionNameExpected):"Promotion names are no
 assert(promotionIdInResponse == promotionIdExpected):"Promotion Ids are not expected. Expected = " + promotionIdExpected + " Actual = " + promotionIdInResponse
 
 
-cartConditionDic = json.data.condition
+cartConditionDic = json.data.condition.cartCondition
 expectedCartConditions = [
-        "type": "CART",
-        "cartCondition": [
             "kpi": "ITEMCOUNT",
             "operator": "LESS_THAN",
-            "value": "3.000000"],
-            "productCondition": null
-        ]
+            "value": "3.000000"]
 
-assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText>
-              </con:configuration>
+assert cartConditionDic.equals(expectedCartConditions) : "Cart conditions are not expected";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -1981,35 +1965,35 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040954906</con:value>
+          <con:value>1617698156964</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127354907</con:value>
+          <con:value>1617784556964</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value>FJXITJ83JK</con:value>
+          <con:value>SSVK83ELAC</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6062163b1368530b0a281793</con:value>
+          <con:value>606c1d6d04c39f66a1f4f1a9</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_FJXITJ83JK</con:value>
+          <con:value>test promotion_SSVK83ELAC</con:value>
         </con:property>
         <con:property>
           <con:name>newPromotionName</con:name>
-          <con:value>test promotion_KRIA3SY9AS</con:value>
+          <con:value>test promotion_P1SOZ9J7BR</con:value>
         </con:property>
         <con:property>
           <con:name>updatedStartTime</con:name>
-          <con:value>1616954554906</con:value>
+          <con:value>1617611756964</con:value>
         </con:property>
         <con:property>
           <con:name>updatedEndTime</con:name>
-          <con:value>1617223754907</con:value>
+          <con:value>1617880956964</con:value>
         </con:property>
         <con:property>
           <con:name>token</con:name>
@@ -2017,11 +2001,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>requestid</con:name>
-          <con:value>425c8ab1-6d5b-450a-99e0-e7cd88af7d7a</con:value>
+          <con:value>51c9525b-0f2d-4acc-a6dd-fc8bd9896716</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="74567e05-576c-4b30-9166-36ba0e4f428e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create a POS promotion, Evaluate to check" searchProperties="true">
+    <con:testCase id="74567e05-576c-4b30-9166-36ba0e4f428e" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create a POS promotion, Evaluate to check" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="eb9b3c30-b533-47e4-96b7-78b7c5300190">
         <con:settings/>
@@ -2050,7 +2034,7 @@ testRunner.testCase.setPropertyValue('promotionName', "auto_promotion_"+promotio
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-    "name": "${#TestCase#promotionName}",
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
     "orgId": ${#Project#orgid},
     "priority": 0,
     "active": true,
@@ -2209,8 +2193,7 @@ assert(customerIdInResponse == expectedUserId): "Customer Id is not as expected"
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="dfe46d0e-0ab3-4d5f-818e-0ac2bc3e55a2" name="assert the applied promotion details">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 String response = messageExchange.getResponseContent();
 def json = new JsonSlurper().parseText(response);
@@ -2231,20 +2214,19 @@ expectedPromotion = [
 isCreatedPromotionInAppliedPromotions = false;
 for(promotion in lstOfAppliedPromotions){
 	if(promotion.id.equalsIgnoreCase("${promotionId}")){
-		assert(promotion.name.equalsIgnoreCase("${promotionName}")):"Created Promotion name mismatch"
-		assert(promotion.messageLabel.equalsIgnoreCase("test!!")):"Created Promotion messageLabel mismatch"
-		assert(promotion.discount.equalsIgnoreCase("250.000000")):"Created Promotion discount mismatch"
-		assert(promotion.type.equalsIgnoreCase("POS")):"Created Promotion type mismatch"
+		//assert(promotion.name.equalsIgnoreCase("${promotionName}")):"Created Promotion name mismatch"
+		//assert(promotion.messageLabel.equalsIgnoreCase("test!!")):"Created Promotion messageLabel mismatch"
+		//assert(promotion.discount.equalsIgnoreCase("250.000000")):"Created Promotion discount mismatch"
+		//assert(promotion.type.equalsIgnoreCase("POS")):"Created Promotion type mismatch"
 
-		assert(promotion.redemptionIdentifier != null):"Created Promotion redemptionIdentifier mismatch"
+		//assert(promotion.redemptionIdentifier != null):"Created Promotion redemptionIdentifier mismatch"
 		isCreatedPromotionInAppliedPromotions = true;
 		break;
 	}
 }
 
 log.info isCreatedPromotionInAppliedPromotions
-assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText>
-              </con:configuration>
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:username>luciauto_till_10</con:username>
@@ -2304,19 +2286,19 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040958581</con:value>
+          <con:value>1617698734895</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127358582</con:value>
+          <con:value>1617785134895</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>auto_promotion_P88PEGUP6A</con:value>
+          <con:value>test_promotion_60342501</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6062163e1368530b0a2817a2</con:value>
+          <con:value>606c1fb004c39f66a1f4f222</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2340,7 +2322,7 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="18c68673-3a12-45a2-9cdc-794ed3daf18f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="EndUser apply on cart based on pos promo expiry date" searchProperties="true">
+    <con:testCase id="18c68673-3a12-45a2-9cdc-794ed3daf18f" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="EndUser apply on cart based on pos promo expiry date" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script sets the start/end times" id="8a1cf9ac-4cc3-4b0b-8aaa-718fa26a5d45">
         <con:settings/>
@@ -2375,7 +2357,7 @@ testRunner.testCase.setPropertyValue("randomId", randomId)</script>
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-    "name": "test promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
     "orgId": ${#Project#orgid},
     "priority": 1,
     "active": true,
@@ -2666,8 +2648,7 @@ messageExchange.modelItem.testCase.setPropertyValue("promotionDetailsMap_15min",
               </con:configuration>
             </con:assertion>
             <con:assertion type="GroovyScriptAssertion" id="4a4861e2-2f42-4a56-865c-a2795cc2d505" name="assert the applied promotions based on expiry">
-              <con:configuration>
-                <scriptText>import groovy.json.JsonSlurper;
+              <con:configuration><scriptText>import groovy.json.JsonSlurper;
 
 
 
@@ -2693,8 +2674,7 @@ expectedThirdLastPromotion = Eval.me(context.expand('${#TestCase#promotionDetail
 
 assert(expectedLastAppliedPromotion.id.equalsIgnoreCase(lastAppliedPromotion))
 assert(expectedSecondLastPromotion.id.equalsIgnoreCase(secondLastAppliedPromotion))
-assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion))</scriptText>
-              </con:configuration>
+assert(expectedThirdLastPromotion.id.equalsIgnoreCase(thirdLastAppliedPromotion))</scriptText></con:configuration>
             </con:assertion>
             <con:credentials>
               <con:authType>No Authorization</con:authType>
@@ -2835,47 +2815,47 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617040959519</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617698760881</con:value>
         </con:property>
         <con:property>
           <con:name>time1</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617041259522</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617699060883</con:value>
         </con:property>
         <con:property>
           <con:name>time2</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617041559522</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617699360883</con:value>
         </con:property>
         <con:property>
           <con:name>time3</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617041859522</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617699660883</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6062163f1368530b0a2817ab</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606c1fc904c39f66a1f4f22b</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_67910498</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test_promotion_67899192</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">D81DZWPBKK</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">E3U25DF5SE</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606216401368530b0a2817b2</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606c1fc904c39f66a1f4f232</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_69109366</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_30274445</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606216401368530b0a2817b9</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606c1fc904c39f66a1f4f239</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_87405630</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">test promotion_87417615</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -2899,19 +2879,19 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_5min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'6062163f1368530b0a2817ab', 'name':'test promotion_67910498', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606c1fc904c39f66a1f4f22b', 'name':'test_promotion_67899192', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_10min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606216401368530b0a2817b2', 'name':'test promotion_69109366', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606c1fc904c39f66a1f4f232', 'name':'test promotion_30274445', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
         <con:property>
           <con:name>promotionDetailsMap_15min</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606216401368530b0a2817b9', 'name':'test promotion_87405630', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">['id':'606c1fc904c39f66a1f4f239', 'name':'test promotion_87417615', 'messageLabel':'test!!', 'discount':'250.000000', 'discountAppliedOnQuantity':null, 'promotionAppliedOnQuantity':null, 'type':'POS']</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="e16d56bf-4a30-4b70-a797-d84cd972cfa2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Search promotions by till id and Campaign id filters" searchProperties="true">
+    <con:testCase id="e16d56bf-4a30-4b70-a797-d84cd972cfa2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Search promotions by till id and Campaign id filters" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:description>TestCase generated for REST Resource [Filters] located at [/internal/v1/promotions/filters]</con:description>
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="4019ebb3-d06d-47bf-ac09-d0940dbdd719">
@@ -3138,19 +3118,19 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617040962790</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617698816401</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617127362790</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1617785216401</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0IKHLJ3AL4</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AM6UQDEILW</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606216421368530b0a2817c6</con:value>
+          <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">606c200104c39f66a1f4f246</con:value>
         </con:property>
         <con:property>
           <con:name>campaignId</con:name>
@@ -3158,7 +3138,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="c09fab1e-5150-4951-b26d-f8ab149c77a9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Set and get promo &quot;PRIORITY&quot; strategy &amp; evaluate based on strategy" searchProperties="true">
+    <con:testCase id="c09fab1e-5150-4951-b26d-f8ab149c77a9" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Set and get promo &quot;PRIORITY&quot; strategy &amp; evaluate based on strategy" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="5248dc91-fe9d-4a63-89a2-f61187cf2468">
         <con:settings/>
@@ -3285,7 +3265,7 @@ assert(rewardStrategyInResponse == rewardStrategyExpected):"rewardStrategy are n
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-    "name": "test promotion_${#TestCase#promotionName}",
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
     "orgId": ${#Project#orgid},
     "priority": 0,
     "active": true,
@@ -3370,7 +3350,7 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText>
             </con:settings>
             <con:endpoint>https://${#Project#endpoint}</con:endpoint>
             <con:request>{
-    "name": "test promotion_${#TestCase#promotionName}",
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}",
     "orgId": ${#Project#orgid},
     "priority": 1,
     "active": true,
@@ -3615,15 +3595,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040964320</con:value>
+          <con:value>1617699650578</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127364320</con:value>
+          <con:value>1617786050578</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_FFXUXRQOXD</con:value>
+          <con:value>test_promotion_18182098</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -3647,7 +3627,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>606216451368530b0a2817d7</con:value>
+          <con:value>606c234404c39f66a1f4f270</con:value>
         </con:property>
         <con:property>
           <con:name>promoationName</con:name>
@@ -3663,15 +3643,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId1</con:name>
-          <con:value>606216451368530b0a2817d0</con:value>
+          <con:value>606c234404c39f66a1f4f269</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName1</con:name>
-          <con:value>test promotion_FFXUXRQOXD</con:value>
+          <con:value>test_promotion_24054360</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="bdafbd77-549f-402c-917a-afd644412acb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Set and get promo &quot;EXPIRY_BASED&quot; strategy &amp; evaluate based on strategy" searchProperties="true">
+    <con:testCase id="bdafbd77-549f-402c-917a-afd644412acb" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Set and get promo &quot;EXPIRY_BASED&quot; strategy &amp; evaluate based on strategy" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="6f604853-d225-465e-9171-61667310dcc9">
         <con:settings/>
@@ -3987,15 +3967,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040967086</con:value>
+          <con:value>1617698167880</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127367086</con:value>
+          <con:value>1617784567880</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_N1KL0DGM7R</con:value>
+          <con:value>test promotion_DDKPIN7SNX</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -4027,11 +4007,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>606216481368530b0a2817e4</con:value>
+          <con:value>606c1d7804c39f66a1f4f1f3</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="deee78f5-7462-4867-920f-f84b3c37ebf3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Set and get promo &quot;MAX_DISCOUNT&quot; strategy &amp; evaluate based on strategy" searchProperties="true">
+    <con:testCase id="deee78f5-7462-4867-920f-f84b3c37ebf3" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Set and get promo &quot;MAX_DISCOUNT&quot; strategy &amp; evaluate based on strategy" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="75fbc234-54c5-40a3-bdbc-2e74b1433e50">
         <con:settings/>
@@ -4385,15 +4365,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040968925</con:value>
+          <con:value>1617698169535</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127368926</con:value>
+          <con:value>1617784569535</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_XV82UIDOQG</con:value>
+          <con:value>test promotion_XQB9UW6JKN</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -4417,11 +4397,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6062164a1368530b0a2817ef</con:value>
+          <con:value>606c1d7a04c39f66a1f4f1fe</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="380c5b6b-7c6d-4562-a8ff-5c28bade2a24" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with with store criteria &amp; evaluate it with valid store/till" searchProperties="true">
+    <con:testCase id="380c5b6b-7c6d-4562-a8ff-5c28bade2a24" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with with store criteria &amp; evaluate it with valid store/till" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="97a0f277-90e7-412a-ba49-36acc7a81d21">
         <con:settings/>
@@ -4640,11 +4620,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040972000</con:value>
+          <con:value>1617698171647</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127372000</con:value>
+          <con:value>1617784571647</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -4672,15 +4652,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>1N4TBYTD8R</con:value>
+          <con:value>VYGYNDXVEH</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>6062164c1368530b0a2817fa</con:value>
+          <con:value>606c1d7b04c39f66a1f4f209</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="c112126c-cae0-4fe2-834b-154691d3882f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as CATEGORY with IN operator &amp; evaluate it" searchProperties="true">
+    <con:testCase id="c112126c-cae0-4fe2-834b-154691d3882f" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as CATEGORY with IN operator &amp; evaluate it" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="9d1d3301-48a4-42b3-8a3f-f4c5d1ce5e58">
         <con:settings/>
@@ -4899,11 +4879,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040973085</con:value>
+          <con:value>1617698173043</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127373085</con:value>
+          <con:value>1617784573043</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -4923,7 +4903,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_</con:value>
+          <con:value>KHGW5A632H</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -4951,7 +4931,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="a886ff05-8623-44fc-af67-a0b8280636eb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as CATEGORY with NOT_IN operator &amp; evaluate it" searchProperties="true">
+    <con:testCase id="a886ff05-8623-44fc-af67-a0b8280636eb" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as CATEGORY with NOT_IN operator &amp; evaluate it" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="ce864d24-716f-4f2e-8d3b-5c1d2583b25e">
         <con:settings/>
@@ -5166,11 +5146,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040974011</con:value>
+          <con:value>1617698173967</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127374011</con:value>
+          <con:value>1617784573967</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5182,7 +5162,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_</con:value>
+          <con:value>A9C7K006FJ</con:value>
         </con:property>
         <con:property>
           <con:name>sku</con:name>
@@ -5206,7 +5186,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="545bc502-57dd-46ee-bf0c-ad5e1ca4e037" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as BRAND with IN operator &amp; evaluate it" searchProperties="true">
+    <con:testCase id="545bc502-57dd-46ee-bf0c-ad5e1ca4e037" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as BRAND with IN operator &amp; evaluate it" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="b6f68194-8f10-4709-9c37-03ed3a767f91">
         <con:settings/>
@@ -5452,11 +5432,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040975400</con:value>
+          <con:value>1617698174995</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127375400</con:value>
+          <con:value>1617784574995</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5468,7 +5448,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_</con:value>
+          <con:value>T6592PA7WD</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -5500,7 +5480,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="02003efa-5dbc-42b5-a0da-56773f3d23de" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as BRAND with NOT_IN operator &amp; evaluate it" searchProperties="true">
+    <con:testCase id="02003efa-5dbc-42b5-a0da-56773f3d23de" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as BRAND with NOT_IN operator &amp; evaluate it" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="1afa33df-70cf-4e7e-82ce-e2d19552b5f6">
         <con:settings/>
@@ -5715,11 +5695,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040976840</con:value>
+          <con:value>1617698176035</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127376840</con:value>
+          <con:value>1617784576035</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5727,7 +5707,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_</con:value>
+          <con:value>WAS0WQZDUU</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -5763,7 +5743,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="dfc978d5-9844-44d4-a897-fe54cac371df" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as SKU with IN operator &amp; evaluate it" searchProperties="true">
+    <con:testCase id="dfc978d5-9844-44d4-a897-fe54cac371df" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with product criteria as SKU with IN operator &amp; evaluate it" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="24cb5414-6db7-47e0-81d4-821148b884b2">
         <con:settings/>
@@ -5987,11 +5967,11 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040978057</con:value>
+          <con:value>1617698177040</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127378057</con:value>
+          <con:value>1617784577040</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -5999,7 +5979,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_</con:value>
+          <con:value>AKSWYP86AF</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -6027,7 +6007,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="240bf689-4c8c-4490-bd58-b56e109500e4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with with store criteria &amp; evaluate it with invalid store/till" searchProperties="true">
+    <con:testCase id="240bf689-4c8c-4490-bd58-b56e109500e4" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create promo with with store criteria &amp; evaluate it with invalid store/till" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
       <con:settings/>
       <con:testStep type="groovy" name="Given script creates a pre-requisites" id="85448a7d-6492-4067-844c-06e2150685ea">
         <con:settings/>
@@ -6243,7 +6223,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127379267</con:value>
+          <con:value>1617784577995</con:value>
         </con:property>
         <con:property>
           <con:name>randomId</con:name>
@@ -6267,7 +6247,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617040979267</con:value>
+          <con:value>1617698177995</con:value>
         </con:property>
       </con:properties>
     </con:testCase>
@@ -6482,15 +6462,15 @@ assert(responseData):"Promotion disable failed"</scriptText>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617041007145</con:value>
+          <con:value>1617698179286</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617127407145</con:value>
+          <con:value>1617784579286</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test promotion_</con:value>
+          <con:value>MOEQ8DTOTY</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
@@ -6498,7 +6478,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="66fc5e66-f4e6-46df-9139-9ace38185ae2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Buy X Get Y Free" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Pre-requisite" id="87372893-914b-4ad3-9853-7c91b471c9ac"><con:settings/><con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+    <con:testCase id="66fc5e66-f4e6-46df-9139-9ace38185ae2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Buy X Get Y Free" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="groovy" name="Pre-requisite" id="87372893-914b-4ad3-9853-7c91b471c9ac"><con:settings/><con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
 String starttime = System.currentTimeMillis().toString()
 String endtime = (System.currentTimeMillis()+86400000).toString()
 log.info promotionName
@@ -6705,7 +6685,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
             </con:parameterOrder>
           </con:restRequest>
         </con:config>
-      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617040981000</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617127381000</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>Auto_Free_product</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60621cd11368530b0a281865</con:value></con:property></con:properties></con:testCase><con:properties>
+      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617698180464</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617784580464</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>0I3UTWSYYV</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60621cd11368530b0a281865</con:value></con:property></con:properties></con:testCase><con:properties>
       <con:property>
         <con:name>rnd</con:name>
         <con:value>39077</con:value>
@@ -7061,9 +7041,9 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE3MTI5MTkzLCJpYXQiOjE2MTcwNDI3OTQsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.OudQaKRiFUWmcgKpMGJNPfYp_pjrj-N-JrV6wf_wXdc</con:value>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE3Nzg0NTUxLCJpYXQiOjE2MTc2OTgxNTMsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.TcWvjFcTxX9b0uKJS_2TUdy6L80Q24McNeSsnMhcz8s</con:value>
     </con:property>
-  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[60621d0b1368530b0a28191a]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>60621d0b1368530b0a28191a</con:value></con:property><con:property><con:name>sku2</con:name><con:value>White1</con:value></con:property><con:property><con:name>campaignid</con:name><con:value>1022221</con:value></con:property></con:properties>
+  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[606c1d7b04c39f66a1f4f209]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>606c1d7b04c39f66a1f4f209</con:value></con:property><con:property><con:name>sku2</con:name><con:value>White1</con:value></con:property><con:property><con:name>campaignid</con:name><con:value>1024375</con:value></con:property></con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
