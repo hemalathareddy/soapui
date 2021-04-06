@@ -6516,7 +6516,7 @@ testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></c
               "entity": "SKU",
               "operator": "IN",
               "values": [
-                "White1"
+                "${#Project#sku2}"
               ]
             }
           ],
@@ -6678,7 +6678,7 @@ assert(responseData):"Promotion disable failed"</scriptText>
             </con:parameterOrder>
           </con:restRequest>
         </con:config>
-      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617709878207</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617796278210</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>test_promotion_99895733t</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>606c691d7537dc2c0f487187</con:value></con:property></con:properties></con:testCase><con:properties>
+      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617709878207</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617796278210</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>test_promotion_41843339t</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>606c69c27537dc2c0f487194</con:value></con:property></con:properties></con:testCase><con:properties>
       <con:property>
         <con:name>rnd</con:name>
         <con:value>39077</con:value>
