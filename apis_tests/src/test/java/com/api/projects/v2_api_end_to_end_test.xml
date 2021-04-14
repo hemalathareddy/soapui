@@ -1,0 +1,2336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="cb40d130-0486-4f5f-8093-9bd80b5e44b6" activeEnvironment="Default" name="v2_api_end_to_end_test" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="f83c5208-a573-4edc-b9ee-e1dbc68b757a" wadlVersion="http://wadl.dev.java.net/2009/02" name="customer_add" type="rest" definitionUrl="http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+      <con:endpoint>https://nightly.capillary.in</con:endpoint>
+    </con:endpoints>
+    <con:resource name="add" path="/{version}/customer/add" id="962fdae1-7460-4dac-92cd-004cf38d476e">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>version</con:name>
+          <con:value>version</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>version</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>{format}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{format}</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="4b908cfb-b824-41e5-bec9-c1a7718b59d8" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "6706295457",
+        "email": "6706295457@gmail.com",
+
+        "firstname": "ng_test",
+        "lastname": "g_test",
+        "gender": "F",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			},
+        "custom_fields": {
+          "field": [
+            {
+              "name": "Hobbies",
+              "value": "[“Fitness”]"
+            },
+            {
+              "name": "a",
+              "value": "[“b”]"
+            }
+          ]
+        }
+
+      }
+    ]
+  }
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="format" value="json"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="e04fff62-3e0e-4387-8dfd-0b7ac5b37a3c" wadlVersion="http://wadl.dev.java.net/2009/02" name="getEventLogs" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://nightly.capillary.in</con:endpoint>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="{req_id}" path="/{version}/webHooks/eventLog/requestId/{request_id}" id="f75ff369-9710-4e54-b790-297750bfb3bd">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>version</con:name>
+          <con:value>v3</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>v3</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>request_id</con:name>
+          <con:value/>
+          <con:style>TEMPLATE</con:style>
+          <con:default/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="f9db9900-9406-472a-8d8c-0eaf603590c1" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=ISO-8859-1</con:mediaType>
+          <con:status>401</con:status>
+          <con:params/>
+          <con:element xmlns:d0b="https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa">d0b:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:d0b="https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa">d0b:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:d0b="https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa">d0b:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="c3c5f177-ed07-4079-aa2d-e3b654c037ab" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic Y20uMToyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MA==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://nightly.capillary.in/v3/webHooks/eventLog/requestId/d0b07a50-3efb-4c16-b395-45b49fb37ffa</con:originalUri>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="version" value="v3"/>
+            <con:entry key="request_id" value=""/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>version</con:entry>
+            <con:entry>request_id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="356e75ca-0be2-4ebd-b5dd-fd47a09c8647" wadlVersion="http://wadl.dev.java.net/2009/02" name="webhook" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints>
+      <con:endpoint>http://${#Project#webhook_workspace}</con:endpoint>
+      <con:endpoint>http://enqovte5kgmv6a1.m.pipedream.net/</con:endpoint>
+    </con:endpoints>
+    <con:resource name="events" path="/api/events" id="016d33c5-439b-45fa-a767-71ab5a57370b">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>request_id</con:name>
+          <con:value>9f54fb7a-aa1d-430d-a1b3-d5dca350fd29</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>9f54fb7a-aa1d-430d-a1b3-d5dca350fd29</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="74e87b38-4211-4367-8ebf-50a19028d74b" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="34ead1d1-1594-4ef4-9ce9-40c691346b9e" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"/>
+  &lt;con:entry key="User-Agent" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>http://${#Project#webhook_workspace}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://enlvdydwm08ks.x.pipedream.net/api/events</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="3212de9c-e2cb-49ed-9b76-075cbc718ca7" wadlVersion="http://wadl.dev.java.net/2009/02" name="getWebhooks" type="rest" definitionUrl="http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="webHooks" path="/{version}/webHooks" id="0e2aa914-1d7d-478d-a249-2ce7557bf37d">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>version</con:name>
+          <con:value>version</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>version</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="c466a5b3-508f-4df5-9b1a-100b5435fc49" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="e34c812d-806e-498b-adbd-323081eda9a6" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="3d786918-f43a-4f2b-bc6e-f1345cc7752c" wadlVersion="http://wadl.dev.java.net/2009/02" name="getCustomerV2" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="{user_id}" path="/v2/customers/{user_id}" id="2e7ea798-f565-4a0e-956f-4f6b84ee913a">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>user_id</con:name>
+          <con:value>user_id</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>user_id</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>source</con:name>
+          <con:value>ALL</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>ALL</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>accountId</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>embed</con:name>
+          <con:value>mlp</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>mlp</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="8d8691dc-6a53-48c4-8c2c-bcaf4d7bf7ee" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="35a353eb-1756-4e37-83f8-d8c4a290f0aa" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://nightly.capillary.in/v2/customers/376790377</con:originalUri>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="user_id" value="376790377" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="0568445a-36d0-42b5-9933-89df50b53456" wadlVersion="http://wadl.dev.java.net/2009/02" name="addRegularTransaction" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="add" path="/v1.1/transaction/add" id="dee9310e-99b0-48cf-acb7-ec04400c84c4">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="7d818094-4183-4839-b179-0eab76edf758" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="30d7b033-bada-4cf6-abdf-781b858869dc" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+	"root": {
+		"transaction": {
+			"bill_client_id": "1121888",
+			"type": "regular",
+			"number": "BILL_6935391507",
+			"notes": "2 lin1e items",
+			"amount" : 50000,
+			"gross_amount": "100",
+			"discount": "10",
+			"customer": {
+				"mobile": "6935391507",
+				"email": "6935391507@gmail.com",
+				"external_id": "x6935391507",
+				"firstname": "Nayan",
+				"lastname": "Gaur"
+			},
+			"extended_fields": {
+				"field": [{
+						"name": "ship_first_name",
+						"value": "Nayan"
+					},
+					{
+						"name": "ship_last_name",
+						"value": "Gaur"
+					}
+				]
+			},
+			"payment_details": {
+				"payment": [{
+						"mode": "CASH",
+						"value": "100"
+					},
+					{
+						"mode": [
+							"CREDIT",
+							"CHECKAPI"
+						],
+						"value": [
+							"4000",
+							"500"
+						],
+						"attributes": {
+							"attribute": [{
+									"name": "BankNameAPI",
+									"value": "value_602656"
+								},
+								{
+									"name": "branch_nameAPI",
+									"value": "value_602656"
+								}
+							]
+						},
+						"notes": "notes_602656"
+					}
+				]
+			},
+			"custom_fields": {
+
+				"field": [{
+						"name": "bankdetails",
+						"value": "SBI"
+					},
+					{
+						"name": "bankdetails",
+						"value": "SBI"
+					}
+				]
+
+			},
+			"line_items": {
+				"line_item": [{
+						"extended_fields": {
+							"field": [{
+									"name": "MetalRate",
+									"value": 23
+								},
+								{
+									"name": "service_tax_amount",
+									"value": 100
+								}
+							]
+						},
+						"serial": "1",
+						"amount": "500",
+						"description": "soap",
+						"item_code": "item-001",
+						"qty": "50",
+						"rate": "10",
+						"value": "500",
+						"attributes": {
+							"attribute": {
+								"name": "brand",
+								"value": "Levis"
+							}
+						}
+					},
+					{
+						"extended_fields": {
+							"field": [{
+									"name": "DesignCode",
+									"value": "jmh6677"
+								},
+								{
+									"name": "SupplierCode",
+									"value": "hgjy111"
+								}
+							]
+						},
+						"serial": "2",
+						"amount": "500",
+						"description": "soap",
+						"item_code": "item-001",
+						"qty": "50",
+						"rate": "10",
+						"value": "500",
+						"transaction_number": "niBill1",
+						"attributes": {
+							"attribute": {
+								"name": "brand",
+								"value": "Levis"
+							}
+						}
+					},
+					{
+						"extended_fields": {
+							"field": [{
+									"name": "StoneCharge",
+									"value": 22
+								},
+								{
+									"name": "MakingCharge",
+									"value": 11
+								}
+							]
+						},
+						"serial": "3",
+						"item_code": "t122",
+						"description": "afvdfvd",
+						"qty": "3",
+						"rate": "1000",
+						"value": "3000",
+						"discount_value": "100",
+						"amount": "2900",
+						"cashier_id": "cash1233",
+						"type": "return",
+						"return_type": "LINE_ITEM",
+						"transaction_number": "previousBill1"
+					}
+				]
+			},
+			"associate_details": {
+				"code": "hiraxdhara",
+				"name": "Tom Sawyer"
+			}
+		}
+	}
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/transaction/add</con:originalUri>
+          <con:credentials>
+            <con:username>cm.1</con:username>
+            <con:password>202cb962ac59075b964b07152d234b70</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="9188fa72-d4ca-4799-b0ec-81d98303a349" wadlVersion="http://wadl.dev.java.net/2009/02" name="isRedeemable" type="rest" definitionUrl="http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="isredeemable" path="/{version}/points/isredeemable" id="fd2cf47e-cfde-48da-8593-244b9da11944">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>version</con:name>
+          <con:value>version</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>version</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>points</con:name>
+          <con:value>{points}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{points}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>skip_validation</con:name>
+          <con:value>true</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>true</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>mobile</con:name>
+          <con:value>{mobile}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{mobile}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>program_id</con:name>
+          <con:style>QUERY</con:style>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="d951de00-4eb0-48cb-b9c6-a53e5d8c10d2" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="7324ca5d-555c-46eb-892f-02a744545f27" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://nightly.capillary.in/version/points/isredeemable</con:originalUri>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="mobile" value="7456470100"/>
+            <con:entry key="version" value="v1.1"/>
+            <con:entry key="points" value="50"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>version</con:entry>
+            <con:entry>format</con:entry>
+            <con:entry>points</con:entry>
+            <con:entry>skip_validation</con:entry>
+            <con:entry>mobile</con:entry>
+            <con:entry>program_id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="01393347-1433-435e-8d4d-c02b4f1ad97c" wadlVersion="http://wadl.dev.java.net/2009/02" name="RedeemPoints" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="redeem" path="/{version}/points/redeem" id="8778912a-bb63-423f-abdb-89c51359fb8a">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>version</con:name>
+          <con:value>version</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>version</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>program_id</con:name>
+          <con:value>{program_id}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{program_id}</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="68dcceb8-9b58-4693-aee2-f6c101bb4f24" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="0c6d7d87-8bdb-450b-b683-a4bcddcec72c" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "redeem": {
+      "points_redeemed": "50",
+      "transaction_number": "1234r743",
+      "customer": { "mobile": "91712292522" },
+      "notes": "Sample notes",
+      "validation_code": "7S8VH7"
+    }
+  }
+}</con:request>
+          <con:credentials>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="program_id" value="1231"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="1486e61e-cd35-4606-b74b-5c6406abb01d" wadlVersion="http://wadl.dev.java.net/2009/02" name="getCustomerV1" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="get" path="/v1.1/customer/get" id="5e983fb5-e4dc-456e-bead-4a470764829c">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>id</con:name>
+          <con:value>{user_id}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{user_id}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>mlp</con:name>
+          <con:value>true</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>true</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="700e2ddf-a659-4042-8dd9-8df792a13bc5" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="fffb4960-10e1-4ff0-982b-f7255dbe25c3" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-CAP-CLIENT-COUNTRYCODE" value="1" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/get</con:originalUri>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="id" value="378087418" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="fcc704d4-06ce-4de6-a1d4-738180ea26c5" wadlVersion="http://wadl.dev.java.net/2009/02" name="issueCoupon" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="issue" path="/v1.1/coupon/issue" id="9f92e04a-5c5b-45d0-9712-e7ddabfa844a">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>user_id</con:name>
+          <con:value>true</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>true</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="e262157b-ca9f-474a-989a-793e74b49680" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="757eb83a-f2f8-4b87-82bf-8545223dbbc2" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+   "root":{
+      "coupon":[
+         {
+            "series_id":87618,
+            "customer":{
+               "mobile":"919090080344",
+               "external_id":null,
+               "email":null
+            }
+         }
+      ]
+   }
+}</con:request>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="f5fc346f-3e9a-4165-8448-f6ce2cb69fdc" wadlVersion="http://wadl.dev.java.net/2009/02" name="RedeemCoupon" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="redeem" path="/v1.1/coupon/redeem" id="3c7e403a-9272-4ba1-8b24-5b3368163cea">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="84d1ca8a-673f-4398-becf-64469fbc920f" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="ff5fa5db-d484-4866-bf48-2ed0a1b8e3c1" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "coupon": [{
+      "code": "{{code}}",
+      "redemption_time": "2017-09-17",
+      "customer": {
+        "mobile": "{{mobile1}}"
+      },
+      "custom_fields": {
+        "field": {
+          "name": "Sport",
+          "value": "[“Soccer”]"
+        }
+      },
+      "transaction": {
+        "number":"{{billNumber}}",
+        "amount": "1000"
+      }
+    }]
+  }
+}</con:request>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="7bd5e296-824e-4279-98ff-8dada1ff92fa" wadlVersion="http://wadl.dev.java.net/2009/02" name="isCouponRedeemable" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="isredeemable" path="/v1.1/coupon/isredeemable" id="de8547f9-9386-4efc-9c1b-dfd3166e43ed">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>details</con:name>
+          <con:value>true</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>true</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>code</con:name>
+          <con:value>{coupon_code}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{coupon_code}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>mobile</con:name>
+          <con:value>{mobile}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{mobile}</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="b60256fa-2b15-4f09-b4ae-5879f86d7367" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="2065919b-04a9-42cd-b6be-b621d97e53d4" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="216dc5d8-4532-4e16-8aeb-831bca39e6a2" wadlVersion="http://wadl.dev.java.net/2009/02" name="getCouponSeries" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="series" path="/v1.1/coupon/series" id="e058e844-1c81-4c0a-a43e-9b09bc11e8b9">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="ace9d9a8-eb6f-4a05-93c9-aeab31251bb9" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="4f9fddd5-ff27-468f-9305-ddb2ae83c9ed" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://nightly.capillary.in/v1.1/coupon/series</con:originalUri>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="2f59ebc7-7862-4705-9aa4-5f205643a0a9" wadlVersion="http://wadl.dev.java.net/2009/02" name="getCustomerCoupons" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="coupons" path="/v1.1/customer/coupons" id="cc3aad53-0998-4733-8201-36512ac5b31d">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>mobile</con:name>
+          <con:value>{mobile}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{mobile}</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="d2677551-7e84-4275-919c-5a8d19151251" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="a83c3c0e-7af3-4d6d-b7d5-76c317dee5b5" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="1d167895-41a8-4013-9475-73ed873bd3c3" wadlVersion="http://wadl.dev.java.net/2009/02" name="getCouponDetails" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="get" path="/v1.1/coupon/get" id="d32d3221-3fbb-4a67-b286-63f03fe45387">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>code</con:name>
+          <con:value>{code}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{code}</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="52be3e16-8714-40c2-9998-1f35b6bdea81" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="b20f21c7-d621-4e58-b18d-b146a4c66139" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="79c18da1-2f79-4030-afc0-ed75ca661831" wadlVersion="http://wadl.dev.java.net/2009/02" name="PointsTransfer" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="transfer" path="/v2/points/transfer" id="1b7a9c33-0ba0-4701-bc78-0a9dc67059f4">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="8289658d-5f36-41be-b41d-11faa4c89d19" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="66016c4b-99ca-4eff-8f1e-3c10187c0c22" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "transferredAtStoreCode": "string",
+  "transferredAtStoreID": 0,
+  "pointsTobeTransferred": 0,
+  "fromCustomerIdentifier": {
+    "type": "MOBILE",
+    "value": "string"
+  },
+  "toCustomerIdentifier": {
+    "type": "MOBILE",
+    "value": "string"
+  },
+  "notes": "string",
+  "code": "string",
+  "groupProgramTransfer": false
+}</con:request>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="5d90c9b2-daf9-4655-a09e-994747cdb1f8" wadlVersion="http://wadl.dev.java.net/2009/02" name="isPointsTransferable" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="isTransferrable" path="/v2/points/isTransferrable" id="3ca0226e-f428-4441-a805-a91854c831dd">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="dfeed04d-66e9-4cc3-9eb9-d4a7141b8e6e" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="0dcc0e21-afd7-4862-838c-ca8bcaeadc75" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+    "issueOtp": true,
+    "pointsTobeTransferred": 1.1,
+    "toCustomerIdentifier": {
+        "type": "MOBILE",
+        "value": "917709142209"
+    },
+    "fromCustomerIdentifier": {
+        "type": "MOBILE",
+        "value": "917332628259"
+    }
+}</con:request>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="f9e0c80e-598d-49ef-98ac-f19bbcb4f1fd" wadlVersion="http://wadl.dev.java.net/2009/02" name="returnRegularTransaction" type="rest" definitionUrl="htts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="add" path="/v1.1/transaction/add" id="1121e52b-c3e8-463f-b2c2-471c7de88da4">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>json</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>json</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="fb853c35-7bdf-448a-ab98-231c2b4a0fcf" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="77cded7f-7736-4732-bd83-29e42c30f628" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+	"root": {
+		"transaction": {
+			"type": "return",
+			"bill_client_id": "wd221123333",
+			"customer": {
+				"firstname": "Rati",
+				"lastname": "Ranjan",
+				"email": "{{mobile1}}@mil.com",
+				"mobile": "{{mobile1}}",
+				"external_id": "X{{mobile1}}"
+			},
+			"transaction_number": "7u78118",
+			"amount": "1000",
+			"notes": "bill with note",
+			"line_items": {
+				"line_item": {
+					"extended_fields": {
+						"field": [{
+								"name": "MetalRate",
+								"value": 23
+							},
+							{
+								"name": "MetalWeight",
+								"value": 200
+							}
+						]
+					},
+					"serial": "0",
+					"item_code": "t122",
+					"description": "afvdfvd",
+					"qty": "3",
+					"rate": "1000",
+					"value": "3000",
+					"discount_value": "100",
+					"amount": "8888",
+					"cashier_id": "cash1233"
+				}
+			},
+			"extended_fields": {
+				"field": [{
+						"name": "CentralGST",
+						"value": 6
+					},
+					{
+						"name": "StateGST",
+						"value": 6
+					}
+				]
+			},
+			"payment_details": {
+				"payment": {
+					"mode": "CASH",
+					"value": "100"
+				}
+			},
+			"custom_fields": {
+				"field": {
+					"-name": "paymentmode",
+					"value": "现金"
+				}
+			},
+			"associate_details": {
+				"code": "223232",
+				"name": "afdf4r3"
+			},
+			"referral_code": "efef34343",
+			"return_type": "FULL"
+		}
+	}
+}</con:request>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="a2f3d0d0-8309-4edf-a0bd-969e38e4bb55" wadlVersion="http://wadl.dev.java.net/2009/02" name="updateOrgConfig" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="configs" path="/{version}/organization/configs" id="72004983-e818-4dff-9903-7a8ef1da5c14">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>version</con:name>
+          <con:value>version</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>version</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>format</con:name>
+          <con:value>xml</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>xml</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="3828eaaf-55d7-41c7-9c90-8277cd469974" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="9ae77cbf-a340-43f2-9a3b-e6cd9213c773" mediaType="application/xml" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>- no endpoint set -</con:endpoint>
+          <con:request><![CDATA[<root>
+     <organization>
+             <configs>
+                     <config>
+                             <name>CONF_LOYALTY_POINTS_REDEMPTION_LIFETIME_PURCHASE_MIN</name>
+                             <scope>ORG</scope>
+                             <value>0</value>
+                            <entity_id>null</entity_id>
+                     </config>
+             </configs>
+     </organization>
+</root>]]></con:request>
+          <con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="version" value="v1.1" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="58906dd6-573e-4ca1-97d8-6660624d4ecd" wadlVersion="http://wadl.dev.java.net/2009/02" name="triggerCustomEvent" type="rest" definitionUrl="https" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT"/>
+    <con:endpoints>
+      <con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint>
+    </con:endpoints>
+    <con:resource name="1b35496e-4126-4242-be3e-20f624766b67" path="" id="298f4f66-d3fe-4f25-bbf4-b8bbcf2e3706">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="bc2ab0db-9295-4bdf-ae1e-788c2302c95b" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="f773dd65-36e5-4368-91df-2c4c620e83d1" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="content-type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#custom_events_webhook}</con:endpoint>
+          <con:request>{"Mobile":"918733645468",
+"Name":"stringxxx",
+"Till":"alpha_endtoend_test",
+"event_name":"AlphaEndToEnd"}</con:request>
+          <con:originalUri>https://8mo7zxjtj0.execute-api.us-east-1.amazonaws.com/onenightly/webhooks/1b35496e-4126-4242-be3e-20f624766b67</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="a691791f-99a2-4ace-9f16-fb0574a1ef08" wadlVersion="http://wadl.dev.java.net/2009/02" name="rp" type="rest" definitionUrl="reportPortal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints/>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="3186c19b-6360-4b1c-8f2f-4cfff7c274a8" wadlVersion="http://wadl.dev.java.net/2009/02" name="transactionV2" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="TransactionV2" path="/v2/transactions" id="187b6fa6-1ac5-4ba0-bb45-b58f077ab189"><con:settings/><con:parameters><con:parameter><con:name>source</con:name><con:style>QUERY</con:style></con:parameter><con:parameter><con:name>accountId</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>identifierName</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>identifierValue</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="RegularTransactionV2" id="4747df0e-d20d-47ef-b051-a3bd997f6a57" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:tran="https://crm-nightly-new.cc.capillarytech.com/v2/transactions">tran:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:tran="https://crm-nightly-new.cc.capillarytech.com/v2/transactions">tran:Fault</con:element></con:representation><con:request name="Request 1" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestSuite#mobile}",
+  "billingDate": "2020-07-27T20:01:51+05:30",
+  "discount": "10",
+  "billAmount": "200",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "22.02",
+    "ship_last_name": "10.50"
+   },
+  "customFields": {
+    "paymentmode": "abc"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "sku_1",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 1.0,
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="mobile"/>
+  <con:entry key="source" value="instore"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="a4193412-f71d-4db9-89ce-516efb2e8e5e" wadlVersion="http://wadl.dev.java.net/2009/02" name="transactionV2Get" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="TransactionV2Get" path="/v2/transactions/${#TestCase#transactionId}/" id="313611d2-0dec-4684-a312-da6f4d337ea0"><con:settings/><con:parameters><con:parameter><con:name>type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>tender</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="RegularTransactionV2Get" id="6c661f8a-21c1-402f-8e1d-1b571060bab0" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="2d8b932f-7dff-4d41-99f3-14a82607d9da" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="tender" value="true"/>
+  <con:entry key="type" value="REGULAR"/>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API" disabled="true">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting>
+      <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@errors_only">false</con:setting>
+    </con:settings>
+    <con:runType>PARALLELL</con:runType>
+    <con:testCase id="a6919450-66f2-417f-9891-60d4219922a2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TransactionAdd" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="get txn numer" id="ebafad87-9920-45df-a6d0-64a324a881a2">
+        <con:settings/>
+        <con:config>
+          <script>String timestamp = System.currentTimeMillis().toString()
+log.info timestamp
+testRunner.testCase.setPropertyValue("tnx_number",timestamp);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="get current date and time" id="022d35e4-b48a-4ff3-afa8-fdccd2adeb35">
+        <con:settings/>
+        <con:config>
+          <script>def getcurrent = Calendar.getInstance()
+String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
+testRunner.testCase.testSuite.setPropertyValue("current_time",current_time);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="get phone number" id="e2d7ab90-5188-4717-be44-f6c409db964c">
+        <con:settings/>
+        <con:config>
+          <script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="addTransaction" id="dc6dd2e1-ece2-4167-9d0e-390ca93e8be6">
+        <con:settings/>
+        <con:config service="addRegularTransaction" resourcePath="/v1.1/transaction/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="addTransaction" id="30d7b033-bada-4cf6-abdf-781b858869dc" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+            <con:request>{
+  "root": {
+    "transaction": {
+      "type": "regular",
+      "number": "${#TestCase#tnx_number}",
+      "amount": "1200",
+      "billing_time": "${#TestSuite#current_time}",
+      "gross_amount": "101",
+      "redemptions": {
+        "points_redemptions": {
+
+        },
+        "coupon_redemptions": {
+
+        }
+      },
+      "customer": {
+        "mobile": "${#TestCase#mobile}",
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+        "type": "loyalty"
+      },
+      "custom_fields": {
+        "field": {
+          "name": "testcustom",
+          "value": "test"
+        }
+      },
+      "extended_fields": {
+        "field": {
+          "name": "CentralGST",
+          "value": "98"
+        }
+      },
+      "line_items": {
+        "line_item": [
+          {
+            "attributes": {
+              "attribute": {
+                "name": "jeans",
+                "value": "jeans"
+              }
+            },
+            "serial": "1",
+            "amount": "500",
+            "description": "White",
+            "item_code": "Pearls",
+            "qty": "20",
+            "rate": "50",
+            "value": "1000",
+            "discount": "0",
+            "notes": "Return type of a line item with full"
+          },
+          {
+            "attributes": {
+              "attribute": {
+                "name": "jeans",
+                "value": "jeans"
+              }
+            },
+            "serial": "2",
+            "amount": "500",
+            "description": "Extra",
+            "item_code": "Extra",
+            "qty": "10",
+            "rate": "50",
+            "value": "500",
+            "discount": "0",
+            "notes": "Return type of a line item with full"
+          },
+          {
+            "attributes": {
+              "attribute": {
+                "name": "jeans",
+                "value": "jeans"
+              }
+            },
+            "serial": "3",
+            "amount": "700",
+            "description": "Extra",
+            "item_code": "Extra",
+            "qty": "1",
+            "rate": "700",
+            "value": "700",
+            "discount": "0",
+            "notes": "Return type of a line item with full"
+          }
+        ]
+      }
+    }
+  }
+}</con:request>
+            <con:originalUri>https://nightly.capillary.in/v1.1/transaction/add</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="e6f1b9ef-b7b8-4fc0-b402-4192ca816b85" name="Verfiy add transaction response">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+String mob = context.expand('${#TestCase#mobile}')
+String tnxNumber = context.expand('${#TestCase#tnx_number}')
+
+// Get customer point info before the tnx.
+
+
+//get transaction details
+String tnxID = json.response.transactions.transaction.id[0].toString();
+String billNumber = json.response.transactions.transaction.number[0].toString();
+String type = json.response.transactions.transaction.type[0].toString();
+
+assert(billNumber == tnxNumber);
+messageExchange.modelItem.testCase.setPropertyValue("tnxID",tnxID);
+
+
+//get customer details.
+
+String user_id = json.response.transactions.transaction.customer[0].user_id.toString();
+messageExchange.modelItem.testCase.setPropertyValue("user_id",user_id);
+String mobile = json.response.transactions.transaction.customer[0].mobile.toString();
+assert(mobile == mob);
+messageExchange.modelItem.testCase.setPropertyValue("tnx_mobile",mobile);
+String fname = json.response.transactions.transaction.customer[0].firstname.toString();
+assert(fname == "fname_" + mob);
+String lname = json.response.transactions.transaction.customer[0].lastname.toString();
+assert(lname == "lname_" + mob);
+String email = json.response.transactions.transaction.customer[0].email.toString();
+assert(email == mob + "@gmail.com")
+
+String awarded_points = json.response.transactions.transaction.side_effects[0].effect.awarded_points[0].toString();
+String totalPoints = json.response.transactions.transaction.side_effects[0].effect.total_points[0].toString();
+
+messageExchange.modelItem.testCase.setPropertyValue("awarded_points_afterTnx",awarded_points);
+
+messageExchange.modelItem.testCase.setPropertyValue("totalPoints_afterTnx",totalPoints);
+
+
+
+//Item status.
+assert(json.response.transactions.transaction.item_status[0].success == "true")
+assert(json.response.transactions.transaction.item_status[0].code == 600)
+String msg = json.response.transactions.transaction.item_status[0].message;
+if(msg.toLowerCase() == "transaction added successfully"){
+	assert true;
+}
+else{
+	assert false : "Getting message as - " + msg;
+}</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="190ad7c6-4b58-4bce-a46d-8f3e1521b68c" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>${#Project#auth_username}</con:username>
+              <con:password>${#Project#auth_password}</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:preemptive>false</con:preemptive>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>tnx_number</con:name>
+          <con:value>1591618396257</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnxID</con:name>
+          <con:value>38261500</con:value>
+        </con:property>
+        <con:property>
+          <con:name>user_id</con:name>
+          <con:value>379085721</con:value>
+        </con:property>
+        <con:property>
+          <con:name>mobile</con:name>
+          <con:value>919618396262</con:value>
+        </con:property>
+        <con:property>
+          <con:name>awarded_points_afterTnx</con:name>
+          <con:value>500</con:value>
+        </con:property>
+        <con:property>
+          <con:name>totalPoints_afterTnx</con:name>
+          <con:value>500</con:value>
+        </con:property>
+        <con:property>
+          <con:name>pointBalance_afterTnx</con:name>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </con:property>
+        <con:property>
+          <con:name>tnx_mobile</con:name>
+          <con:value>919618396262</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase>
+    <con:testCase id="e2f222e7-9e9d-4be0-926a-e697dbefc4f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TransactionAddForNonDefaultProgram" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="get txn number" id="3256e6ff-bbd0-4566-bd53-e8f859eab140">
+        <con:settings/>
+        <con:config>
+          <script>String timestamp = System.currentTimeMillis().toString()
+testRunner.testCase.setPropertyValue("tnx_number",timestamp);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="get current date and time" id="a0053fb7-9bd0-42a4-96cc-bc04b2057922">
+        <con:settings/>
+        <con:config>
+          <script>def getcurrent = Calendar.getInstance()
+String current_time = getcurrent.format("yyyy-MM-dd HH:mm:ss");
+testRunner.testCase.setPropertyValue("current_time",current_time);</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="addTransactionFromNonDefaultTill" id="af3b04be-ed8e-4f6e-ad7c-d003098990cc">
+        <con:settings/>
+        <con:config service="addRegularTransaction" resourcePath="/v1.1/transaction/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="addTransactionFromNonDefaultTill" id="30d7b033-bada-4cf6-abdf-781b858869dc" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+            <con:request>{
+  "root": {
+    "transaction": {
+      "type": "regular",
+      "number": "${#TestCase#tnx_number}",
+      "amount": "1200",
+      "billing_time": "${#TestCase#current_time}",
+      "gross_amount": "101",
+      "redemptions": {
+        "points_redemptions": {
+          
+        },
+        "coupon_redemptions": {
+          
+        }
+      },
+      "customer": {
+        "mobile": "${#TestCase#mobilNuberFromCalledFunction}",
+        "firstname": "fname_${#TestCase#mobilNuberFromCalledFunction}",
+        "lastname": "lname_${#TestCase#mobilNuberFromCalledFunction}",
+        "email": "${#TestCase#mobilNuberFromCalledFunction}@gmail.com",
+        "type": "loyalty"
+      },
+      "custom_fields": {
+        "field": {
+          "name": "testcustom",
+          "value": "test"
+        }
+      },
+      "extended_fields": {
+        "field": {
+          "name": "CentralGST",
+          "value": "98"
+        }
+      },
+      "line_items": {
+        "line_item": [
+          {
+            "attributes": {
+              "attribute": {
+                "name": "jeans",
+                "value": "jeans"
+              }
+            },
+            "serial": "1",
+            "amount": "500",
+            "description": "White",
+            "item_code": "Pearls",
+            "qty": "20",
+            "rate": "50",
+            "value": "1000",
+            "discount": "0",
+            "notes": "Return type of a line item with full"
+          },
+          {
+            "attributes": {
+              "attribute": {
+                "name": "jeans",
+                "value": "jeans"
+              }
+            },
+            "serial": "2",
+            "amount": "500",
+            "description": "Extra",
+            "item_code": "Extra",
+            "qty": "10",
+            "rate": "50",
+            "value": "500",
+            "discount": "0",
+            "notes": "Return type of a line item with full"
+          },
+          {
+            "attributes": {
+              "attribute": {
+                "name": "jeans",
+                "value": "jeans"
+              }
+            },
+            "serial": "3",
+            "amount": "700",
+            "description": "Extra",
+            "item_code": "Extra",
+            "qty": "1",
+            "rate": "700",
+            "value": "700",
+            "discount": "0",
+            "notes": "Return type of a line item with full"
+          }
+        ]
+      }
+    }
+  }
+}</con:request>
+            <con:originalUri>https://nightly.capillary.in/v1.1/transaction/add</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="493f8172-1390-4d91-a9ac-f26069a2fb58" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="ad2f17d6-a168-47ca-a0de-8db6e0276f68" name="Validate non default response">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+String mob = context.expand('${#TestCase#mobilNuberFromCalledFunction}')
+String tnxNumber = context.expand('${#TestCase#tnx_number}')
+
+// Get customer point info before the tnx.
+
+
+//get transaction details
+String tnxID = json.response.transactions.transaction.id[0].toString();
+String billNumber = json.response.transactions.transaction.number[0].toString();
+String type = json.response.transactions.transaction.type[0].toString();
+
+assert(billNumber == tnxNumber);
+messageExchange.modelItem.testCase.setPropertyValue("non_default_tnxID",tnxID);
+messageExchange.modelItem.testCase.setPropertyValue("non_default_tnx_number",billNumber);
+
+
+//get customer details.
+
+String user_id = json.response.transactions.transaction.customer[0].user_id.toString();
+messageExchange.modelItem.testCase.setPropertyValue("non_default_tnx_user_id",user_id);
+String mobile = json.response.transactions.transaction.customer[0].mobile.toString();
+assert(mobile == mob);
+messageExchange.modelItem.testCase.setPropertyValue("non_default_tnx_mobile",mobile);
+String fname = json.response.transactions.transaction.customer[0].firstname.toString();
+assert(fname == "fname_" + mob);
+String lname = json.response.transactions.transaction.customer[0].lastname.toString();
+assert(lname == "lname_" + mob);
+String email = json.response.transactions.transaction.customer[0].email.toString();
+assert(email == mob + "@gmail.com")
+
+String lifetime_points = json.response.transactions.transaction.customer[0].lifetime_points.toString();
+String totalPoints = json.response.transactions.transaction.customer[0].loyalty_points.toString();
+
+messageExchange.modelItem.testCase.setPropertyValue("non_default_tnx_awarded_points_afterTnx",lifetime_points);
+
+messageExchange.modelItem.testCase.setPropertyValue("non_default_tnx_totalPoints_afterTnx",totalPoints);
+
+
+
+//Item status.
+assert(json.response.transactions.transaction.item_status[0].success == "true")
+assert(json.response.transactions.transaction.item_status[0].code == 600)
+String msg = json.response.transactions.transaction.item_status[0].message;
+if(msg.toLowerCase() == "transaction added successfully"){
+	assert true;
+}
+else{
+	assert false : "Getting message as - " + msg;
+}</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:username>${#TestCase#non_default_auth_username}</con:username>
+              <con:password>${#TestCase#non_default_auth_password}</con:password>
+              <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>Global HTTP Settings</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>mobilNuberFromCalledFunction</con:name>
+          <con:value>919736268900</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_auth_username</con:name>
+          <con:value>alpha_endtoend_test</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_auth_password</con:name>
+          <con:value>202cb962ac59075b964b07152d234b70</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnx_number</con:name>
+          <con:value>1590736272947</con:value>
+        </con:property>
+        <con:property>
+          <con:name>current_time</con:name>
+          <con:value>2020-05-29 12:41:12</con:value>
+        </con:property>
+        <con:property>
+          <con:name>tnxID</con:name>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </con:property>
+        <con:property>
+          <con:name>user_id</con:name>
+          <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </con:property>
+        <con:property>
+          <con:name>non_default_tnxID</con:name>
+          <con:value>38260737</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_tnx_user_id</con:name>
+          <con:value>379076669</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_tnx_mobile</con:name>
+          <con:value>919736268900</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_tnx_awarded_points_afterTnx</con:name>
+          <con:value>880</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_tnx_totalPoints_afterTnx</con:name>
+          <con:value>880</con:value>
+        </con:property>
+        <con:property>
+          <con:name>non_default_tnx_number</con:name>
+          <con:value>1590736272947</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase>
+    <con:testCase id="23925634-f0eb-426a-a829-a89cf00cdd78" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RegisterNewCustomer" searchProperties="true">
+      <con:settings/>
+      <con:properties/>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>mobile</con:name>
+        <con:value>8767496655</con:value>
+      </con:property>
+      <con:property>
+        <con:name>current_time</con:name>
+        <con:value>2020-06-08 17:43:16</con:value>
+      </con:property>
+    </con:properties>
+  </con:testSuite>
+  
+  
+  
+  <con:testSuite id="d8888b94-0ad8-44f1-acb7-3706881c7c7e" name="V2.0_AddRegularTransaction"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="98ea33f6-f7da-405d-a03b-a0628aaf67f4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddAValiadTransaction" searchProperties="true"><con:settings/><con:testStep type="groovy" name="generaeVariables" id="3afd66a3-3705-459b-9986-96fbf87c3d5f"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.testSuite.setPropertyValue("mobile","919" + mobile);
+testRunner.testCase.testSuite.setPropertyValue("billnumber","bill" + mobile);
+testRunner.testCase.testSuite.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV1" id="3eee4c67-a974-44cf-aa6b-2fd7bc6d1d93"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV1" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestSuite#mobile}",
+        "email": "${#TestSuite#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestSuite#mobile}",
+        "lastname": "lname_${#TestSuite#mobile}",
+        "external_id": "x${#TestSuite#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="f2b95d6f-6d65-41b7-8cba-d71f02e9768d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+customerId = json.response.customers.customer[0].user_id
+log.info customerId
+messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="format" value="json"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="regularTransactionv2" id="28023b39-af24-4b5e-bef2-21a62c4980fa"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="regularTransactionv2" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestSuite#billnumber}",
+  "billingDate": "${#TestSuite#billingTime}",
+  "discount": "10",
+  "billAmount": "200",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "capillary",
+    "ship_last_name": "customer"
+   },
+  "customFields": {
+    "paymentmode": "abc"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "sku_1",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 1.0,
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions</con:originalUri><con:assertion type="GroovyScriptAssertion" id="9a5f20bb-8e70-4cb2-b45e-3b996d8511f2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+//set transactionId
+messageExchange.modelItem.testCase.setPropertyValue("transactionId",json.createdId+"");
+
+
+def transactionId = json.createdId;
+assert transactionId == json.createdId
+assert json.sideEffects[0].rawAwardedPoints==20
+assert json.sideEffects[0].awardedPoints==20
+assert json.sideEffects[0].type=="points"
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="mobile"/>
+  <con:entry key="identifierValue" value="${#TestSuite#mobile}"/>
+  <con:entry key="source" value="instore"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="transactionV2Get" id="814f1325-d7a4-4405-a7cb-253e8dc738c3"><con:settings/><con:config service="transactionV2Get" resourcePath="/v2/transactions/${#TestCase#transactionId}/" methodName="RegularTransactionV2Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="transactionV2Get" id="2d8b932f-7dff-4d41-99f3-14a82607d9da" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions//</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5135a58b-4e42-4c9b-9f5a-293450308dcb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="10e727e2-6d44-4303-bc58-ce96f9b1f2ac" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+transactionId =context.expand('${#TestCase#transactionId}');
+
+def attribution = json.attribution;
+def billDetails = json.billDetails;//Done
+def customFields =json.customFields; //Done
+def addWithLocalCurrency = json.addWithLocalCurrency;//Done
+def async = json.async;//Done
+def useV2 = json.useV2; //Done
+def customerId = json.customerId; //Done
+def id = json.id; //Done
+def lineItems = json.lineItems;
+def outlierStatus = json.outlierStatus; //Done
+def type = json.type;//Done
+def warnings = json.warnings //Done
+def lifeTimePurchases = json.lifeTimePurchases//Done
+def ignorePoints = json.ignorePoints //Done
+def niReturnDetails = json.niReturnDetails //Done
+def basketSize = json.basketSize //Done
+def returnDetails = json.returnDetails //Done
+
+
+assert id == Long.valueOf(transactionId)
+
+//Assert attribute
+assert billDetails.amount == 200;
+assert billDetails.billNumber == context.expand('${#TestSuite#billnumber}');
+assert billDetails.discount == 10;
+assert billDetails.grossAmount ==110;
+assert billDetails.note == "this is test";
+assert billDetails.returnDetails.canceled == false;
+assert billDetails.niReturnDetails[0] == null 
+assert billDetails.invalidBill == false;
+assert billDetails.billingTime ==context.expand('${#TestSuite#billingTime}')
+
+//Assert customFields
+assert customFields[0] == null
+
+//Assert addWithLocalCurrency
+assert addWithLocalCurrency == false
+
+//Assert useV2
+assert useV2 ==false
+
+//Assert async
+assert async ==false
+
+//Assert customerId
+assert customerId == Long.valueOf(context.expand('${#TestCase#customerId}'));
+
+//Assert type
+assert type == "REGULAR"
+
+//Assert outlierStatus
+assert outlierStatus == "NORMAL"
+
+//Assert warnings
+assert warnings[0] == null  
+
+//Assert lifeTimePurchases
+assert lifeTimePurchases == 0
+
+//Assert ignorePoints
+assert ignorePoints == false
+
+//Assert niReturnDetails'
+assert niReturnDetails[0] == null
+
+//Assert basketSize
+assert basketSize == 1
+
+//Assert returnDetails
+assert returnDetails.canceled == false
+
+//Assert  lineItems
+assert  lineItems.size()==1
+for(int i=0;i&lt;lineItems.size();i++)
+{
+	assert lineItems[i].details.amount ==100.5;
+	assert lineItems[i].details.description =="";
+	assert lineItems[i].details.discount == 0;
+	assert lineItems[i].details.itemCode == "sku_1";
+	assert lineItems[i].details.qty == 1;
+	assert lineItems[i].details.rate == 100.5 ;
+	assert lineItems[i].details.serial == 0;
+	assert lineItems[i].details.value == 0;
+	assert lineItems[i].details.returnable == true
+	assert lineItems[i].details.returnableDays == -1;
+	assert lineItems[i].details.attributes[0] == null ;
+	assert lineItems[i].details.extendedFields.GrossWeight == 10.5;
+	assert lineItems[i].details.extendedFields.MetalRate == 22.02;
+	assert lineItems[i].details.attributesSet[0] == null;
+	assert lineItems[i].outlierStatus == "NORMAL";
+	assert lineItems[i].returnDetails[0] == null
+	assert lineItems[i].valid == true;
+	assert lineItems[i].returnLineItemsDtos[0] == null; 
+	assert lineItems[i].niReturnLineItemsDtos[0] == null;
+	assert lineItems[i].addonDetails[0] == null
+	assert lineItems[i].splitItemsDetails[0] == null
+	assert lineItems[i].niReturn == false
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="tender" value="true"/>
+  <con:entry key="type" value="REGULAR"/>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147628177</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373563975</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919407197071</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill407197071</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-14T19:03:17+05:30</con:value></con:property></con:properties></con:testSuite><con:properties>
+    <con:property>
+      <con:name>environment</con:name>
+      <con:value>nightly</con:value>
+    </con:property>
+    <con:property>
+      <con:name>execution_group</con:name>
+      <con:value>sanity,regression</con:value>
+    </con:property>
+    <con:property>
+      <con:name>auth_username</con:name>
+      <con:value>api.auto1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>auth_password</con:name>
+      <con:value>202cb962ac59075b964b07152d234b70</con:value>
+    </con:property>
+    <con:property>
+      <con:name>application_endpoint</con:name>
+      <con:value>crm-nightly-new.cc.capillarytech.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>webhook_workspace</con:name>
+      <con:value>enqovte5kgmv6a1.m.pipedream.net</con:value>
+    </con:property>
+    <con:property>
+      <con:name>webhook_workspace_name</con:name>
+      <con:value>endtoend_hook_ng</con:value>
+    </con:property>
+    <con:property>
+      <con:name>custom_events_webhook</con:name>
+      <con:value>vo4mrjpidb.execute-api.us-east-1.amazonaws.com/crm-nightly-new/webhooks/8b5ec968-6c9d-46cf-8d1b-30b5ffb2d925</con:value>
+    </con:property>
+    <con:property>
+      <con:name>alphatill_username</con:name>
+      <con:value>api.auto2</con:value>
+    </con:property>
+    <con:property>
+      <con:name>alphatill_password</con:name>
+      <con:value>202cb962ac59075b964b07152d234b70</con:value>
+    </con:property>
+    <con:property>
+      <con:name>gammatill_username</con:name>
+      <con:value>api.auto3</con:value>
+    </con:property>
+    <con:property>
+      <con:name>gammatill_password</con:name>
+      <con:value>202cb962ac59075b964b07152d234b70</con:value>
+    </con:property>
+    <con:property>
+      <con:name>polling_time</con:name>
+      <con:value>15000</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:beforeRunScript>import groovy.json.JsonSlurper
+import java.io.FileInputStream;
+
+////////////////////// Functions /////////////////////////
+
+def filterList(commaSperatedListContent){
+	def list = commaSperatedListContent.split(",");
+	def filteredList = [];
+	list.each(){
+	def entry = it.toLowerCase().replaceAll("^\\s+", "");
+	entry = entry.trim();
+	if(entry != ""){
+	filteredList.add(entry);}	
+	}
+	return filteredList;
+}
+
+def customListCompare(list1,list2){
+	//list1 is the list of tags that are given by user to execute.
+	//list2 is the list of tags for specific test suite.
+	boolean isRunnable = false;
+	for(int l1 in 0 .. list1.size()-1)
+	{
+		def inputTag = list1.get(l1);		
+		for(int l2 in 0 .. list2.size()-1){
+			
+			if(inputTag.toString() == list2.get(l2).toString()){
+				isRunnable =  true;
+				break;
+			}
+		}
+		if(isRunnable){
+			break;
+		}
+	}
+	return isRunnable;
+}
+///////////////////// Function //////////////////////////////////////////////
+
+
+// connect to json data file based on environment specified.
+String environment = context.expand('${#Project#environment}');
+
+String project_dir = context.expand('${projectDir}');
+String filepath = project_dir + File.separator + "test_data" + File.separator + project.name + File.separator + environment + ".json";
+log.info environment
+try{
+//File data_file = new File(filepath);
+def reader = new BufferedReader(new InputStreamReader(new FileInputStream(filepath),"UTF-8"))
+def json = new JsonSlurper().parse(reader);
+String endpoint = json.endpoint;
+String auth_username = json.authorization.username;
+String auth_password = json.authorization.password;
+project.setPropertyValue("auth_username",auth_username);
+project.setPropertyValue("auth_password",auth_password);
+project.setPropertyValue("alphatill_username",json.authorization.alphatill_username);
+project.setPropertyValue("alphatill_password",json.authorization.alphatill_password);
+project.setPropertyValue("gammatill_username",json.authorization.gammatill_username);
+project.setPropertyValue("gammatill_password",json.authorization.gammatill_password);
+project.setPropertyValue("application_endpoint",endpoint);
+project.setPropertyValue("webhook_workspace",json.webhook_workspace);
+project.setPropertyValue("webhook_workspace_name",json.webhook_workspace_name);
+project.setPropertyValue("custom_events_webhook",json.custom_events_webhook);
+}
+catch(Exception e){
+	log.info("Could not find the data file " + filepath + " Please check the data file. error == " + e.getMessage());
+	assert(false)
+}
+
+
+// Selecting the test suites to run based on the group.
+
+String executionGroups = project.getPropertyValue("execution_group")
+def filteredTags = filterList(executionGroups) ;
+
+def Conf_input = "";
+
+log.info "Reading the Configuration file.....";
+
+try{
+
+Conf_input = new File(project_dir + "/test_data/" + project.getName() + "/TestData.xml");
+
+def parser = new XmlParser(); //Get XML Parser.
+
+def Configuration = parser.parse(Conf_input);//Point parser to configration file.
+
+context.Configuration = Configuration;
+
+}
+catch(Exception e){
+		assert false : "Error in reading configuration file -- " + e.getMessage();
+}
+
+def testSuiteListToExecute = [];
+
+log.info "Fetching Test-Scenarios to execute....";
+
+def testSuites = project.getTestSuiteList();
+
+//Enable all TestSuites.
+for(j in 0 .. testSuites.size()-1){
+	//log.info testSuites.get(j).getName();
+	testSuites.get(j).setDisabled(false); 
+}
+//Decide which test suites to execute and eventually disabled the non-relevant test suites.
+		for(i in 0 .. testSuites.size()-1) {
+   			def testSuiteName = testSuites.get(i).getName();
+   			def tags = context.Configuration.TestSuite."${testSuiteName}".tags.text()
+   			def testSuiteTags = filterList(tags);
+   			   			
+   			if(filteredTags == null || filteredTags.empty){
+   				break;
+   			}
+   			else{
+   				if(testSuiteTags == null || testSuiteTags.empty){
+   					testSuites.get(i).setDisabled(true);
+   				}
+   				else{
+   					def isRunnable = customListCompare(filteredTags,testSuiteTags);
+   					log.info testSuiteName+":::"+isRunnable
+   					if(!isRunnable){
+   						testSuites.get(i).setDisabled(true);
+   					}
+   				}
+   			}
+   			
+		}</con:beforeRunScript>
+  <con:sensitiveInformation/>
+</con:soapui-project>
