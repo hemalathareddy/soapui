@@ -1316,7 +1316,7 @@ log.info campaignid
 log.info(context.getCurrentStep().getLabel())
 messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("campaignid",""+campaignid+"");
 
-</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-CAP-ORG" value="${#Project#orgid}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617701694264</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617788094264</con:value></con:property><con:property><con:name>randomId</con:name><con:value>VPQHMNIIWF</con:value></con:property><con:property><con:name>requestid</con:name><con:value>56832b96-23f0-4fbb-bfb6-2fd26ec4c007</con:value></con:property></con:properties></con:testCase><con:properties/>
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="X-CAP-ORG" value="${#Project#orgid}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1618379075480</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1618465475491</con:value></con:property><con:property><con:name>randomId</con:name><con:value>RQ2BCR6CWQ</con:value></con:property><con:property><con:name>requestid</con:name><con:value>51c89906-292b-4f49-887c-7f83ab63bcea</con:value></con:property></con:properties></con:testCase><con:properties/>
   </con:testSuite>
   <con:testSuite id="de558d39-3385-4245-9b31-98b3da168dd6" name="GenericPromotions_Scenarios">
     <con:description>TestSuite generated for REST Service [Create generic promotion]</con:description>
@@ -2286,19 +2286,19 @@ assert(responseData):"Promotion disable failed"</scriptText></con:configuration>
       <con:properties>
         <con:property>
           <con:name>starttime</con:name>
-          <con:value>1617706631703</con:value>
+          <con:value>1617735902960</con:value>
         </con:property>
         <con:property>
           <con:name>endtime</con:name>
-          <con:value>1617793031703</con:value>
+          <con:value>1617822302962</con:value>
         </con:property>
         <con:property>
           <con:name>promotionName</con:name>
-          <con:value>test_promotion_39611913</con:value>
+          <con:value>test_promotion_63643893</con:value>
         </con:property>
         <con:property>
           <con:name>promotionId</con:name>
-          <con:value>606c3e877aa6ae08e2483301</con:value>
+          <con:value>606cb0df6af2bc1e99e7f7a3</con:value>
         </con:property>
         <con:property>
           <con:name>tnxId</con:name>
@@ -6468,14 +6468,18 @@ assert(responseData):"Promotion disable failed"</scriptText>
         </con:property>
       </con:properties>
     </con:testCase>
-    <con:testCase id="66fc5e66-f4e6-46df-9139-9ace38185ae2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Buy X Get Y Free" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="groovy" name="Pre-requisite" id="87372893-914b-4ad3-9853-7c91b471c9ac"><con:settings/><con:config><script>def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+    <con:testCase id="66fc5e66-f4e6-46df-9139-9ace38185ae2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Buy X Get Y Free" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="groovy" name="Pre-requisite" id="87372893-914b-4ad3-9853-7c91b471c9ac"><con:settings/><con:config><script>//Creating a dummy promotion name
+//def promotionName = new Random().with {(1..10).collect { (('A'..'Z')+('0'..'9')).join()[ nextInt( (('A'..'Z')+('0'..'9')).join().length() ) ] }.join()}
+//testRunner.testCase.setPropertyValue('promotionName', promotionName)
+
+
 String starttime = System.currentTimeMillis().toString()
-String endtime = (System.currentTimeMillis()+86400000).toString()
-log.info promotionName
-//storing ids to test case level.
 testRunner.testCase.setPropertyValue("starttime", starttime);
+
+String endtime = (System.currentTimeMillis()+86400000).toString()
 testRunner.testCase.setPropertyValue("endtime", endtime);
-testRunner.testCase.setPropertyValue('promotionName', promotionName)</script></con:config></con:testStep><con:testStep type="restrequest" name="Promotion Manager Creates a promotion with condition buy x get y" id="ba727012-5a4a-499e-9798-948237863f29"><con:settings/><con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Promotion Manager Creates a promotion with condition buy x get y" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+
+//log.info promotionName</script></con:config></con:testStep><con:testStep type="restrequest" name="Promotion Manager Creates a promotion with condition buy x get y" id="ba727012-5a4a-499e-9798-948237863f29"><con:settings/><con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Promotion Manager Creates a promotion with condition buy x get y" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
@@ -6559,6 +6563,90 @@ assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></
           <con:jmsPropertyConfig/>
           <con:parameters/>
           <con:parameterOrder/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Promotion Manager Creates a promotion with condition buy 2x get y" id="3898b757-6a8e-48d7-a7e4-bc3938e43000"><con:settings/><con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Promotion Manager Creates a promotion with condition buy 2x get y" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+&lt;/xml-fragment></con:setting>
+            <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+          <con:request>{
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}t",
+    "messageLabel": "Buy 2X and get Y free",
+    "type": "POS",
+    "condition": {
+        "type": "PRODUCT",
+        "productCondition": {
+            "criteriaList": [
+                {
+                    "entity": "SKU",
+                    "operator": "IN",
+                    "values": [
+                        "${#Project#sku}"
+                    ]
+                }
+            ],
+            "kpi": "QUANTITY",
+            "value": "2.000000",
+            "operator": "GREATER_THAN_OR_EQUAL"
+        }
+    },
+    "action": {
+        "type": "FREE_PRODUCT",
+        "freeProductAction": {
+      	"productBasedCondition": {
+        	"type": "PRODUCT",
+        	"productCondition": {
+          "criteriaList": [
+            {
+              "entity": "SKU",
+              "operator": "IN",
+              "values": [
+                "${#Project#sku2}"
+              ]
+            }
+          ],
+          "kpi": "QUANTITY",
+          "value": "1.000000",
+          "operator": "EQUALS"
+        }
+      }
+    }
+    },
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#Project#campaignid},
+    "loyaltyEarningExpiryDays": 10,
+    "maxEarningPerCustomer": 2147483647,
+    "earnLimitedToSpecificAudience": false
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="e7bccfed-08ec-48ea-97ea-4113a14e57a5" name="Save Promotion Details"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionid_buy2xgety",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName__buy2xgety",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
         </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Evaluate for buy x get y free condition" id="317d15ee-d61a-43df-b5a8-03676ffd181e"><con:settings/><con:config service="Evaluate" resourcePath="/v1/promotions/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Evaluate for buy x get y free condition" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
@@ -6599,16 +6687,19 @@ promotionId = context.expand('${#TestCase#promotionId}')
 promotionName = context.expand('${#TestCase#promotionName}')
 
 isCreatedPromotionInAppliedPromotions = false;
-
 for(promotion in lstOfAppliedPromotions){
 	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku+" for discount "+promotion.discount)
 	if(promotion.id.equalsIgnoreCase(promotionId)){
-		if (appliedSku.equalsIgnoreCase(context.expand('${#TestCase#sku}')))
-		    assert promotion.discount.equalsIgnoreCase("200.000000")
-		else
+		if (appliedSku.equalsIgnoreCase(context.expand('${#Project#sku}'))){
 		    assert promotion.discount.equalsIgnoreCase("0.000000")
-		isCreatedPromotionInAppliedPromotions = true;
-		break;
+		    isCreatedPromotionInAppliedPromotions = true;
+			break;
+		    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+			isCreatedPromotionInAppliedPromotions = true;
+			break;
+		}
 	}
 }
 
@@ -6618,12 +6709,17 @@ isCreatedPromotionInAppliedPromotions2 = false;
 for(promotion in lstOfAppliedPromotions2){
 	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku1+" for discount "+promotion.discount)
 	if(promotion.id.equalsIgnoreCase(promotionId)){
-	    if (appliedSku1.equalsIgnoreCase(context.expand('${#TestCase#sku}')))
-		    assert promotion.discount.equalsIgnoreCase("0.000000")
-		else
+	    if (appliedSku1.equalsIgnoreCase(context.expand('${#Project#sku2}'))){
 		    assert promotion.discount.equalsIgnoreCase("200.000000")
-		isCreatedPromotionInAppliedPromotions2 = true;
-		break;
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+	    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+		}
+		
 	}
 }
 assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";
@@ -6678,7 +6774,559 @@ assert(responseData):"Promotion disable failed"</scriptText>
             </con:parameterOrder>
           </con:restRequest>
         </con:config>
-      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1617709878207</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1617796278210</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>test_promotion_41843339t</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>606c69c27537dc2c0f487194</con:value></con:property></con:properties></con:testCase><con:properties>
+      </con:testStep><con:testStep type="restrequest" name="Evaluate for buy 2x get y free condition" id="1b1e6f60-7080-4031-bb8f-8bcd383e1cdd"><con:settings/><con:config service="Evaluate" resourcePath="/v1/promotions/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Evaluate for buy 2x get y free condition" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${#Project#authorization}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
+          <con:request>{
+  "amount": "1000.000000",
+  "customerId": 373429184,
+  "cartItems": [
+    {
+      "referenceId": "ccff6637-545e-407f-96b3-9d60d70b6e51",
+      "sku": "${#Project#sku}",
+      "amount": "1000.000000",
+      "qty":  "2.000000"
+    },
+     {
+      "referenceId": "ccff6637-545e-407f-96b3-9760d70b6e51",
+      "sku": "${#Project#sku2}",
+      "amount": "200.000000",
+      "qty": "1.000000"
+    }]
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="dc57020c-e5e6-4fb3-bd8e-11837e808767" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
+appliedSku = json.data.cartItems[0].sku
+lstOfAppliedPromotions2 = json.data.cartItems[1].appliedPromotions
+appliedSku1 = json.data.cartItems[1].sku
+
+promotionId = context.expand('${#TestCase#promotionid_buy2xgety}')
+promotionName = context.expand('${#TestCase#promotionName__buy2xgety}')
+
+isCreatedPromotionInAppliedPromotions = false;
+for(promotion in lstOfAppliedPromotions){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+		if (appliedSku.equalsIgnoreCase(context.expand('${#Project#sku}'))){
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions = true;
+		    assert promotion.promotionAppliedOnQuantity.equalsIgnoreCase("2.000000")
+			break;
+		    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+		    
+			isCreatedPromotionInAppliedPromotions = true;
+			break;
+		}
+	}
+}
+
+log.info isCreatedPromotionInAppliedPromotions
+
+isCreatedPromotionInAppliedPromotions2 = false;
+for(promotion in lstOfAppliedPromotions2){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku1+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+	    if (appliedSku1.equalsIgnoreCase(context.expand('${#Project#sku2}'))){
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+	    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    assert promotion.promotionAppliedOnQuantity.equalsIgnoreCase("2.000000")
+		    break;
+		}
+		
+	}
+}
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";
+assert(isCreatedPromotionInAppliedPromotions2 == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#tillusername}</con:username>
+            <con:password>202cb962ac59075b964b07152d234b70</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="De-activate Promotion 1" id="3327ee07-584a-4dd2-b73c-8623afef96e9">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="54049dc6-1c2c-46ee-a941-fa1f735abcc0" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionid_buy2xgety}"/>
+</con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep><con:testStep type="restrequest" name="Promotion Manager Creates a promotion with condition buy 2x get 2y" id="58dd947c-6aa2-422a-a39d-2396b942dce3"><con:settings/><con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Promotion Manager Creates a promotion with condition buy x get 2y" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+&lt;/xml-fragment></con:setting>
+            <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+          <con:request>{
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}t",
+    "messageLabel": "Buy 2X and get 2Y free",
+    "type": "POS",
+    "condition": {
+        "type": "PRODUCT",
+        "productCondition": {
+            "criteriaList": [
+                {
+                    "entity": "SKU",
+                    "operator": "IN",
+                    "values": [
+                        "${#Project#sku}"
+                    ]
+                }
+            ],
+            "kpi": "QUANTITY",
+            "value": "2.000000",
+            "operator": "GREATER_THAN_OR_EQUAL"
+        }
+    },
+    "action": {
+        "type": "FREE_PRODUCT",
+        "freeProductAction": {
+      	"productBasedCondition": {
+        	"type": "PRODUCT",
+        	"productCondition": {
+          "criteriaList": [
+            {
+              "entity": "SKU",
+              "operator": "IN",
+              "values": [
+                "${#Project#sku2}"
+              ]
+            }
+          ],
+          "kpi": "QUANTITY",
+          "value": "2.000000",
+          "operator": "EQUALS"
+        }
+      }
+    }
+    },
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#Project#campaignid},
+    "loyaltyEarningExpiryDays": 10,
+    "maxEarningPerCustomer": 2147483647,
+    "earnLimitedToSpecificAudience": false
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="e7bccfed-08ec-48ea-97ea-4113a14e57a5" name="Save Promotion Details"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionid_buy2xget2y",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName__buy2xget2y",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Evaluate for buy 2x get 2y free condition" id="46a5e5b1-502c-4c7a-ac3f-869fb5f51e61"><con:settings/><con:config service="Evaluate" resourcePath="/v1/promotions/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Evaluate for buy x get 2y free condition" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${#Project#authorization}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
+          <con:request>{
+  "amount": "1000.000000",
+  "customerId": 373429184,
+  "cartItems": [
+    {
+      "referenceId": "ccff6637-545e-407f-96b3-9d60d70b6e51",
+      "sku": "${#Project#sku}",
+      "amount": "1000.000000",
+      "qty":  "2.000000"
+    },
+     {
+      "referenceId": "ccff6637-545e-407f-96b3-9760d70b6e51",
+      "sku": "${#Project#sku2}",
+      "amount": "200.000000",
+      "qty": "2.000000"
+    }]
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="dc57020c-e5e6-4fb3-bd8e-11837e808767" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
+appliedSku = json.data.cartItems[0].sku
+lstOfAppliedPromotions2 = json.data.cartItems[1].appliedPromotions
+appliedSku1 = json.data.cartItems[1].sku
+
+promotionId = context.expand('${#TestCase#promotionid_buy2xget2y}')
+promotionName = context.expand('${#TestCase#promotionid_buy2xget2y}')
+
+isCreatedPromotionInAppliedPromotions = false;
+for(promotion in lstOfAppliedPromotions){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+		if (appliedSku.equalsIgnoreCase(context.expand('${#Project#sku}'))){
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions = true;
+			break;
+		    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+			isCreatedPromotionInAppliedPromotions = true;
+			break;
+		}
+	}
+}
+
+log.info isCreatedPromotionInAppliedPromotions
+
+isCreatedPromotionInAppliedPromotions2 = false;
+for(promotion in lstOfAppliedPromotions2){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku1+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+	    if (appliedSku1.equalsIgnoreCase(context.expand('${#Project#sku2}'))){
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+	    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+		}
+		
+	}
+}
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";
+assert(isCreatedPromotionInAppliedPromotions2 == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#tillusername}</con:username>
+            <con:password>202cb962ac59075b964b07152d234b70</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="De-activate Promotion 2" id="078cbf55-a68c-42b2-8774-6cdc98d693d7">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion 2" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="54049dc6-1c2c-46ee-a941-fa1f735abcc0" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionid_buy2xget2y}"/>
+</con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep><con:testStep type="restrequest" name="Promotion Manager Creates a promotion with condition buy x get 2y" id="abcf662a-58c9-4f1e-9655-e4239bbbd3ed"><con:settings/><con:config service="createPosPromotion" resourcePath="/internal/v1/promotions" methodName="createPosPromotion" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Promotion Manager Creates a promotion with condition buy x get 2y" id="0022cbf4-6c96-4073-a4d7-0ea694808616" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  &lt;con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+&lt;/xml-fragment></con:setting>
+            <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+          <con:request>{
+    "name": "test_promotion_${=org.apache.commons.lang.RandomStringUtils.randomNumeric(8)}t",
+    "messageLabel": "Buy 2X and get 2Y free",
+    "type": "POS",
+    "condition": {
+        "type": "PRODUCT",
+        "productCondition": {
+            "criteriaList": [
+                {
+                    "entity": "SKU",
+                    "operator": "IN",
+                    "values": [
+                        "${#Project#sku}"
+                    ]
+                }
+            ],
+            "kpi": "QUANTITY",
+            "value": "1.000000",
+            "operator": "GREATER_THAN_OR_EQUAL"
+        }
+    },
+    "action": {
+        "type": "FREE_PRODUCT",
+        "freeProductAction": {
+      	"productBasedCondition": {
+        	"type": "PRODUCT",
+        	"productCondition": {
+          "criteriaList": [
+            {
+              "entity": "SKU",
+              "operator": "IN",
+              "values": [
+                "${#Project#sku2}"
+              ]
+            }
+          ],
+          "kpi": "QUANTITY",
+          "value": "2.000000",
+          "operator": "EQUALS"
+        }
+      }
+    }
+    },
+    "startDate": ${#TestCase#starttime},
+    "endDate": ${#TestCase#endtime},
+    "campaignId": ${#Project#campaignid},
+    "loyaltyEarningExpiryDays": 10,
+    "maxEarningPerCustomer": 2147483647,
+    "earnLimitedToSpecificAudience": false
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotion/generic</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="e7bccfed-08ec-48ea-97ea-4113a14e57a5" name="Save Promotion Details"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+
+// getting and saving promotion name and ID to test case level.
+def promotionId = json.data.id
+def promotionName = json.data.name
+messageExchange.modelItem.testCase.setPropertyValue("promotionid_buyxget2y",promotionId);
+messageExchange.modelItem.testCase.setPropertyValue("promotionName__buyxget2y",promotionName);
+
+orgIdInResponse = json.data.orgId.toString()
+orgIdExpected = context.expand('${#Project#orgid}')
+
+assert(orgIdInResponse == orgIdExpected):"Org Id is not expected"</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Evaluate for buy x get 2y free condition" id="4a1d3a8c-5c14-4bd5-a0d5-48dec24abacd"><con:settings/><con:config service="Evaluate" resourcePath="/v1/promotions/evaluate" methodName="Evaluate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Evaluate for buy x get 2y free condition" id="76ec8db7-d854-4d98-a590-3b20231743f0" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Authorization" value="${#Project#authorization}"/>
+  &lt;con:entry key="X-CAP-API-AUTH-ENTITY-ID" value="${#Project#tillid}"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#externalEndpoint}</con:endpoint>
+          <con:request>{
+  "amount": "1000.000000",
+  "customerId": 373429184,
+  "cartItems": [
+    {
+      "referenceId": "ccff6637-545e-407f-96b3-9d60d70b6e51",
+      "sku": "${#Project#sku}",
+      "amount": "1000.000000",
+      "qty":  "1.000000"
+    },
+     {
+      "referenceId": "ccff6637-545e-407f-96b3-9760d70b6e51",
+      "sku": "${#Project#sku2}",
+      "amount": "200.000000",
+      "qty": "2.000000"
+    }]
+}</con:request>
+          <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/v1/promotion/evaluate</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="dc57020c-e5e6-4fb3-bd8e-11837e808767" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+lstOfAppliedPromotions = json.data.cartItems[0].appliedPromotions
+appliedSku = json.data.cartItems[0].sku
+lstOfAppliedPromotions2 = json.data.cartItems[1].appliedPromotions
+appliedSku1 = json.data.cartItems[1].sku
+
+promotionId = context.expand('${#TestCase#promotionid_buyxget2y}')
+promotionName = context.expand('${#TestCase#promotionid_buyxget2y}')
+
+isCreatedPromotionInAppliedPromotions = false;
+for(promotion in lstOfAppliedPromotions){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+		if (appliedSku.equalsIgnoreCase(context.expand('${#Project#sku}'))){
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions = true;
+			break;
+		    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+			isCreatedPromotionInAppliedPromotions = true;
+			break;
+		}
+	}
+}
+
+log.info isCreatedPromotionInAppliedPromotions
+
+isCreatedPromotionInAppliedPromotions2 = false;
+for(promotion in lstOfAppliedPromotions2){
+	log.info("Checking promotion "+promotion.id+" for sku "+appliedSku1+" for discount "+promotion.discount)
+	if(promotion.id.equalsIgnoreCase(promotionId)){
+	    if (appliedSku1.equalsIgnoreCase(context.expand('${#Project#sku2}'))){
+		    assert promotion.discount.equalsIgnoreCase("200.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+	    }
+		else{
+		    assert promotion.discount.equalsIgnoreCase("0.000000")
+		    isCreatedPromotionInAppliedPromotions2 = true;
+		    break;
+		}
+		
+	}
+}
+assert(isCreatedPromotionInAppliedPromotions == true) : "Created promotion is not in list of applied promotions";
+assert(isCreatedPromotionInAppliedPromotions2 == true) : "Created promotion is not in list of applied promotions";</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#tillusername}</con:username>
+            <con:password>202cb962ac59075b964b07152d234b70</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="De-activate Promotion 3" id="7b162cbf-055f-4bc7-8028-c94604efc50e">
+        <con:settings/>
+        <con:config service="DeactivatePromotion" resourcePath="/internal/v1/promotions/{promotionid}/deactivate" methodName="Deactivate 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="De-activate Promotion 3" id="82128d68-6af6-4042-83e9-4d9233a29bfa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://${#Project#endpoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://promotion-engine-api.crm-nightly-new.cc.capillarytech.com/internal/v1/promotions//deactivate</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="54049dc6-1c2c-46ee-a941-fa1f735abcc0" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+log.info(json)
+responseData = json.data
+log.info(responseData)
+assert(responseData):"Promotion disable failed"</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+  <con:entry key="X-CAP-API-AUTH-ORG-ID" value="${#Project#orgid}"/>
+  <con:entry key="AUTH-COOKIE" value="${#Project#token}"/>
+  <con:entry key="promotionid" value="${#TestCase#promotionid_buyxget2y}"/>
+</con:parameters>
+            <con:parameterOrder>
+              <con:entry>promotionid</con:entry>
+              <con:entry>X-CAP-API-AUTH-ORG-ID</con:entry>
+              <con:entry>AUTH-COOKIE</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep><con:properties><con:property><con:name>starttime</con:name><con:value>1618382069732</con:value></con:property><con:property><con:name>endtime</con:name><con:value>1618468469735</con:value></con:property><con:property><con:name>promotionName</con:name><con:value>test_promotion_75110701t</con:value></con:property><con:property><con:name>promotionId</con:name><con:value>60768cf67331ae3f8592ccd6</con:value></con:property><con:property><con:name>promotionid_buy2xgety</con:name><con:value>60768cf67331ae3f8592cce1</con:value></con:property><con:property><con:name>promotionName__buy2xgety</con:name><con:value>test_promotion_12813750t</con:value></con:property><con:property><con:name>promotionid_buy2xget2y</con:name><con:value>60768cf97331ae3f8592ccf0</con:value></con:property><con:property><con:name>promotionName__buy2xget2y</con:name><con:value>test_promotion_70438252t</con:value></con:property><con:property><con:name>promotionid_buyxget2y</con:name><con:value>60768cfa7331ae3f8592ccfd</con:value></con:property><con:property><con:name>promotionName__buyxget2y</con:name><con:value>test_promotion_96854774t</con:value></con:property></con:properties></con:testCase><con:properties>
       <con:property>
         <con:name>rnd</con:name>
         <con:value>39077</con:value>
@@ -7034,9 +7682,9 @@ context.JsonContent &lt;&lt; [(KEY): [(context.INDEX): ["request": reqBody, "res
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE3ODAzOTI3LCJpYXQiOjE2MTc3MTc1MjksImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.saiyyY3qrjFDXbFR9_ILNsCFOSMoE0VPQH3ZVG_j3xY</con:value>
+      <con:value>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6WyIxNDc4MyJdLCJvcmdJRCI6MCwiZXhwIjoxNjE4NDY1NDY4LCJpYXQiOjE2MTgzNzkwNjgsImlzcyI6ImNhcGlsbGFyeXRlY2guY29tIiwiYXVkIjoiY2FwaWxsYXJ5LGludG91Y2gsYXJ5YSxyZW9uLGFwcHMiLCJzb3VyY2UiOiJXRUJBUFAifQ.y2o8_TCKcFSd1UXngi-GWtYyrwi2VP5C2JdO9lrT3D4</con:value>
     </con:property>
-  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>606c2b7104c39f66a1f4f376</con:value></con:property><con:property><con:name>sku2</con:name><con:value>White1</con:value></con:property><con:property><con:name>campaignid</con:name><con:value>1024390</con:value></con:property></con:properties>
+  <con:property><con:name>intouchurl</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>disableids</con:name><con:value>[]</con:value></con:property><con:property><con:name>disableid</con:name><con:value>606c2b7104c39f66a1f4f376</con:value></con:property><con:property><con:name>sku2</con:name><con:value>White1</con:value></con:property><con:property><con:name>campaignid</con:name><con:value>1026515</con:value></con:property></con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
