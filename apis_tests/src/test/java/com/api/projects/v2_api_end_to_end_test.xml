@@ -1410,14 +1410,17 @@
       "primary": true,
       "verified": true
     }],
-    "source": "WECHAT",
-    "accountId": "WECHAT-CM"
+    "source": "${#TestCase#source}",
+    "accountId": "${#TestCase#accountId}"
   }],
   "loyaltyInfo": {
     "loyaltyType": "loyalty"
   },
   "referralCode": ""
-}</con:request><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API">
+}</con:request><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="3c23b037-2bb0-4e14-94ee-3c9da2355aaa" wadlVersion="http://wadl.dev.java.net/2009/02" name="getOrgSourceV2" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="GetOrgSourceV2" path="/v2/org/${#Project#orgId}/sources" id="e9056708-b127-4619-a537-3250c18ee0de"><con:settings/><con:parameters><con:parameter><con:name>details</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>source_name</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="GetOrgSourceV2 1" id="bf71346b-99d3-4519-b524-c4a267b6c455" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:sour="https://crm-nightly-new.cc.capillarytech.com/v2/50660/sources">sour:Fault</con:element></con:representation><con:request name="Request 1" id="618dc494-e15e-4021-84c4-6c1df0be8d08" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="details" value="true"/>
+  <con:entry key="source_name" value="${#TestCase#source}"/>
+</con:parameters><con:parameterOrder><con:entry>details</con:entry><con:entry>source_name</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="617b1441-f979-4855-baef-f5bc9610b80c" name="Reusable API">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@max_rows">1000</con:setting>
       <con:setting id="com.eviware.soapui.impl.wsdl.panels.testcase.JTestRunLog$OptionsForm@errors_only">false</con:setting>
@@ -2556,7 +2559,24 @@ def startDate = new Date()
 testRunner.testCase.setPropertyValue("mobile","919" + mobile);
 testRunner.testCase.setPropertyValue("billnumber","bill" + mobile);
 testRunner.testCase.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
-log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV2" id="d9b3e6d5-0ead-4ed9-b9c5-4f731e28cbf4"><con:settings/><con:config service="customerV2" resourcePath="/v2/customers" methodName="CustomerV2Add" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV2" id="8758edb4-9fcb-467d-8a7b-16d3c4685745" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="groovy" name="setPropertyVariable" id="222847e0-aa6d-412b-8b3a-1171a13d7af0"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("source","WECHAT");
+testRunner.testCase.setPropertyValue("identifierName","mobile");
+testRunner.testCase.setPropertyValue("identifierValue",'${#TestCase#mobile}');
+</script></con:config></con:testStep><con:testStep type="restrequest" name="getAccountidForOrgSourceWechat" id="221dcd54-b532-4564-8002-a5052f5aa2c2"><con:settings/><con:config service="getOrgSourceV2" resourcePath="/v2/org/${#Project#orgId}/sources" methodName="GetOrgSourceV2 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAccountidForOrgSourceWechat" id="618dc494-e15e-4021-84c4-6c1df0be8d08" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/org/50660/sources</con:originalUri><con:assertion type="GroovyScriptAssertion" id="489132e5-af12-48fc-87c7-1acee2187d58" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+accountId= json.data[0].sourceAccountIdentifier
+log.info "Fetched AccountId for Source : "+accountId
+
+messageExchange.modelItem.testCase.setPropertyValue("accountId",accountId);</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="details" value="true"/>
+  <con:entry key="source_name" value="${#TestCase#source}"/>
+</con:parameters><con:parameterOrder><con:entry>details</con:entry><con:entry>source_name</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV2" id="d9b3e6d5-0ead-4ed9-b9c5-4f731e28cbf4"><con:settings/><con:config service="customerV2" resourcePath="/v2/customers" methodName="CustomerV2Add" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV2" id="8758edb4-9fcb-467d-8a7b-16d3c4685745" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="Accept" value="application/json"/>
   &lt;con:entry key="Content-Type" value="application/json"/>
 &lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
@@ -2611,14 +2631,7 @@ customerId = json.createdId
 log.info customerId
 messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
 
-</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="setPropertyVariable" id="222847e0-aa6d-412b-8b3a-1171a13d7af0"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
-String mobile = timestamp.substring(4);
-def startDate = new Date()
-testRunner.testCase.setPropertyValue("source","WECHAT");
-testRunner.testCase.setPropertyValue("accountId","WECHAT-APIAUTO");
-testRunner.testCase.setPropertyValue("identifierName","mobile");
-testRunner.testCase.setPropertyValue("identifierValue",'${#TestCase#mobile}');
-</script></con:config></con:testStep><con:testStep type="restrequest" name="AddRegularTransaction" id="83fd61e8-6281-46b0-95c4-c1cb7d9b28ac"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AddRegularTransaction" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="AddRegularTransaction" id="83fd61e8-6281-46b0-95c4-c1cb7d9b28ac"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AddRegularTransaction" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="Accept" value="application/json"/>
   &lt;con:entry key="Content-Type" value="application/json"/>
 &lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
@@ -2706,14 +2719,14 @@ assert id == Long.valueOf(transactionId)
 
 //Assert attribute
 assert billDetails.amount == 200;
-assert billDetails.billNumber == context.expand('${#TestSuite#billnumber}');
+assert billDetails.billNumber == context.expand('${#TestCase#billnumber}');
 assert billDetails.discount == 10;
 assert billDetails.grossAmount ==110;
 assert billDetails.note == "this is test";
 assert billDetails.returnDetails.canceled == false;
 assert billDetails.niReturnDetails[0] == null 
 assert billDetails.invalidBill == false;
-assert billDetails.billingTime ==context.expand('${#TestSuite#billingTime}')
+assert billDetails.billingTime ==context.expand('${#TestCase#billingTime}')
 
 //Assert customFields
 assert customFields[0] == null
@@ -2794,10 +2807,264 @@ for(int i=0;i&lt;lineItems.size();i++)
 log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="tender" value="true"/>
   <con:entry key="type" value="REGULAR"/>
-</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>null</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373580939</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919925625024</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill925625024</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-20T19:03:45+05:30</con:value></con:property><con:property><con:name>source</con:name><con:value>WECHAT</con:value></con:property><con:property><con:name>accountId</con:name><con:value>WECHAT-APIAUTO</con:value></con:property><con:property><con:name>identifierName</con:name><con:value>mobile</con:value></con:property><con:property><con:name>identifierValue</con:name><con:value>${#TestCase#mobile}</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919919991799</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill919991799</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-20T17:29:51+05:30</con:value></con:property></con:properties></con:testSuite><con:properties>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147640555</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373583981</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919997269711</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill997269711</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-21T14:57:49+05:30</con:value></con:property><con:property><con:name>source</con:name><con:value>WECHAT</con:value></con:property><con:property><con:name>accountId</con:name><con:value>WECHAT-APIAUTO</con:value></con:property><con:property><con:name>identifierName</con:name><con:value>mobile</con:value></con:property><con:property><con:name>identifierValue</con:name><con:value>${#TestCase#mobile}</con:value></con:property></con:properties></con:testCase><con:testCase id="bfbf098c-42d9-4f4a-9869-49c400d93cab" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddValiadRegularTransactionForWEB_ENGAGECustomer" searchProperties="true"><con:settings/><con:testStep type="groovy" name="generateVariables" id="3994d8ee-21d7-4e19-9f03-b26ad674ac40"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);
+testRunner.testCase.setPropertyValue("billnumber","bill" + mobile);
+testRunner.testCase.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="groovy" name="setPropertyVariable" id="7055547b-f527-4ebb-b224-9abcf3b65986"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("source","WEB_ENGAGE");
+testRunner.testCase.setPropertyValue("identifierName","mobile");
+testRunner.testCase.setPropertyValue("identifierValue",'${#TestCase#mobile}');
+</script></con:config></con:testStep><con:testStep type="restrequest" name="getAccountidForOrgSourceWechat" id="2cd33cb3-e694-4801-8db0-75c8eef73fe3"><con:settings/><con:config service="getOrgSourceV2" resourcePath="/v2/org/${#Project#orgId}/sources" methodName="GetOrgSourceV2 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAccountidForOrgSourceWechat" id="618dc494-e15e-4021-84c4-6c1df0be8d08" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/org/50660/sources</con:originalUri><con:assertion type="GroovyScriptAssertion" id="489132e5-af12-48fc-87c7-1acee2187d58" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+accountId= json.data[0].sourceAccountIdentifier
+log.info "Fetched AccountId for Source : "+accountId
+
+messageExchange.modelItem.testCase.setPropertyValue("accountId",accountId);</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="details" value="true"/>
+  <con:entry key="source_name" value="${#TestCase#source}"/>
+</con:parameters><con:parameterOrder><con:entry>details</con:entry><con:entry>source_name</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV2" id="79f4de80-f32c-474b-82c9-b7e663a9b077"><con:settings/><con:config service="customerV2" resourcePath="/v2/customers" methodName="CustomerV2Add" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV2" id="8758edb4-9fcb-467d-8a7b-16d3c4685745" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "profiles": [{
+    "firstName": "Capillary",
+    "lastName": "Customer",
+    "identifiers": [{
+      "type": "mobile",
+      "value": "${#TestCase#mobile}"
+    },
+{
+      "type": "email",
+      "value": "${#TestCase#mobile}@email.com"
+    },
+{
+      "type": "externalId",
+      "value": "x${#TestCase#mobile}"
+    },
+{
+      "type": "cuid",
+      "value": "cuid_${#TestCase#mobile}"
+    },
+    {
+      "type": "unionId",
+      "value": "unionId_${#TestCase#mobile}"
+    }
+   ],
+    "commChannels": [{
+      "type": "mobile",
+      "value": "${#TestCase#mobile}",
+      "primary": true,
+      "verified": true
+    }, {
+      "type": "email",
+      "value": "${#TestCase#mobile}@mail.com",
+      "primary": true,
+      "verified": true
+    }],
+    "source": "${#TestCase#source}",
+    "accountId": "${#TestCase#accountId}"
+  }],
+  "loyaltyInfo": {
+    "loyaltyType": "loyalty"
+  },
+  "referralCode": ""
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/customers</con:originalUri><con:assertion type="GroovyScriptAssertion" id="654e0e2a-b5ff-4dd2-9b90-56f2448a668d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+customerId = json.createdId
+log.info customerId
+messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="AddRegularTransaction" id="00f6c597-2424-4bf5-81e6-5dfc8f55a3ee"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AddRegularTransaction" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestCase#billnumber}",
+  "billingDate": "${#TestCase#billingTime}",
+  "discount": "10",
+  "billAmount": "200",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "capillary",
+    "ship_last_name": "customer"
+   },
+  "customFields": {
+    "paymentmode": "abc"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "sku_1",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 1.0,
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions</con:originalUri><con:assertion type="GroovyScriptAssertion" id="ccfdc791-f143-4134-ac00-feac0715c544" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+//set transactionId
+messageExchange.modelItem.testCase.setPropertyValue("transactionId",json.createdId+"");
+
+
+def transactionId = json.createdId;
+assert transactionId == json.createdId
+assert json.sideEffects[0].rawAwardedPoints==20
+assert json.sideEffects[0].awardedPoints==20
+assert json.sideEffects[0].type=="points"
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="${#TestCase#identifierName}"/>
+  <con:entry key="accountId" value="${#TestCase#accountId}"/>
+  <con:entry key="identifierValue" value="${#TestCase#identifierValue}"/>
+  <con:entry key="source" value="${#TestCase#source}"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="transactionV2Get" id="c08b899b-c5f4-430f-a70f-d6145c83aabd"><con:settings/><con:config service="transactionV2Get" resourcePath="/v2/transactions/${#TestCase#transactionId}/" methodName="RegularTransactionV2Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="transactionV2Get" id="2d8b932f-7dff-4d41-99f3-14a82607d9da" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions//</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5135a58b-4e42-4c9b-9f5a-293450308dcb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="10e727e2-6d44-4303-bc58-ce96f9b1f2ac" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+transactionId =context.expand('${#TestCase#transactionId}');
+
+def attribution = json.attribution;
+def billDetails = json.billDetails;//Done
+def customFields =json.customFields; //Done
+def addWithLocalCurrency = json.addWithLocalCurrency;//Done
+def async = json.async;//Done
+def useV2 = json.useV2; //Done
+def customerId = json.customerId; //Done
+def id = json.id; //Done
+def lineItems = json.lineItems;
+def outlierStatus = json.outlierStatus; //Done
+def type = json.type;//Done
+def warnings = json.warnings //Done
+def lifeTimePurchases = json.lifeTimePurchases//Done
+def ignorePoints = json.ignorePoints //Done
+def niReturnDetails = json.niReturnDetails //Done
+def basketSize = json.basketSize //Done
+def returnDetails = json.returnDetails //Done
+
+
+assert id == Long.valueOf(transactionId)
+
+//Assert attribute
+assert billDetails.amount == 200;
+assert billDetails.billNumber == context.expand('${#TestCase#billnumber}');
+assert billDetails.discount == 10;
+assert billDetails.grossAmount ==110;
+assert billDetails.note == "this is test";
+assert billDetails.returnDetails.canceled == false;
+assert billDetails.niReturnDetails[0] == null 
+assert billDetails.invalidBill == false;
+assert billDetails.billingTime ==context.expand('${#TestCase#billingTime}')
+
+//Assert customFields
+assert customFields[0] == null
+
+//Assert addWithLocalCurrency
+assert addWithLocalCurrency == false
+
+//Assert useV2
+assert useV2 ==false
+
+//Assert async
+assert async ==false
+
+//Assert customerId
+assert customerId == Long.valueOf(context.expand('${#TestCase#customerId}'));
+
+//Assert type
+assert type == "REGULAR"
+
+//Assert outlierStatus
+assert outlierStatus == "NORMAL"
+
+//Assert warnings
+assert warnings[0] == null  
+
+//Assert lifeTimePurchases
+assert lifeTimePurchases == 0
+
+//Assert ignorePoints
+assert ignorePoints == false
+
+//Assert niReturnDetails'
+assert niReturnDetails[0] == null
+
+//Assert basketSize
+assert basketSize == 1
+
+//Assert returnDetails
+assert returnDetails.canceled == false
+
+//Assert  lineItems
+assert  lineItems.size()==1
+for(int i=0;i&lt;lineItems.size();i++)
+{
+	assert lineItems[i].details.amount ==100.5;
+	assert lineItems[i].details.description =="";
+	assert lineItems[i].details.discount == 0;
+	assert lineItems[i].details.itemCode == "sku_1";
+	assert lineItems[i].details.qty == 1;
+	assert lineItems[i].details.rate == 100.5 ;
+	assert lineItems[i].details.serial == 0;
+	assert lineItems[i].details.value == 0;
+	assert lineItems[i].details.returnable == true
+	assert lineItems[i].details.returnableDays == -1;
+	assert lineItems[i].details.attributes[0] == null ;
+	assert lineItems[i].details.extendedFields.GrossWeight == 10.5;
+	assert lineItems[i].details.extendedFields.MetalRate == 22.02;
+	assert lineItems[i].details.attributesSet[0] == null;
+	assert lineItems[i].outlierStatus == "NORMAL";
+	assert lineItems[i].returnDetails[0] == null
+	assert lineItems[i].valid == true;
+	assert lineItems[i].returnLineItemsDtos[0] == null; 
+	assert lineItems[i].niReturnLineItemsDtos[0] == null;
+	assert lineItems[i].addonDetails[0] == null
+	assert lineItems[i].splitItemsDetails[0] == null
+	assert lineItems[i].niReturn == false
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="tender" value="true"/>
+  <con:entry key="type" value="REGULAR"/>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147640556</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373583983</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919997688780</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill997688780</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-21T15:04:48+05:30</con:value></con:property><con:property><con:name>source</con:name><con:value>WEB_ENGAGE</con:value></con:property><con:property><con:name>accountId</con:name><con:value>WEBENGAGE-APIAUTO</con:value></con:property><con:property><con:name>identifierName</con:name><con:value>mobile</con:value></con:property><con:property><con:name>identifierValue</con:name><con:value>${#TestCase#mobile}</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919919991799</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill919991799</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-20T17:29:51+05:30</con:value></con:property></con:properties></con:testSuite><con:properties>
     <con:property>
       <con:name>environment</con:name>
-      <con:value>nightly</con:value>
+      <con:value>crm-nightly-new_50660</con:value>
     </con:property>
     <con:property>
       <con:name>execution_group</con:name>
@@ -2817,11 +3084,11 @@ log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:c
     </con:property>
     <con:property>
       <con:name>webhook_workspace</con:name>
-      <con:value>enqovte5kgmv6a1.m.pipedream.net</con:value>
+      <con:value>enfmnlq9rj2i6m3.m.pipedream.net</con:value>
     </con:property>
     <con:property>
       <con:name>webhook_workspace_name</con:name>
-      <con:value>endtoend_hook_ng</con:value>
+      <con:value>apiauto_webhook</con:value>
     </con:property>
     <con:property>
       <con:name>custom_events_webhook</con:name>
@@ -2847,7 +3114,7 @@ log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:c
       <con:name>polling_time</con:name>
       <con:value>15000</con:value>
     </con:property>
-  </con:properties>
+  <con:property><con:name>orgId</con:name><con:value>50660</con:value></con:property></con:properties>
   <con:wssContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
@@ -2904,6 +3171,8 @@ def json = new JsonSlurper().parse(reader);
 String endpoint = json.endpoint;
 String auth_username = json.authorization.username;
 String auth_password = json.authorization.password;
+log.info json.orgId
+project.setPropertyValue("orgId",json.orgId);
 project.setPropertyValue("auth_username",auth_username);
 project.setPropertyValue("auth_password",auth_password);
 project.setPropertyValue("alphatill_username",json.authorization.alphatill_username);
