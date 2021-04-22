@@ -1,7 +1,6 @@
 {
 "orgId": "50371",
-"endpoint": "promotion-engine-api.crm-nightly-new.cc.capillarytech.com",
-"externalEndpoint": "crm-nightly-new.cc.capillarytech.com/api_gateway",
+"endpoint": "crm-nightly-new.cc.capillarytech.com",
 "responseSLA":"300000",
 "tillid":"50022820",
 "store":"50022813",
