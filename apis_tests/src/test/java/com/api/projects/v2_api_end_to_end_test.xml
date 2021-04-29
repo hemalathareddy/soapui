@@ -1981,7 +1981,7 @@ else{
   "keyName": "${#TestCase#config_name}",
   "scope": "ORG",
   "value": "${#TestCase#config_value}"
-}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/organization/configs</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>config_name</con:name><con:value>CONF_LOYALTY_IS_BILL_NUMBER_UNIQUE</con:value></con:property><con:property><con:name>config_value</con:name><con:value>0</con:value></con:property></con:properties></con:testCase><con:testCase id="6e71980a-ee7a-45cb-8ad1-b70abf867847" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddNewProductAttribute" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addProductAttribute" id="8d33aa81-e838-476b-9582-d8b088bcfb9d"><con:settings/><con:config service="addProductAttribute" resourcePath="/v1.1/product/attributes" methodName="AddProductAttribute 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addProductAttribute" id="ff509996-e17f-4d67-b646-f33359fd8bbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/organization/configs</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>config_name</con:name><con:value>CONF_LOYALTY_IS_BILL_NUMBER_UNIQUE</con:value></con:property><con:property><con:name>config_value</con:name><con:value>1</con:value></con:property></con:properties></con:testCase><con:testCase id="6e71980a-ee7a-45cb-8ad1-b70abf867847" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddNewProductAttribute" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addProductAttribute" id="8d33aa81-e838-476b-9582-d8b088bcfb9d"><con:settings/><con:config service="addProductAttribute" resourcePath="/v1.1/product/attributes" methodName="AddProductAttribute 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addProductAttribute" id="ff509996-e17f-4d67-b646-f33359fd8bbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "product": [
       {
@@ -2001,7 +2001,7 @@ else{
       }
     ]
   }
-}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/product/attributes</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="format" value="json" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>attribute_lable</con:name><con:value>color</con:value></con:property><con:property><con:name>attribute_name</con:name><con:value>color</con:value></con:property></con:properties></con:testCase><con:testCase id="58e007b6-6c23-43d4-9736-d38127b6d94e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddProduct" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addProductWithoutAttribute" id="4d89b165-7c98-493d-a932-27f04c90a8d1"><con:settings/><con:config service="addProductV1,1" resourcePath="/v1.1/product/add?" methodName="AddProductWithoutAttribute" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addProductWithoutAttribute" id="496f7dba-befe-4bf3-81ff-9fc42df683b8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/product/attributes</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="format" value="json" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>attribute_lable</con:name><con:value>size</con:value></con:property><con:property><con:name>attribute_name</con:name><con:value>size</con:value></con:property></con:properties></con:testCase><con:testCase id="58e007b6-6c23-43d4-9736-d38127b6d94e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddProduct" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addProductWithoutAttribute" id="4d89b165-7c98-493d-a932-27f04c90a8d1"><con:settings/><con:config service="addProductV1,1" resourcePath="/v1.1/product/add?" methodName="AddProductWithoutAttribute" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addProductWithoutAttribute" id="496f7dba-befe-4bf3-81ff-9fc42df683b8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "product": [
       {
@@ -2013,7 +2013,7 @@ else{
       }
     ]
   }
-}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/product/add</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="format" value="json" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>sku</con:name><con:value>sku_617424341</con:value></con:property></con:properties></con:testCase><con:properties>
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v1.1/product/add</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="format" value="json" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>format</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>sku</con:name><con:value>sku_685831755</con:value></con:property></con:properties></con:testCase><con:properties>
       <con:property>
         <con:name>mobile</con:name>
         <con:value>8767496655</con:value>
@@ -2311,8 +2311,10 @@ testcaseRef.setPropertyValue("config_value",confi_value);
 
 //run UpdateOrgConfig test cases property 
 def resuableTestStep = testcaseRef.testSteps["UpdateOrgConfig"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 
 </script></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV1" id="84c48ad1-a899-4689-a04f-6c4e8e9a6d66"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV1" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
           <con:settings>
@@ -2638,8 +2640,10 @@ testcaseRef.setPropertyValue("config_value",confi_value);
 
 //run UpdateOrgConfig test cases property 
 def resuableTestStep = testcaseRef.testSteps["UpdateOrgConfig"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 
 </script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147654507</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373607219</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919618343944</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill618343944</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-28T19:29:03+05:30</con:value></con:property></con:properties></con:testCase><con:testCase id="a3d70f34-5f6a-499e-ba41-d6230b2ee444" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddAValidRegularTransactionWithWechatCustomer" searchProperties="true"><con:settings/><con:testStep type="groovy" name="generateVariables" id="36f002e0-6675-474e-af60-b16488d1cc42"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
 String mobile = timestamp.substring(4);
@@ -4802,8 +4806,8 @@ testcaseRef.setPropertyValue("attribute_name",attribute_name);
 
 //run AddNewProductAttribute test cases property 
 def resuableTestStep = testcaseRef.testSteps["addProductAttribute"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 </script></con:config></con:testStep><con:testStep type="groovy" name="addProductAttribute_color" id="76b8c22f-1249-4f3d-9537-20e71cdd0eea"><con:settings/><con:config><script>attribute_lable = "color";
 attribute_name = "color"
 def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
@@ -4815,8 +4819,8 @@ testcaseRef.setPropertyValue("attribute_name",attribute_name);
 
 //run AddNewProductAttribute test cases property 
 def resuableTestStep = testcaseRef.testSteps["addProductAttribute"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+def runner = testcaseRef.run(testRunner, context)
+log.info ("runner status ....... : " + runner.getStatus())
 </script></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV1" id="34e71645-85d1-4fb4-82af-0c18500c64f9"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV1" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
@@ -5104,8 +5108,8 @@ testcaseRef.setPropertyValue("attribute_name",attribute_name);
 
 //run AddNewProductAttribute test cases property 
 def resuableTestStep = testcaseRef.testSteps["addProductAttribute"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 </script></con:config></con:testStep><con:testStep type="groovy" name="addProductAttribute_color" id="660295bf-e470-4248-aa61-c66315b0c91f"><con:settings/><con:config><script>attribute_lable = "color";
 attribute_name = "color"
 def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
@@ -5117,8 +5121,8 @@ testcaseRef.setPropertyValue("attribute_name",attribute_name);
 
 //run AddNewProductAttribute test cases property 
 def resuableTestStep = testcaseRef.testSteps["addProductAttribute"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 </script></con:config></con:testStep><con:testStep type="groovy" name="addProduct_WithoutAnyAttribute" id="37083ceb-6cb9-4543-9d1e-d1bbce361a84"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
 String sku = "sku_"+timestamp.substring(4);
 
@@ -5131,8 +5135,8 @@ testcaseRef.setPropertyValue("sku",sku);
 
 //run AddProduct test cases property 
 def resuableTestStep = testcaseRef.testSteps["addProductWithoutAttribute"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 testRunner.testCase.setPropertyValue("sku",sku);
 </script></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV1" id="db195de8-2f14-4886-aec4-b708c56d3650"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV1" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
           <con:settings>
@@ -5403,7 +5407,7 @@ for(int i=0;i&lt;lineItems.size();i++)
 log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="tender" value="true"/>
   <con:entry key="type" value="REGULAR"/>
-</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147654500</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373607214</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919617423159</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill617423159</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-28T19:13:43+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_614025983</con:value></con:property><con:property><con:name>sku</con:name><con:value>sku_617424341</con:value></con:property></con:properties></con:testCase><con:testCase id="040b247d-75b2-4a57-b77f-6a96e1bdf1cf" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="VerifySuccessMessageonDuplicateTransactionWhenCONF_LOYALTY_IS_BILL_NUMBER_UNIQUE is False" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>1- CONF_LOYALTY_IS_BILL_NUMBER_UNIQUE = 0 
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147654500</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373607214</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919617423159</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill617423159</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-28T19:13:43+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_614025983</con:value></con:property><con:property><con:name>sku</con:name><con:value>sku_685831755</con:value></con:property></con:properties></con:testCase><con:testCase id="040b247d-75b2-4a57-b77f-6a96e1bdf1cf" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="VerifySuccessMessageonDuplicateTransactionWhenCONF_LOYALTY_IS_BILL_NUMBER_UNIQUE is False" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>1- CONF_LOYALTY_IS_BILL_NUMBER_UNIQUE = 0 
 2- Add a regular transaction 
 3- Verify same transaction
 4- Add a regular transaction  with same transaction number
@@ -5423,10 +5427,11 @@ testcaseRef.setPropertyValue("config_name",config_name);
 testcaseRef.setPropertyValue("config_value",confi_value);
 
 //run UpdateOrgConfig test cases property 
-Thread.sleep(3000)
 def resuableTestStep = testcaseRef.testSteps["UpdateOrgConfig"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 
 </script></con:config></con:testStep><con:testStep type="restrequest" name="CustomerAddV1" id="b8ebe0ac-f974-4eb8-9e99-99d6c6b233a1"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CustomerAddV1" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
           <con:settings>
@@ -5873,8 +5878,10 @@ testcaseRef.setPropertyValue("config_value",confi_value);
 
 //run UpdateOrgConfig test cases property 
 def resuableTestStep = testcaseRef.testSteps["UpdateOrgConfig"]
-def runner = resuableTestStep.run(testRunner, context)
-log.info ("runner status ....... : " + runner.hasResponse())
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
 
 </script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147654505</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373607218</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919618308717</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill618308717</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-28T19:28:28+05:30</con:value></con:property><con:property><con:name>transactionId2</con:name><con:value>2147654506</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919919991799</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill919991799</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-20T17:29:51+05:30</con:value></con:property></con:properties></con:testSuite><con:properties>
     <con:property>
