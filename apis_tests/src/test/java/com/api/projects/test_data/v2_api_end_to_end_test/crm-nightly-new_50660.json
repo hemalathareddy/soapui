@@ -1,0 +1,15 @@
+{
+  "endpoint": "crm-nightly-new.cc.capillarytech.com",
+  "orgId": "50660",
+  "authorization": {
+    "username": "api.auto1",
+    "password": "202cb962ac59075b964b07152d234b70",
+    "alphatill_username": "api.auto2",
+    "alphatill_password": "202cb962ac59075b964b07152d234b70",
+    "gammatill_username": "api.auto3",
+    "gammatill_password": "202cb962ac59075b964b07152d234b70"
+  },
+  "webhook_workspace": "enfmnlq9rj2i6m3.m.pipedream.net",
+  "webhook_workspace_name": "apiauto_webhook",
+  "custom_events_webhook": "vo4mrjpidb.execute-api.us-east-1.amazonaws.com/crm-nightly-new/webhooks/8b5ec968-6c9d-46cf-8d1b-30b5ffb2d925"
+}
