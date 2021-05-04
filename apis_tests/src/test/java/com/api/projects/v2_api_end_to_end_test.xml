@@ -1981,7 +1981,7 @@ else{
   "keyName": "${#TestCase#config_name}",
   "scope": "ORG",
   "value": "${#TestCase#config_value}"
-}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/organization/configs</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>config_name</con:name><con:value>CONF_LOYALTY_MAX_BILL_AMOUNTE</con:value></con:property><con:property><con:name>config_value</con:name><con:value>50000</con:value></con:property></con:properties></con:testCase><con:testCase id="6e71980a-ee7a-45cb-8ad1-b70abf867847" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddNewProductAttribute" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addProductAttribute" id="8d33aa81-e838-476b-9582-d8b088bcfb9d"><con:settings/><con:config service="addProductAttribute" resourcePath="/v1.1/product/attributes" methodName="AddProductAttribute 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addProductAttribute" id="ff509996-e17f-4d67-b646-f33359fd8bbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/organization/configs</con:originalUri><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>config_name</con:name><con:value>MARK_BILLS_OUTLIER_STARTING_WITH</con:value></con:property><con:property><con:name>config_value</con:name><con:value>TEST</con:value></con:property></con:properties></con:testCase><con:testCase id="6e71980a-ee7a-45cb-8ad1-b70abf867847" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddNewProductAttribute" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addProductAttribute" id="8d33aa81-e838-476b-9582-d8b088bcfb9d"><con:settings/><con:config service="addProductAttribute" resourcePath="/v1.1/product/attributes" methodName="AddProductAttribute 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addProductAttribute" id="ff509996-e17f-4d67-b646-f33359fd8bbd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
   "root": {
     "product": [
       {
@@ -2029,7 +2029,7 @@ else{
   
   
   
-  <con:testSuite id="d8888b94-0ad8-44f1-acb7-3706881c7c7e" name="V2.0_AddRegularTransaction"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="98ea33f6-f7da-405d-a03b-a0628aaf67f4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddAValiadTransaction" searchProperties="true"><con:settings/><con:testStep type="groovy" name="generaeVariables" id="3afd66a3-3705-459b-9986-96fbf87c3d5f"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+  <con:testSuite id="d8888b94-0ad8-44f1-acb7-3706881c7c7e" name="V2.0_AddRegularTransaction"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="98ea33f6-f7da-405d-a03b-a0628aaf67f4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : Verify adding a valid regular transaction with transaction v2.0 api" searchProperties="true"><con:settings/><con:testStep type="groovy" name="generaeVariables" id="3afd66a3-3705-459b-9986-96fbf87c3d5f"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
 String mobile = timestamp.substring(4);
 def startDate = new Date()
 testRunner.testCase.setPropertyValue("mobile","919" + mobile);
@@ -7086,7 +7086,7 @@ for(int i=0;i&lt;lineItems.size();i++)
 log.info "transactionv2Get verification done"</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="tender" value="true"/>
   <con:entry key="type" value="REGULAR"/>
-</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147658304</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373613380</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919770178998</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill770178998</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-30T13:39:38+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_770178998</con:value></con:property><con:property><con:name>combosku</con:name><con:value>combo_sku_1_765748453</con:value></con:property><con:property><con:name>addonsku</con:name><con:value>addon_sku_1_769698431</con:value></con:property><con:property><con:name>splitsku</con:name><con:value>split_sku_1_770178998</con:value></con:property></con:properties></con:testCase><con:testCase id="b85ec5e6-d554-4518-8e6f-40905ffda7e1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : VerifyRegularTransactionOUTLIERstatusOnExceedingMaxBillAmount" searchProperties="true"><con:description>1-Add regular transaction withamount greater that set in CONF_LOYALTY_MAX_BILL_AMOUNT
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147658304</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373613380</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919770178998</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill770178998</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-30T13:39:38+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_770178998</con:value></con:property><con:property><con:name>combosku</con:name><con:value>combo_sku_1_765748453</con:value></con:property><con:property><con:name>addonsku</con:name><con:value>addon_sku_1_769698431</con:value></con:property><con:property><con:name>splitsku</con:name><con:value>split_sku_1_770178998</con:value></con:property></con:properties></con:testCase><con:testCase id="b85ec5e6-d554-4518-8e6f-40905ffda7e1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : Verify regular transaction OUTLIER status on exceeding MaxBillAmount" searchProperties="true"><con:description>1-Add regular transaction withamount greater that set in CONF_LOYALTY_MAX_BILL_AMOUNT
 2-verify transaction status in transaction get api</con:description><con:settings/><con:testStep type="groovy" name="when config CONF_LOYALTY_MAX_BILL_AMOUNT set as 50000" id="8a10cdf3-76a0-41ff-bb1d-b589bddecdb9"><con:settings/><con:config><script>config_name = "CONF_LOYALTY_MAX_BILL_AMOUNT";
 confi_value = "50000"
 def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
@@ -7248,9 +7248,9 @@ messageExchange.modelItem.testCase.setPropertyValue("transactionId",json.created
 
 def transactionId = json.createdId;
 assert transactionId == json.createdId
-assert json.sideEffects[0].rawAwardedPoints==20
-assert json.sideEffects[0].awardedPoints==20
-assert json.sideEffects[0].type=="points"
+//assert json.sideEffects[0].rawAwardedPoints==20
+//assert json.sideEffects[0].awardedPoints==20
+//assert json.sideEffects[0].type=="points"
 
 </scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="identifierName" value="mobile"/>
@@ -7286,7 +7286,7 @@ def returnDetails = json.returnDetails //Done
 assert id == Long.valueOf(transactionId)
 
 //Assert attribute
-assert billDetails.amount == 200;
+assert billDetails.amount == 50001;
 assert billDetails.billNumber == context.expand('${#TestCase#billnumber}');
 assert billDetails.discount == 10;
 assert billDetails.grossAmount ==110;
@@ -7316,7 +7316,7 @@ assert customerId == Long.valueOf(context.expand('${#TestCase#customerId}'));
 assert type == "REGULAR"
 
 //Assert outlierStatus
-assert outlierStatus == "NORMAL"
+assert outlierStatus == "OUTLIER"
 
 //Assert warnings
 assert warnings[0] == null  
@@ -7356,7 +7356,7 @@ for(int i=0;i&lt;lineItems.size();i++)
 	assert lineItems[i].details.extendedFields.MetalRate == 22.02;
 	assert lineItems[i].details.attributesSet[0].size == "10";
 	assert lineItems[i].details.attributesSet[1].color == "black";
-	assert lineItems[i].outlierStatus == "NORMAL";
+	assert lineItems[i].outlierStatus == "OUTLIER";
 	assert lineItems[i].returnDetails[0] == null
 	assert lineItems[i].valid == true;
 	assert lineItems[i].returnLineItemsDtos[0] == null; 
@@ -7378,8 +7378,8 @@ for(int i=0;i&lt;lineItems.size();i++)
 log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="tender" value="true"/>
   <con:entry key="type" value="REGULAR"/>
-</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="finally reset config CONF_LOYALTY_MAX_BILL_AMOUNT to 50000" id="98229ab5-1044-4141-b08d-6c3ba8215661"><con:settings/><con:config><script>config_name = "CONF_LOYALTY_MAX_BILL_AMOUNT";
-confi_value = "50000"
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="finally reset config CONF_LOYALTY_MAX_BILL_AMOUNT to 50000" id="98229ab5-1044-4141-b08d-6c3ba8215661"><con:settings/><con:config><script>config_name = "BILL_OUTLIER_BASKET_SIZE_LIMIT";
+confi_value = "-1"
 def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
 def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
 
@@ -7391,7 +7391,1075 @@ testcaseRef.setPropertyValue("config_value",confi_value);
 def runner = testcaseRef.run(null, true)
 log.info ("runner status ....... : " + runner.getStatus())
 
-</script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147656424</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373610297</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919690699709</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill690699709</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-29T15:34:59+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_690699709</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919919991799</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill919991799</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-20T17:29:51+05:30</con:value></con:property></con:properties></con:testSuite><con:properties>
+</script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147665999</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373625617</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919135888843</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill135888843</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-05-04T19:14:48+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_135888843</con:value></con:property></con:properties></con:testCase><con:testCase id="5ae82c15-8e7c-47ba-8bf2-ca6fe261d103" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : Verify regular transaction OUTLIER status when amount is lessthan minimum bill amount" searchProperties="true"><con:description>1-Add regular transaction with amount less  than set in CONF_LOYALTY_MIN_BILL_AMOUNT
+2-verify transaction status in transaction get api</con:description><con:settings/><con:testStep type="groovy" name="when config CONF_LOYALTY_MIN_BILL_AMOUNT set as 5" id="e52e4e84-f0b3-48df-bc4c-78c7090216e8"><con:settings/><con:config><script>config_name = "CONF_LOYALTY_MIN_BILL_AMOUNT";
+confi_value = "5"
+def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
+def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
+
+//set UpdateOrgConfig test cases property 
+testcaseRef.setPropertyValue("config_name",config_name);
+testcaseRef.setPropertyValue("config_value",confi_value);
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="given Variables set" id="478dc820-00a8-44aa-9074-d8b15d0581bf"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);
+testRunner.testCase.setPropertyValue("billnumber","bill" + mobile);
+testRunner.testCase.setPropertyValue("sku1","sku_1_" + mobile);
+testRunner.testCase.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="restrequest" name="given customer register with instore profile" id="f5b279ea-c8ae-49f5-865a-90cc5be00ee7"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="given customer register with instore profile" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="f2b95d6f-6d65-41b7-8cba-d71f02e9768d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+customerId = json.response.customers.customer[0].user_id
+log.info customerId
+messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="format" value="json"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate succesful  regular transaction with v2 api" id="de8d3161-573e-4b1d-b995-56c51211a409"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate succesful  regular transaction with v2 api" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestCase#billnumber}",
+  "billingDate": "${#TestCase#billingTime}",
+  "discount": "10",
+  "billAmount": "3",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "capillary",
+    "ship_last_name": "customer"
+  },
+  "customFields": {
+    "tx_custom_field_one": "abc",
+    "tx_custom_field_two": "xyz"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "${#TestCase#sku1}",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 1.0,
+      "returnable" : true,
+      "returnableDays" : "10",
+      "attributes": {
+        "size": "10",
+        "color": "black"
+      },
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions</con:originalUri><con:assertion type="GroovyScriptAssertion" id="9a5f20bb-8e70-4cb2-b45e-3b996d8511f2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+//set transactionId
+messageExchange.modelItem.testCase.setPropertyValue("transactionId",json.createdId+"");
+
+
+def transactionId = json.createdId;
+assert transactionId == json.createdId
+//assert json.sideEffects[0].rawAwardedPoints==20
+//assert json.sideEffects[0].awardedPoints==20
+//assert json.sideEffects[0].type=="points"
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="mobile"/>
+  <con:entry key="identifierValue" value="${#TestCase#mobile}"/>
+  <con:entry key="source" value="instore"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate trandsaction details with v2.0 transaction api" id="cfdf0f05-b812-459d-8875-e2a13e536f8f"><con:settings/><con:config service="transactionV2Get" resourcePath="/v2/transactions/${#TestCase#transactionId}/" methodName="RegularTransactionV2Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate trandsaction details with v2.0 transaction api" id="2d8b932f-7dff-4d41-99f3-14a82607d9da" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions//</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5135a58b-4e42-4c9b-9f5a-293450308dcb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="10e727e2-6d44-4303-bc58-ce96f9b1f2ac" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+transactionId =context.expand('${#TestCase#transactionId}');
+
+def attribution = json.attribution;
+def billDetails = json.billDetails;//Done
+def customFields =json.customFields; //Done
+def addWithLocalCurrency = json.addWithLocalCurrency;//Done
+def async = json.async;//Done
+def useV2 = json.useV2; //Done
+def customerId = json.customerId; //Done
+def id = json.id; //Done
+def lineItems = json.lineItems;
+def outlierStatus = json.outlierStatus; //Done
+def type = json.type;//Done
+def warnings = json.warnings //Done
+def lifeTimePurchases = json.lifeTimePurchases//Done
+def ignorePoints = json.ignorePoints //Done
+def niReturnDetails = json.niReturnDetails //Done
+def basketSize = json.basketSize //Done
+def returnDetails = json.returnDetails //Done
+
+
+assert id == Long.valueOf(transactionId)
+
+//Assert attribute
+assert billDetails.amount == 3;
+assert billDetails.billNumber == context.expand('${#TestCase#billnumber}');
+assert billDetails.discount == 10;
+assert billDetails.grossAmount ==110;
+assert billDetails.note == "this is test";
+assert billDetails.returnDetails.canceled == false;
+assert billDetails.niReturnDetails[0] == null 
+assert billDetails.invalidBill == false;
+assert billDetails.billingTime ==context.expand('${#TestCase#billingTime}')
+
+//Assert customFields
+assert customFields.tx_custom_field_one == "abc"
+assert customFields.tx_custom_field_two == "xyz"
+
+//Assert addWithLocalCurrency
+assert addWithLocalCurrency == false
+
+//Assert useV2
+assert useV2 ==false
+
+//Assert async
+assert async ==false
+
+//Assert customerId
+assert customerId == Long.valueOf(context.expand('${#TestCase#customerId}'));
+
+//Assert type
+assert type == "REGULAR"
+
+//Assert outlierStatus
+assert outlierStatus == "OUTLIER"
+
+//Assert warnings
+assert warnings[0] == null  
+
+//Assert lifeTimePurchases
+assert lifeTimePurchases == 0
+
+//Assert ignorePoints
+assert ignorePoints == false
+
+//Assert niReturnDetails'
+assert niReturnDetails[0] == null
+
+//Assert basketSize
+assert basketSize == 1
+
+//Assert returnDetails
+assert returnDetails.canceled == false
+
+//Assert  lineItems
+assert  lineItems.size()==1
+for(int i=0;i&lt;lineItems.size();i++)
+{
+	assert lineItems[i].details.amount ==100.5;
+	assert lineItems[i].details.description =="";
+	assert lineItems[i].details.discount == 0;
+	assert lineItems[i].details.itemCode == context.expand('${#TestCase#sku1}');
+	assert lineItems[i].details.qty == 1;
+	assert lineItems[i].details.rate == 100.5 ;
+	assert lineItems[i].details.serial == 0;
+	assert lineItems[i].details.value == 0;
+	assert lineItems[i].details.returnable == true
+	assert lineItems[i].details.returnableDays == 10;
+	assert lineItems[i].details.attributes.size == "10";
+	assert lineItems[i].details.attributes.color == "black";
+	assert lineItems[i].details.extendedFields.GrossWeight == 10.5;
+	assert lineItems[i].details.extendedFields.MetalRate == 22.02;
+	assert lineItems[i].details.attributesSet[0].size == "10";
+	assert lineItems[i].details.attributesSet[1].color == "black";
+	assert lineItems[i].outlierStatus == "OUTLIER";
+	assert lineItems[i].returnDetails[0] == null
+	assert lineItems[i].valid == true;
+	assert lineItems[i].returnLineItemsDtos[0] == null; 
+	assert lineItems[i].niReturnLineItemsDtos[0] == null;
+	assert lineItems[i].addonDetails[0] == null
+	assert lineItems[i].splitItemsDetails[0] == null
+	assert lineItems[i].niReturn == false
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="tender" value="true"/>
+  <con:entry key="type" value="REGULAR"/>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="finally reset config CONF_LOYALTY_MIN_BILL_AMOUNT to 5" id="592ca7a8-7754-45a0-94a3-33a1c3d9bc30"><con:settings/><con:config><script>config_name = "CONF_LOYALTY_MAX_BILL_AMOUNT";
+confi_value = "5"
+def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
+def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
+
+//set UpdateOrgConfig test cases property 
+testcaseRef.setPropertyValue("config_name",config_name);
+testcaseRef.setPropertyValue("config_value",confi_value);
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
+
+</script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147666001</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373625619</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919136655670</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill136655670</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-05-04T19:27:35+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_136655670</con:value></con:property></con:properties></con:testCase><con:testCase id="a9f35a08-7f10-4faa-9da9-a4b0da55e14d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : Verify regular transaction OUTLIER status when bill number starts with TEST" searchProperties="true"><con:description>1-Add regular transaction with bill number set as  MARK_BILLS_OUTLIER_STARTING_WITH
+2-verify transaction status in transaction get api</con:description><con:settings/><con:testStep type="groovy" name="when config MARK_BILLS_OUTLIER_STARTING_WITH set as TEST" id="6dcd5235-dd3c-4f72-8e98-afb035ce305e"><con:settings/><con:config><script>config_name = "MARK_BILLS_OUTLIER_STARTING_WITH";
+confi_value = "TEST"
+def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
+def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
+
+//set UpdateOrgConfig test cases property 
+testcaseRef.setPropertyValue("config_name",config_name);
+testcaseRef.setPropertyValue("config_value",confi_value);
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="given Variables set" id="27afa8b8-8191-45a7-86b9-708d84907ff9"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);
+testRunner.testCase.setPropertyValue("billnumber","TEST-" + mobile);
+testRunner.testCase.setPropertyValue("sku1","sku_1_" + mobile);
+testRunner.testCase.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="restrequest" name="given customer register with instore profile" id="ccd7ebe6-c2bc-45d5-a8ef-8af8393d36e5"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="given customer register with instore profile" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="f2b95d6f-6d65-41b7-8cba-d71f02e9768d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+customerId = json.response.customers.customer[0].user_id
+log.info customerId
+messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="format" value="json"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate succesful  regular transaction with v2 api" id="c8dc466c-856b-43f4-8aac-a48662aae129"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate succesful  regular transaction with v2 api" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestCase#billnumber}",
+  "billingDate": "${#TestCase#billingTime}",
+  "discount": "10",
+  "billAmount": "300",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "capillary",
+    "ship_last_name": "customer"
+  },
+  "customFields": {
+    "tx_custom_field_one": "abc",
+    "tx_custom_field_two": "xyz"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "${#TestCase#sku1}",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 1.0,
+      "returnable" : true,
+      "returnableDays" : "10",
+      "attributes": {
+        "size": "10",
+        "color": "black"
+      },
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions</con:originalUri><con:assertion type="GroovyScriptAssertion" id="9a5f20bb-8e70-4cb2-b45e-3b996d8511f2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+//set transactionId
+messageExchange.modelItem.testCase.setPropertyValue("transactionId",json.createdId+"");
+
+
+def transactionId = json.createdId;
+assert transactionId == json.createdId
+//assert json.sideEffects[0].rawAwardedPoints==20
+//assert json.sideEffects[0].awardedPoints==20
+//assert json.sideEffects[0].type=="points"
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="mobile"/>
+  <con:entry key="identifierValue" value="${#TestCase#mobile}"/>
+  <con:entry key="source" value="instore"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate trandsaction details with v2.0 transaction api" id="9e9c8e9e-3a7e-441a-a349-7f2c99fe8bf6"><con:settings/><con:config service="transactionV2Get" resourcePath="/v2/transactions/${#TestCase#transactionId}/" methodName="RegularTransactionV2Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate trandsaction details with v2.0 transaction api" id="2d8b932f-7dff-4d41-99f3-14a82607d9da" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions//</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5135a58b-4e42-4c9b-9f5a-293450308dcb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="10e727e2-6d44-4303-bc58-ce96f9b1f2ac" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+transactionId =context.expand('${#TestCase#transactionId}');
+
+def attribution = json.attribution;
+def billDetails = json.billDetails;//Done
+def customFields =json.customFields; //Done
+def addWithLocalCurrency = json.addWithLocalCurrency;//Done
+def async = json.async;//Done
+def useV2 = json.useV2; //Done
+def customerId = json.customerId; //Done
+def id = json.id; //Done
+def lineItems = json.lineItems;
+def outlierStatus = json.outlierStatus; //Done
+def type = json.type;//Done
+def warnings = json.warnings //Done
+def lifeTimePurchases = json.lifeTimePurchases//Done
+def ignorePoints = json.ignorePoints //Done
+def niReturnDetails = json.niReturnDetails //Done
+def basketSize = json.basketSize //Done
+def returnDetails = json.returnDetails //Done
+
+
+assert id == Long.valueOf(transactionId)
+
+//Assert attribute
+assert billDetails.amount == 300;
+assert billDetails.billNumber == context.expand('${#TestCase#billnumber}');
+assert billDetails.discount == 10;
+assert billDetails.grossAmount ==110;
+assert billDetails.note == "this is test";
+assert billDetails.returnDetails.canceled == false;
+assert billDetails.niReturnDetails[0] == null 
+assert billDetails.invalidBill == false;
+assert billDetails.billingTime ==context.expand('${#TestCase#billingTime}')
+
+//Assert customFields
+assert customFields.tx_custom_field_one == "abc"
+assert customFields.tx_custom_field_two == "xyz"
+
+//Assert addWithLocalCurrency
+assert addWithLocalCurrency == false
+
+//Assert useV2
+assert useV2 ==false
+
+//Assert async
+assert async ==false
+
+//Assert customerId
+assert customerId == Long.valueOf(context.expand('${#TestCase#customerId}'));
+
+//Assert type
+assert type == "REGULAR"
+
+//Assert outlierStatus
+assert outlierStatus == "OUTLIER"
+
+//Assert warnings
+assert warnings[0] == null  
+
+//Assert lifeTimePurchases
+assert lifeTimePurchases == 0
+
+//Assert ignorePoints
+assert ignorePoints == false
+
+//Assert niReturnDetails'
+assert niReturnDetails[0] == null
+
+//Assert basketSize
+assert basketSize == 1
+
+//Assert returnDetails
+assert returnDetails.canceled == false
+
+//Assert  lineItems
+assert  lineItems.size()==1
+for(int i=0;i&lt;lineItems.size();i++)
+{
+	assert lineItems[i].details.amount ==100.5;
+	assert lineItems[i].details.description =="";
+	assert lineItems[i].details.discount == 0;
+	assert lineItems[i].details.itemCode == context.expand('${#TestCase#sku1}');
+	assert lineItems[i].details.qty == 1;
+	assert lineItems[i].details.rate == 100.5 ;
+	assert lineItems[i].details.serial == 0;
+	assert lineItems[i].details.value == 0;
+	assert lineItems[i].details.returnable == true
+	assert lineItems[i].details.returnableDays == 10;
+	assert lineItems[i].details.attributes.size == "10";
+	assert lineItems[i].details.attributes.color == "black";
+	assert lineItems[i].details.extendedFields.GrossWeight == 10.5;
+	assert lineItems[i].details.extendedFields.MetalRate == 22.02;
+	assert lineItems[i].details.attributesSet[0].size == "10";
+	assert lineItems[i].details.attributesSet[1].color == "black";
+	assert lineItems[i].outlierStatus == "OUTLIER";
+	assert lineItems[i].returnDetails[0] == null
+	assert lineItems[i].valid == true;
+	assert lineItems[i].returnLineItemsDtos[0] == null; 
+	assert lineItems[i].niReturnLineItemsDtos[0] == null;
+	assert lineItems[i].addonDetails[0] == null
+	assert lineItems[i].splitItemsDetails[0] == null
+	assert lineItems[i].niReturn == false
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="tender" value="true"/>
+  <con:entry key="type" value="REGULAR"/>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="finally reset config MARK_BILLS_OUTLIER_STARTING_WITH to TEST" id="1aa451ec-2e7f-42b2-9b2d-f0060d761f04"><con:settings/><con:config><script>config_name = "MARK_BILLS_OUTLIER_STARTING_WITH";
+confi_value = "TEST"
+def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
+def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
+
+//set UpdateOrgConfig test cases property 
+testcaseRef.setPropertyValue("config_name",config_name);
+testcaseRef.setPropertyValue("config_value",confi_value);
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
+
+</script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147666002</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373625620</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919137146943</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>TEST-137146943</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-05-04T19:35:46+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_137146943</con:value></con:property></con:properties></con:testCase><con:testCase id="aa6d2b17-e5c1-4f69-a58a-3a2285de0232" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : Verify regular transaction OUTLIER status when basketsize is greater than max set in the config" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>1-Add regular transaction with basket size greater than set in BILL_OUTLIER_BASKET_SIZE_LIMIT
+2-verify transaction status in transaction get api</con:description><con:settings/><con:testStep type="groovy" name="when config BILL_OUTLIER_BASKET_SIZE_LIMIT set as 10" id="bbe46c3d-81eb-4f17-80c8-21db7252cccf"><con:settings/><con:config><script>config_name = "BILL_OUTLIER_BASKET_SIZE_LIMIT";
+confi_value = "10"
+def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
+def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
+
+//set UpdateOrgConfig test cases property 
+testcaseRef.setPropertyValue("config_name",config_name);
+testcaseRef.setPropertyValue("config_value",confi_value);
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="given Variables set" id="b0d8836d-1c54-4465-8b72-482652cbdf16"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);
+testRunner.testCase.setPropertyValue("billnumber","BILL-" + mobile);
+testRunner.testCase.setPropertyValue("sku1","sku_1_" + mobile);
+testRunner.testCase.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="restrequest" name="given customer register with instore profile" id="ab9b6874-b78b-4566-876d-c7ada5323f5d"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="given customer register with instore profile" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="f2b95d6f-6d65-41b7-8cba-d71f02e9768d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+customerId = json.response.customers.customer[0].user_id
+log.info customerId
+messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="format" value="json"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate succesful  regular transaction with v2 api" id="55e1506f-7e25-4ef8-97da-2ace5a1c0934"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate succesful  regular transaction with v2 api" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestCase#billnumber}",
+  "billingDate": "${#TestCase#billingTime}",
+  "discount": "10",
+  "billAmount": "300",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "capillary",
+    "ship_last_name": "customer"
+  },
+  "customFields": {
+    "tx_custom_field_one": "abc",
+    "tx_custom_field_two": "xyz"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "${#TestCase#sku1}",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 11,
+      "returnable" : true,
+      "returnableDays" : "10",
+      "attributes": {
+        "size": "10",
+        "color": "black"
+      },
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions</con:originalUri><con:assertion type="GroovyScriptAssertion" id="9a5f20bb-8e70-4cb2-b45e-3b996d8511f2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+//set transactionId
+messageExchange.modelItem.testCase.setPropertyValue("transactionId",json.createdId+"");
+
+
+def transactionId = json.createdId;
+assert transactionId == json.createdId
+//assert json.sideEffects[0].rawAwardedPoints==20
+//assert json.sideEffects[0].awardedPoints==20
+//assert json.sideEffects[0].type=="points"
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="mobile"/>
+  <con:entry key="identifierValue" value="${#TestCase#mobile}"/>
+  <con:entry key="source" value="instore"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate trandsaction details with v2.0 transaction api" id="ddb2b84b-496d-4d5c-946b-d2a0f37645f9"><con:settings/><con:config service="transactionV2Get" resourcePath="/v2/transactions/${#TestCase#transactionId}/" methodName="RegularTransactionV2Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate trandsaction details with v2.0 transaction api" id="2d8b932f-7dff-4d41-99f3-14a82607d9da" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request/><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions//</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="5135a58b-4e42-4c9b-9f5a-293450308dcb" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="10e727e2-6d44-4303-bc58-ce96f9b1f2ac" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+transactionId =context.expand('${#TestCase#transactionId}');
+
+def attribution = json.attribution;
+def billDetails = json.billDetails;//Done
+def customFields =json.customFields; //Done
+def addWithLocalCurrency = json.addWithLocalCurrency;//Done
+def async = json.async;//Done
+def useV2 = json.useV2; //Done
+def customerId = json.customerId; //Done
+def id = json.id; //Done
+def lineItems = json.lineItems;
+def outlierStatus = json.outlierStatus; //Done
+def type = json.type;//Done
+def warnings = json.warnings //Done
+def lifeTimePurchases = json.lifeTimePurchases//Done
+def ignorePoints = json.ignorePoints //Done
+def niReturnDetails = json.niReturnDetails //Done
+def basketSize = json.basketSize //Done
+def returnDetails = json.returnDetails //Done
+
+
+assert id == Long.valueOf(transactionId)
+
+//Assert attribute
+assert billDetails.amount == 300;
+assert billDetails.billNumber == context.expand('${#TestCase#billnumber}');
+assert billDetails.discount == 10;
+assert billDetails.grossAmount ==110;
+assert billDetails.note == "this is test";
+assert billDetails.returnDetails.canceled == false;
+assert billDetails.niReturnDetails[0] == null 
+assert billDetails.invalidBill == false;
+assert billDetails.billingTime ==context.expand('${#TestCase#billingTime}')
+
+//Assert customFields
+assert customFields.tx_custom_field_one == "abc"
+assert customFields.tx_custom_field_two == "xyz"
+
+//Assert addWithLocalCurrency
+assert addWithLocalCurrency == false
+
+//Assert useV2
+assert useV2 ==false
+
+//Assert async
+assert async ==false
+
+//Assert customerId
+assert customerId == Long.valueOf(context.expand('${#TestCase#customerId}'));
+
+//Assert type
+assert type == "REGULAR"
+
+//Assert outlierStatus
+assert outlierStatus == "OUTLIER"
+
+//Assert warnings
+assert warnings[0] == null  
+
+//Assert lifeTimePurchases
+assert lifeTimePurchases == 0
+
+//Assert ignorePoints
+assert ignorePoints == false
+
+//Assert niReturnDetails'
+assert niReturnDetails[0] == null
+
+//Assert basketSize
+assert basketSize == 11
+
+//Assert returnDetails
+assert returnDetails.canceled == false
+
+//Assert  lineItems
+assert  lineItems.size()==1
+for(int i=0;i&lt;lineItems.size();i++)
+{
+	assert lineItems[i].details.amount ==100.5;
+	assert lineItems[i].details.description =="";
+	assert lineItems[i].details.discount == 0;
+	assert lineItems[i].details.itemCode == context.expand('${#TestCase#sku1}');
+	assert lineItems[i].details.qty == 11;
+	assert lineItems[i].details.rate == 100.5 ;
+	assert lineItems[i].details.serial == 0;
+	assert lineItems[i].details.value == 0;
+	assert lineItems[i].details.returnable == true
+	assert lineItems[i].details.returnableDays == 10;
+	assert lineItems[i].details.attributes.size == "10";
+	assert lineItems[i].details.attributes.color == "black";
+	assert lineItems[i].details.extendedFields.GrossWeight == 10.5;
+	assert lineItems[i].details.extendedFields.MetalRate == 22.02;
+	assert lineItems[i].details.attributesSet[0].size == "10";
+	assert lineItems[i].details.attributesSet[1].color == "black";
+	assert lineItems[i].outlierStatus == "OUTLIER";
+	assert lineItems[i].returnDetails[0] == null
+	assert lineItems[i].valid == true;
+	assert lineItems[i].returnLineItemsDtos[0] == null; 
+	assert lineItems[i].niReturnLineItemsDtos[0] == null;
+	assert lineItems[i].addonDetails[0] == null
+	assert lineItems[i].splitItemsDetails[0] == null
+	assert lineItems[i].niReturn == false
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+log.info lineItems.size()</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="tender" value="true"/>
+  <con:entry key="type" value="REGULAR"/>
+</con:parameters><con:parameterOrder><con:entry>type</con:entry><con:entry>tender</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="finally reset config BILL_OUTLIER_BASKET_SIZE_LIMIT to -1" id="58500b78-00e3-41f8-8215-06a9f35d6bdd"><con:settings/><con:config><script>config_name = "MARK_BILLS_OUTLIER_STARTING_WITH";
+confi_value = "TEST"
+def suitRef=testRunner.testCase.testSuite.project.testSuites["Reusable API"];
+def testcaseRef = suitRef.testCases["UpdateOrgConfig"];
+
+//set UpdateOrgConfig test cases property 
+testcaseRef.setPropertyValue("config_name",config_name);
+testcaseRef.setPropertyValue("config_value",confi_value);
+
+
+def runner = testcaseRef.run(null, true)
+log.info ("runner status ....... : " + runner.getStatus())
+
+</script></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147666004</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373625622</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919137553515</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>BILL-137553515</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-05-04T19:42:33+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_137553515</con:value></con:property></con:properties></con:testCase><con:testCase id="027ca16d-daf8-42a9-afd9-0e2c308e56a2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Scenario : Verify regular transaction error message on  negative amount" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>1-Add regular transaction with negative amount
+2-verify error message in transaction add reponse</con:description><con:settings/><con:testStep type="groovy" name="given Variables set" id="403a40a8-b467-48ef-ab4c-14554f929f5f"><con:settings/><con:config><script>String timestamp = System.currentTimeMillis().toString()
+String mobile = timestamp.substring(4);
+def startDate = new Date()
+testRunner.testCase.setPropertyValue("mobile","919" + mobile);
+testRunner.testCase.setPropertyValue("billnumber","BILL-" + mobile);
+testRunner.testCase.setPropertyValue("sku1","sku_1_" + mobile);
+testRunner.testCase.setPropertyValue("billingTime",startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30"));
+log.info startDate.format("yyyy-MM-dd'T'HH:mm:ss+05:30");</script></con:config></con:testStep><con:testStep type="restrequest" name="given customer register with instore profile" id="4cc2e92a-487c-4512-8bf3-5817d39f193d"><con:settings/><con:config service="customer_add" resourcePath="/{version}/customer/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="given customer register with instore profile" id="6b3f46be-1a90-4d61-9862-329d83eba9bd" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="X-CAP-CLIENT-COUNTRYCODE" value="1"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://${#Project#application_endpoint}</con:endpoint>
+          <con:request>{
+  "root": {
+    "customer": [
+      {
+        "mobile": "${#TestCase#mobile}",
+        "email": "${#TestCase#mobile}@gmail.com",
+
+        "firstname": "fname_${#TestCase#mobile}",
+        "lastname": "lname_${#TestCase#mobile}",
+        "external_id": "x${#TestCase#mobile}",
+        "gender": "M",
+        "subscriptions": {
+          "subscription": [
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "email"
+            },
+            {
+              "priority": "TRANS",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            },
+            {
+              "priority": "BULK",
+              "scope": "all",
+              "is_subscribed": "0",
+              "channel": "sms"
+            }
+          ]
+        },
+        	"extended_fields": {
+				"field": [{
+						"name": "nationality",
+						"value": "India"
+					},
+					{
+						"name": "zip",
+						"value": "122001"
+					}
+				]
+			}
+
+      }
+    ]
+  }
+}</con:request>
+          <con:originalUri>https://nightly.capillary.in/v1.1/customer/add</con:originalUri>
+          <con:assertion type="GroovyScriptAssertion" id="f2b95d6f-6d65-41b7-8cba-d71f02e9768d" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+customerId = json.response.customers.customer[0].user_id
+log.info customerId
+messageExchange.modelItem.testCase.setPropertyValue("customerId",customerId+"");
+
+</scriptText></con:configuration></con:assertion><con:credentials>
+            <con:username>${#Project#auth_username}</con:username>
+            <con:password>${#Project#auth_password}</con:password>
+            <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>Global HTTP Settings</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="format" value="json"/>
+            <con:entry key="version" value="v1.1"/>
+          </con:parameters>
+        </con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="then validate error message on adding regular transaction with negave amount with v2 api" id="028665d8-4346-4ebe-805f-8bf51030645c"><con:settings/><con:config service="transactionV2" resourcePath="/v2/transactions" methodName="RegularTransactionV2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="then validate succesful  regular transaction with v2 api" id="d9e2f4c6-1064-4ce9-900a-7f2b4e6d83c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/json"/>
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>https://${#Project#application_endpoint}</con:endpoint><con:request>{
+  "type": "REGULAR",
+  "billNumber": "${#TestCase#billnumber}",
+  "billingDate": "${#TestCase#billingTime}",
+  "discount": "10",
+  "billAmount": "-300",
+  "note": "this is test",
+  "grossAmount": "110",
+  "deliveryStatus": "SHIPPED",
+  "paymentModes": [
+    {
+      "notes": "notes_6555444",
+      "mode": "Cash",
+      "value": "500"
+    }
+  ],
+  "extendedFields": {
+    "ship_first_name": "capillary",
+    "ship_last_name": "customer"
+  },
+  "customFields": {
+    "tx_custom_field_one": "abc",
+    "tx_custom_field_two": "xyz"
+  },
+  "lineItemsV2": [
+    {
+      "itemCode": "${#TestCase#sku1}",
+      "amount": 100.5,
+      "rate": 100.5,
+      "qty": 1,
+      "returnable" : true,
+      "returnableDays" : "10",
+      "attributes": {
+        "size": "10",
+        "color": "black"
+      },
+      "extendedFields": {
+        "MetalRate": "22.02",
+        "GrossWeight": "10.50"
+      }
+    }
+  ]
+}</con:request><con:originalUri>https://crm-nightly-new.cc.capillarytech.com/v2/transactions</con:originalUri><con:assertion type="GroovyScriptAssertion" id="9a5f20bb-8e70-4cb2-b45e-3b996d8511f2" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+String response = messageExchange.getResponseContent();
+def json = new JsonSlurper().parseText(response);
+
+
+assert json.warnings[0] == null
+assert json.errors[0].status==false
+assert json.errors[0].code==631
+assert json.errors[0].message=="Transaction amount cannot be negative"
+</scriptText></con:configuration></con:assertion><con:credentials><con:username>${#Project#auth_username}</con:username><con:password>${#Project#auth_password}</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="identifierName" value="mobile"/>
+  <con:entry key="identifierValue" value="${#TestCase#mobile}"/>
+  <con:entry key="source" value="instore"/>
+</con:parameters><con:parameterOrder><con:entry>source</con:entry><con:entry>accountId</con:entry><con:entry>identifierName</con:entry><con:entry>identifierValue</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>transactionId</con:name><con:value>2147666004</con:value></con:property><con:property><con:name>customerId</con:name><con:value>373625624</con:value></con:property><con:property><con:name>mobile</con:name><con:value>919137973468</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>BILL-137973468</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-05-04T19:49:33+05:30</con:value></con:property><con:property><con:name>sku1</con:name><con:value>sku_1_137973468</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>mobile</con:name><con:value>919919991799</con:value></con:property><con:property><con:name>billnumber</con:name><con:value>bill919991799</con:value></con:property><con:property><con:name>billingTime</con:name><con:value>2021-04-20T17:29:51+05:30</con:value></con:property></con:properties></con:testSuite><con:properties>
     <con:property>
       <con:name>environment</con:name>
       <con:value>crm-nightly-new_50660</con:value>
